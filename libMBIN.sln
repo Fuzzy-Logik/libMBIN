@@ -12,6 +12,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBINCompilerTests", "MBINCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libMBIN", "libMBIN\libMBIN.csproj", "{F2D295A6-D082-4EB4-8FC9-F4687F674939}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build_tools", ".build_tools", "{637D83CF-08A2-49CB-9D7A-1978FEEEFAF8}"
+	ProjectSection(SolutionItems) = preProject
+		.build_tools\post-build.bat = .build_tools\post-build.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

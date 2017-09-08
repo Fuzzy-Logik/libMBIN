@@ -256,3 +256,6 @@ paket-files/
 .cr/
 /MBINCompilerTests/app.config
 *.manifest
+
+# Exclusions
+!.build_tools/bin
