@@ -47,7 +47,14 @@ REM Get the path to this script
 set SCRIPT_PATH=%~dp0
 
 REM Get the last tag on or before this commit.
-for /f "usebackq tokens=*" %%I in (`git describe --always --tags --candidates^=1 --abbrev^=0`) do set VERSION_TAG=%%I
+for /f "usebackq tokens=*" %%I in (`git describe --always --tags --candidates^=1 --abbrev^=0 --dirty`) do set VERSION_TAG=%%I
+
+REM get the -dirty tag if there is one
+set DIRTY_TAG=%VERSION_TAG:-dirty=%
+if "%DIRTY_TAG%"=="%VERSION_TAG%" set DIRTY_TAG=
+if not "%DIRTY_TAG%"=="" set DIRTY_TAG=-dirty
+REM strip the dirty tag from VERSION_TAG
+if not "%DIRTY_TAG%"=="" set VERSION_TAG=%VERSION_TAG:-dirty=%
 
 REM Get the SHA commit hash 
 for /f "usebackq tokens=*" %%I in (`git rev-parse HEAD`) do set COMMIT_SHA=%%I
@@ -63,8 +70,8 @@ REM Get the config abbreviation
 set CFG_NAME=dbg
 if "%CONFIG_NAME%"=="Release" set CFG_NAME=rel
 
-REM The completed pkg name. Can't use : in a filename so we replace with -
-set RELEASE=%SOLUTION_NAME%-%VERSION_TAG%-%CFG_NAME:~0,3% (%DATESTAMP%.%TIMESTAMP%)
+REM The completed pkg name.
+set RELEASE=%SOLUTION_NAME%-%VERSION_TAG%-%CFG_NAME:~0,3%%DIRTY_TAG% (%DATESTAMP%.%TIMESTAMP%)
 
 set PACKAGE_DIR=%TARGET_DIR%\pkg
 set ARCHIVE_DIR=%TARGET_DIR%\archive
