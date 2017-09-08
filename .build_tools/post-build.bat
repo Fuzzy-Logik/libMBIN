@@ -47,7 +47,7 @@ REM Get the path to this script
 set SCRIPT_PATH=%~dp0
 
 REM Get the last tag on or before this commit.
-for /f "usebackq tokens=*" %%I in (`git describe --always --tags --candidates=1`) do set VERSION_TAG=%%I
+for /f "usebackq tokens=*" %%I in (`git describe --always --tags --candidates^=1`) do set VERSION_TAG=%%I
 
 REM Get the SHA commit hash 
 for /f "usebackq tokens=*" %%I in (`git rev-parse HEAD`) do set COMMIT_SHA=%%I
