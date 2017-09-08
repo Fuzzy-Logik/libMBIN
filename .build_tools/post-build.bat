@@ -97,4 +97,4 @@ REM ***************************************************************************
 REM CLEANUP
 
 REM Cleanup package assembly
-REM rd /s /q  "%ARCHIVE_PATH%"
+rd /s /q  "%RELEASE_PATH%"
