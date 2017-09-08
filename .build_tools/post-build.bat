@@ -58,8 +58,6 @@ set TIMESTAMP=%time:~0,2%.%time:~3,2%
 
 REM Derive CONFIG_NAME from TARGET_DIR
 for /f "tokens=*" %%I in ("%TARGET_DIR%") do set CONFIG_NAME=%%~nI
-echo TARGET_DIR=%TARGET_DIR%
-echo CONFIG_NAME=%CONFIG_NAME%
 
 REM Get the config abbreviation
 set CFG_NAME=dbg
