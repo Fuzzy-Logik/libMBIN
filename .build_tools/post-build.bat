@@ -66,8 +66,11 @@ if "%CONFIG_NAME%"=="Release" set CFG_NAME=rel
 REM The completed pkg name. Can't use : in a filename so we replace with -
 set RELEASE=%SOLUTION_NAME%-%VERSION_TAG%-%CFG_NAME:~0,3% (%DATESTAMP%.%TIMESTAMP%)
 
+set PACKAGE_DIR=%TARGET_DIR%\pkg
+set ARCHIVE_DIR=%TARGET_DIR%\archive
+
 REM The package folder
-set RELEASE_PATH=%TARGET_DIR%\%RELEASE%
+set RELEASE_PATH=%PACKAGE_DIR%\%RELEASE%
 
 REM This file will be generated
 set VERSION_FILE=%TARGET_DIR%\VERSION.TXT
@@ -90,11 +93,11 @@ copy "%TARGET_DIR%\*.txt" "%RELEASE_PATH%\"
 copy "%TARGET_DIR%\*.md"  "%RELEASE_PATH%\"
 
 REM Create a .zip archive
-"%SCRIPT_PATH%\bin\7z.exe" a -bd -r -tzip "%RELEASE%.zip" "%RELEASE_PATH%"
+"%SCRIPT_PATH%\bin\7z.exe" a -bd -r -tzip "%ARCHIVE_DIR%\%RELEASE%.zip" "%RELEASE_PATH%"
 
 
 REM ***************************************************************************
 REM CLEANUP
 
 REM Cleanup package assembly
-rd /s /q  "%RELEASE_PATH%"
+rd /s /q  "%PACKAGE_DIR%"
