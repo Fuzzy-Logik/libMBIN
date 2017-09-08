@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build_tools", ".build_tool
 		.build_tools\post-build.bat = .build_tools\post-build.bat
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{1E608AA6-0A0F-4E41-81AE-B974054C402C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,5 +40,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{637D83CF-08A2-49CB-9D7A-1978FEEEFAF8} = {1E608AA6-0A0F-4E41-81AE-B974054C402C}
 	EndGlobalSection
 EndGlobal
