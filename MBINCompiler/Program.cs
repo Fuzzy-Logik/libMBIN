@@ -165,10 +165,11 @@ namespace MBINCompiler {
         /// Show the version string.
         /// </summary>
         /// <returns>Always returns 0 (exit code = success)</returns>
-        static int ShowVersion() {
+        static int ShowVersion(bool verbose = true) {
             string ver = GetVersionString();
-            // TODO: (GH) show full version string?
-            Console.WriteLine( ver.Substring( 0, ver.Length - 2 ) );
+            ver = ver.Substring( 0, ver.Length - 2 );
+            if (verbose) ver = $"libMBIN version {ver}";
+            Console.WriteLine( ver );
             return 0;
         }
 
@@ -235,8 +236,8 @@ namespace MBINCompiler {
             if (args[0] == "--help") return ShowHelp();
             if (args[0] == "-h")     return ShowHelp();
 
-            if (args[0] == "--version") return ShowVersion();
-            if (args[0] == "-v")        return ShowVersion();
+            if (args[0] == "--version") return ShowVersion(true);
+            if (args[0] == "-v")        return ShowVersion(false);
 
             // at least the first argument is an input param
 
