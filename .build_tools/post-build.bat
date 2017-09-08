@@ -57,7 +57,7 @@ set DATESTAMP=%date:~10,4%-%date:~4,2%-%date:~7,2%
 set TIMESTAMP=%time:~0,2%.%time:~3,2%
 
 REM Derive CONFIG_NAME from TARGET_DIR
-for /f "tokens=*" %%I in ("%TARGET_DIR%") do set CONFIG_NAME=%%~nI
+for /f "usebackq tokens=*" %%I in ('%TARGET_DIR%') do set CONFIG_NAME=%%~nI
 
 REM Get the config abbreviation
 set CFG_NAME=dbg
