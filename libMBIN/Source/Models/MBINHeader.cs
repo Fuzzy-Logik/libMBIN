@@ -56,18 +56,17 @@ namespace libMBIN.Models
 
         public void SetDefaults() {
             Magic   = MBIN_MAGIC;
-            Version = MBIN_VERSION;
-            Tag     = MBINCVER_TAG;
+            Version      = MBIN_VERSION;
+            Tag          = MBINCVER_TAG;
 
-            // set the 0x10 bytes to be the MBINCompiler version
-            MbinVersionString = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            MbinVersionString = libMBIN.Version.GetVersion().ToString(); // set the 0x10 bytes to be the MBINCompiler version
             // get just the part we need and pad to 8 bytes
             MbinVersionString = MbinVersionString.Substring( 0, MbinVersionString.Length - 2 ).PadRight( 0x8, Convert.ToChar( 0x00 ) );
 
-            MbinVersion = StringToUlong( MbinVersionString );
+            MbinVersion  = StringToUlong( MbinVersionString );
 
             TemplateName = string.Empty;
-            EndPadding = 0;
+            EndPadding   = 0;
             //Padding58 = ulong.Parse($"{DateTime.Now:yyyyMMddhhmm}"); // may as well make use of this field too
         }
 

@@ -182,11 +182,11 @@ namespace MBINCompiler {
 
         static void ShowVersionStringVerbose() {
             Console.WriteLine( $"MBINCompiler v{GetVersionString()}" );
-            Console.WriteLine( $"libMBIN v{libMBIN.Version.GetVersionString()}" );
+            Console.WriteLine( $"libMBIN v{libMBIN.Version.GetVersion().ToString()}" );
         }
 
         static void ShowVersionStringCompact() {
-            Console.WriteLine( libMBIN.Version.GetVersionString() );
+            Console.WriteLine( libMBIN.Version.GetVersion().ToString() );
         }
 
         /// <summary>
