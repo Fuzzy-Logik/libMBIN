@@ -6,6 +6,8 @@ namespace libMBIN.Models {
 
     public class MBINHeader : NMSTemplate {
 
+        internal static uint SIZE = 0x60; // sizeof MBINHeader
+
         internal static uint  MBIN_MAGIC      = 0xCCCCCCCC;         // MBIN format ID
         internal static uint  MBIN_MAGIC_PC   = 0xDDDDDDDD;         // only used by TkGeometryData / .MBIN.PC files, maybe used to signal the file is PC only?
         internal static  int  MBIN_VERSION    = 2500;               // vanilla version, always 2500 (why not uint?)

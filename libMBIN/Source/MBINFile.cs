@@ -64,13 +64,13 @@ namespace libMBIN {
         }
 
         public NMSTemplate GetData() {
-            _io.Stream.Position = 0x60;
+            _io.Stream.Position = MBINHeader.SIZE;
             return NMSTemplate.DeserializeBinaryTemplate( _io.Reader, Header.GetXMLTemplateName() );
         }
 
-        public void SetData(NMSTemplate template) {
-            _io.Stream.SetLength(0x60);
-            _io.Stream.Position = 0x60;
+        public void SetData( NMSTemplate template ) {
+            _io.Stream.SetLength( MBINHeader.SIZE ); // TODO: redundant?
+            _io.Stream.Position = MBINHeader.SIZE;
 
             _io.Writer.Write( template.SerializeBytes() );
             Header.TemplateName = "c" + template.GetType().Name;
