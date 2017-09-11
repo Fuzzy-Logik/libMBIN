@@ -2,14 +2,14 @@
 using System.Reflection;
 using System.Linq;
 
-namespace libMBIN.Models
-{
-    public class MBINHeader : NMSTemplate
-    {
-        private static uint  MBIN_MAGIC    = 0xCCCCCCCC;        // MBIN format ID
-        private static uint  MBIN_MAGIC_PC = 0xDDDDDDDD;        // only used by TkGeometryData / .MBIN.PC files, maybe used to signal the file is PC only?
-        private static  int  MBIN_VERSION = 2500;               // vanilla version (why not uint?)
-        private static ulong MBINCVER_TAG = 0x726576434E49424D; // "revCNIBM" ("MBINCver")
+namespace libMBIN.Models {
+
+    public class MBINHeader : NMSTemplate {
+
+        internal static uint  MBIN_MAGIC      = 0xCCCCCCCC;         // MBIN format ID
+        internal static uint  MBIN_MAGIC_PC   = 0xDDDDDDDD;         // only used by TkGeometryData / .MBIN.PC files, maybe used to signal the file is PC only?
+        internal static  int  MBIN_VERSION    = 2500;               // vanilla version, always 2500 (why not uint?)
+        internal static ulong MBINCVER_TAG    = 0x726576434E49424D; // "revCNIBM" ("MBINCver")
 
         public uint Magic;              // can be 0xCCCCCCCC, or 0xDDDDDDDD for MBIN.PC files, probably used to seperate PC files from PS4
         public int Version;             // seems to be a version field, game checks this under certain conditions to make sure it's equal to 2500
@@ -34,6 +34,33 @@ namespace libMBIN.Models
             return TemplateName;
         }
 
+        public MBINHeader() { }
+
+        public MBINHeader Initialize(Type type = null) {
+            MbinVersionString = libMBIN.Version.GetVersion().ToString(); // set the 0x10 bytes to be the MBINCompiler version
+            MbinVersionString = MbinVersionString.Substring( 0, MbinVersionString.Length - 2 ); // get just the part we need
+            MbinVersionString = MbinVersionString.PadRight( 8, Convert.ToChar( 0x00 ) );        // and pad to 8 bytes
+
+            // TkGeometryData / .MBIN.PC files, use a different magic ID. To signal the file is PC only?
+            Magic = (type == typeof( Structs.TkGeometryData )) ? MBIN_MAGIC_PC : MBIN_MAGIC;
+            Version      = MBIN_VERSION;
+            Tag          = MBINCVER_TAG;
+            MbinVersion  = StringToUlong( MbinVersionString );
+            TemplateName = string.Empty;
+            EndPadding   = 0;
+
+            // TODO: (GH) something should be done about these magic values
+            if (type == typeof( Structs.TkAnimMetadata )) {
+                Tag         = 0xFFFFFFFFFFFFFFFF;
+                MbinVersion = 0x9B251350AE1ABCA7;
+                EndPadding  = 0xFEFEFEFEFEFEFEFE;
+            }
+
+            //Padding58 = ulong.Parse($"{DateTime.Now:yyyyMMddhhmm}"); // may as well make use of this field too
+
+            return this;
+        }
+
         /// <summary>
         /// Get a Version object representing the MBIN file version
         /// if it was compiled with MBINCompiler.
@@ -49,25 +76,9 @@ namespace libMBIN.Models
             if (MbinVersionString != null) return version; // already cached
 
             // get the string representation of MbinVersion and cache it in MbinVersionString
-            MbinVersionString = UlongToString(MbinVersion);
+            MbinVersionString = UlongToString( MbinVersion );
             // convert the string to a Version object
-            return new System.Version(MbinVersionString);
-        }
-
-        public void SetDefaults() {
-            Magic   = MBIN_MAGIC;
-            Version      = MBIN_VERSION;
-            Tag          = MBINCVER_TAG;
-
-            MbinVersionString = libMBIN.Version.GetVersion().ToString(); // set the 0x10 bytes to be the MBINCompiler version
-            // get just the part we need and pad to 8 bytes
-            MbinVersionString = MbinVersionString.Substring( 0, MbinVersionString.Length - 2 ).PadRight( 0x8, Convert.ToChar( 0x00 ) );
-
-            MbinVersion  = StringToUlong( MbinVersionString );
-
-            TemplateName = string.Empty;
-            EndPadding   = 0;
-            //Padding58 = ulong.Parse($"{DateTime.Now:yyyyMMddhhmm}"); // may as well make use of this field too
+            return new System.Version( MbinVersionString );
         }
 
         private ulong StringToUlong(string s) {

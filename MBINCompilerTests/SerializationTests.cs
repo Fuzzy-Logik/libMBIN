@@ -14758,13 +14758,7 @@ namespace MBINCompilerTests
             Assert.IsNotNull(data, "exml failed to deserialize");
 
             MemoryStream memory = new MemoryStream();
-            using (var file = new MBINFile(memory, true))
-            {
-                file.Header = new MBINHeader();
-                file.Header.SetDefaults();
-                if (data.GetType().Name == "TkGeometryData")
-                    file.Header.Magic = 0xDDDDDDDD; // only used by TkGeometryData / .MBIN.PC files, maybe used to signal the file is PC only?
-
+            using (var file = new MBINFile(memory, true).Initialize( data.GetType() )) {
                 file.SetData(data);
                 file.Save();
             }

@@ -83,17 +83,7 @@ namespace MBINCompiler {
                 File.Delete( outputPath ); // todo: ask for confirmation?
             }
 
-            using (var file = new MBINFile( outputPath )) {
-                file.Header = new MBINHeader();
-                file.Header.SetDefaults();
-                if (data.GetType() == typeof( TkGeometryData ))
-                    file.Header.Magic = 0xDDDDDDDD; // only used by TkGeometryData / .MBIN.PC files, maybe used to signal the file is PC only?
-                if (data.GetType() == typeof( TkAnimMetadata )) {
-                    file.Header.Tag = 0xFFFFFFFFFFFFFFFF;
-                    file.Header.MbinVersion = 0x9B251350AE1ABCA7;
-                    file.Header.EndPadding = 0xFEFEFEFEFEFEFEFE;
-                }
-
+            using (var file = new MBINFile( outputPath ).Initialize( data.GetType() )) {
                 file.SetData( data );
                 file.Save();
             }
