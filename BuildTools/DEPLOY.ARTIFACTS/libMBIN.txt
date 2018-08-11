@@ -1,0 +1,6 @@
+README.md
+LICENSE.md
+Build\Release\libMBIN.dll
+Build\Release\libMBIN.pdb
+Build\Release\MBINCompiler.exe
+Build\Release\MBINCompiler.pdb
