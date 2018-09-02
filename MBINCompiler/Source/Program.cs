@@ -44,6 +44,7 @@ namespace MBINCompiler {
             options.AddOptions( null,      OPTIONS_GENERAL );
             options.AddOptions( "help",    OPTIONS_HELP    );
             options.AddOptions( "version", OPTIONS_VERSION );
+            options.AddOptions( "scan",    OPTIONS_SCAN    );
             options.AddOptions( "convert", OPTIONS_CONVERT );
 
             // save the error state
@@ -67,12 +68,55 @@ namespace MBINCompiler {
                 switch (options.Verb) {
                     case "help":    return HelpCommand.Execute( options );
                     case "version": return VersionCommand.Execute( options );
+                    case "scan":    return HandleScanMode( options );
                     default:        return ConvertCommand.Execute( options );
                 }
             } catch ( System.Exception e ) {
                 return CommandLine.ShowException( e );
             }
 
+        }
+
+        private static int HandleScanMode( CommandLineParser options ) {
+            string oldDir = null;
+            string newDir = null;
+
+            var paths = options.GetFileParams();
+
+            var full = false;
+
+            var switchList = options.GetOptionSwitch( "list" );
+            if ( switchList ) {
+                if ( paths.Count < 1 ) return Console.ShowCommandLineError( "Missing required <GameData Directory> argument." );
+                newDir = paths[0];
+                paths.RemoveAt( 0 );
+            } else {
+                full = options.GetOptionSwitch( "full" );
+                if ( paths.Count < 1 ) return Console.ShowCommandLineError( "Missing required <Old GameData Directory> argument." );
+                if ( paths.Count < 2 ) return Console.ShowCommandLineError( "Missing required <New GameData Directory> argument." );
+                oldDir = paths[0];
+                newDir = paths[1];
+                paths.RemoveAt( 0 );
+                paths.RemoveAt( 0 );
+            }
+
+            if (options.Args.Count > 0) return Console.ShowInvalidCommandLineArg( options.Args[0] );
+            if ( paths.Count > 0 ) return Console.ShowInvalidCommandLineArg( paths[0] );
+
+            var stopwatch = new System.Diagnostics.Stopwatch();
+            stopwatch.Start();
+
+            if ( full ) {
+                var results = ModeScan.ScanAssets( oldDir, newDir );
+                Logger.WriteLine( $"Elapsed time: {stopwatch.Elapsed}" );
+                ModeScan.EmitResults( results );
+            } else {
+                var results = switchList ? ModeScan.ScanGUID( newDir ) : ModeScan.ScanGUID( oldDir, newDir );
+                Logger.WriteLine( $"Elapsed time: {stopwatch.Elapsed}" );
+                ModeScan.EmitResults( results );
+            }
+
+            return (int) ErrorCode.Success;
         }
 
     }

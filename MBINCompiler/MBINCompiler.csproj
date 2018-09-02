@@ -68,6 +68,10 @@
     <Compile Include="Source\Commands\VersionMode.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\ModeScan.cs" />
+    <Compile Include="Source\Scan\AbstractScanner.cs" />
+    <Compile Include="Source\Scan\AssetScanner.cs" />
+    <Compile Include="Source\Scan\GuidScanner.cs" />
     <Compile Include="Source\Utils.cs" />
     <Compile Include="Source\Version.cs" />
   </ItemGroup>

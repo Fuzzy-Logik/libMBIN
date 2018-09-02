@@ -136,6 +136,17 @@ namespace MBINCompiler
             new Option { longName = "no-threads", isHidden = true, description = "Disable multi-threading." },
         };
 
+        public static readonly List<Option> OPTIONS_SCAN = new List<Option> {
+            new Option { shortName = 'o', longName = "old-gamedata-dir",
+                            description = "The directory containing the old vanilla MBIN files." },
+            new Option { shortName = 'n', longName = "new-gamedata-dir",
+                            description = "The directory containing the new vanilla MBIN files." },
+            new Option { shortName = 'f', longName = "full",
+                            description = "Diff all files in the two gamedata directories." },
+            new Option { shortName = 'l', longName = "list",
+                            description = "List all templates/guids for a given gamedata directory.\n" +
+                                          "Cannot be used with the -o and -n options." },
+        };
 
         private static string FormatWrapped( string prefix, int padleft, string txt, bool trim = false )
         {
@@ -158,6 +169,10 @@ namespace MBINCompiler
             sb.Append( "\nUsage:\n\n" +
                    $"    {exe} help [<Option>...]\n" +
                    $"    {exe} version [<Option>...] [<File>]\n" +
+#if DEBUG
+                   $"    {exe} scan <Old GameData Directory> <New GameData Directory>\n" +
+                   $"    {exe} scan --list <GameData Directory>\n" +
+#endif
                    $"    {exe} [convert] [<Option>...] <Path> [<Path>...]\n" );
 
             sb.Append( "\n\nModes:\n\n" +
@@ -180,6 +195,22 @@ namespace MBINCompiler
                 sb.Append( "\nversion Options:\n" );
                 foreach ( var option in OPTIONS_VERSION ) AppendOption( sb, option );
             }
+
+#if DEBUG
+            sb.Append( FormatWrapped( "\n\nscan <Old GameData Directory> <New GameData Directory>\n\n", 4,
+                    "    Compare the template GUIDs for two versions of the unpacked Vanilla GAMEDATA folders and report differences.\n" ) );
+
+            sb.Append( FormatWrapped( "\n\nscan --full <Old GameData Directory> <New GameData Directory>\n\n", 4,
+                    "    Compare all assets for two versions of the unpacked Vanilla GAMEDATA folders and report differences.\n" ) );
+
+            sb.Append( FormatWrapped( "\nscan --list <GameData Directory>\n\n", 4,
+                    "    List all the templates and corresponding guids for the specified <GameData Directory>.\n" ) );
+
+            if ( OPTIONS_SCAN.Count > 0 ) {
+                sb.Append( "\nscan Options:\n" );
+                foreach ( var option in OPTIONS_SCAN ) { sw.Append( option ); }
+            }
+#endif
 
             sb.Append( FormatWrapped( "\n\n[convert] [<Option>...] <Path> [<Path>...]\n\n", 4,
                     "    This mode is the default. The convert keyword is optional.\n" +
