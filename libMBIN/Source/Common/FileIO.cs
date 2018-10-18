@@ -58,7 +58,7 @@ namespace libMBIN
             }
             catch (Exception e)
             {
-                throw new MbinException($"Failed to read {mbin.header.GetXMLTemplateName()} from MBIN.", e, path);
+                throw new MbinException($"Failed to read {mbin.header.GetXMLTemplateName()} from MBIN.", path, e);
             }
 
             return data;
