@@ -108,13 +108,13 @@ namespace MBINCompiler.Commands {
 
                     if ( inputFormat == FormatType.MBIN ) {
                         var mbin = new MBINFile( fIn );
-                        if ( !mbin.Load() || !mbin.header.IsValid ) throw new InvalidDataException( "Not a valid MBIN file!" );
+                        if ( !mbin.LoadHeader() || !mbin.header.IsValid ) throw new InvalidDataException( "Not a valid MBIN file!" );
 
                         var sw = new StreamWriter( ms );
 
                         NMSTemplate data = null;
                         try {
-                            data = mbin.GetData();
+                            data = mbin.LoadData();
                             if ( data is null ) throw new InvalidDataException( "Invalid MBIN data." );
                         } catch ( Exception e ) {
                             throw new MbinException( $"Failed to read {mbin.header.GetXMLTemplateName()} from MBIN.", e, fileIn, mbin );
@@ -136,8 +136,8 @@ namespace MBINCompiler.Commands {
                             if ( data is libMBIN.NMS.Toolkit.TkGeometryData | data is libMBIN.NMS.Toolkit.TkGeometryStreamData ) fileOut += ".PC";
                             var mbin = new MBINFile( ms ) { header = new MBINHeader() };
                             mbin.header.SetDefaults( data.GetType() );
-                            mbin.SetData( data );
-                            mbin.Save();
+                            mbin.SaveData( data );
+                            mbin.SaveHeader();
                         } catch ( Exception e ) {
                             throw new ExmlException( e, fileIn, data );
                         }

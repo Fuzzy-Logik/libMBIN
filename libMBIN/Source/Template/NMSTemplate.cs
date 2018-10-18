@@ -1209,8 +1209,8 @@ namespace libMBIN
                 file.header = new MBINHeader();
                 var type = this.GetType();
                 file.header.SetDefaults(type);
-                file.SetData(this);
-                file.Save();
+                file.SaveData(this);
+                file.SaveHeader();
             }
         }
 

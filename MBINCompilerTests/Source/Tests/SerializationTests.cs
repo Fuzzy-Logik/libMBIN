@@ -136,8 +136,8 @@ namespace libMBIN.UnitTests {
         #region Compile
         private static MemoryStream Decompile( Stream stream ) {
             using (var mbin = new MBINFile( stream, true )) {
-                mbin.Load();
-                var data = mbin.GetData();
+                mbin.LoadHeader();
+                var data = mbin.LoadData();
                 if (data == null) throw new APIException( "deserialized data was null" );
 
                 if (data.SerializeEXml( false ) == null) throw new APIException( "xml serialization was null" );
@@ -162,8 +162,8 @@ namespace libMBIN.UnitTests {
             using (var file = new MBINFile( memory, true )) {
                 file.header = new MBINHeader();
                 file.header.SetDefaults( data.GetType() );
-                file.SetData( data );
-                file.Save();
+                file.SaveData( data );
+                file.SaveHeader();
             }
             memory.Position = 0;
             return memory;

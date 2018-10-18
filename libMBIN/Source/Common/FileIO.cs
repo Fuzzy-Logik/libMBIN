@@ -48,12 +48,12 @@ namespace libMBIN
         public static NMSTemplate LoadMbin(string path)
         {
             MBINFile mbin = new MBINFile(path);
-            if (!mbin.Load() || !mbin.header.IsValid) throw new InvalidDataException("Not a valid MBIN file!");
+            if (!mbin.LoadHeader() || !mbin.header.IsValid) throw new InvalidDataException("Not a valid MBIN file!");
 
             NMSTemplate data = null;
             try
             {
-                data = mbin.GetData();
+                data = mbin.LoadData();
                 if (data is null) throw new InvalidDataException("Invalid MBIN data.");
             }
             catch (Exception e)

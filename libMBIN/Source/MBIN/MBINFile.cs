@@ -14,7 +14,7 @@ namespace libMBIN {
         public static bool IsValid( string path ) {
             if ( !File.Exists( path ) ) return false;
             using ( var mbin = new MBINFile( path ) ) {
-                return mbin.Load() ? mbin.header.IsValid : false;
+                return mbin.LoadHeader() ? mbin.header.IsValid : false;
             }
         }
 
@@ -30,14 +30,14 @@ namespace libMBIN {
             this.keepOpen = keepOpen;
         }
 
-        public bool Load() {
+        public bool LoadHeader() {
             if ( io.Stream.Length < 0x60 ) return false;
             io.Stream.Position = 0;
             header = (MBINHeader) NMSTemplate.DeserializeBinaryTemplate( io.Reader, "MBINHeader" );
             return true;
         }
 
-        public bool Save() {
+        public bool SaveHeader() {
             io.Stream.Position = 0;
             io.Writer.Write( header.SerializeBytes() );
             io.Writer.Flush();
@@ -45,12 +45,12 @@ namespace libMBIN {
             return true;
         }
 
-        public NMSTemplate GetData() {
+        public NMSTemplate LoadData() {
             io.Stream.Position = 0x60;
             return NMSTemplate.DeserializeBinaryTemplate( io.Reader, header.GetXMLTemplateName() );
         }
 
-        public void SetData( NMSTemplate template ) {
+        public void SaveData( NMSTemplate template ) {
             io.Stream.SetLength( 0x60 );
             io.Stream.Position = 0x60;
 
@@ -63,7 +63,7 @@ namespace libMBIN {
         }
 
         public static explicit operator NMSTemplate( MBINFile mbin ) {
-            return mbin.GetData();
+            return mbin.LoadData();
         }
 
         public void Dispose() {
