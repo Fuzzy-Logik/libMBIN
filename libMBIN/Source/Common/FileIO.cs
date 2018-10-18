@@ -48,7 +48,7 @@ namespace libMBIN
         public static NMSTemplate LoadMbin(string path)
         {
             MBINFile mbin = new MBINFile(path);
-            if (!mbin.Load() || !mbin.Header.IsValid) throw new InvalidDataException("Not a valid MBIN file!");
+            if (!mbin.Load() || !mbin.header.IsValid) throw new InvalidDataException("Not a valid MBIN file!");
 
             NMSTemplate data = null;
             try
@@ -58,7 +58,7 @@ namespace libMBIN
             }
             catch (Exception e)
             {
-                throw new MbinException($"Failed to read {mbin.Header.GetXMLTemplateName()} from MBIN.", e, path);
+                throw new MbinException($"Failed to read {mbin.header.GetXMLTemplateName()} from MBIN.", e, path);
             }
 
             return data;

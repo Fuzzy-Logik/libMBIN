@@ -108,7 +108,7 @@ namespace MBINCompiler.Commands {
 
                     if ( inputFormat == FormatType.MBIN ) {
                         var mbin = new MBINFile( fIn );
-                        if ( !mbin.Load() || !mbin.Header.IsValid ) throw new InvalidDataException( "Not a valid MBIN file!" );
+                        if ( !mbin.Load() || !mbin.header.IsValid ) throw new InvalidDataException( "Not a valid MBIN file!" );
 
                         var sw = new StreamWriter( ms );
 
@@ -117,7 +117,7 @@ namespace MBINCompiler.Commands {
                             data = mbin.GetData();
                             if ( data is null ) throw new InvalidDataException( "Invalid MBIN data." );
                         } catch ( Exception e ) {
-                            throw new MbinException( $"Failed to read {mbin.Header.GetXMLTemplateName()} from MBIN.", e, fileIn, mbin );
+                            throw new MbinException( $"Failed to read {mbin.header.GetXMLTemplateName()} from MBIN.", e, fileIn, mbin );
                         }
 
                         try {
@@ -125,7 +125,7 @@ namespace MBINCompiler.Commands {
                             sw.Flush();
                             if ( ms.Length == 0 ) throw new InvalidDataException( "Invalid EXML data." );
                         } catch ( Exception e ) {
-                            throw new MbinException( $"Failed serializing {mbin.Header.GetXMLTemplateName()} to EXML.", e, fileIn, mbin );
+                            throw new MbinException( $"Failed serializing {mbin.header.GetXMLTemplateName()} to EXML.", e, fileIn, mbin );
                         }
 
                     } else if ( inputFormat == FormatType.EXML ) {
@@ -134,8 +134,8 @@ namespace MBINCompiler.Commands {
                             data = EXmlFile.ReadTemplateFromStream( fIn );
                             if ( data is null ) throw new InvalidDataException( $"Failed to deserialize EXML." );
                             if ( data is libMBIN.NMS.Toolkit.TkGeometryData | data is libMBIN.NMS.Toolkit.TkGeometryStreamData ) fileOut += ".PC";
-                            var mbin = new MBINFile( ms ) { Header = new MBINHeader() };
-                            mbin.Header.SetDefaults( data.GetType() );
+                            var mbin = new MBINFile( ms ) { header = new MBINHeader() };
+                            mbin.header.SetDefaults( data.GetType() );
                             mbin.SetData( data );
                             mbin.Save();
                         } catch ( Exception e ) {

@@ -68,7 +68,7 @@ namespace MBINCompiler {
                     Logger.LogMessage( "INFO", $"\n{((CompilerException) e).FileName}" );
                     if ( e is MbinException ) {
                         var mbin = ((MbinException) e).Mbin;
-                        Logger.LogMessage( "INFO", $"MBIN\tversion:\t{mbin.Header.GetMBINVersion()}\tguid:\t{mbin.Header.TemplateGUID:X}\ttemplate:\t{mbin.Header.TemplateName}" );
+                        Logger.LogMessage( "INFO", $"MBIN\tversion:\t{mbin.header.GetMBINVersion()}\tguid:\t{mbin.header.TemplateGUID:X}\ttemplate:\t{mbin.header.TemplateName}" );
                     }
                     e = e.InnerException;
                 }

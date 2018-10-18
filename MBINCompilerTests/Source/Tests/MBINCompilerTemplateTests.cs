@@ -10,7 +10,7 @@ namespace libMBIN.UnitTests {
             const string path = "../../MBINCompilerTestTemplate.MBIN";
             var file = new MBINFile( path );
             file.Load();
-            Assert.AreEqual( "MBINCompilerTestTemplate", file.Header.GetXMLTemplateName(), $"{path} header not using TemplateType MBINCompilerTestTemplate!" );
+            Assert.AreEqual( "MBINCompilerTestTemplate", file.header.GetXMLTemplateName(), $"{path} header not using TemplateType MBINCompilerTestTemplate!" );
 
             var data = file.GetData();
             Assert.IsNotNull( data, $"{path} deserialized data was null" );

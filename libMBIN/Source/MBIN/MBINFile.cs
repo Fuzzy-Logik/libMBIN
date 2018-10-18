@@ -1,83 +1,75 @@
 ﻿using System;
 using System.IO;
 
-namespace libMBIN
-{
-    public class MBINFile : IDisposable
-    {
+namespace libMBIN {
 
-        public MBINHeader Header; // TODO: header instead of Header
-        private readonly IO _io;
-        private readonly string _filePath;
-        private readonly bool _keepOpen;
-        public ulong FileLength = 0; // TODO: fileLength instead of FileLength
+    public class MBINFile : IDisposable {
 
-        public static bool IsValid(string path)
-        {
-            if (!File.Exists(path)) return false;
-            using (var mbin = new MBINFile(path)) {
-                return mbin.Load() ? mbin.Header.IsValid : false;
+        public MBINHeader header;
+        private readonly IO io;
+        private readonly string filePath;
+        private readonly bool keepOpen;
+        public ulong fileLength = 0;
+
+        public static bool IsValid( string path ) {
+            if ( !File.Exists( path ) ) return false;
+            using ( var mbin = new MBINFile( path ) ) {
+                return mbin.Load() ? mbin.header.IsValid : false;
             }
         }
 
-        public MBINFile(string path)
-        {
-            _filePath = path;
-            _io = new IO(path, FileMode.OpenOrCreate);
-            _keepOpen = false;
+        public MBINFile( string path ) {
+            filePath = path;
+            io = new IO( path, FileMode.OpenOrCreate );
+            keepOpen = false;
         }
 
-        public MBINFile(Stream stream, bool keepOpen = false)
-        {
-            _filePath = "/DEV/NULL";
-            _io = new IO(stream);
-            _keepOpen = keepOpen;
+        public MBINFile( Stream stream, bool keepOpen = false ) {
+            filePath = "/DEV/NULL";
+            io = new IO( stream );
+            this.keepOpen = keepOpen;
         }
 
-        public bool Load()
-        {
-            if (_io.Stream.Length < 0x60) return false;
-            _io.Stream.Position = 0;
-            Header = (MBINHeader)NMSTemplate.DeserializeBinaryTemplate(_io.Reader, "MBINHeader");
+        public bool Load() {
+            if ( io.Stream.Length < 0x60 ) return false;
+            io.Stream.Position = 0;
+            header = (MBINHeader) NMSTemplate.DeserializeBinaryTemplate( io.Reader, "MBINHeader" );
             return true;
         }
 
-        public bool Save()
-        {
-            _io.Stream.Position = 0;
-            _io.Writer.Write(Header.SerializeBytes());
-            _io.Writer.Flush();
+        public bool Save() {
+            io.Stream.Position = 0;
+            io.Writer.Write( header.SerializeBytes() );
+            io.Writer.Flush();
 
             return true;
         }
 
-        public NMSTemplate GetData()
-        {
-            _io.Stream.Position = 0x60;
-            return NMSTemplate.DeserializeBinaryTemplate(_io.Reader, Header.GetXMLTemplateName());
+        public NMSTemplate GetData() {
+            io.Stream.Position = 0x60;
+            return NMSTemplate.DeserializeBinaryTemplate( io.Reader, header.GetXMLTemplateName() );
         }
 
-        public void SetData(NMSTemplate template)
-        {
-            _io.Stream.SetLength(0x60);
-            _io.Stream.Position = 0x60;
+        public void SetData( NMSTemplate template ) {
+            io.Stream.SetLength( 0x60 );
+            io.Stream.Position = 0x60;
 
             byte[] data = template.SerializeBytes();
-            _io.Writer.Write(data);
+            io.Writer.Write( data );
 
-            FileLength = (ulong)data.LongLength;
+            fileLength = (ulong) data.LongLength;
 
-            Header.TemplateName = "c" + template.GetType().Name;
+            header.TemplateName = "c" + template.GetType().Name;
         }
 
-        public static explicit operator NMSTemplate(MBINFile mbin)
-        {
+        public static explicit operator NMSTemplate( MBINFile mbin ) {
             return mbin.GetData();
         }
 
-        public void Dispose()
-        {
-            if (_io != null && _keepOpen == false) _io.Dispose();
+        public void Dispose() {
+            if ( io != null && keepOpen == false ) io.Dispose();
         }
+
     }
+
 }

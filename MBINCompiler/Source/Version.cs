@@ -34,7 +34,7 @@ namespace MBINCompiler
         public static string GetVersionString(MBINFile mbin = null, bool quiet = false) {
             if ( mbin == null ) return GetVersionString( quiet );
 
-            System.Version mbinVersion = mbin.Header.GetMBINVersion();
+            System.Version mbinVersion = mbin.header.GetMBINVersion();
             string versionString = mbinVersion.ToString();
 
             return !quiet

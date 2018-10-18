@@ -79,7 +79,7 @@ namespace libMBIN.UnitTests.Analysis
 
                         using ( var mbin = new MBINFile( file ) ) {
                             mbin.Load();
-                            record = new GameDataMBIN.Record( path, size, hash, mbin.Header );
+                            record = new GameDataMBIN.Record( path, size, hash, mbin.header );
                         }
                     }
 
