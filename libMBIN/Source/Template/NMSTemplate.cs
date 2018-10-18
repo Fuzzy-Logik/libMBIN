@@ -109,6 +109,12 @@ namespace libMBIN
             return template.GetDataSize();
         }
 
+        private static FieldInfo[] GetOrderedFields( Type type ) {
+            var bindingFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;
+            var fields = type.GetFields( bindingFlags ).OrderBy( field => field.MetadataToken );
+            return fields.Where( field => !field.IsPrivate || (field.GetCustomAttribute<NMSAttribute>() != null) ).ToArray();
+        }
+
         public static object DeserializeValue(BinaryReader reader, Type field, NMSAttribute settings, long templatePosition, FieldInfo fieldInfo, NMSTemplate parent)
         {
             //Logger.LogDebug( $"{fieldInfo?.DeclaringType.Name}.{fieldInfo?.Name}\ttype:\t{field.Name}\tpos:\t0x{templatePosition:X}" );
@@ -251,11 +257,12 @@ namespace libMBIN
                 return obj;
             }
 
-            var type = obj.GetType();
-            var fields = type.GetFields().OrderBy(field => field.MetadataToken); // hack to get fields in order of declaration (todo: use something less hacky, this might break mono?)
+            var fields = GetOrderedFields( obj.GetType() );
+
             foreach (var field in fields)
             {
                 NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();
+
                 if (field.FieldType.IsEnum)
                 {
                     field.SetValue(obj, Enum.ToObject(field.FieldType, DeserializeValue(reader, field.FieldType, settings, templatePosition, field, obj)));
@@ -533,7 +540,7 @@ namespace libMBIN
             long templatePosition = writer.BaseStream.Position;
             //Logger.LogDebug( $"[C] writing {GetType().Name} to offset 0x{templatePosition:X} (parent: {parent.Name})" );
             var type = GetType();
-            var fields = type.GetFields().OrderBy( field => field.MetadataToken ); // hack to get fields in order of declaration (todo: use something less hacky, this might break mono?)
+            var fields = GetOrderedFields( type );
 
             // todo: remove struct length?? Not needed any more I think...
             NMSAttribute attribute = type.GetCustomAttribute<NMSAttribute>();
@@ -952,7 +959,7 @@ namespace libMBIN
                 xmlData = new EXmlData { Template = type.Name };
             }
 
-            var fields = type.GetFields().OrderBy(field => field.MetadataToken); // hack to get fields in order of declaration (todo: use something less hacky, this might break mono?)
+            var fields = GetOrderedFields( type );
 
             foreach ( var field in fields ) {
 
@@ -1114,7 +1121,7 @@ namespace libMBIN
             if (template == null) return null;
 
             Type templateType = template.GetType();
-            var templateFields = templateType.GetFields().OrderBy(field => field.MetadataToken); // hack to get fields in order of declaration (todo: use something less hacky, this might break mono?)
+            var templateFields = GetOrderedFields( templateType );
 
             foreach (var templateField in templateFields) {
                 // check to see if the object has a default value in the struct
@@ -1220,8 +1227,7 @@ namespace libMBIN
         public string GetID()
         {
             string ID = null;
-            var type = GetType();
-            var fields = type.GetFields();
+            var fields = GetOrderedFields( this.GetType() );
             foreach (var field in fields)
             {
                 NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();
@@ -1239,7 +1245,7 @@ namespace libMBIN
         {
 #if DEBUG
             // check enums are valid
-            var fields = GetType().GetFields().OrderBy(field => field.MetadataToken); // hack to get fields in order of declaration (todo: use something less hacky, this might break mono?)
+            var fields = GetOrderedFields( this.GetType() );
             foreach (var field in fields)
             {
                 var fieldType = field.FieldType.Name;

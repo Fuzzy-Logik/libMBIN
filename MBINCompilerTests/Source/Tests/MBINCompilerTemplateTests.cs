@@ -38,7 +38,7 @@ namespace libMBIN.UnitTests {
             Assert.AreEqual( expectedStrings.Length, test.Test0x80ByteStringList.Count );
 
             for ( int i = 0; i < expectedStrings.Length; i++ ) {
-                Assert.AreEqual( expectedStrings[i], test.Test0x80ByteStringList[i].Value );
+                Assert.AreEqual( expectedStrings[i], (string) test.Test0x80ByteStringList[i] );
             }
         }
 
