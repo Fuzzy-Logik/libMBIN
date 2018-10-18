@@ -171,9 +171,6 @@ namespace libMBIN
         /* 0x58 */ public ulong MetaOffset { get => EndPadding; internal set => EndPadding = value; }
         #endregion
 
-        // used for format V1
-        private string MbinVersionString; // Version of the mbin file as read initially as a string
-
         public bool IsValid => ((MagicID == MBIN_MAGIC) || (MagicID == MBIN_MAGIC_PC)) && (FormatNMS == MBIN_VERSION);
 
         public int GetFormat() => IsFormatV0 ? 0 : IsFormatV1 ? 1 : FormatAPI;
@@ -197,11 +194,7 @@ namespace libMBIN
         /// </returns>
         public System.Version GetMBINVersion() {
             if (IsFormatV0) return new System.Version( "0.0.0.0" );
-            if (IsFormatV1) {
-                // get the string representation of MbinVersion and cache it in MbinVersionString
-                if (MbinVersionString == null) MbinVersionString = UlongToString(MbinVersion);
-                return new System.Version( MbinVersionString );
-            }
+            if (IsFormatV1) return new System.Version( UlongToString(MbinVersion) );
             return VersionAPI;
         }
 
@@ -234,8 +227,7 @@ namespace libMBIN
 
             // set the 0x10 bytes to be the MBINCompiler version
             // get just the part we need and pad to 8 bytes
-            MbinVersionString = Version.AssemblyVersion.ToString( 3 ).PadRight( 8, '\0' );
-            MbinVersion = StringToUlong( MbinVersionString );
+            MbinVersion = StringToUlong( Version.AssemblyVersion.ToString( 3 ).PadRight( 8, '\0' ) );
         }
 
         public void SetDefaultsV2( Type type = null ) {
