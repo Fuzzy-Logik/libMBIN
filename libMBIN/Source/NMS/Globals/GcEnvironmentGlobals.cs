@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xB16E5213AD3DEF96 )]
-    public class GcEnvironmentGlobals : GlobalDataStruct {
+    public class GcEnvironmentGlobals : GlobalData {
 
         /* 0x0 */ public Vector2f SpaceBuildingTemperature;
 

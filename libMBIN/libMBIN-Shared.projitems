@@ -28,10 +28,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\MBIN\MbinSerializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\NMSType.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponentType.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameDataType.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GlobalDataType.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\ToolkitDataType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GlobalData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\ToolkitComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcAtlasRecvBaseList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcMissionConditionNearScanEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcRealityGameIcons.cs" />

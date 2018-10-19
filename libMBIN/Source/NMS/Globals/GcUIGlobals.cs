@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xD25256FB1959D22E )]
-    public class GcUIGlobals : GlobalDataStruct {
+    public class GcUIGlobals : GlobalData {
 
         /* 0x0 */ public bool LoadPagesFromMetadataCache;
         /* 0x1 */ public bool AlwaysCloseQuickMenu;

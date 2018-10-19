@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x5B44806E8B658952 )]
-    public class GcFleetGlobals : GlobalDataStruct {
+    public class GcFleetGlobals : GlobalData {
 
         [NMS(Size = 0x20)]
         /* 0x0 */ public string CivilianMPMissionGiverPuzzle;

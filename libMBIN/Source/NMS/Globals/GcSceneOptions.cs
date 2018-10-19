@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xE631F099F9410CAB )]
-    public class GcSceneOptions : GlobalDataStruct { // doesn't seem like any of this is used by the game..
+    public class GcSceneOptions : GlobalData { // doesn't seem like any of this is used by the game..
 
         /* 0x0 */ public int RecentToolboxIndex;
         /* 0x4 */ public int SelectedToolboxIndex;

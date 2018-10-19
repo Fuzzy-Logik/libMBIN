@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xDA8B00B2D67658AF )]
-    public class GcMultiplayerGlobals : GlobalDataStruct {
+    public class GcMultiplayerGlobals : GlobalData {
 
         /* 0x0 */ public float FullSimUpdateInterval;
         /* 0x4 */ public int MaxDownloadableBases;

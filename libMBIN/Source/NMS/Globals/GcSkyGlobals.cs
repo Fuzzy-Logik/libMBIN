@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x18B789779D43057A )]
-    public class GcSkyGlobals : GlobalDataStruct {
+    public class GcSkyGlobals : GlobalData {
 
         /* 0x0 */ public float NightThreshold;
         /* 0x4 */ public GcPhotoModeAdjustData FogAdjust;

@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x6ABE798B8E148B68 )]
-    public class GcBuildingGlobals : GlobalDataStruct {
+    public class GcBuildingGlobals : GlobalData {
 
         /* 0x0 */ public bool AllowBuildingUsingIntermediates;
         /* 0x4 */ public float BuildingLineFadeStart;

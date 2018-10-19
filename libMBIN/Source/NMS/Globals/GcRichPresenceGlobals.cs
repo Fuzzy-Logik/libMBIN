@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x37A021DF6D707809 )]
-    public class GcRichPresenceGlobals : GlobalDataStruct {
+    public class GcRichPresenceGlobals : GlobalData {
 
         /* 0x0 */ public bool ShowOnScreen;
         /* 0x4 */ public float IdleThreshold;

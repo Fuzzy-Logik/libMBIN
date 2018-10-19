@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x5E2BB84C26535A58 )]
-    public class GcCameraGlobals : GlobalDataStruct {
+    public class GcCameraGlobals : GlobalData {
 
 		/* 0x0 */ public bool PauseThirdPersonCamInPause;
 		/* 0x4 */ public float TogglePerspectiveBlendTime;
