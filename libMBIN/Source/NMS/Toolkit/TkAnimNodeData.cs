@@ -5,13 +5,14 @@ using System.Reflection;
 
 namespace libMBIN.NMS.Toolkit {
 
-    [NMS(Size = 0x50, GUID = 0x14C032849E45EE8D)]
+    [NMS( Size = 0x50, GUID = 0x14C032849E45EE8D )]
     public class TkAnimNodeData : NMSTemplate, ISerialize {
 
-        [NMS(Size = 0x40)]
+        [NMS( Size = 0x40 )]
         /* 0x00 */ public string Node;
 
         /* 0x40 */ public bool CanCompress; // set to 0xFE, with following 3 padding bytes also set to 0xFE, might be padding indicating that this is 0? currently treated as 1...
+
         /* 0x44 */ public int RotIndex;
         /* 0x48 */ public int TransIndex;
         /* 0x4C */ public int ScaleIndex;
@@ -24,7 +25,5 @@ namespace libMBIN.NMS.Toolkit {
             writer.Write( 0xFEFEFEFE );
             return true;
         }
-
     }
-
 }

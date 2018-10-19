@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace libMBIN.NMS.Toolkit {
 
-    [NMS(Size = 0x140, GUID = 0xCD49AC37B4729513)]
+    [NMS( Size = 0x140, GUID = 0xCD49AC37B4729513 )]
     public class TkGeometryData : NMSTemplate, ISerialize, IDeserialize {
 
         /* 0x000 */ public int VertexCount;
@@ -58,9 +58,9 @@ namespace libMBIN.NMS.Toolkit {
 
                     IList data = (IList) fieldData;
 
-                    if ( Indices16Bit != 1 ) // if 32bit indices, we can just pass it directly
+                    if ( Indices16Bit != 1 ) { // if 32bit indices, we can just pass it directly
                         additionalData.Insert( addtDataIndex, new Tuple<long, object>( listPos, data ) );
-                    else {
+                    } else {
                         // otherwise we have to create 32bit indices from the 16bit ones
                         var list32Bit = new List<uint>();
                         int effective_count = (data.Count / 2) * 2;

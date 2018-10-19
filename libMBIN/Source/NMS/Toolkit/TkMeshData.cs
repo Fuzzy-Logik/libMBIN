@@ -5,10 +5,10 @@ using System.Reflection;
 
 namespace libMBIN.NMS.Toolkit {
 
-    [NMS(Size = 0xA0, GUID = 0x990A0508C5DCEEE6)]
+    [NMS( Size = 0xA0, GUID = 0x990A0508C5DCEEE6 )]
     public class TkMeshData : NMSTemplate, ISerialize, IDeserialize {
 
-        [NMS(Size = 0x80, Padding = 0xFE)]
+        [NMS( Size = 0x80, Padding = 0xFE )]
         /* 0x00 */ public string IdString;
         /* 0x80 */ public ulong Hash;
         /* 0x88 */ public int VertexDataSize;
