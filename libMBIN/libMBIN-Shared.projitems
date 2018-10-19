@@ -16,8 +16,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\Common\APIException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\Common\Logger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\Common\INT_2_10_10_10_REV.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\Common\IO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\MBIN\MbinException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\MBIN\MbinFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlMeta.cs" />
@@ -1172,9 +1174,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\Quaternion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\Vector4f.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\Version.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Source\EXML\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Source\MBIN\" />
   </ItemGroup>
 </Project>

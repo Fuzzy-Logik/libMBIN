@@ -45,7 +45,7 @@ namespace libMBIN {
                 return data;
 
             } catch ( Exception e ) {
-                throw new MbinException( err, path, e );
+                throw new MBIN.MbinException( err, path, e );
             }
         }
 
