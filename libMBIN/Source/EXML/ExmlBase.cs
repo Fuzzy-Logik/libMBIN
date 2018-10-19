@@ -4,22 +4,22 @@ using System.Xml.Serialization;
 
 namespace libMBIN.EXML {
 
-    [XmlInclude( typeof( EXmlData ) )]
-    [XmlInclude( typeof( EXmlProperty ) )]
-    [XmlInclude( typeof( EXmlMeta ) )]
-    public abstract class EXmlBase {
+    [XmlInclude( typeof( ExmlData ) )]
+    [XmlInclude( typeof( ExmlProperty ) )]
+    [XmlInclude( typeof( ExmlMeta ) )]
+    public abstract class ExmlBase {
 
-        protected EXmlBase() {
-            Elements = new List<EXmlBase>();
+        protected ExmlBase() {
+            Elements = new List<ExmlBase>();
         }
 
         [XmlAttribute( "name" )]
         public string Name { get; set; }
 
-        [XmlElement( typeof( EXmlData ), ElementName = "Data" )]
-        [XmlElement( typeof( EXmlProperty ), ElementName = "Property" )]
-        [XmlElement( typeof( EXmlMeta ), ElementName = "Meta" )]
-        public List<EXmlBase> Elements { get; set; }
+        [XmlElement( typeof( ExmlData ), ElementName = "Data" )]
+        [XmlElement( typeof( ExmlProperty ), ElementName = "Property" )]
+        [XmlElement( typeof( ExmlMeta ), ElementName = "Meta" )]
+        public List<ExmlBase> Elements { get; set; }
 
     }
 

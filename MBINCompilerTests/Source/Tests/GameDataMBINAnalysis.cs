@@ -77,7 +77,7 @@ namespace libMBIN.UnitTests.Analysis
                         long size = new FileInfo( file ).Length;
                         string hash = Utils.SHA1.GetHexString( file );
 
-                        using ( var mbin = new MBINFile( file ) ) {
+                        using ( var mbin = new MbinFile( file ) ) {
                             mbin.LoadHeader();
                             record = new GameDataMBIN.Record( path, size, hash, mbin.header );
                         }

@@ -135,14 +135,14 @@ namespace libMBIN.UnitTests {
 
         #region Compile
         private static MemoryStream Decompile( Stream stream ) {
-            using (var mbin = new MBINFile( stream, true )) {
+            using (var mbin = new MbinFile( stream, true )) {
                 mbin.LoadHeader();
                 var data = mbin.LoadData();
                 if (data == null) throw new APIException( "deserialized data was null" );
 
                 if (SerializeEXML.SerializeEXml( data, false ) == null) throw new APIException( "xml serialization was null" );
 
-                var xmlString = EXmlFile.WriteTemplate( data );
+                var xmlString = ExmlFile.WriteTemplate( data );
                 if ( string.IsNullOrEmpty( xmlString ) ) throw new APIException( "xml data is null" );
 
                 MemoryStream memory = new MemoryStream();
@@ -155,12 +155,12 @@ namespace libMBIN.UnitTests {
         }
 
         private static MemoryStream Compile( Stream stream ) {
-            var data = EXmlFile.ReadTemplateFromStream( stream );
+            var data = ExmlFile.ReadTemplateFromStream( stream );
             if (data == null) throw new APIException( "exml failed to deserialize" );
 
             MemoryStream memory = new MemoryStream();
-            using (var file = new MBINFile( memory, true )) {
-                file.header = new MBIN.MBINHeader();
+            using (var file = new MbinFile( memory, true )) {
+                file.header = new MBIN.MbinHeader();
                 file.header.SetDefaults( data.GetType() );
                 file.SaveData( data );
                 file.SaveHeader();

@@ -107,7 +107,7 @@ namespace MBINCompiler.Commands {
                 using ( var ms = new MemoryStream() ) {
 
                     if ( inputFormat == FormatType.MBIN ) {
-                        var mbin = new MBINFile( fIn );
+                        var mbin = new MbinFile( fIn );
                         if ( !mbin.LoadHeader() || !mbin.header.IsValid ) throw new InvalidDataException( "Not a valid MBIN file!" );
 
                         var sw = new StreamWriter( ms );
@@ -121,7 +121,7 @@ namespace MBINCompiler.Commands {
                         }
 
                         try {
-                            sw.Write( EXmlFile.WriteTemplate( data ) );
+                            sw.Write( ExmlFile.WriteTemplate( data ) );
                             sw.Flush();
                             if ( ms.Length == 0 ) throw new InvalidDataException( "Invalid EXML data." );
                         } catch ( Exception e ) {
@@ -131,10 +131,10 @@ namespace MBINCompiler.Commands {
                     } else if ( inputFormat == FormatType.EXML ) {
                         NMSTemplate data = null;
                         try {
-                            data = EXmlFile.ReadTemplateFromStream( fIn );
+                            data = ExmlFile.ReadTemplateFromStream( fIn );
                             if ( data is null ) throw new InvalidDataException( $"Failed to deserialize EXML." );
                             if ( data is libMBIN.NMS.Toolkit.TkGeometryData | data is libMBIN.NMS.Toolkit.TkGeometryStreamData ) fileOut += ".PC";
-                            var mbin = new MBINFile( ms ) { header = new libMBIN.MBIN.MBINHeader() };
+                            var mbin = new MbinFile( ms ) { header = new libMBIN.MBIN.MbinHeader() };
                             mbin.header.SetDefaults( data.GetType() );
                             mbin.SaveData( data );
                             mbin.SaveHeader();

@@ -22,21 +22,21 @@ namespace MBINCompiler {
     internal class MbinException : CompilerException {
         private const string DEFAULT_MESSAGE = "An MBIN exception has occurred!";
 
-        public MBINFile Mbin { get; private set; }
+        public MbinFile Mbin { get; private set; }
 
         public MbinException()                                                                           : this( DEFAULT_MESSAGE                 ) { }
         public MbinException( string message )                                                           : base( message                         ) { }
         public MbinException(                 Exception innerException )                                 : base( DEFAULT_MESSAGE, innerException ) { }
         public MbinException( string message, Exception innerException )                                 : base( message,         innerException ) { }
         public MbinException( string message,                           string fileName )                : base( message,         null,           fileName       ) { }
-        public MbinException( string message,                                            MBINFile mbin ) : this( message,         null,           "",       mbin ) { }
-        public MbinException( string message,                           string fileName, MBINFile mbin ) : base( message,         null,           fileName       ) { }
+        public MbinException( string message,                                            MbinFile mbin ) : this( message,         null,           "",       mbin ) { }
+        public MbinException( string message,                           string fileName, MbinFile mbin ) : base( message,         null,           fileName       ) { }
         public MbinException(                 Exception innerException, string fileName )                : base( DEFAULT_MESSAGE, innerException, fileName       ) { }
-        public MbinException(                 Exception innerException,                  MBINFile mbin ) : this( DEFAULT_MESSAGE, innerException, "",       mbin ) { }
-        public MbinException(                 Exception innerException, string fileName, MBINFile mbin ) : this( DEFAULT_MESSAGE, innerException, fileName, mbin ) { }
+        public MbinException(                 Exception innerException,                  MbinFile mbin ) : this( DEFAULT_MESSAGE, innerException, "",       mbin ) { }
+        public MbinException(                 Exception innerException, string fileName, MbinFile mbin ) : this( DEFAULT_MESSAGE, innerException, fileName, mbin ) { }
         public MbinException( string message, Exception innerException, string fileName )                : base( message,         innerException, fileName       ) { }
-        public MbinException( string message, Exception innerException,                  MBINFile mbin ) : this( message,         innerException, "",       mbin ) { }
-        public MbinException( string message, Exception innerException, string fileName, MBINFile mbin ) : base( message,         innerException, fileName       ) {
+        public MbinException( string message, Exception innerException,                  MbinFile mbin ) : this( message,         innerException, "",       mbin ) { }
+        public MbinException( string message, Exception innerException, string fileName, MbinFile mbin ) : base( message,         innerException, fileName       ) {
             this.Mbin = mbin;
         }
     }

@@ -12,7 +12,7 @@ namespace MBINCompiler.Commands {
             if ( files.Count > 1 ) return CommandLine.ShowInvalidCommandLineArg( files[1] );
 
             var fIn = new FileStream( files[0], FileMode.Open, FileAccess.Read );
-            var mbin = new libMBIN.MBINFile( fIn );
+            var mbin = new libMBIN.MbinFile( fIn );
             if ( !mbin.LoadHeader() || !mbin.header.IsValid ) {
                 return CommandLine.ShowCommandLineError( "Invalid file type.\n" +
                                                          "Only MBIN files can be versioned.\n" +

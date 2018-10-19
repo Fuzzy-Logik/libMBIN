@@ -177,7 +177,7 @@ namespace MBINCompiler.Commands {
                 if ( (fileList.Count == 1) && File.Exists( fileList[0] ) ) {
                     using ( var fIn = new FileStream( fileList[0], FileMode.Open ) ) {
                         // possibly MBIN? check for a valid header
-                        using ( var mbin = new MBINFile( fIn, true ) ) foundMBIN = (mbin.LoadHeader() && mbin.header.IsValid);
+                        using ( var mbin = new MbinFile( fIn, true ) ) foundMBIN = (mbin.LoadHeader() && mbin.header.IsValid);
                         if ( !foundMBIN ) { // possibly EXML? check for a valid xml tag
                             var xmlTag = "<?xml version=\"1.0\" encoding=\"utf-8\"?>".ToLower();
                             var bytes = new byte[xmlTag.Length];

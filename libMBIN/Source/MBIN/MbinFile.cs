@@ -6,9 +6,9 @@ namespace libMBIN {
 
     using MBIN;
 
-    public class MBINFile : IDisposable {
+    public class MbinFile : IDisposable {
 
-        public MBINHeader header;
+        public MbinHeader header;
         private readonly IO io;
         private readonly string filePath;
         private readonly bool keepOpen;
@@ -16,21 +16,21 @@ namespace libMBIN {
 
         public static bool IsValid( string path ) {
             if ( !File.Exists( path ) ) return false;
-            using ( var mbin = new MBINFile( path ) ) {
+            using ( var mbin = new MbinFile( path ) ) {
                 return mbin.LoadHeader() ? mbin.header.IsValid : false;
             }
         }
 
-        public MBINFile( string path ) : this( path, new IO( path, FileMode.OpenOrCreate ), false ) { }
-        public MBINFile( Stream stream, bool keepOpen = false ) : this( "/DEV/NULL", new IO( stream ), keepOpen ) { }
-        private MBINFile( string path, IO io, bool keepOpen = false ) {
+        public MbinFile( string path ) : this( path, new IO( path, FileMode.OpenOrCreate ), false ) { }
+        public MbinFile( Stream stream, bool keepOpen = false ) : this( "/DEV/NULL", new IO( stream ), keepOpen ) { }
+        private MbinFile( string path, IO io, bool keepOpen = false ) {
             filePath = path;
             this.io = io;
             this.keepOpen = keepOpen;
         }
 
         public bool LoadHeader() {
-            int len = Marshal.SizeOf<MBINHeader>();
+            int len = Marshal.SizeOf<MbinHeader>();
             var bytes = new byte[len];
 
             io.Stream.Position = 0;
@@ -38,7 +38,7 @@ namespace libMBIN {
 
             GCHandle handle = GCHandle.Alloc( bytes, GCHandleType.Pinned );
             try {
-                header = new MBINHeader();
+                header = new MbinHeader();
                 Marshal.PtrToStructure( handle.AddrOfPinnedObject(), header );
             } finally {
                 handle.Free();
@@ -48,7 +48,7 @@ namespace libMBIN {
         }
 
         public bool SaveHeader() {
-            int len = Marshal.SizeOf<MBINHeader>();
+            int len = Marshal.SizeOf<MbinHeader>();
             var bytes = new byte[len];
 
             GCHandle handle = GCHandle.Alloc( bytes, GCHandleType.Pinned );
@@ -66,12 +66,12 @@ namespace libMBIN {
         }
 
         public NMSTemplate LoadData() {
-            io.Stream.Position = Marshal.SizeOf<MBINHeader>();
+            io.Stream.Position = Marshal.SizeOf<MbinHeader>();
             return DeserializeMBIN.DeserializeBinaryTemplate( io.Reader, header.GetXMLTemplateName() );
         }
 
         public void SaveData( NMSTemplate template ) {
-            int headerLen = Marshal.SizeOf<MBINHeader>();
+            int headerLen = Marshal.SizeOf<MbinHeader>();
             io.Stream.SetLength( headerLen );
             io.Stream.Position = headerLen;
 
@@ -83,7 +83,7 @@ namespace libMBIN {
             header.TemplateName = "c" + template.GetType().Name;
         }
 
-        public static implicit operator NMSTemplate( MBINFile mbin ) {
+        public static implicit operator NMSTemplate( MbinFile mbin ) {
             return mbin.LoadData();
         }
 

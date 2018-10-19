@@ -36,7 +36,7 @@ namespace libMBIN {
             string err = null;
             try {
 
-                MBINFile mbin = new MBINFile( path );
+                MbinFile mbin = new MbinFile( path );
                 if ( !mbin.LoadHeader() || !mbin.header.IsValid ) throw new InvalidDataException( "Not a valid MBIN file!" );
 
                 NMSTemplate data = mbin.LoadData();
@@ -55,7 +55,7 @@ namespace libMBIN {
         /// <param name="path">File path to the .exml to be loaded into memory.</param>
         /// <returns>NMSTemplate</returns>
         public static NMSTemplate LoadExml( string path ) {
-            return EXmlFile.ReadTemplate( path );
+            return ExmlFile.ReadTemplate( path );
         }
 
     }

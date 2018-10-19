@@ -9,7 +9,7 @@ namespace libMBIN.UnitTests {
     public class MBINHeaderTestsV2 {
 
         private const ushort FORMAT_V2 = 2;
-        private const uint FORMAT_ID = (MBINHeader.MBIN_VERSION & 0xFFFF) | (FORMAT_V2 & 0xFFFF) << 16;
+        private const uint FORMAT_ID = (MbinHeader.MBIN_VERSION & 0xFFFF) | (FORMAT_V2 & 0xFFFF) << 16;
 
         private static readonly System.Version NMS_VERSION = Version.NMSVersion;
         private static readonly System.Version API_VERSION = Version.AssemblyVersion;
@@ -41,15 +41,15 @@ namespace libMBIN.UnitTests {
         private static readonly ulong TKGEOMETRYDATA_GUID =
                 ((attrTkGeometryData?.Length ?? 0) != 0) ? attrTkGeometryData[0].GUID : 0;
 
-        private MBINHeader CreateMockHeader(
-                    uint magic        = MBINHeader.MBIN_MAGIC,
+        private MbinHeader CreateMockHeader(
+                    uint magic        = MbinHeader.MBIN_MAGIC,
                     uint formatID     = FORMAT_ID,
                     ulong versionID   = ~0ul,
                     ulong guid        = TEMPLATE_GUID,
                     string name       = TEMPLATE_NAME,
                     ulong metaOffset  = METAOFFSET
         ) {
-            return new MBINHeader() {
+            return new MbinHeader() {
                 MagicID       = magic,
                 FormatID      = formatID,
                 VersionID     = (versionID == ~0ul) ? VERSION_ID : versionID,
@@ -59,8 +59,8 @@ namespace libMBIN.UnitTests {
             };
         }
 
-        private MBINHeader HeaderCommon => CreateMockHeader();
-        private MBINHeader HeaderTkGeometryData => CreateMockHeader( magic: MBINHeader.MBIN_MAGIC_PC );
+        private MbinHeader HeaderCommon => CreateMockHeader();
+        private MbinHeader HeaderTkGeometryData => CreateMockHeader( magic: MbinHeader.MBIN_MAGIC_PC );
 
         [TestMethod]
         public void TestIsValid() {
@@ -94,14 +94,14 @@ namespace libMBIN.UnitTests {
 
         [TestMethod]
         public void TestCreateHeaderCommon() {
-            Assert.AreEqual( MBINHeader.MBIN_MAGIC,     HeaderCommon.MagicID );
+            Assert.AreEqual( MbinHeader.MBIN_MAGIC,     HeaderCommon.MagicID );
             Assert.AreEqual( FORMAT_ID,                 HeaderCommon.FormatID );
             Assert.AreEqual( VERSION_ID,                HeaderCommon.VersionID );
             Assert.AreEqual( TEMPLATE_GUID,             HeaderCommon.TemplateGUID );
             Assert.AreEqual( TEMPLATE_NAME,             HeaderCommon.TemplateName );
             Assert.AreEqual( METAOFFSET,                HeaderCommon.MetaOffset );
 
-            Assert.AreEqual( MBINHeader.MBIN_VERSION,   HeaderCommon.FormatNMS );
+            Assert.AreEqual( MbinHeader.MBIN_VERSION,   HeaderCommon.FormatNMS );
             Assert.AreEqual( FORMAT_V2,                 HeaderCommon.FormatAPI );
 
             Assert.AreEqual( NMS_VERSION_ID,            HeaderCommon.VersionID_NMS );
@@ -113,14 +113,14 @@ namespace libMBIN.UnitTests {
 
         [TestMethod]
         public void TestCreateHeaderTkGeometryData() {
-            Assert.AreEqual( MBINHeader.MBIN_MAGIC_PC,  HeaderTkGeometryData.MagicID );
+            Assert.AreEqual( MbinHeader.MBIN_MAGIC_PC,  HeaderTkGeometryData.MagicID );
             Assert.AreEqual( FORMAT_ID,                 HeaderTkGeometryData.FormatID );
             Assert.AreEqual( VERSION_ID,                HeaderTkGeometryData.VersionID );
             Assert.AreEqual( TEMPLATE_GUID,             HeaderTkGeometryData.TemplateGUID );
             Assert.AreEqual( TEMPLATE_NAME,             HeaderTkGeometryData.TemplateName );
             Assert.AreEqual( METAOFFSET,                HeaderTkGeometryData.MetaOffset );
 
-            Assert.AreEqual( MBINHeader.MBIN_VERSION,   HeaderTkGeometryData.FormatNMS );
+            Assert.AreEqual( MbinHeader.MBIN_VERSION,   HeaderTkGeometryData.FormatNMS );
             Assert.AreEqual( FORMAT_V2,                 HeaderTkGeometryData.FormatAPI );
 
             Assert.AreEqual( NMS_VERSION_STRING,        HeaderTkGeometryData.VersionNMS.ToString() );
@@ -129,17 +129,17 @@ namespace libMBIN.UnitTests {
 
         [TestMethod]
         public void TestSetDefaultsV2Common() {
-            var header = new MBINHeader();
+            var header = new MbinHeader();
             header.SetDefaultsV2();
 
-            Assert.AreEqual( MBINHeader.MBIN_MAGIC,   header.MagicID );
+            Assert.AreEqual( MbinHeader.MBIN_MAGIC,   header.MagicID );
             Assert.AreEqual( FORMAT_ID,               header.FormatID );
             Assert.AreEqual( VERSION_ID,              header.VersionID );
             Assert.AreEqual( 0ul,                     header.TemplateGUID );
             Assert.AreEqual( "",                      header.TemplateName );
             Assert.AreEqual( 0ul,                     header.MetaOffset );
 
-            Assert.AreEqual( MBINHeader.MBIN_VERSION, header.FormatNMS );
+            Assert.AreEqual( MbinHeader.MBIN_VERSION, header.FormatNMS );
             Assert.AreEqual( FORMAT_V2,               header.FormatAPI );
 
             Assert.AreEqual( NMS_VERSION_STRING,      header.VersionNMS.ToString() );
@@ -148,17 +148,17 @@ namespace libMBIN.UnitTests {
 
         [TestMethod]
         public void TestSetDefaultsV2TkGeometry() {
-            var header = new MBINHeader();
+            var header = new MbinHeader();
             header.SetDefaultsV2( typeof( NMS.Toolkit.TkGeometryData ) );
 
-            Assert.AreEqual( MBINHeader.MBIN_MAGIC_PC, header.MagicID );
+            Assert.AreEqual( MbinHeader.MBIN_MAGIC_PC, header.MagicID );
             Assert.AreEqual( FORMAT_ID,                header.FormatID );
             Assert.AreEqual( VERSION_ID,               header.VersionID );
             Assert.AreEqual( TKGEOMETRYDATA_GUID,      header.TemplateGUID );
             Assert.AreEqual( "",                       header.TemplateName );
             Assert.AreEqual( 0ul,                      header.MetaOffset );
 
-            Assert.AreEqual( MBINHeader.MBIN_VERSION,  header.FormatNMS );
+            Assert.AreEqual( MbinHeader.MBIN_VERSION,  header.FormatNMS );
             Assert.AreEqual( FORMAT_V2,                header.FormatAPI );
                                                        
             Assert.AreEqual( NMS_VERSION_STRING,       header.VersionNMS.ToString() );
@@ -167,17 +167,17 @@ namespace libMBIN.UnitTests {
 
         [TestMethod]
         public void TestSetDefaultsCommon() {
-            var header = new MBINHeader();
-            header.SetDefaults( format: MBINHeader.Format.V2 );
+            var header = new MbinHeader();
+            header.SetDefaults( format: MbinHeader.Format.V2 );
 
-            Assert.AreEqual( MBINHeader.MBIN_MAGIC,   header.MagicID );
+            Assert.AreEqual( MbinHeader.MBIN_MAGIC,   header.MagicID );
             Assert.AreEqual( FORMAT_ID,               header.FormatID );
             Assert.AreEqual( VERSION_ID,              header.VersionID );
             Assert.AreEqual( 0ul,                     header.TemplateGUID );
             Assert.AreEqual( "",                      header.TemplateName );
             Assert.AreEqual( 0ul,                     header.MetaOffset );
 
-            Assert.AreEqual( MBINHeader.MBIN_VERSION, header.FormatNMS );
+            Assert.AreEqual( MbinHeader.MBIN_VERSION, header.FormatNMS );
             Assert.AreEqual( FORMAT_V2,               header.FormatAPI );
 
             Assert.AreEqual( NMS_VERSION_STRING,      header.VersionNMS.ToString() );
@@ -186,17 +186,17 @@ namespace libMBIN.UnitTests {
 
         [TestMethod]
         public void TestSetDefaultsTkGeometry() {
-            var header = new MBINHeader();
-            header.SetDefaults( typeof( NMS.Toolkit.TkGeometryData ), MBINHeader.Format.V2 );
+            var header = new MbinHeader();
+            header.SetDefaults( typeof( NMS.Toolkit.TkGeometryData ), MbinHeader.Format.V2 );
 
-            Assert.AreEqual( MBINHeader.MBIN_MAGIC_PC, header.MagicID );
+            Assert.AreEqual( MbinHeader.MBIN_MAGIC_PC, header.MagicID );
             Assert.AreEqual( FORMAT_ID,                header.FormatID );
             Assert.AreEqual( VERSION_ID,               header.VersionID );
             Assert.AreEqual( TKGEOMETRYDATA_GUID,      header.TemplateGUID );
             Assert.AreEqual( "",                       header.TemplateName );
             Assert.AreEqual( 0ul,                      header.MetaOffset );
 
-            Assert.AreEqual( MBINHeader.MBIN_VERSION,  header.FormatNMS );
+            Assert.AreEqual( MbinHeader.MBIN_VERSION,  header.FormatNMS );
             Assert.AreEqual( FORMAT_V2,                header.FormatAPI );
 
             Assert.AreEqual( NMS_VERSION_STRING,       header.VersionNMS.ToString() );
@@ -205,17 +205,17 @@ namespace libMBIN.UnitTests {
 
         [TestMethod]
         public void TestSetDefaultsImplicitCommon() {
-            var header = new MBINHeader();
+            var header = new MbinHeader();
             header.SetDefaults();
 
-            Assert.AreEqual( MBINHeader.MBIN_MAGIC,   header.MagicID );
+            Assert.AreEqual( MbinHeader.MBIN_MAGIC,   header.MagicID );
             Assert.AreEqual( FORMAT_ID,               header.FormatID );
             Assert.AreEqual( VERSION_ID,              header.VersionID );
             Assert.AreEqual( 0ul,                     header.TemplateGUID );
             Assert.AreEqual( "",                      header.TemplateName );
             Assert.AreEqual( 0ul,                     header.MetaOffset );
 
-            Assert.AreEqual( MBINHeader.MBIN_VERSION, header.FormatNMS );
+            Assert.AreEqual( MbinHeader.MBIN_VERSION, header.FormatNMS );
             Assert.AreEqual( FORMAT_V2,               header.FormatAPI );
 
             Assert.AreEqual( NMS_VERSION_STRING,      header.VersionNMS.ToString() );
@@ -224,17 +224,17 @@ namespace libMBIN.UnitTests {
 
         [TestMethod]
         public void TestSetDefaultsImplicitTkGeometry() {
-            var header = new MBINHeader();
+            var header = new MbinHeader();
             header.SetDefaults( typeof( NMS.Toolkit.TkGeometryData ) );
 
-            Assert.AreEqual( MBINHeader.MBIN_MAGIC_PC, header.MagicID );
+            Assert.AreEqual( MbinHeader.MBIN_MAGIC_PC, header.MagicID );
             Assert.AreEqual( FORMAT_ID,                header.FormatID );
             Assert.AreEqual( VERSION_ID,               header.VersionID );
             Assert.AreEqual( TKGEOMETRYDATA_GUID,      header.TemplateGUID );
             Assert.AreEqual( "",                       header.TemplateName );
             Assert.AreEqual( 0ul,                      header.MetaOffset );
 
-            Assert.AreEqual( MBINHeader.MBIN_VERSION,  header.FormatNMS );
+            Assert.AreEqual( MbinHeader.MBIN_VERSION,  header.FormatNMS );
             Assert.AreEqual( FORMAT_V2,                header.FormatAPI );
 
             Assert.AreEqual( NMS_VERSION_STRING,       header.VersionNMS.ToString() );

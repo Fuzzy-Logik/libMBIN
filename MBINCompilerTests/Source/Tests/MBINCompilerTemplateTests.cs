@@ -8,7 +8,7 @@ namespace libMBIN.UnitTests {
         [TestMethod, TestProperty( "Time", "Fast" )]
         public void TestMBINCompilerTemplate() {
             const string path = "../../MBINCompilerTestTemplate.MBIN";
-            var file = new MBINFile( path );
+            var file = new MbinFile( path );
             file.LoadHeader();
             Assert.AreEqual( "MBINCompilerTestTemplate", file.header.GetXMLTemplateName(), $"{path} header not using TemplateType MBINCompilerTestTemplate!" );
 

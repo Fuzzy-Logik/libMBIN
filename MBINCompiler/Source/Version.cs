@@ -30,7 +30,7 @@ namespace MBINCompiler {
         ///     If true then a plain, script-friendly version string is displayed.
         ///     If false then a human-friendly message is displayed.
         /// </param>
-        public static string GetVersionString(MBINFile mbin = null, bool quiet = false) {
+        public static string GetVersionString(MbinFile mbin = null, bool quiet = false) {
             if ( mbin == null ) return GetVersionString( quiet );
 
             System.Version mbinVersion = mbin.header.GetMBINVersion();

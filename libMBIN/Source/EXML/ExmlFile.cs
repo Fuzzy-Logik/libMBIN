@@ -10,9 +10,9 @@ namespace libMBIN {
 
     using EXML;
 
-    public static class EXmlFile {
+    public static class ExmlFile {
 
-        private static readonly XmlSerializer Serializer = new XmlSerializer( typeof( EXmlData ) );
+        private static readonly XmlSerializer Serializer = new XmlSerializer( typeof( ExmlData ) );
         private static readonly XmlSerializerNamespaces Namespaces = new XmlSerializerNamespaces( new[] { new XmlQualifiedName( "", "" ) } );
 
         private static XmlReaderSettings readerSettings = new XmlReaderSettings();
@@ -50,19 +50,19 @@ namespace libMBIN {
         }
 
         private static NMSTemplate ReadTemplateFromXmlReader( XmlReader reader ) {
-            EXmlData root = (EXmlData) Serializer.Deserialize( reader );
+            ExmlData root = (ExmlData) Serializer.Deserialize( reader );
             NMSTemplate rootTemplate = DeserializeEXML.DeserializeEXml( root );
             return rootTemplate;
         }
 
-        public static EXmlData ReadExmlDataFromString( string xml ) {
+        public static ExmlData ReadExmlDataFromString( string xml ) {
             var origCulture = Thread.CurrentThread.CurrentCulture;
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             readerSettings.IgnoreComments = false;
 
             using ( var reader = new StringReader( xml ) )
             using ( var xmlReader = XmlReader.Create( reader, readerSettings ) ) {
-                var data = (EXmlData) Serializer.Deserialize( xmlReader );
+                var data = (ExmlData) Serializer.Deserialize( xmlReader );
                 Thread.CurrentThread.CurrentCulture = origCulture;
                 return data;
             }

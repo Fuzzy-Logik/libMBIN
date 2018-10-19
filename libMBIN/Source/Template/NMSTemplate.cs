@@ -708,18 +708,18 @@ namespace libMBIN {
     internal class DeserializeEXML {
 
         // this code is run to parse over the exml file and put it into a data structure that is processed by SerializeBytes() (I think...)
-        internal static NMSTemplate DeserializeEXml( EXmlBase xmlData ) {     // this is the inital code that is run when converting exml to mbin.
+        internal static NMSTemplate DeserializeEXml( ExmlBase xmlData ) {     // this is the inital code that is run when converting exml to mbin.
             NMSTemplate template = null;
 
             //DebugLog(xmlData.Name);
             //DebugLog(xmlData.GetType().ToString());
 
-            if ( xmlData.GetType() == typeof( EXmlData ) ) {
-                template = NMSTemplate.TemplateFromName( ((EXmlData) xmlData).Template );
-            } else if ( xmlData.GetType() == typeof( EXmlProperty ) ) {
-                template = NMSTemplate.TemplateFromName( ((EXmlProperty) xmlData).Value.Replace( ".xml", "" ) );
-            } else if ( xmlData.GetType() == typeof( EXmlMeta ) ) {
-                NMSTemplate.DebugLogComment( ((EXmlMeta) xmlData).Comment );
+            if ( xmlData.GetType() == typeof( ExmlData ) ) {
+                template = NMSTemplate.TemplateFromName( ((ExmlData) xmlData).Template );
+            } else if ( xmlData.GetType() == typeof( ExmlProperty ) ) {
+                template = NMSTemplate.TemplateFromName( ((ExmlProperty) xmlData).Value.Replace( ".xml", "" ) );
+            } else if ( xmlData.GetType() == typeof( ExmlMeta ) ) {
+                NMSTemplate.DebugLogComment( ((ExmlMeta) xmlData).Comment );
             }
 
             /*
@@ -741,8 +741,8 @@ namespace libMBIN {
             }
 
             foreach ( var xmlElement in xmlData.Elements ) {
-                if ( xmlElement.GetType() == typeof( EXmlProperty ) ) {
-                    EXmlProperty xmlProperty = (EXmlProperty) xmlElement;
+                if ( xmlElement.GetType() == typeof( ExmlProperty ) ) {
+                    ExmlProperty xmlProperty = (ExmlProperty) xmlElement;
                     FieldInfo field = templateType.GetField( xmlProperty.Name );
                     object fieldValue = null;
                     NMSTemplate.DebugLogPropertyName( xmlProperty.Name );
@@ -754,13 +754,13 @@ namespace libMBIN {
                         fieldValue = DeserializeEXmlValue( template, fieldType, field, xmlProperty, templateType, settings );
                     }
                     field.SetValue( template, fieldValue );
-                } else if ( xmlElement.GetType() == typeof( EXmlData ) ) {
-                    EXmlData innerXmlData = (EXmlData) xmlElement;
+                } else if ( xmlElement.GetType() == typeof( ExmlData ) ) {
+                    ExmlData innerXmlData = (ExmlData) xmlElement;
                     FieldInfo field = templateType.GetField( innerXmlData.Name );
                     NMSTemplate innerTemplate = DeserializeEXml( innerXmlData );
                     field.SetValue( template, innerTemplate );
-                } else if ( xmlElement.GetType() == typeof( EXmlMeta ) ) {
-                    EXmlMeta xmlMeta = (EXmlMeta) xmlElement;
+                } else if ( xmlElement.GetType() == typeof( ExmlMeta ) ) {
+                    ExmlMeta xmlMeta = (ExmlMeta) xmlElement;
                     string comment = xmlMeta.Comment;
                     NMSTemplate.DebugLogComment( comment );
                 }
@@ -800,7 +800,7 @@ namespace libMBIN {
             return template;
         }
 
-        private static object DeserializeEXmlValue( NMSTemplate template, Type fieldType, FieldInfo field, EXmlProperty xmlProperty, Type templateType, NMSAttribute settings ) {
+        private static object DeserializeEXmlValue( NMSTemplate template, Type fieldType, FieldInfo field, ExmlProperty xmlProperty, Type templateType, NMSAttribute settings ) {
             switch ( fieldType.Name ) {
                 case "String":
                     return xmlProperty.Value;
@@ -853,15 +853,15 @@ namespace libMBIN {
                         object element = null;
 
                         var type = innerXmlData.GetType();
-                        var data = innerXmlData as EXmlProperty;
-                        type = (data?.Value.EndsWith( ".xml" ) ?? false) ? typeof( EXmlData ) : type;
+                        var data = innerXmlData as ExmlProperty;
+                        type = (data?.Value.EndsWith( ".xml" ) ?? false) ? typeof( ExmlData ) : type;
 
-                        if ( type == typeof( EXmlData ) ) {
+                        if ( type == typeof( ExmlData ) ) {
                             element = DeserializeEXml( innerXmlData ); // child template if <Data> tag or <Property> tag with value ending in .xml (todo: better way of finding <Property> child templates)
-                        } else if ( type == typeof( EXmlProperty ) ) {
-                            element = DeserializeEXmlValue( template, elementType, field, (EXmlProperty) innerXmlData, templateType, settings );
-                        } else if ( type == typeof( EXmlMeta ) ) {
-                            NMSTemplate.DebugLogComment( ((EXmlMeta) innerXmlData).Comment );
+                        } else if ( type == typeof( ExmlProperty ) ) {
+                            element = DeserializeEXmlValue( template, elementType, field, (ExmlProperty) innerXmlData, templateType, settings );
+                        } else if ( type == typeof( ExmlMeta ) ) {
+                            NMSTemplate.DebugLogComment( ((ExmlMeta) innerXmlData).Comment );
                         }
 
                         if ( element == null ) throw new TemplateException( "element == null ??!" );
@@ -873,10 +873,10 @@ namespace libMBIN {
                     if ( field.FieldType.IsArray && field.FieldType.GetElementType().BaseType.Name == "NMSTemplate" ) {
                         Array array = Array.CreateInstance( field.FieldType.GetElementType(), settings.Size );
                         //var data = xmlProperty.Elements.OfType<EXmlProperty>().ToList();
-                        List<EXmlBase> data = xmlProperty.Elements.ToList();
+                        List<ExmlBase> data = xmlProperty.Elements.ToList();
                         int numMeta = 0;
-                        foreach ( EXmlBase entry in data ) {
-                            if ( entry.GetType() == typeof( EXmlMeta ) ) numMeta++;
+                        foreach ( ExmlBase entry in data ) {
+                            if ( entry.GetType() == typeof( ExmlMeta ) ) numMeta++;
                         }
 
                         if ( data.Count - numMeta != settings.Size ) {
@@ -885,11 +885,11 @@ namespace libMBIN {
                         }
 
                         for ( int i = 0; i < data.Count; ++i ) {
-                            if ( data[i].GetType() == typeof( EXmlProperty ) ) {
+                            if ( data[i].GetType() == typeof( ExmlProperty ) ) {
                                 NMSTemplate element = DeserializeEXml( data[i] );
                                 array.SetValue( element, i - numMeta );
-                            } else if ( data[i].GetType() == typeof( EXmlMeta ) ) {
-                                NMSTemplate.DebugLogComment( ((EXmlMeta) data[i]).Comment );     // don't need to worry about nummeta here since it is already counted above...
+                            } else if ( data[i].GetType() == typeof( ExmlMeta ) ) {
+                                NMSTemplate.DebugLogComment( ((ExmlMeta) data[i]).Comment );     // don't need to worry about nummeta here since it is already counted above...
                             }
                         }
 
@@ -897,14 +897,14 @@ namespace libMBIN {
                     } else if ( field.FieldType.IsArray ) {
                         Array array = Array.CreateInstance( field.FieldType.GetElementType(), settings.Size );
                         //List<EXmlProperty> data = xmlProperty.Elements.OfType<EXmlProperty>().ToList();
-                        List<EXmlBase> data = xmlProperty.Elements.ToList();
+                        List<ExmlBase> data = xmlProperty.Elements.ToList();
                         int numMeta = 0;
                         for ( int i = 0; i < data.Count; ++i ) {
-                            if ( data[i].GetType() == typeof( EXmlProperty ) ) {
-                                object element = DeserializeEXmlValue( template, field.FieldType.GetElementType(), field, (EXmlProperty) data[i], templateType, settings );
+                            if ( data[i].GetType() == typeof( ExmlProperty ) ) {
+                                object element = DeserializeEXmlValue( template, field.FieldType.GetElementType(), field, (ExmlProperty) data[i], templateType, settings );
                                 array.SetValue( element, i - numMeta );
-                            } else if ( data[i].GetType() == typeof( EXmlMeta ) ) {
-                                NMSTemplate.DebugLogComment( ((EXmlMeta) data[i]).Comment );
+                            } else if ( data[i].GetType() == typeof( ExmlMeta ) ) {
+                                NMSTemplate.DebugLogComment( ((ExmlMeta) data[i]).Comment );
                                 numMeta += 1;           // increment so that the actual data is still placed at the right spot
                             }
                         }
@@ -922,7 +922,7 @@ namespace libMBIN {
 
     internal class SerializeEXML {
 
-        private static EXmlBase SerializeEXmlValue( NMSTemplate template, Type fieldType, FieldInfo field, NMSAttribute settings, object value ) {
+        private static ExmlBase SerializeEXmlValue( NMSTemplate template, Type fieldType, FieldInfo field, NMSAttribute settings, object value ) {
             string t = fieldType.Name;
             int i = 0;
             string valueString = String.Empty;
@@ -973,7 +973,7 @@ namespace libMBIN {
                     break;
                 case "List`1":
                     var listType = field.FieldType.GetGenericArguments()[0];
-                    EXmlProperty listProperty = new EXmlProperty {
+                    ExmlProperty listProperty = new ExmlProperty {
                         Name = field.Name
                     };
 
@@ -981,7 +981,7 @@ namespace libMBIN {
                     i = 0;
                     if ( items != null ) {
                         foreach ( var item in items ) {
-                            EXmlBase data = SerializeEXmlValue( template, listType, field, settings, item );
+                            ExmlBase data = SerializeEXmlValue( template, listType, field, settings, item );
                             if ( settings?.EnumValue != null ) {
                                 data.Name = settings.EnumValue[i];
                                 i++;
@@ -1018,14 +1018,14 @@ namespace libMBIN {
                         return templateXmlData;
                     } else if ( fieldType.IsArray ) {
                         var arrayType = field.FieldType.GetElementType();
-                        EXmlProperty arrayProperty = new EXmlProperty {
+                        ExmlProperty arrayProperty = new ExmlProperty {
                             Name = field.Name
                         };
 
                         Array array = (Array) value;
                         i = 0;
                         foreach ( var element in array ) {
-                            EXmlBase data = SerializeEXmlValue( template, arrayType, field, settings, element );
+                            ExmlBase data = SerializeEXmlValue( template, arrayType, field, settings, element );
                             if ( settings?.EnumValue != null ) {
                                 data.Name = settings.EnumValue[i];
                                 i++;
@@ -1044,18 +1044,18 @@ namespace libMBIN {
                     }
             }
 
-            return new EXmlProperty {
+            return new ExmlProperty {
                 Name = field.Name,
                 Value = valueString
             };
         }
 
-        internal static EXmlBase SerializeEXml( NMSTemplate template, bool isChildTemplate ) {
+        internal static ExmlBase SerializeEXml( NMSTemplate template, bool isChildTemplate ) {
             Type type = template.GetType();
-            EXmlBase xmlData = new EXmlProperty { Value = type.Name + ".xml" };
+            ExmlBase xmlData = new ExmlProperty { Value = type.Name + ".xml" };
 
             if ( !isChildTemplate ) {
-                xmlData = new EXmlData { Template = type.Name };
+                xmlData = new ExmlData { Template = type.Name };
             }
 
             var fields = NMSTemplate.GetOrderedFields( type );
@@ -1160,8 +1160,8 @@ namespace libMBIN {
         /// </summary>
         /// <param name="outputpath">The location to write the .mbin file.</param>
         public void WriteToMbin( string outputpath ) {
-            using ( var file = new MBINFile( outputpath ) ) {
-                file.header = new MBIN.MBINHeader();
+            using ( var file = new MbinFile( outputpath ) ) {
+                file.header = new MBIN.MbinHeader();
                 var type = this.GetType();
                 file.header.SetDefaults( type );
                 file.SaveData( this );
@@ -1174,7 +1174,7 @@ namespace libMBIN {
         /// </summary>
         /// <param name="outputpath">The location to write the .exml file.</param>
         public void WriteToExml( string outputpath ) {
-            File.WriteAllText( outputpath, EXmlFile.WriteTemplate( this ) );
+            File.WriteAllText( outputpath, ExmlFile.WriteTemplate( this ) );
         }
 
         public static string GetID( NMSTemplate template ) {

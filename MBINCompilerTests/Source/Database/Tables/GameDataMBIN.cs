@@ -39,7 +39,7 @@
             this.SHA1          = sha1;
         }
 
-        public Record( string path, long fileSize, string sha1, libMBIN.MBIN.MBINHeader header )
+        public Record( string path, long fileSize, string sha1, libMBIN.MBIN.MbinHeader header )
             : this( path, fileSize, sha1, header.MagicID, header.FormatID, header.Tag, header.MbinVersion, header.GetXMLTemplateName() ) { }
 
         //public GameDataFileRecord( string[] fields ) : this() { SetFields( fields ); }

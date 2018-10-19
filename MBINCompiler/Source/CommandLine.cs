@@ -113,7 +113,7 @@ namespace MBINCompiler {
         /// </summary>
         /// <returns>Always returns 0 (exit code = success)</returns>
         public static int ShowVersion( bool quiet = false ) => ShowVersion( null, quiet );
-        public static int ShowVersion( MBINFile mbin , bool quiet = false ) {
+        public static int ShowVersion( MbinFile mbin , bool quiet = false ) {
             using ( var forceConsole = new ForceConsoleOutput() ) {
                 Logger.LogInfo( Version.GetVersionString( mbin, quiet ) );
             }
