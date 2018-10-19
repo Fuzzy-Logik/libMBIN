@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x5B2795E2FEF75E70)]
-    public class TkSpeedLineData : ToolkitDataType {
+    public class TkSpeedLineData : ToolkitComponent {
 
         [NMS(Size = 0x80)]
         public string Material;

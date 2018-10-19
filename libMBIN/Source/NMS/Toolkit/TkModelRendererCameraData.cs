@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x4117A6369803D90B)]
-    public class TkModelRendererCameraData : ToolkitDataType {
+    public class TkModelRendererCameraData : ToolkitComponent {
 
         public float Distance;
         [NMS(Size = 0xC, Ignore = true)]

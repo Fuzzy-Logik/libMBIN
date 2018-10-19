@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xC, GUID = 0x12CAE7C5B1936243)]
-    public class GcAudio3PointDopplerData : GameComponentType {
+    public class GcAudio3PointDopplerData : GameComponent {
 
         /* 0x0 */ public float Front;
 		/* 0x4 */ public float Mid;

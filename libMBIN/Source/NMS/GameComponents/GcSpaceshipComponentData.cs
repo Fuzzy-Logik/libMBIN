@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x98, GUID = 0x8AC5D18F92C33E43)]
-    public class GcSpaceshipComponentData : GameComponentType {
+    public class GcSpaceshipComponentData : GameComponent {
 
         /* 0x00 */ public GcSpaceshipClasses ShipClass;
         [NMS(Size = 0x80)]

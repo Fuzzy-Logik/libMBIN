@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xC6B511D5C5B06A8E)]
-    public class GcCustomisationComponentData : GameComponentType {
+    public class GcCustomisationComponentData : GameComponent {
 
         // size = 0xE
 		public enum CustomisationDataTypeEnum { Player, Vehicle, Weapon, Ship_01, Ship_02, Ship_03, Ship_04, Ship_05, Ship_06,

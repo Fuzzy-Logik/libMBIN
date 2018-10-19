@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x74D72ACAAE69D013)]
-    public class GcInteractionBaseBuildingState : GameComponentType {
+    public class GcInteractionBaseBuildingState : GameComponent {
 
         [NMS(Size = 0x10)]
         public string TriggerAction;

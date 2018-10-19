@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x40, GUID = 0x6E9501A491AD55CA)]
-    public class GcStatsEntry : GameComponentType {
+    public class GcStatsEntry : GameComponent {
 
         /* 0x00 */ public GcStatsTypes Type;
         /* 0x10 */ public Colour Colour;

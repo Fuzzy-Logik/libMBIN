@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x9808CBC171682435)]
-    public class TkProceduralModelList : ToolkitDataType {
+    public class TkProceduralModelList : ToolkitComponent {
 
         [NMS(Size = 0x10)]
         public string Id;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x25CCF6A206E9514F)]
-    public class TkControllerSpecification : ToolkitDataType {
+    public class TkControllerSpecification : ToolkitComponent {
 
         [NMS(Size = 0x10)]
         public string Id;

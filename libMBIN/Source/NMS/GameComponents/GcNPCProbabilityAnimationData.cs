@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0xFECDFAAE257D62DC)]
-    public class GcNPCProbabilityAnimationData : GameComponentType {
+    public class GcNPCProbabilityAnimationData : GameComponent {
 
         [NMS(Size = 0x10)]
         public string Name;

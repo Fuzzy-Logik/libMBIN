@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8E0C4DD242A5FA5D)]
-    public class GcPlayerStatsGroup : GameComponentType {
+    public class GcPlayerStatsGroup : GameComponent {
 
         [NMS(Size = 0x10)]
         public string GroupId;

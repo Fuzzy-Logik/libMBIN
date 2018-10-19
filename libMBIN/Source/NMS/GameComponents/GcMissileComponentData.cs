@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x3084C666AE66E619)]
-    public class GcMissileComponentData : GameComponentType {
+    public class GcMissileComponentData : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x000 */ public string Explosion;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x3041C51DBAC8620E)]
-    public class GcAtlasDiscoveryData : GameComponentType {
+    public class GcAtlasDiscoveryData : GameComponent {
 
         /* 0x00 */ public GcUniverseAddressData UniverseAddress;
         /* 0x18 */ public GcDiscoveryTypes Type;

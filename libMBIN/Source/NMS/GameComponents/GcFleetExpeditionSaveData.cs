@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x1F0, GUID = 0x230722D2F2A2F12A)]
-    public class GcFleetExpeditionSaveData : GameComponentType {
+    public class GcFleetExpeditionSaveData : GameComponent {
 
         /* 0x000 */ public GcSeed ResourceSeed;
         /* 0x010 */ public ulong UA;

@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x209CCBD02527DE07)]
-    public class TkInteractivityData : ToolkitDataType {
+    public class TkInteractivityData : ToolkitComponent {
 
         public List<TkInteractiveSceneData> Scenes;
     }

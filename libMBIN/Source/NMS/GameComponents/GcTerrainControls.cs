@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x74, GUID = 0xE9658EF1531C595E)]
-    public class GcTerrainControls : GameComponentType {
+    public class GcTerrainControls : GameComponent {
 
         [NMS(Size = 8, EnumValue = new[] { "Base", "Hill", "Mountain", "Rock", "UnderWater", "Texture", "Elevation", "Continent" })]
         /* 0x00 */ public float[] NoiseLayers;      // chance of this noise layer being active

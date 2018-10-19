@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x835A9EE0AC007013 )]
-    public class GcPlacementGlobals : GlobalDataType {
+    public class GcPlacementGlobals : GlobalDataStruct {
 
         /* 0x0 */ public float MinFrequency;
         /* 0x4 */ public float MinDensity;

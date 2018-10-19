@@ -1,5 +1,5 @@
 ﻿namespace libMBIN.NMS {
 
-    public class GlobalDataType : GameDataType { }
+    public class GlobalDataStruct : GameDataStruct { }
 
 }

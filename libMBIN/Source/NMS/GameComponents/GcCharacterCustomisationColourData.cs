@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x20, GUID = 0x5E7EC2D347D72B80)]
-    public class GcCharacterCustomisationColourData : GameComponentType {
+    public class GcCharacterCustomisationColourData : GameComponent {
 
         public TkPaletteTexture Palette;
         public Colour Colour;

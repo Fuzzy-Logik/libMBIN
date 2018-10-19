@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4150DB7F9D5B8C28)]
-    public class GcRewardTableItemList : GameComponentType {
+    public class GcRewardTableItemList : GameComponent {
 
 		public enum RewardChoiceEnum { GiveAll, Select, SelectAlways, TryEach, SelectSilent, TryFirst_ThenSelectAlways }
 		public RewardChoiceEnum RewardChoice;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x81D9597B7AE1CF72)]
-    public class GcCreatureFootParticleSingleData : GameComponentType {
+    public class GcCreatureFootParticleSingleData : GameComponent {
 
         [NMS(Size = 0x10)]
         public string EffectName;

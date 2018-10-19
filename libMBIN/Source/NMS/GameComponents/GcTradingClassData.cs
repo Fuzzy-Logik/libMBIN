@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x7035F702191A0370)]
-    public class GcTradingClassData : GameComponentType {
+    public class GcTradingClassData : GameComponent {
 
         /* 0x00 */ public GcTradeCategory Sells;
         /* 0x04 */ public GcTradeCategory Needs;

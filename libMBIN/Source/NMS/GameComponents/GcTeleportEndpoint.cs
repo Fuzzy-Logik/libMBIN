@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x90, GUID = 0x377F9168390C70C1)]
-    public class GcTeleportEndpoint : GameComponentType {
+    public class GcTeleportEndpoint : GameComponent {
 
         /* 0x00 */ public GcUniverseAddressData UniverseAddress;
         /* 0x20 */ public Vector4f Position;

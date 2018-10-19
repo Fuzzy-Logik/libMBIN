@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x3828C7CE898239CA)]
-    public class TkVoxelGeneratorRegionData : ToolkitDataType {
+    public class TkVoxelGeneratorRegionData : ToolkitComponent {
 
         /* 0x00 */ public float PlanetRadius;
         /* 0x04 */ public float VoronoiPointDivisions;

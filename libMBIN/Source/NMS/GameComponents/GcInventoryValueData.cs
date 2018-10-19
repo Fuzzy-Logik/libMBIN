@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x1C, GUID = 0xBFBA97AD59322690)]
-    public class GcInventoryValueData : GameComponentType {
+    public class GcInventoryValueData : GameComponent {
 
         /* 0x000 */ public float BaseMinValue;          // 41F00000h
         /* 0x004 */ public float BaseMaxValue;          // 42200000h

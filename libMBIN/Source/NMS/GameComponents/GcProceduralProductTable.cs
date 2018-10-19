@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x10, GUID = 0x41D2B747BA8E5D04)]
-    public class GcProceduralProductTable : GameComponentType {
+    public class GcProceduralProductTable : GameComponent {
 
         public List<GcProceduralProductData> Table;
     }

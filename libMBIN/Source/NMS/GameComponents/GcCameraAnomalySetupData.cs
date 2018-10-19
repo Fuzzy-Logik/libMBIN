@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF9C90D4C466ED78B)]
-    public class GcCameraAnomalySetupData : GameComponentType {
+    public class GcCameraAnomalySetupData : GameComponent {
 
         /* 0x00 */ public Vector4f CameraAt;
 		/* 0x10 */ public Vector4f CameraUp;

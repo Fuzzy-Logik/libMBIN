@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x7AACCA8A1F8AE79F)]
-    public class TkNGuiRectanglePulseEffect : ToolkitDataType {
+    public class TkNGuiRectanglePulseEffect : ToolkitComponent {
 
         public float PulseWidth;                // 40C00000h
         public float PulseOffset;               // 42200000h

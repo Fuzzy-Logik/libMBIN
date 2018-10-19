@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x4E0, GUID = 0x5129C9CAFEEDC1E8)]
-    public class GcSceneSettings : GameComponentType {
+    public class GcSceneSettings : GameComponent {
 
         [NMS(Size = 0x80)]
         /* 0x000 */ public string NextSettingFile;

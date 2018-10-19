@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x50, GUID = 0x483E6945FC60E4E1)]
-    public class GcNGuiElementData : GameComponentType {
+    public class GcNGuiElementData : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string ID;

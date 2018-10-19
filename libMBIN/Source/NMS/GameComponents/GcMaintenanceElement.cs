@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xA2897FCA5D887E81)]
-    public class GcMaintenanceElement : GameComponentType {
+    public class GcMaintenanceElement : GameComponent {
 
         /* 0x00 */ public int ItemGroupOverride;        // not sure what type this is
         /* 0x04 */ public GcInventoryType Type;

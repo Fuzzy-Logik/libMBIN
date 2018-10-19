@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xAFB195227CDEA6E2)]
-    public class GcTerrainTileType : GameComponentType {
+    public class GcTerrainTileType : GameComponent {
 
 
 		public enum TileTypeEnum { Air, Base, Rock, Mountain, Underwater, Cave, Dirt, Liquid, Substance }

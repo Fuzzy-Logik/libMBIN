@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0xBC0EE957E29F834C)]
-    public class GcObjectSpawnDataArray : GameComponentType {
+    public class GcObjectSpawnDataArray : GameComponent {
 
         public GcTerrainTileType TileType;
         public int MaxObjectsToSpawn;

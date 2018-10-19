@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xA2939C8D2780E13C )]
-    public class GcGraphicsGlobals : GlobalDataType {
+    public class GcGraphicsGlobals : GlobalDataStruct {
 
         /* 0x0 */ public float LUTDistanceFlightMultiplier;
         /* 0x4 */ public float SunLightIntensity;

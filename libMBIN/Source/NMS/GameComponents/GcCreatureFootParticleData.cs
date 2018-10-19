@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x9867783D0630B771)]
-    public class GcCreatureFootParticleData : GameComponentType {
+    public class GcCreatureFootParticleData : GameComponent {
 
         public List<GcCreatureFootParticleSingleData> ParticleData;
     }

@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x97711ED5616C8AA0)]
-    public class GcPlayerMissionProgressMapTable : GameComponentType {
+    public class GcPlayerMissionProgressMapTable : GameComponent {
 
         public List<GcPlayerMissionProgressMapEntry> MissionProgressTable;
     }

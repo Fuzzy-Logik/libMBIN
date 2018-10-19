@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xAFF99D684E9C68AD)]
-    public class GcMissionDifficulty : GameComponentType {
+    public class GcMissionDifficulty : GameComponent {
 
 		public enum MissionDifficultyEnum { Easy, Normal, Hard }
 		public MissionDifficultyEnum MissionDifficulty;

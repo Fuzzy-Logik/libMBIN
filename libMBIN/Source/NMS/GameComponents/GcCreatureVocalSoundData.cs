@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFE1CDC6167AE7D3B)]
-    public class GcCreatureVocalSoundData : GameComponentType {
+    public class GcCreatureVocalSoundData : GameComponent {
 
         [NMS(Size = 0x10)]
         public string Id;

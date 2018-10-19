@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xBBE337CA5A46D965)]
-    public class TkJointBindingData : ToolkitDataType {
+    public class TkJointBindingData : ToolkitComponent {
 
         [NMS(Size = 16)]
         public float[] InvBindMatrix; // 4x4 matrix

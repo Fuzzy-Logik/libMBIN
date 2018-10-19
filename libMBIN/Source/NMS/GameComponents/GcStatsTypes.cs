@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xD4AF92219306D798)]
-    public class GcStatsTypes : GameComponentType {
+    public class GcStatsTypes : GameComponent {
 
         // size: 0x7F
 		public enum StatsTypeEnum { Unspecified, Weapon_Laser, Weapon_Laser_Damage, Weapon_Laser_Mining_Speed, Weapon_Laser_HeatTime,

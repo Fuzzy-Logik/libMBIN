@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x6DAB1474F9B0A50B)]
-    public class TkLanguagesAllowedData : ToolkitDataType {
+    public class TkLanguagesAllowedData : ToolkitComponent {
 
         public List<TkLanguages> Allowed;
         public TkLanguages Language;

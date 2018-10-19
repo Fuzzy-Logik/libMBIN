@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xA33987CC964AAE24, Broken = true)]
-    public class GcTechnologyTable : GameComponentType {
+    public class GcTechnologyTable : GameComponent {
 
         public List<GcTechnology> Table;
     }

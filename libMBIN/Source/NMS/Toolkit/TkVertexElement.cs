@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x20, GUID = 0x56D2CFD1D4DB01F3)]
-    public class TkVertexElement : ToolkitDataType {
+    public class TkVertexElement : ToolkitComponent {
 
         /* 0x00 */ public int SemanticID;
         /* 0x04 */ public int Size;

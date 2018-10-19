@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x2C, GUID = 0x267CDC1694674427)]
-    public class GcAudioPulseDemo : GameComponentType {
+    public class GcAudioPulseDemo : GameComponent {
 
         public float MixRateSeconds;
         public Vector2f Planet;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x96FEB7E2FEA00BC5)]
-    public class GcMissionConditionCanReceiveReward : GameComponentType {
+    public class GcMissionConditionCanReceiveReward : GameComponent {
 
         [NMS(Size = 0x10)]
         public string Reward;

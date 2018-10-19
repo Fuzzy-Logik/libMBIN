@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xE58BBB2467C4A948)]
-    public class GcSpaceMapObjectData : GameComponentType {
+    public class GcSpaceMapObjectData : GameComponent {
 
         /* 0x00 */ public Colour Colour;
         /* 0x10 */ public float Radius;             // 40200000h

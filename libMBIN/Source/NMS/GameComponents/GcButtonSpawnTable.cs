@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x88124B83B6861EAC)]
-    public class GcButtonSpawnTable : GameComponentType {
+    public class GcButtonSpawnTable : GameComponent {
 
         public List<GcButtonSpawn> ButtonSpawns;
     }

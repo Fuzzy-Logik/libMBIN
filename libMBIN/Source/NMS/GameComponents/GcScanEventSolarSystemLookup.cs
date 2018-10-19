@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8246371C1D8ECBA2)]
-    public class GcScanEventSolarSystemLookup : GameComponentType {
+    public class GcScanEventSolarSystemLookup : GameComponent {
 
         public bool UseStarType;
         public bool UseWealth;

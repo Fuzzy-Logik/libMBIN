@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x422A6825233203FC )]
-    public class GcVehicleGlobals : GlobalDataType {
+    public class GcVehicleGlobals : GlobalDataStruct {
 
         [NMS(Size = 0x10)]
 		/* 0x000 */ public string VehicleStrongLaser;

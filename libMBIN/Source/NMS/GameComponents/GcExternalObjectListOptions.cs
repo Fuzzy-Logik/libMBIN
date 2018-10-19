@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x40, GUID = 0x62ECC2A88402F1DD)]
-    public class GcExternalObjectListOptions : GameComponentType {
+    public class GcExternalObjectListOptions : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Name;

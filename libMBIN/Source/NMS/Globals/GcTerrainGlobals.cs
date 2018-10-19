@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x544924CC0A70DE9B )]
-    public class GcTerrainGlobals : GlobalDataType {
+    public class GcTerrainGlobals : GlobalDataStruct {
 
         /* 0x0 */  public float RegisterTerrainMinDistance;
         /* 0x4 */  public float TerrainBeamUndoRangeFromLastAdd;

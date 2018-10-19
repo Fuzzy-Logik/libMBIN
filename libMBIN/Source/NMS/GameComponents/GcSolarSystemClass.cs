@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x5AC84A35CBFF4798)]
-    public class GcSolarSystemClass : GameComponentType {
+    public class GcSolarSystemClass : GameComponent {
 
 		public enum SolarSystemClassEnum { Default, Initial, Anomaly, GameStart }
 		public SolarSystemClassEnum SolarSystemClass;

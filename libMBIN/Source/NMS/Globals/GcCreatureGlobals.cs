@@ -3,7 +3,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xF239EC0A912FB902 )]
-    public class GcCreatureGlobals : GlobalDataType {
+    public class GcCreatureGlobals : GlobalDataStruct {
 
         /* 0x0 */ public bool IsHurtingCreaturesACrime;
         /* 0x4 */ public float CreatureSeed;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xE06E78532B6DAA85)]
-    public class GcMissionSequenceWaitForShips : GameComponentType {
+    public class GcMissionSequenceWaitForShips : GameComponent {
 
         [NMS(Size = 0x80)]
         /* 0x000 */ public string Message;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x20, GUID = 0x2E3E5DACD50B6024)]
-    public class GcPassiveFrigateIncome : GameComponentType {
+    public class GcPassiveFrigateIncome : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string IncomeID;

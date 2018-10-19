@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x790, GUID = 0x2369A7BC5405CBED)]
-    public class GcTradeSettings : GameComponentType {
+    public class GcTradeSettings : GameComponent {
 
         public GcTradeData SpaceStation;
         public GcTradeData Shop;

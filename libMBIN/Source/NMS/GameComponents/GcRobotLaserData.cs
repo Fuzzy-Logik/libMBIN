@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF2A6C64121B1D193)]
-    public class GcRobotLaserData : GameComponentType {
+    public class GcRobotLaserData : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string LaserID;

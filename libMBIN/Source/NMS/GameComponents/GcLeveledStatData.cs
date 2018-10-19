@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x528, GUID = 0x3190441302E11BA2)]
-    public class GcLeveledStatData : GameComponentType {
+    public class GcLeveledStatData : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x000 */ public string StatId;

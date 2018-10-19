@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x1B50C3536D5CAB4)]
-    public class GcMissionConditionCriticalMissionsDone : GameComponentType {
+    public class GcMissionConditionCriticalMissionsDone : GameComponent {
 
         /* 0x0 */ public bool Warped;
     }

@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xF24315C7821A1B8C )]
-    public class GcGalaxyGlobals : GlobalDataType {
+    public class GcGalaxyGlobals : GlobalDataStruct {
 
         /* 0x0 */ public float PathUIWidth;
         /* 0x4 */ public float StarPathUIWidth;

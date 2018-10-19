@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x1CCB7BDC1ECBB02A)]
-    public class GcMessageCrime : GameComponentType {
+    public class GcMessageCrime : GameComponent {
 
 		public enum CrimeEnum { AttackCreature, AttackSentinel, KillCreature, KillSentinel, MineResources, HitResources, AttackSpaceStation, AttackShip, AttackPolice,
             KillShip, KillPolice, TimedShootable }

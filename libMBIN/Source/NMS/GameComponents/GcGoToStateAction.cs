@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xB1E0E8AFA4A55904)]
-    public class GcGoToStateAction : GameComponentType {
+    public class GcGoToStateAction : GameComponent {
 
         [NMS(Size = 0x10)]
         public string State;

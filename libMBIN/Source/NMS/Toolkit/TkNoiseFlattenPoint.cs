@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x141A63354CB056EF)]
-    public class TkNoiseFlattenPoint : ToolkitDataType {
+    public class TkNoiseFlattenPoint : ToolkitComponent {
 
         /* 0x00 */ public float Density;
         /* 0x04 */ public float FlattenRadius;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x50, GUID = 0x2427F1DD0BFC8AE1)]
-    public class GcScanEffectData : GameComponentType {
+    public class GcScanEffectData : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Id;

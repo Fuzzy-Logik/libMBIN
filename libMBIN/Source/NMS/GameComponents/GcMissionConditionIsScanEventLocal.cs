@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x20, Alignment = 0x8, GUID = 0x8BF18ADD8648960A)]
-    public class GcMissionConditionIsScanEventLocal : GameComponentType {
+    public class GcMissionConditionIsScanEventLocal : GameComponent {
 
         [NMS(Size = 0x20)]
         public string Event;

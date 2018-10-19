@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x14, GUID = 0xB7215C9D4BD1BDC9)]
-    public class GcProceduralTechnologyStatLevel : GameComponentType {
+    public class GcProceduralTechnologyStatLevel : GameComponent {
 
         public GcStatsTypes Stat;
         public float ValueMin;

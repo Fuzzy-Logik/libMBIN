@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x50BDF4B763608D81)]
-    public class TkNGuiLayoutList : ToolkitDataType {
+    public class TkNGuiLayoutList : ToolkitComponent {
 
         public List<TkNGuiLayoutListData> Layouts;
     }

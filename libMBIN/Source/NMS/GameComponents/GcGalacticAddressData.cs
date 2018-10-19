@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xCDC0444569389B85)]
-    public class GcGalacticAddressData : GameComponentType {
+    public class GcGalacticAddressData : GameComponent {
 
         public int VoxelX;
 

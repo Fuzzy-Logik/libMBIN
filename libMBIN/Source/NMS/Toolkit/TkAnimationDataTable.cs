@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x2AE00E7A5251AFA8)]
-    public class TkAnimationDataTable : ToolkitDataType {
+    public class TkAnimationDataTable : ToolkitComponent {
 
         public List<TkAnimationData> Table;
     }

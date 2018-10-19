@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x21E266137C8188B8)]
-    public class TkAnimPoseExampleElement : ToolkitDataType {
+    public class TkAnimPoseExampleElement : ToolkitComponent {
 
         [NMS(Size = 0x10)]
         public string Anim;

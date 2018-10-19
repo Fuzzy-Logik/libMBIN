@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x50, GUID = 0x18203ECAB461D679)]
-    public class TkEntitlementListData : ToolkitDataType {
+    public class TkEntitlementListData : ToolkitComponent {
 
         [NMS(Size = 0x10)]
         public string EntitlementId;

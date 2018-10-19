@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x1C, GUID = 0xA14CF9DF062F6321)]
-    public class TkTrailData : ToolkitDataType {
+    public class TkTrailData : ToolkitComponent {
 
         public float Width;
         public int Points;

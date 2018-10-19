@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xD96E3A3A21F98E23)]
-    public class GcCreatureAlertData : GameComponentType {
+    public class GcCreatureAlertData : GameComponent {
 
         /* 0x000 */ public GcCreatureTypes AlertTarget;
 		/* 0x004 */ public GcCreatureTypes AlertInitiator;

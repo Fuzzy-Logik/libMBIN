@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x9F997389CDFC8C8E)]
-    public class GcPhotoModeSettings : GameComponentType {
+    public class GcPhotoModeSettings : GameComponent {
 
         /* 0x00 */ public float Fog;
         /* 0x04 */ public float CloudAmount;

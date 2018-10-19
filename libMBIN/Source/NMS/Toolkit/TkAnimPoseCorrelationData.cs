@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xE39536D6A25C5F9)]
-    public class TkAnimPoseCorrelationData : ToolkitDataType {
+    public class TkAnimPoseCorrelationData : ToolkitComponent {
 
         [NMS(Size = 0x10)]
         public string ItemA;

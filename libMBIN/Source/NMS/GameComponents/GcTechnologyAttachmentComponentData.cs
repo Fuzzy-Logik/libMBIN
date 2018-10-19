@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x30BE414835A620E)]
-    public class GcTechnologyAttachmentComponentData : GameComponentType {
+    public class GcTechnologyAttachmentComponentData : GameComponent {
 
         /* 0x00 */ public List<NMSString0x10> Techs;
 

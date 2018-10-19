@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x35A289BA96E36B5)]
-    public class GcAtlasRecvVoxel : GameComponentType {
+    public class GcAtlasRecvVoxel : GameComponent {
 
         public ulong ClientUserdata;
         public int NumberOfThings;

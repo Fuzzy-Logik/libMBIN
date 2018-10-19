@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x782E71276AD79AF2)]
-    public class GcCostJourneyStatLevel : GameComponentType {
+    public class GcCostJourneyStatLevel : GameComponent {
 
         [NMS(Size = 0x10)]
         public string StatName;

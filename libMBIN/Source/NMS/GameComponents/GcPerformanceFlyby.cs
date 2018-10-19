@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x1C154290758F1D41)]
-    public class GcPerformanceFlyby : GameComponentType {
+    public class GcPerformanceFlyby : GameComponent {
 
         public float Length;            // 44FA0000h
         public float Offset;            // 43480000h

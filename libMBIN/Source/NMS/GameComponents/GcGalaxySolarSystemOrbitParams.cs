@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x9C076D6012D84D8)]
-    public class GcGalaxySolarSystemOrbitParams : GameComponentType {
+    public class GcGalaxySolarSystemOrbitParams : GameComponent {
 
         /* 0x00 */ public float FirstOrbitRadiusMin;        // 42480000h
         /* 0x00 */ public float FirstOrbitRadiusMax;        // 42480000h

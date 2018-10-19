@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF1D50AB3E136474F)]
-    public class GcFoliageComponentData : GameComponentType {
+    public class GcFoliageComponentData : GameComponent {
 
         public float Radius;
     }

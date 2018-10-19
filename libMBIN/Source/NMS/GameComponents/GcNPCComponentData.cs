@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x20, GUID = 0xE1870C528F718DCE)]
-    public class GcNPCComponentData : GameComponentType {
+    public class GcNPCComponentData : GameComponent {
 
         public GcAlienRace AlienRace;
         [NMS(Size = 0x4, Ignore = true)]

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x14, GUID = 0xB16F8E87710A1DA6)]
-    public class GcFrigateUITraitLines : GameComponentType {
+    public class GcFrigateUITraitLines : GameComponent {
 
         public float Line0;
         public float Line1;

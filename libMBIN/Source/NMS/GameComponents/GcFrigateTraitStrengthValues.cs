@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x50, GUID = 0xAF1EE85670A2C6DB)]
-    public class GcFrigateTraitStrengthValues : GameComponentType {
+    public class GcFrigateTraitStrengthValues : GameComponent {
 
         [NMS(Size = 0xA)]
         /* 0x00 */ public int[] StatAlterations;

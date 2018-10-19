@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x6CAEF8DD21A894EA)]
-    public class GcInventoryTechProbability : GameComponentType {
+    public class GcInventoryTechProbability : GameComponent {
 
         [NMS(Size = 0x10)]
         public string Tech;

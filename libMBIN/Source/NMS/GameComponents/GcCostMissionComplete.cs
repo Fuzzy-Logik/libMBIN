@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFEB265C930EFAC22)]
-    public class GcCostMissionComplete : GameComponentType {
+    public class GcCostMissionComplete : GameComponent {
 
         [NMS(Size = 0x10)]
         public string Cost;

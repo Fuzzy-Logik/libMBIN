@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0xAD1718785B26B78F)]
-    public class GcRewardSpecificTechFromList : GameComponentType {
+    public class GcRewardSpecificTechFromList : GameComponent {
 
         public List<NMSString0x10> TechList;
 

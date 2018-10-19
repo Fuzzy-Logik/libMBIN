@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x1C, GUID = 0x2CE40353E3CAA625)]
-    public class GcPlayerStickData : GameComponentType {
+    public class GcPlayerStickData : GameComponent {
 
         /* 0x000 */ public float AcceleratorStickPoint;     // 3F733333h
         /* 0x004 */ public float AcceleratorMinTime;        // 3E4CCCCDh

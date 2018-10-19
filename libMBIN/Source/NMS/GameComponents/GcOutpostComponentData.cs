@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x68, GUID = 0x2A085978A47D2472)]
-    public class GcOutpostComponentData : GameComponentType {
+    public class GcOutpostComponentData : GameComponent {
 
         /* 0x00 */ public bool Frigate;
         /* 0x01 */ public bool SpaceStation;

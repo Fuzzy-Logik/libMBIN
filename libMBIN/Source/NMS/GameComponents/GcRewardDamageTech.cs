@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x20, GUID = 0xDE8F18A1FD0B2736)]
-    public class GcRewardDamageTech : GameComponentType {
+    public class GcRewardDamageTech : GameComponent {
 
         public GcTechnologyCategory Category;
         [NMS(Size = 0x4, Ignore = true)]

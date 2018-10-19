@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x2E0, GUID = 0xB020F49EA74EB8D2)]
-    public class GcNPCWorkerData : GameComponentType {
+    public class GcNPCWorkerData : GameComponent {
 
         /* 0x000 */ public GcResourceElement ResourceElement;
         /* 0x2A8 */ public GcSeed InteractionSeed;

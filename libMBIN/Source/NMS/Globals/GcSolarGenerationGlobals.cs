@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xAA09A75A30ADC8D )]
-    public class GcSolarGenerationGlobals : GlobalDataType {
+    public class GcSolarGenerationGlobals : GlobalDataStruct {
 
         /* 0x0 */ public bool MassiveSolarSystems;
 

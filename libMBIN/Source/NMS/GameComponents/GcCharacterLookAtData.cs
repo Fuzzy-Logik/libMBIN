@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x34, GUID = 0x45FE3137E90587F4)]
-    public class GcCharacterLookAtData : GameComponentType {
+    public class GcCharacterLookAtData : GameComponent {
 
         public float InteractionLookAtRadius;
         public float CreatureLookAtRadius;

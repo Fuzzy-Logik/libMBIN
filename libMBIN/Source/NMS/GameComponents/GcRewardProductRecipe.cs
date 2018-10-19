@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0xD2A4169D7657745E)]
-    public class GcRewardProductRecipe : GameComponentType {
+    public class GcRewardProductRecipe : GameComponent {
 
         public GcRealitySubstanceCategory Category;
         public GcRarity Rarity;

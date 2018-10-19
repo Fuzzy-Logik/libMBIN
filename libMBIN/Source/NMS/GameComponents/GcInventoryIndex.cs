@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x6C8FC9B39D3BF30E)]
-    public class GcInventoryIndex : GameComponentType {
+    public class GcInventoryIndex : GameComponent {
 
         public int X;
         public int Y;

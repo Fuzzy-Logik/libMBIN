@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xED9D01EDEE998FDB)]
-    public class GcTestMetadata : GameComponentType {
+    public class GcTestMetadata : GameComponent {
 
         public bool TestBool;
         public int TestInt;

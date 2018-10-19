@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x3D6C19C581BD238A)]
-    public class GcInventoryCostDataEntry : GameComponentType {
+    public class GcInventoryCostDataEntry : GameComponent {
 
         /* 0x00 */ public int MinSlots;                 // 0Fh
         /* 0x04 */ public float MinValueInMillions;     // 41200000h

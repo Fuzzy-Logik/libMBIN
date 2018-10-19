@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xDE740CFF10FD49AC)]
-    public class GcBlockedUser : GameComponentType {
+    public class GcBlockedUser : GameComponent {
 
         [NMS(Size = 0x40)]
         public string UserId;

@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x150, GUID = 0x9A90B15AED7B75AE)]
-    public class GcIkConstraint : GameComponentType {
+    public class GcIkConstraint : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x000 */ public string Id;

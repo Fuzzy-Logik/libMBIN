@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x125AC72B0D023EDF)]
-    public class GcMissionConditionHasSubstance : GameComponentType {
+    public class GcMissionConditionHasSubstance : GameComponent {
 
         public GcDefaultMissionSubstanceEnum Default;
         public GcSubstanceTableEnum Substance;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x166006DB2573EE25)]
-    public class GcLightProperties : GameComponentType {
+    public class GcLightProperties : GameComponent {
 
         public Colour SunColour;
         public Colour LightColour;

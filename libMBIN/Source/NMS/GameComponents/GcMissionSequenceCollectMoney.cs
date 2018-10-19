@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x108, GUID = 0x9AA5966B8AD10C45)]
-    public class GcMissionSequenceCollectMoney : GameComponentType {
+    public class GcMissionSequenceCollectMoney : GameComponent {
 
         [NMS(Size = 0x80)]
         public string Message;

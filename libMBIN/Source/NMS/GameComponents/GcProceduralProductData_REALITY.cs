@@ -11,7 +11,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
     [NMS(Size = 0x3D0)]
-    public class GcProceduralProductData_REALITY : GameComponentType {
+    public class GcProceduralProductData_REALITY : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x000 */ public string Id;

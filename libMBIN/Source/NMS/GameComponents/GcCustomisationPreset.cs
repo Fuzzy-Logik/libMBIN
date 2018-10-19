@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x58, GUID = 0xF148E364848F2605)]
-    public class GcCustomisationPreset : GameComponentType {
+    public class GcCustomisationPreset : GameComponent {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Name;

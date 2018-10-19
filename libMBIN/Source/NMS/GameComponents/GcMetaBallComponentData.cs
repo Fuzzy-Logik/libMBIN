@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x1D1348AD9F68E484)]
-    public class GcMetaBallComponentData : GameComponentType {
+    public class GcMetaBallComponentData : GameComponent {
 
         [NMS(Size = 0x80)]
         /* 0x000 */ public string File;

@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x191124BEAF09E4AA, Broken = true)]
-    public class GcInventoryContainer : GameComponentType {
+    public class GcInventoryContainer : GameComponent {
 
         /* 0x00 */ public List<GcInventoryElement> Slots;
         /* 0x10 */ public List<GcInventoryIndex> ValidSlotIndices;

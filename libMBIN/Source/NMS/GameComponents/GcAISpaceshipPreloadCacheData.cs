@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x20, GUID = 0x94D7D10B4E01B45E)]
-    public class GcAISpaceshipPreloadCacheData : GameComponentType {
+    public class GcAISpaceshipPreloadCacheData : GameComponent {
 
         /* 0x00 */ public GcRealityCommonFactions Faction;
         /* 0x04 */ public GcAISpaceshipRoles ShipRole;

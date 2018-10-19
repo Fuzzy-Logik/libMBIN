@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x9A9C381629097F2D)]
-    public class GcCustomInventoryComponentData : GameComponentType {
+    public class GcCustomInventoryComponentData : GameComponent {
 
         [NMS(Size = 0x10)]
         public string Size;

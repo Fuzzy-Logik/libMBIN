@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x60, GUID = 0xCEBBAB8E576F1B96)]
-    public class TkAnimBlendTree : ToolkitDataType {
+    public class TkAnimBlendTree : ToolkitComponent {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Id;

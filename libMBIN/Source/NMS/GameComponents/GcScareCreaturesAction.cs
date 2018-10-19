@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x686BB2CB47FE47CF)]
-    public class GcScareCreaturesAction : GameComponentType {
+    public class GcScareCreaturesAction : GameComponent {
 
         public float HearRadius;
         public float FleeRadius;

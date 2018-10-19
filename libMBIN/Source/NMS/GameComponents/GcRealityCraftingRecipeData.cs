@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8F21833376B03851)]
-    public class GcRealityCraftingRecipeData : GameComponentType {
+    public class GcRealityCraftingRecipeData : GameComponent {
 
         [NMS(Size = 3)]
         public GcRealitySubstanceCraftingMix[] Inputs;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xCFD91697CCC3D372)]
-    public class GcCostMoney : GameComponentType {
+    public class GcCostMoney : GameComponent {
 
         public int Cost;
 		public enum CostCurrencyEnum { Units, Nanites, Specials }

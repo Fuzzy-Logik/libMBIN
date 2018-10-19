@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x89ED051FD49328DB)]
-    public class GcShipHUDTargetIconData : GameComponentType {
+    public class GcShipHUDTargetIconData : GameComponent {
 
         [NMS(Size = 0x80)]
         public string Corner;

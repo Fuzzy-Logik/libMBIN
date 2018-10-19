@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x928C87F25BF4300A)]
-    public class GcMaintenanceGroupEntry : GameComponentType {
+    public class GcMaintenanceGroupEntry : GameComponent {
 
         /* 0x00 */ public GcInventoryType Type;
         [NMS(Size = 0x4, Ignore = true)]

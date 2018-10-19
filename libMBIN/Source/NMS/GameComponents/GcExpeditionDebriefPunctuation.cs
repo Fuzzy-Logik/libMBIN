@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x24, GUID = 0xBD8A11BC4589CBE8)]
-    public class GcExpeditionDebriefPunctuation : GameComponentType {
+    public class GcExpeditionDebriefPunctuation : GameComponent {
 
         [NMS(Size = 0x20)]
         public string Punctuation;

@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x3276D67F7EC472E5 )]
-    public class GcCharacterGlobals : GlobalDataType {
+    public class GcCharacterGlobals : GlobalDataStruct {
 
         [NMS(Size = 0x80)]
         /* 0x000 */ public string CharacterFile;

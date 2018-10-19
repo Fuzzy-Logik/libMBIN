@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xC062555E105776D )]
-    public class GcAISpaceshipGlobals : GlobalDataType {
+    public class GcAISpaceshipGlobals : GlobalDataStruct {
 
         /* 0x0 */ public bool TradersAttackPirates;
         /* 0x1 */ public bool TraderHailingEnabled;

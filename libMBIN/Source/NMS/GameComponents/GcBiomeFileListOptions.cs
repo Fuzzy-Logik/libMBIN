@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xC61664D2E822E1ED)]
-    public class GcBiomeFileListOptions : GameComponentType {
+    public class GcBiomeFileListOptions : GameComponent {
 
         public List<NMSString0x80> BiomeFiles;
     }

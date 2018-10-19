@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x3C2D30DB140CBF81)]
-    public class TkTrophyData : ToolkitDataType {
+    public class TkTrophyData : ToolkitComponent {
 
         public List<TkTrophyEntry> Trophies;
     }

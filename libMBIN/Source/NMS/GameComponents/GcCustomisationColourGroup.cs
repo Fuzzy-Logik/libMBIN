@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x38, GUID = 0xAF69A920435DE7D)]
-    public class GcCustomisationColourGroup : GameComponentType {
+    public class GcCustomisationColourGroup : GameComponent {
 
         [NMS(Size = 0x10)]
         public string GroupID;

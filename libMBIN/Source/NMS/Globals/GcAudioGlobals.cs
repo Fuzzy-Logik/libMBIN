@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x909213CA197AC1CB )]
-    public class GcAudioGlobals : GlobalDataType {
+    public class GcAudioGlobals : GlobalDataStruct {
 
         /* 0x0 */ public GcAudioNPCDoppler NPCEngines;
         /* 0x3C */ public GcAudio3PointDopplerData DroneDoppler;

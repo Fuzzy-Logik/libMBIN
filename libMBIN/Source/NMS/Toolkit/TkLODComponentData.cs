@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x18, GUID = 0x3F840374AD3BDE3C)]
-    public class TkLODComponentData : ToolkitDataType {
+    public class TkLODComponentData : ToolkitComponent {
 
         /* 0x10 */ public List<TkLODModelResource> LODModel;
         /* 0x10 */ public float CrossFadeTime;

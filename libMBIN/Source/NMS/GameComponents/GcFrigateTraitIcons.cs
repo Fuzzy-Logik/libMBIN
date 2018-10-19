@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x500, GUID = 0x69FFF37CCA5995E5)]
-    public class GcFrigateTraitIcons : GameComponentType {
+    public class GcFrigateTraitIcons : GameComponent {
 
         [NMS(Size = 0xA, EnumValue = new string[] { "Combat", "Exploration", "Mining", "Diplomatic", "FuelBurnRate", "FuelCapacity", "Speed", "ExtraLoot", "Repair", "Invulnerable" })]
 

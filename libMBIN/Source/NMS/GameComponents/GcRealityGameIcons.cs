@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x6FDD2A63BD224C75)]
-    public class GcRealityGameIcons : GameComponentType {
+    public class GcRealityGameIcons : GameComponent {
 
         // 0x42 entries
 		public enum GameIconsEnum { Stamina, NoStamina, EnergyCharge, Scanner, NoScanner, Grave, Resources, Inventory, InventoryFull,

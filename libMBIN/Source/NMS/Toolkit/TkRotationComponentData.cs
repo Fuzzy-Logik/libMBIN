@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x41BC3C0B86CEBAA0)]
-    public class TkRotationComponentData : ToolkitDataType {
+    public class TkRotationComponentData : ToolkitComponent {
 
         public float Speed;
 

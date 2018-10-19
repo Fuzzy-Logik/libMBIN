@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x10A4, GUID = 0x72F5B7416AB51616)]
-    public class TkNGuiWindowLayoutData : ToolkitDataType {
+    public class TkNGuiWindowLayoutData : ToolkitComponent {
 
         [NMS(Size = 0x80)]
         /* 0x0000 */ public string Name;

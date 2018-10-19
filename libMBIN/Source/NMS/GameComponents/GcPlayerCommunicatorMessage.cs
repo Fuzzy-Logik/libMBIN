@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x50, GUID = 0xC0B64BD7B895172A)]
-    public class GcPlayerCommunicatorMessage : GameComponentType {
+    public class GcPlayerCommunicatorMessage : GameComponent {
 
         [NMS(Size = 0x20)]
         /* 0x00 */ public string Dialog;

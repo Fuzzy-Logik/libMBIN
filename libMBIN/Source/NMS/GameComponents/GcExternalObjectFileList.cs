@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x38, GUID = 0xB9AC8248B97BE97F)]
-    public class GcExternalObjectFileList : GameComponentType {
+    public class GcExternalObjectFileList : GameComponent {
 
         [NMS(Size = 0x10)]
         public string Id;

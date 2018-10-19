@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xEAA4DBFE9DCC9844)]
-    public class GcRealityCommonFactions : GameComponentType {
+    public class GcRealityCommonFactions : GameComponent {
 
 		public enum AIFactionEnum { FactionA, FactionB, FactionC, FactionD, Pirate, Police }
 		public AIFactionEnum AIFaction;

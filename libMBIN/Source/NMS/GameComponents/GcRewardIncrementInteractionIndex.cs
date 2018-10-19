@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xC077DBEECAE0D84B)]
-    public class GcRewardIncrementInteractionIndex : GameComponentType {
+    public class GcRewardIncrementInteractionIndex : GameComponent {
 
         public int InteractionToIncrement;
         public GcAlienRace Race;

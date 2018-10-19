@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x1E0, GUID = 0x2564BC1E1547197C)]
-    public class GcTerrainTexture : GameComponentType {
+    public class GcTerrainTexture : GameComponent {
 
         [NMS(Size = 0x80)]
         /* 0x000 */ public string DiffuseTexture;

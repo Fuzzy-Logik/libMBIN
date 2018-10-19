@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xC97CF3FC4899F90A)]
-    public class GcChainComponentData : GameComponentType {
+    public class GcChainComponentData : GameComponent {
 
         public float StartBone;     // temp data type
 

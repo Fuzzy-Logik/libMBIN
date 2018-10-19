@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x20, GUID = 0x28A5F0DD7B123C68)]
-    public class GcPlayerCharacterIKOverrideData : GameComponentType {
+    public class GcPlayerCharacterIKOverrideData : GameComponent {
 
         public bool Enabled;
         public float Strength;

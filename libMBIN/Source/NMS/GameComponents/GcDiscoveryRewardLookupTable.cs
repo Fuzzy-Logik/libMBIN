@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x10, GUID = 0x9B47247812B4DD38)]
-    public class GcDiscoveryRewardLookupTable : GameComponentType {
+    public class GcDiscoveryRewardLookupTable : GameComponent {
 
         public List<GcDiscoveryRewardLookup> Table;
     }

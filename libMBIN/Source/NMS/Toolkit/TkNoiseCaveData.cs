@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x5C0A92328BBE7F0F)]
-    public class TkNoiseCaveData : ToolkitDataType {
+    public class TkNoiseCaveData : ToolkitComponent {
 
         public TkNoiseFeatureData Mouth;
         public TkNoiseFeatureData Tunnel;

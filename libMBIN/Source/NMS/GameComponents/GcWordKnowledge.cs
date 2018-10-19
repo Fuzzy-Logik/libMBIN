@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xB3617F01FF3C2D0D)]
-    public class GcWordKnowledge : GameComponentType {
+    public class GcWordKnowledge : GameComponent {
 
         [NMS(Size = 0x10)]
         public string Word;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8AB614E47861119A)]
-    public class GcNGuiActionData : GameComponentType {
+    public class GcNGuiActionData : GameComponent {
 
         [NMS(Size = 0x10)]
         public string LayerID;

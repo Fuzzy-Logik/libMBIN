@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8B913442E7E83049)]
-    public class GcBootLogoData : GameComponentType {
+    public class GcBootLogoData : GameComponent {
 
         [NMS(Size = 0x100)]
         public string Texture1;

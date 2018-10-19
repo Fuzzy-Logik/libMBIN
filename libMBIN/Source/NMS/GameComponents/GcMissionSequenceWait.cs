@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF1BABCCA84CF0AD5)]
-    public class GcMissionSequenceWait : GameComponentType {
+    public class GcMissionSequenceWait : GameComponent {
 
         /* 0x0 */ public float Time;
         [NMS(Size = 0x80)]

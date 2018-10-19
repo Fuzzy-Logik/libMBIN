@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x460A5242E45C4AF8)]
-    public class GcSolarSystemTraderSpawnData : GameComponentType {
+    public class GcSolarSystemTraderSpawnData : GameComponent {
 
         public int MaxToSpawn;                      // 3
         public float InitialTakeoffDelay;           // 40400000h

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xA8, GUID = 0x7C4CB3CB26C66166)]
-    public class GcScreenFilterData : GameComponentType {
+    public class GcScreenFilterData : GameComponent {
 
         [NMS(Size = 0x20)]
         public string LocText;

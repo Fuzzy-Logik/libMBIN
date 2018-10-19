@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xB2224162A8931EAF)]
-    public class TkAudioAnimTrigger : ToolkitDataType {
+    public class TkAudioAnimTrigger : ToolkitComponent {
 
         [NMS(Size = 0x80)]
         public string Sound;

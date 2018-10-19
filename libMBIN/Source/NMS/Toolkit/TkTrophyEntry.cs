@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x78, GUID = 0xFF0643125795309F)]
-    public class TkTrophyEntry : ToolkitDataType {
+    public class TkTrophyEntry : ToolkitComponent {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string TrophyId;

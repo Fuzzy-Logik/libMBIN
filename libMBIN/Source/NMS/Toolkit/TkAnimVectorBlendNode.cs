@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x18, GUID = 0x1300B3988CAEE69E)]
-    public class TkAnimVectorBlendNode : ToolkitDataType {
+    public class TkAnimVectorBlendNode : ToolkitComponent {
 
 		public enum BlendOperationEnum { Blend, Add }
 		public BlendOperationEnum BlendOperation;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x58, GUID = 0x5526B7917EA8D181)]
-    public class GcPlayerSpaceshipEngineData : GameComponentType {
+    public class GcPlayerSpaceshipEngineData : GameComponent {
 
         public float ThrustForce;
         public float MaxSpeed;

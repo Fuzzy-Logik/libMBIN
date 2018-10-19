@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x505FDF971BB7421A)]
-    public class GcExpeditionRewardTable : GameComponentType {
+    public class GcExpeditionRewardTable : GameComponent {
 
         public List<GcGenericRewardTableEntry> Table;
     }

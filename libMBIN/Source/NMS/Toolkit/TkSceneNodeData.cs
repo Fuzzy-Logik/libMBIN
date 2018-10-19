@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit       // size: 0xD8
 {
 	[NMS(GUID = 0xD5756F96B501B8A2)]
-    public class TkSceneNodeData : ToolkitDataType {
+    public class TkSceneNodeData : ToolkitComponent {
 
         [NMS(Size = 0x80)]
         /* 0x00 */ public string Name;

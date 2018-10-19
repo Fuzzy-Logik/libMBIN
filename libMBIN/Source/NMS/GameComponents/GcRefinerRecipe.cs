@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xB0, GUID = 0xF361385BC37AE809)]
-    public class GcRefinerRecipe : GameComponentType {
+    public class GcRefinerRecipe : GameComponent {
 
         [NMS(Size = 0x80)]
         /* 0x00 */ public string Name;

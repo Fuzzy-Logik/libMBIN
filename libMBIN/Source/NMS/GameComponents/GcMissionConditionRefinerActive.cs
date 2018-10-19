@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x88, GUID = 0x39BC2F266DED2C79)]
-    public class GcMissionConditionRefinerActive : GameComponentType {
+    public class GcMissionConditionRefinerActive : GameComponent {
 
         public bool HasFuel;
         [NMS(Size = 0x80)]

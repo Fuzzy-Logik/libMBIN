@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x8C, GUID = 0xB8D561F082A01C10)]
-    public class TkLODModelResource : ToolkitDataType {
+    public class TkLODModelResource : ToolkitComponent {
 
         /* 0x00 */ public TkModelResource LODModel;
         /* 0x84 */ public float CrossFadeTime;

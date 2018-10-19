@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xC377F0E807316984)]
-    public class GcInventoryBaseStatEntry : GameComponentType {
+    public class GcInventoryBaseStatEntry : GameComponent {
 
         [NMS(Size = 0x10)]
         public string BaseStatID;

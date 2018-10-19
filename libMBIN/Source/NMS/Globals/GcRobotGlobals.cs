@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x464813EEC6B590AD )]
-    public class GcRobotGlobals : GlobalDataType {
+    public class GcRobotGlobals : GlobalDataStruct {
 
         /* 0x0 */ public float GrenadeLaunchFlightTime;
         /* 0x4 */ public int AttackSentinelWantedValue;

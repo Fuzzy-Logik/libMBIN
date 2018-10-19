@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x4FDBDEDFBA4CEB35)]
-    public class TkNGuiTextStyle : ToolkitDataType {
+    public class TkNGuiTextStyle : ToolkitComponent {
 
         public TkNGuiTextStyleData Default;
         public TkNGuiTextStyleData Highlight;

@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Alignment = 0x10, Size = 0x310, GUID = 0x5E9A900228C5334B)]
-    public class GcNGuiLayerData : GameComponentType {
+    public class GcNGuiLayerData : GameComponent {
 
         /* 0x000 */ public GcNGuiElementData Data;
         /* 0x050 */ public TkNGuiGraphicStyle Style;

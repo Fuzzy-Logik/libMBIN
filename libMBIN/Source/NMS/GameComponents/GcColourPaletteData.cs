@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x70, GUID = 0xDAB31CFBF20311E9)]
-    public class GcColourPaletteData : GameComponentType {
+    public class GcColourPaletteData : GameComponent {
 
         [NMS(Size = 0x5)]
         public Colour[] Colours;

@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x600CAC2FB5629419)]
-    public class GcShipAIAttackDataTable : GameComponentType {
+    public class GcShipAIAttackDataTable : GameComponent {
 
         /* 0x00 */ public List<GcShipAICombatDefinition> Definitions;
         /* 0x10 */ public List<GcShipAIAttackData> BehaviourTable;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x1A8, GUID = 0x881E40C22112767)]
-    public class TkNoiseGridData : ToolkitDataType {
+    public class TkNoiseGridData : ToolkitComponent {
 
         /* 0x000 */ public bool Active;
         /* 0x004 */ public int MaximumLOD;

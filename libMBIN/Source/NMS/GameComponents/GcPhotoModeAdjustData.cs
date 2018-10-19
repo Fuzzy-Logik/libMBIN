@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0xD3E230DB23C781)]
-    public class GcPhotoModeAdjustData : GameComponentType {
+    public class GcPhotoModeAdjustData : GameComponent {
 
         /* 0x00 */ public float AdjustMin;
         /* 0x04 */ public TkCurveType AdjustMinCurve;

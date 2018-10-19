@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x120, GUID = 0xC107557450982F7E)]
-    public class GcGalaxyMarkerSettings : GameComponentType {
+    public class GcGalaxyMarkerSettings : GameComponent {
 
         [NMS(Size = 3)]
         /* 0x00 */ public Colour[] Colours;

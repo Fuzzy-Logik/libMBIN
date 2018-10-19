@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x70, GUID = 0xBD4CFE2A5D9127F8)]
-    public class TkPhysicsComponentData : ToolkitDataType {
+    public class TkPhysicsComponentData : ToolkitComponent {
 
         public TkPhysicsData Data;
         /* 0x018 */ public NMSTemplate RagdollData;
