@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace libMBIN
-{
-    public class MBINCompilerTestTemplate : NMSTemplate
-    {
+namespace libMBIN {
+
+    public class MBINCompilerTestTemplate : NMS.NMSType {
+
         public bool TestBoolTrue;
         public bool TestBoolFalse;
         public bool TestBool3;

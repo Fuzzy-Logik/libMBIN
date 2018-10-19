@@ -132,22 +132,25 @@ namespace libMBIN.MBIN {
                     reader.BaseStream.Position = endPos;
                     return val;
                 default:
-                    if ( fieldType == "Colour" ) // unsure if this is needed?
+                    if ( fieldType == "Colour" ) { // unsure if this is needed?
                         reader.Align( 0x10, templatePosition );
-                    if ( fieldType == "VariableStringSize" || fieldType == "GcRewardProduct" )    // TODO: I don't think we need to specify GcRewardProduct here explicitly...
+                    } else if ( fieldType == "VariableStringSize" || fieldType == "GcRewardProduct" ) { // TODO: I don't think we need to specify GcRewardProduct here explicitly...
                         reader.Align( 0x4, templatePosition );
+                    }
+
                     // todo: align for VariableSizeString?
                     if ( field.IsEnum ) {
                         reader.Align( 4, templatePosition );
                         return fieldType == "Int32" ? (object) reader.ReadInt32() : (object) reader.ReadUInt32();
-                    }
-                    if ( field.IsArray ) {
+
+                    } else if ( field.IsArray ) {
                         var arrayType = field.GetElementType();
                         Array array = Array.CreateInstance( arrayType, settings.Size );
                         for ( int i = 0; i < settings.Size; ++i ) {
                             array.SetValue( DeserializeValue( reader, field.GetElementType(), settings, templatePosition, fieldInfo, parent ), i );
                         }
                         return array;
+
                     } else {
                         reader.Align( 0x4, templatePosition );
                         return DeserializeBinaryTemplate( reader, fieldType );
@@ -219,8 +222,7 @@ namespace libMBIN.MBIN {
                 var template = DeserializeValue( reader, field.FieldType.GetGenericArguments()[0], settings, templateStartOffset, field, parent );
                 if ( template == null ) throw new DeserializeTypeException( typeof( T ) );
 
-                var type = template.GetType().BaseType;
-                if ( type == typeof( NMSTemplate ) ) FinishDeserialize( (NMSTemplate) template );
+                if ( template.GetType().IsSubclassOf( typeof( NMSTemplate ) ) ) FinishDeserialize( (NMSTemplate) template );
 
                 list.Add( (T) template );
             }
@@ -249,7 +251,7 @@ namespace libMBIN.MBIN {
                 string[] values = (string[]) valuesMethod.Invoke( template, null );
                 try {
                     string valueStr = values[(int) value];
-                } catch ( IndexOutOfRangeException e ) {
+                } catch ( IndexOutOfRangeException ) {
                     throw new IndexOutOfRangeException( "Values index out of Range. Struct: " + template.GetType() + " field: " + field.Name );
                 }
 
@@ -316,7 +318,7 @@ namespace libMBIN.MBIN {
                             writer.Write( listEnding );
 
                             writer.BaseStream.Position = stringEndPos;
-                        } else if ( data.Item2.GetType().BaseType == typeof( NMSTemplate ) ) {
+                        } else if ( data.Item2.GetType().IsSubclassOf( typeof( NMSTemplate ) ) ) {
                             var pos = writer.BaseStream.Position;
                             var template2 = (NMSTemplate) data.Item2;
                             int i2 = i + 1;
@@ -528,7 +530,7 @@ namespace libMBIN.MBIN {
                         writer.Align( 4, startStructPos );
                         writer.Write( (int) Enum.Parse( field.FieldType, fieldData.ToString() ) );
 
-                    } else if ( fieldType.BaseType == typeof( NMSTemplate ) ) {
+                    } else if ( fieldType.IsSubclassOf( typeof( NMSTemplate ) ) ) {
                         int alignment = settings?.Alignment ?? 0x4;     // this isn't 0x10 for Colour's??
                         writer.Align( alignment, startStructPos );
                         var realData = (NMSTemplate) fieldData;
