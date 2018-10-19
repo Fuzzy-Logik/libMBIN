@@ -51,7 +51,7 @@ namespace libMBIN {
 
         private static NMSTemplate ReadTemplateFromXmlReader( XmlReader reader ) {
             EXmlData root = (EXmlData) Serializer.Deserialize( reader );
-            NMSTemplate rootTemplate = NMSTemplate.DeserializeEXml( root );
+            NMSTemplate rootTemplate = DeserializeEXML.DeserializeEXml( root );
             return rootTemplate;
         }
 
@@ -81,7 +81,7 @@ namespace libMBIN {
             using ( var xmlTextWriter = XmlWriter.Create( stringWriter, xmlSettings ) ) {
                 string ver = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 xmlTextWriter.WriteComment( String.Format( "File created using MBINCompiler version ({0})", ver.Substring( 0, ver.Length - 2 ) ) );
-                var data = template.SerializeEXml( false );
+                var data = SerializeEXML.SerializeEXml( template, false );
                 Serializer.Serialize( xmlTextWriter, data, Namespaces );
                 xmlTextWriter.Flush();
 

@@ -140,7 +140,7 @@ namespace libMBIN.UnitTests {
                 var data = mbin.LoadData();
                 if (data == null) throw new APIException( "deserialized data was null" );
 
-                if (data.SerializeEXml( false ) == null) throw new APIException( "xml serialization was null" );
+                if (SerializeEXML.SerializeEXml( data, false ) == null) throw new APIException( "xml serialization was null" );
 
                 var xmlString = EXmlFile.WriteTemplate( data );
                 if ( string.IsNullOrEmpty( xmlString ) ) throw new APIException( "xml data is null" );

@@ -14,7 +14,7 @@ namespace libMBIN.UnitTests {
 
             var data = file.LoadData();
             Assert.IsNotNull( data, $"{path} deserialized data was null" );
-            Assert.IsNotNull( data.SerializeEXml( false ), $"{path} xml serialization was null" );
+            Assert.IsNotNull( SerializeEXML.SerializeEXml( data, false ), $"{path} xml serialization was null" );
             Assert.IsInstanceOfType( data, typeof( MBINCompilerTestTemplate ), $"{path} template isn't of type MBINCompilerTestTemplate!" );
 
             MBINCompilerTestTemplate test = (MBINCompilerTestTemplate) data;

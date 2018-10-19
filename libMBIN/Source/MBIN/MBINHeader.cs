@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace libMBIN.MBIN {
 
     [NMS(Size = 0x60)]
-    public class MBINHeader : NMSTemplate
-    {
+    [StructLayout( LayoutKind.Sequential, Pack = 4 )]
+    public class MBINHeader /*: NMSTemplate*/ {
+
         internal const uint  MBIN_MAGIC    = 0xCCCCCCCC;         // MBIN format ID
         internal const uint  MBIN_MAGIC_PC = 0xDDDDDDDD;         // only used by TkGeometryData and TkGeometryStreamData (*.MBIN.PC)
         internal const uint  MBIN_VERSION  = 2500;               // vanilla version
@@ -60,7 +62,7 @@ namespace libMBIN.MBIN {
         ///     Eg. <c>"cGcTestMetadata"</c>
         /// </summary>
         /// <remarks>Do not Change. Required in NMS.exe</remarks>
-        [NMS( Size = 0x40 )] // 64 bytes
+        [NMS( Size = 0x40 ), MarshalAs(UnmanagedType.ByValTStr, SizeConst = 0x40)]
         /* 0x18 */ public string TemplateName;
 
         /// <summary><b><i>Format V0 and V1:</i></b> Not used.</summary>

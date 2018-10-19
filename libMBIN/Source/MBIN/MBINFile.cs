@@ -1,11 +1,14 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace libMBIN {
 
+    using MBIN;
+
     public class MBINFile : IDisposable {
 
-        public MBIN.MBINHeader header;
+        public MBINHeader header;
         private readonly IO io;
         private readonly string filePath;
         private readonly bool keepOpen;
@@ -27,30 +30,52 @@ namespace libMBIN {
         }
 
         public bool LoadHeader() {
-            if ( io.Stream.Length < 0x60 ) return false;
+            int len = Marshal.SizeOf<MBINHeader>();
+            var bytes = new byte[len];
+
             io.Stream.Position = 0;
-            header = (MBIN.MBINHeader) NMSTemplate.DeserializeBinaryTemplate( io.Reader, "MBINHeader" );
+            if ( io.Stream.Read( bytes, 0, len ) != len ) return false;
+
+            GCHandle handle = GCHandle.Alloc( bytes, GCHandleType.Pinned );
+            try {
+                header = new MBINHeader();
+                Marshal.PtrToStructure( handle.AddrOfPinnedObject(), header );
+            } finally {
+                handle.Free();
+            }
+
             return true;
         }
 
         public bool SaveHeader() {
+            int len = Marshal.SizeOf<MBINHeader>();
+            var bytes = new byte[len];
+
+            GCHandle handle = GCHandle.Alloc( bytes, GCHandleType.Pinned );
+            try {
+                Marshal.StructureToPtr( header, handle.AddrOfPinnedObject(), false );
+            } finally {
+                handle.Free();
+            }
+
             io.Stream.Position = 0;
-            io.Writer.Write( header.SerializeBytes() );
+            io.Writer.Write( bytes );
             io.Writer.Flush();
 
             return true;
         }
 
         public NMSTemplate LoadData() {
-            io.Stream.Position = 0x60;
-            return NMSTemplate.DeserializeBinaryTemplate( io.Reader, header.GetXMLTemplateName() );
+            io.Stream.Position = Marshal.SizeOf<MBINHeader>();
+            return DeserializeMBIN.DeserializeBinaryTemplate( io.Reader, header.GetXMLTemplateName() );
         }
 
         public void SaveData( NMSTemplate template ) {
-            io.Stream.SetLength( 0x60 );
-            io.Stream.Position = 0x60;
+            int headerLen = Marshal.SizeOf<MBINHeader>();
+            io.Stream.SetLength( headerLen );
+            io.Stream.Position = headerLen;
 
-            byte[] data = template.SerializeBytes();
+            byte[] data = SerializeMBIN.SerializeBytes( template );
             io.Writer.Write( data );
 
             fileLength = (ulong) data.LongLength;
