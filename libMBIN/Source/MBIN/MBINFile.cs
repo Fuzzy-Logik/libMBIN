@@ -18,15 +18,11 @@ namespace libMBIN {
             }
         }
 
-        public MBINFile( string path ) {
+        public MBINFile( string path ) : this( path, new IO( path, FileMode.OpenOrCreate ), false ) { }
+        public MBINFile( Stream stream, bool keepOpen = false ) : this( "/DEV/NULL", new IO( stream ), keepOpen ) { }
+        private MBINFile( string path, IO io, bool keepOpen = false ) {
             filePath = path;
-            io = new IO( path, FileMode.OpenOrCreate );
-            keepOpen = false;
-        }
-
-        public MBINFile( Stream stream, bool keepOpen = false ) {
-            filePath = "/DEV/NULL";
-            io = new IO( stream );
+            this.io = io;
             this.keepOpen = keepOpen;
         }
 
@@ -62,7 +58,7 @@ namespace libMBIN {
             header.TemplateName = "c" + template.GetType().Name;
         }
 
-        public static explicit operator NMSTemplate( MBINFile mbin ) {
+        public static implicit operator NMSTemplate( MBINFile mbin ) {
             return mbin.LoadData();
         }
 
