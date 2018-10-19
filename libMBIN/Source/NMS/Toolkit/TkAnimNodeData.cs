@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+namespace libMBIN.NMS.Toolkit {
 
-namespace libMBIN.NMS.Toolkit
-{
-	[NMS(Size = 0x50, GUID = 0x14C032849E45EE8D)]
-    public class TkAnimNodeData : NMSTemplate
-    {
+    [NMS(Size = 0x50, GUID = 0x14C032849E45EE8D)]
+    public class TkAnimNodeData : NMSTemplate, ISerialize {
+
         [NMS(Size = 0x40)]
         /* 0x00 */ public string Node;
 
@@ -19,22 +16,15 @@ namespace libMBIN.NMS.Toolkit
         /* 0x48 */ public int TransIndex;
         /* 0x4C */ public int ScaleIndex;
 
-        public override bool CustomSerialize(BinaryWriter writer, Type field, object fieldData, NMSAttribute settings, FieldInfo fieldInfo, ref List<Tuple<long, object>> additionalData, ref int addtDataIndex)
-        {
-            if (field == null || fieldInfo == null)
-                return false;
+        public bool OnSerialize( BinaryWriter writer, Type field, object fieldData, NMSAttribute settings, FieldInfo fieldInfo, ref List<Tuple<long, object>> additionalData, ref int addtDataIndex ) {
+            if ( field == null || fieldInfo == null ) return false;
+            if ( fieldInfo.Name != nameof( CanCompress ) ) return false;
 
-            var fieldName = fieldInfo.Name;
-            switch (fieldName)
-            {
-                case nameof(CanCompress):
-                    //writer.Align(4, 0);
-                    writer.Write(0xFEFEFEFE);
-                    return true;
-
-            }
-
-            return false;
+            //writer.Align(4, 0);
+            writer.Write( 0xFEFEFEFE );
+            return true;
         }
+
     }
+
 }

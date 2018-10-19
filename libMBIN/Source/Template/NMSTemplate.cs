@@ -119,9 +119,8 @@ namespace libMBIN
         {
             //Logger.LogDebug( $"{fieldInfo?.DeclaringType.Name}.{fieldInfo?.Name}\ttype:\t{field.Name}\tpos:\t0x{templatePosition:X}" );
 
-            var template = parent.CustomDeserialize(reader, field, settings, templatePosition, fieldInfo);
-            if (template != null)
-                return template;
+            var data = (parent as NMS.IDeserialize)?.OnDeserialize(reader, field, settings, templatePosition, fieldInfo);
+            if (data != null) return data;
 
             var fieldType = field.Name;
             switch (fieldType)
@@ -215,12 +214,9 @@ namespace libMBIN
                             array.SetValue(DeserializeValue(reader, field.GetElementType(), settings, templatePosition, fieldInfo, parent), i);
                         }
                         return array;
-                    }
-                    else
-                    {
+                    } else {
                         reader.Align(0x4, templatePosition);
-                        var data = DeserializeBinaryTemplate(reader, fieldType);
-                        return data;
+                        return DeserializeBinaryTemplate(reader, fieldType);
                     }
             }
         }
@@ -376,8 +372,7 @@ namespace libMBIN
         public void SerializeValue( BinaryWriter writer, Type fieldType, object fieldData, NMSAttribute settings, FieldInfo field, long startStructPos, ref List<Tuple<long, object>> additionalData, ref int addtDataIndex, int structLength = 0, UInt32 listEnding = 0xAAAAAA01 ) {
             //Logger.LogDebug( $"{field?.DeclaringType.Name}.{field?.Name}\ttype:\t{fieldType.Name}\tadditionalData.Count:\t{additionalData?.Count ?? 0}\taddtDataIndex:\t{addtDataIndex}" );
 
-            if (CustomSerialize(writer, fieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex))
-                return;
+            if ((this as NMS.ISerialize)?.OnSerialize(writer, fieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex) ?? false) return;
 
             if ( settings?.DefaultValue != null ) fieldData = settings.DefaultValue;
             switch ( fieldType.Name ) {
@@ -1268,14 +1263,5 @@ namespace libMBIN
 #endif
         }
 
-        public virtual object CustomDeserialize(BinaryReader reader, Type field, NMSAttribute settings, long templatePosition, FieldInfo fieldInfo)
-        {
-            return null;
-        }
-
-        public virtual bool CustomSerialize(BinaryWriter writer, Type field, object fieldData, NMSAttribute settings, FieldInfo fieldInfo, ref List<Tuple<long, object>> additionalData, ref int addtDataIndex)
-        {
-            return false;
-        }
     }
 }
