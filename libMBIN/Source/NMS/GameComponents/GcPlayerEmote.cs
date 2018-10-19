@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x100, GUID = 0xE2535405D0C11B96)]
-    public class GcPlayerEmote : GameComponent {
+    public class GcPlayerEmote : GameComponentType {
 
         [NMS(Size = 0x20)]
         /* 0x000 */ public string Title;

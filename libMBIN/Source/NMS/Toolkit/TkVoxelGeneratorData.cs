@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Toolkit {
 
     [NMS( Size = 0x15D0, GUID = 0x1E376F876EF204A0 )]
-    public class TkVoxelGeneratorData : ToolkitData {
+    public class TkVoxelGeneratorData : ToolkitDataType {
 
         /* 0x0000 */ public GcSeed BaseSeed;
         /* 0x0010 */ public float SeaLevel;

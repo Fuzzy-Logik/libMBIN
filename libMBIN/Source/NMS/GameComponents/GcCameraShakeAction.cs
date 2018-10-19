@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xA5442BD7F600755C)]
-    public class GcCameraShakeAction : GameComponent {
+    public class GcCameraShakeAction : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Shake;

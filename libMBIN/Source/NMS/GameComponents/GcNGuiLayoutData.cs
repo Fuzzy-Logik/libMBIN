@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xA60A79117E847607)]
-    public class GcNGuiLayoutData : GameComponent {
+    public class GcNGuiLayoutData : GameComponentType {
 
         /* 0x00 */ public float PositionX;
         /* 0x04 */ public float PositionY;

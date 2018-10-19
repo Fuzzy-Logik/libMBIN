@@ -1,5 +1,5 @@
 ﻿namespace libMBIN.NMS {
 
-    public class ToolkitData : GameData { }
+    public class ToolkitDataType : GameDataType { }
 
 }

@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x70B584A12FB31217)]
-    public class GcCreatureStupidName : GameComponent {
+    public class GcCreatureStupidName : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Id;

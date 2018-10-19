@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x85A1EEB4E962980B)]
-    public class GcNGuiSpecialTextImageData : GameComponent {
+    public class GcNGuiSpecialTextImageData : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Name;

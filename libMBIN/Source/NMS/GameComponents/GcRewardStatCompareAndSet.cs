@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8BC8F6B78C4BDE3B)]
-    public class GcRewardStatCompareAndSet : GameComponent {
+    public class GcRewardStatCompareAndSet : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string CoreStat;

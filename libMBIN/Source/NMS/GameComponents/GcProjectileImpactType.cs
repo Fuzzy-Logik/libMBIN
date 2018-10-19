@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x89F8948FA2B8AD2A)]
-    public class GcProjectileImpactType : GameComponent {
+    public class GcProjectileImpactType : GameComponentType {
 
 		public enum ImpactEnum { Default, Terrain, Substance, Rock, Asteroid, Shield, Creature, Robot, Freighter, Cargo, Ship, Plant, NeedsTech, Player, OtherPlayer }
 		public ImpactEnum Impact;

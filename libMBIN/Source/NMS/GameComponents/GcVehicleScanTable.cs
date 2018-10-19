@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x522533AC131BE64B)]
-    public class GcVehicleScanTable : GameComponent {
+    public class GcVehicleScanTable : GameComponentType {
 
         public List<GcVehicleScanTableEntry> VehicleScanTable;
     }

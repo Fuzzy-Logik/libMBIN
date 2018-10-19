@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x180, GUID = 0x139125167CF73FEB)]
-    public class GcGalaxyGenerationSetupData : GameComponent {
+    public class GcGalaxyGenerationSetupData : GameComponentType {
 
         /* 0x00 */ public float SpiralFormChance;
         /* 0x04 */ public Vector2f SpiralInclusion;

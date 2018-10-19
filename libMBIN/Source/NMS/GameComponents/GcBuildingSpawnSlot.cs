@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x0C, GUID = 0xC6BACB251FBD021)]
-    public class GcBuildingSpawnSlot : GameComponent {
+    public class GcBuildingSpawnSlot : GameComponentType {
 
         public bool HasBuilding;
         public int BuildingDataIndex;

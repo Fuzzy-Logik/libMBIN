@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x9876B949FCE1EA5B)]
-    public class GcSolarSystemLocatorChoice : GameComponent {
+    public class GcSolarSystemLocatorChoice : GameComponentType {
 
 		public enum ChoiceEnum { LookupName, AnyOfType, SpecificIndex, InFrontOfPlayer }
 		public ChoiceEnum Choice;

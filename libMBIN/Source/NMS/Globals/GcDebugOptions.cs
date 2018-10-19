@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xB74B21AE3DAA306B )]
-    public class GcDebugOptions : GlobalData {
+    public class GcDebugOptions : GlobalDataType {
 
         /* 0x0 */ public bool ThirdPersonIsDefaultCamera;
         /* 0x1 */ public bool SkipIntro;

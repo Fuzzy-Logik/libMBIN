@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x9C, GUID = 0x698532BFF8C2F781)]
-    public class GcObjectDefinitionData : GameComponent {
+    public class GcObjectDefinitionData : GameComponentType {
 
         [NMS(Size = 0x80)]
         /* 0x00 */ public string Filename;

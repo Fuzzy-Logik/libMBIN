@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x28, GUID = 0x88450AC51476AB6E)]
-    public class GcMissionConditionNearScanEvent : GameComponent {
+    public class GcMissionConditionNearScanEvent : GameComponentType {
 
         [NMS(Size = 0x20)]
         /* 0x00 */ public string Event;

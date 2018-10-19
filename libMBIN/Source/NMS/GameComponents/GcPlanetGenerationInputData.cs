@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x48, GUID = 0xCA4B078251BAF8BE)]
-    public class GcPlanetGenerationInputData : GameComponent {
+    public class GcPlanetGenerationInputData : GameComponentType {
 
         /* 0x00 */ public GcSeed Seed;
         /* 0x10 */ public GcGalaxyStarTypes StarType;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x20, GUID = 0x9A9D9B667592CEE8)]
-    public class GcPainAction : GameComponent {
+    public class GcPainAction : GameComponentType {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Damage;

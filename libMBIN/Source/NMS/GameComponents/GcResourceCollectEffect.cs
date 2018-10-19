@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x34, GUID = 0xA762E30993D934E3)]
-    public class GcResourceCollectEffect : GameComponent {
+    public class GcResourceCollectEffect : GameComponentType {
 
         /* 0x000 */ public float PlayerOffset;
         /* 0x004 */ public float SizeMin;

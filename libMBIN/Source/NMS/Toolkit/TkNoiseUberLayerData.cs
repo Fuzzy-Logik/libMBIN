@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x88, GUID = 0xF674532EDBBCAFB5)]
-    public class TkNoiseUberLayerData : ToolkitData {
+    public class TkNoiseUberLayerData : ToolkitDataType {
 
         /* 0x00 */ public TkNoiseUberData NoiseData;
         /* 0x40 */ public bool Active;

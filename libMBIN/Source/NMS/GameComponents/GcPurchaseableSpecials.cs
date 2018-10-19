@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x3A5019696FD699AB)]
-    public class GcPurchaseableSpecials : GameComponent {
+    public class GcPurchaseableSpecials : GameComponentType {
 
         public List<GcPurchaseableSpecial> Table;
     }

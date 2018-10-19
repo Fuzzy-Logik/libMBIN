@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x16E7961BF112FCD7)]
-    public class GcStyleProp_Size : GameComponent {
+    public class GcStyleProp_Size : GameComponentType {
 
         public float FontSize;
     }

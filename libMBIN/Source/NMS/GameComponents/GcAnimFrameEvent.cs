@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x81EFA1D4D693E25A)]
-    public class GcAnimFrameEvent : GameComponent {
+    public class GcAnimFrameEvent : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Anim;

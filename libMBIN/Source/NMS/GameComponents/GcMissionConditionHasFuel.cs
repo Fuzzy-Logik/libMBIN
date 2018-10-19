@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x5EEB19C3B738D569)]
-    public class GcMissionConditionHasFuel : GameComponent {
+    public class GcMissionConditionHasFuel : GameComponentType {
 
         public GcStatsTypes TargetStat;
         public int Amount;

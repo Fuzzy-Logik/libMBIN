@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x54D3FF1DCD34430F)]
-    public class GcMissionSequenceWaitForSuitUpgrade : GameComponent {
+    public class GcMissionSequenceWaitForSuitUpgrade : GameComponentType {
 
         [NMS(Size = 0x80)]
         public string DebugText;

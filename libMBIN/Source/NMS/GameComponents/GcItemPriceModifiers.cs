@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x41793B4468575F6D)]
-    public class GcItemPriceModifiers : GameComponent {
+    public class GcItemPriceModifiers : GameComponentType {
 
         public float SpaceStationMarkup;
         public float LowPriceMod;

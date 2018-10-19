@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x91E568FA1C5AAF38)]
-    public class GcWikiTopic : GameComponent {
+    public class GcWikiTopic : GameComponentType {
 
         [NMS(Size = 0x20)]
         /* 0x00 */ public string TopicID;

@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x4E4FDD440BD74765 )]
-    public class GcSmokeTestOptions : GlobalData {
+    public class GcSmokeTestOptions : GlobalDataType {
 
         /* 0x0 */  public float InitialPause;
         /* 0x4 */  public float SmokeTestFlashTimeDuration;

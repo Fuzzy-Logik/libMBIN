@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xB9913A609DA490D3)]
-	public class GcFontTable : GameComponent {
+	public class GcFontTable : GameComponentType {
 
 		public GcFontData Table1;
 		public GcFontData Table2;

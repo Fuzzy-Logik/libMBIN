@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x488A2F49CCD026FC)]
-    public class GcPlayerOwnershipData : GameComponent {
+    public class GcPlayerOwnershipData : GameComponentType {
 
         [NMS(Size = 0x20)]
         /* 0x000 */ public string Name;

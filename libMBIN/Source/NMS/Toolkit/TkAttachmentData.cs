@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x28, GUID = 0x87068490DC83B1C1)]
-    public class TkAttachmentData : ToolkitData {
+    public class TkAttachmentData : ToolkitDataType {
 
         /* 0x00 */ public List<NMSTemplate> Components;
         [NMS(Size = 0x5)]

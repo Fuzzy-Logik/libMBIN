@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x49843E9480857ED0 )]
-    public class GcSpaceshipGlobals : GlobalData {
+    public class GcSpaceshipGlobals : GlobalDataType {
 
         /* 0x0 */  public float MaximumShipHeightWhenExiting;
 		/* 0x4 */  public float DistanceFromShipToAllowSpawningOnFreighter;

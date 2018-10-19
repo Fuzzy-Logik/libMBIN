@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4C487B2085AD7C1F)]
-    public class GcCameraShakeMechanicalData : GameComponent {
+    public class GcCameraShakeMechanicalData : GameComponentType {
 
         /* 0x000 */ public bool Active;
 

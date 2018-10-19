@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x820765B29553ADDD)]
-    public class GcHUDImageData : GameComponent {
+    public class GcHUDImageData : GameComponentType {
 
         public GcHUDComponent Data;
 

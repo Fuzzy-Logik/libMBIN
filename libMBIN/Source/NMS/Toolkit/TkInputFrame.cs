@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x46FE92211FE98307)]
-    public class TkInputFrame : ToolkitData {
+    public class TkInputFrame : ToolkitDataType {
 
         public Vector2f LeftStick;
         public Vector2f RightStick;

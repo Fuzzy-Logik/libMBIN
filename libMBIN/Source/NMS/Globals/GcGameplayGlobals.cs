@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x15C8B6A94DE6326E )]
-    public class GcGameplayGlobals : GlobalData {
+    public class GcGameplayGlobals : GlobalDataType {
 
         [NMS(Size = 0x3)]
         /* 0x0 */ public NMSString0x10[] HyperdriveAccess;

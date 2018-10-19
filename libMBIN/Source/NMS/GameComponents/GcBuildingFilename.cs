@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x400, GUID = 0x5714540BBB449EE5)]
-    public class GcBuildingFilename : GameComponent {
+    public class GcBuildingFilename : GameComponentType {
 
         [NMS(Size = 0x80)]
         public string LSystem;

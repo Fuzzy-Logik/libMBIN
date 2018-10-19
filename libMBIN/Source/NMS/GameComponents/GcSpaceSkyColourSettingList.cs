@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xE8C6C0EE1B649953)]
-    public class GcSpaceSkyColourSettingList : GameComponent {
+    public class GcSpaceSkyColourSettingList : GameComponentType {
 
 	    public List<GcSolarSystemSkyColourData> Settings;
     }

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x34, GUID = 0xC758EE0D67375E80)]
-    public class GcCustomisationCameraData : GameComponent {
+    public class GcCustomisationCameraData : GameComponentType {
 
         public int InteractionCameraIndex;
         [NMS(Size = 0x20)]

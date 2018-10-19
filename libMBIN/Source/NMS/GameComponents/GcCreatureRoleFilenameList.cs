@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x5A4C8E158976A977)]
-    public class GcCreatureRoleFilenameList : GameComponent {
+    public class GcCreatureRoleFilenameList : GameComponentType {
 
         public List<GcCreatureRoleFilename> Options;
     }

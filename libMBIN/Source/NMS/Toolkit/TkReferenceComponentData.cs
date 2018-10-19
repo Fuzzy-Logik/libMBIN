@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x968D796CF16400E)]
-    public class TkReferenceComponentData : ToolkitData {
+    public class TkReferenceComponentData : ToolkitDataType {
 
         [NMS(Size = 0x80)]
         public string Reference;

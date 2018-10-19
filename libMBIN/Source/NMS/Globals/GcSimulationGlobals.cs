@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x131A257CD72A878F )]
-    public class GcSimulationGlobals : GlobalData {
+    public class GcSimulationGlobals : GlobalDataType {
 
         [NMS(Size = 0x80)]
         /* 0x0 */ public string StartingSceneFile;

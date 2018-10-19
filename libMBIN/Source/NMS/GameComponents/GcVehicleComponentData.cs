@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x6BADA75FD7BE0161, Size = 0x130)]
-    public class GcVehicleComponentData : GameComponent {
+    public class GcVehicleComponentData : GameComponentType {
 
         /* 0x00 */ public GcVehicleType Class;
         [NMS(Size = 0x4, Ignore = true)]

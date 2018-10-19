@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x54E73B4E8FC596F5)]
-    public class GcPlanetSize : GameComponent {
+    public class GcPlanetSize : GameComponentType {
 
 		public enum PlanetSizeEnum { Large, Medium, Small, Moon }
 		public PlanetSizeEnum PlanetSize;

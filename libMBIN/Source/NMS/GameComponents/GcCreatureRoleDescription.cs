@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x40, GUID = 0xFB244025F9941C1A)]
-    public class GcCreatureRoleDescription : GameComponent {
+    public class GcCreatureRoleDescription : GameComponentType {
 
         public GcCreatureRoles CreatureRole;
         public GcCreatureTypes CreatureType;

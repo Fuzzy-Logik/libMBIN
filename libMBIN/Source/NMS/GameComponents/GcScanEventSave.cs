@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x87DB4E0216224E8F)]
-    public class GcScanEventSave : GameComponent {
+    public class GcScanEventSave : GameComponentType {
 
         public int Table;
         [NMS(Size = 4, Ignore = true)]

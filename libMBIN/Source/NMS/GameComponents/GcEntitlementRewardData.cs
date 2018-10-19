@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x54366264A902610C)]
-    public class GcEntitlementRewardData : GameComponent {
+    public class GcEntitlementRewardData : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string EntitlementId;

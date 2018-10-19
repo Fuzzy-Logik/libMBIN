@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x183EF44FE92F3F19)]
-    public class TkTransformData : ToolkitData {
+    public class TkTransformData : ToolkitDataType {
 
         public float TransX;
         public float TransY;

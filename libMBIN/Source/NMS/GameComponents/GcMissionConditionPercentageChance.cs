@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xA18791E073723FD)]
-    public class GcMissionConditionPercentageChance : GameComponent {
+    public class GcMissionConditionPercentageChance : GameComponentType {
 
         public int Percent;
         public bool Seeded;

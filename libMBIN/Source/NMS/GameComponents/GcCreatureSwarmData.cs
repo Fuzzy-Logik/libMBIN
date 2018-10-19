@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x58, GUID = 0x5AD1656C01D71836)]
-    public class GcCreatureSwarmData : GameComponent {
+    public class GcCreatureSwarmData : GameComponentType {
 
         /* 0x00 */ public int MinCount;
         /* 0x04 */ public int MaxCount;

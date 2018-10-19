@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xEAECF620845E40EE)]
-    public class GcShipMessage : GameComponent {
+    public class GcShipMessage : GameComponentType {
 
 		public enum MessageTypeEnum { Leave, Fight }
 		public MessageTypeEnum MessageType;

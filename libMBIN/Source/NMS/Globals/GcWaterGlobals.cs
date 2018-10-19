@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x1E1FC5B279A0B148 )]
-    public class GcWaterGlobals : GlobalData {
+    public class GcWaterGlobals : GlobalDataType {
 
         /* 0x00 */ public bool   RenderReflections;
         /* 0x01 */ public bool   UseNewWater;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x78, GUID = 0x1AEE30F647B71877)]
-    public class GcPlayerCharacterState : GameComponent {
+    public class GcPlayerCharacterState : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Locomotion0H;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x30, GUID = 0x1FA54D54FA89D565)]
-    public class GcAtmosphereEntryComponentData : GameComponent {
+    public class GcAtmosphereEntryComponentData : GameComponentType {
 
         public bool AutEntry;
         public float EntryTime;

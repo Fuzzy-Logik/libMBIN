@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xE257E78487E5727A)]
-    public class GcGenericIconTypes : GameComponent {
+    public class GcGenericIconTypes : GameComponentType {
 
 		public enum GenericIconTypeEnum { None, Interaction, SpaceStation, SpaceAnomaly, SpaceAtlas }
 		public GenericIconTypeEnum GenericIconType;

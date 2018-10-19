@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x7DFFC6F281EA6394)]
-    public class GcPresetTextureData : GameComponent {
+    public class GcPresetTextureData : GameComponentType {
 
         [NMS(Size = 0x80)]
         public string Name;

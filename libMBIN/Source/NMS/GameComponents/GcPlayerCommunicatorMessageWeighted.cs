@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x58, GUID = 0x63ADDD99AFB6D901)]
-    public class GcPlayerCommunicatorMessageWeighted : GameComponent {
+    public class GcPlayerCommunicatorMessageWeighted : GameComponentType {
 
         public GcPlayerCommunicatorMessage Message;
         public int Weighted;

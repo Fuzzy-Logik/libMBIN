@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x340, GUID = 0xA6DB59482483CC14)]
-    public class GcBiomeData : GameComponent {
+    public class GcBiomeData : GameComponentType {
 
         /* 0x000 */ public GcMiningSubstanceData MiningSubstance1;
         /* 0x00C */ public GcMiningSubstanceData MiningSubstance2;

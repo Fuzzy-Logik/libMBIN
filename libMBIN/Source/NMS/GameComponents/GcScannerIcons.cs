@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x5BF0, GUID = 0x71F109309F124312)]
-    public class GcScannerIcons : GameComponent {
+    public class GcScannerIcons : GameComponentType {
 
         /* 0x0000 */ public TkTextureResource TaggedBuilding;
         /* 0x0084 */ public TkTextureResource Ship;

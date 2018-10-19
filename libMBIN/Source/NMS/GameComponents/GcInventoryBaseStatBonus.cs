@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x8, GUID = 0xBE20B8323918D049)]
-    public class GcInventoryBaseStatBonus : GameComponent {
+    public class GcInventoryBaseStatBonus : GameComponentType {
 
         public GcStatsTypes StatType;
         public bool LessIsBetter;

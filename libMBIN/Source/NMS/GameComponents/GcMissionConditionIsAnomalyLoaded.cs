@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xB2A31FF3FD2A18F8)]
-    public class GcMissionConditionIsAnomalyLoaded : GameComponent {
+    public class GcMissionConditionIsAnomalyLoaded : GameComponentType {
 
         public GcGalaxyStarAnomaly Anomaly;
     }

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x41FEBAC9A23EF9D6)]
-    public class GcDiscoveryHelperTimings : GameComponent {
+    public class GcDiscoveryHelperTimings : GameComponentType {
 
 
         public float DiscoverPlanetTotalTime;           // 41200000h

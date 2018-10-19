@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x1E0, GUID = 0x1AC501CA8F8E4CB0, Broken = true)]
-    public class GcPlayerFullBodyIKComponentData : GameComponent {
+    public class GcPlayerFullBodyIKComponentData : GameComponentType {
 
         /* 0x000 */ public bool Enabled;
         /* 0x001 */ public bool EnableFootRaycasts;

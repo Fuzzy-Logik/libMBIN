@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xC942CEE446854EF2)]
-    public class GcRewardClosePortal : GameComponent {
+    public class GcRewardClosePortal : GameComponentType {
 
     }
 }

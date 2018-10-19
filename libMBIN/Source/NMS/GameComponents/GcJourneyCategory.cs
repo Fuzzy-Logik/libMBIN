@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xA7F3AE06D8A09EE9)]
-    public class GcJourneyCategory : GameComponent {
+    public class GcJourneyCategory : GameComponentType {
 
         /* 0x000 */ public GcJourneyCategoryType Type;
         /* 0x004 */ public GcMissionFaction Faction;

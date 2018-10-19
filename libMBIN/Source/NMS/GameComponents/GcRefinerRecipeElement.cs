@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0x79E540957090F638)]
-    public class GcRefinerRecipeElement : GameComponent {
+    public class GcRefinerRecipeElement : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Id;

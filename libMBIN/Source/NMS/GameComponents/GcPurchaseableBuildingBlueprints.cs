@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x1D8475D6A5DE0D20)]
-    public class GcPurchaseableBuildingBlueprints : GameComponent {
+    public class GcPurchaseableBuildingBlueprints : GameComponentType {
 
         public List<GcBuildingBlueprint> Table;
         public List<int> GroupMaxItems;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xE30B374723957FD2)]
-    public class GcNPCNavigationAreaComponentData : GameComponent {
+    public class GcNPCNavigationAreaComponentData : GameComponentType {
 
     }
 }

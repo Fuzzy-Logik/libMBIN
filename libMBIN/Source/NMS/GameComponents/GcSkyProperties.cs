@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x30, GUID = 0xFAB9C0B6A3CF6C16)]
-    public class GcSkyProperties : GameComponent {
+    public class GcSkyProperties : GameComponentType {
 
         /* 0x000 */ public float AtmosphereThickness;
         /* 0x004 */ public float HorizonMultiplier;

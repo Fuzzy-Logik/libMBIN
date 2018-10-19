@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x35EAC27A312632DF)]
-    public class GcBlockListPersistence : GameComponent {
+    public class GcBlockListPersistence : GameComponentType {
 
         [NMS(Size = 0x32)]
         /* 0x0000 */ public GcBlockedUser[] BlockedUserArray;

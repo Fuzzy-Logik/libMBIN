@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x84, GUID = 0xEFADC778D8A5950B)]
-    public class GcFreighterBaseOption : GameComponent {
+    public class GcFreighterBaseOption : GameComponentType {
 
         [NMS(Size = 0x80)]
         public string BaseDataFile;

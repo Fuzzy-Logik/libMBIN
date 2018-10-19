@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xC2EBE8CA8AF40DB1)]
-    public class GcSpaceSkyProperties : GameComponent {
+    public class GcSpaceSkyProperties : GameComponentType {
 
           public GcPlanetWeatherColourIndex ColourIndex;        // add + 0x10 to all the next values
           [NMS(Size = 0x8, Ignore = true)]

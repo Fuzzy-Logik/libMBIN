@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0x869B1703BD6D8601)]
-    public class GcRewardUpgradeBase : GameComponent {
+    public class GcRewardUpgradeBase : GameComponentType {
 
 		public enum UpgradeBaseTypeEnum { AllMatching, NearestMatching }
 		public UpgradeBaseTypeEnum UpgradeBaseType;

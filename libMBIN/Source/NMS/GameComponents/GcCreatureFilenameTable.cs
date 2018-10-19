@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8BE96E739B255AA3)]
-    public class GcCreatureFilenameTable : GameComponent {
+    public class GcCreatureFilenameTable : GameComponentType {
 
         public List<GcCreatureFilename> Table;
     }

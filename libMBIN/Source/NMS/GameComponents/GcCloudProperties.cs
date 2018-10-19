@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xF0, GUID = 0x61834312DCADA196)]
-    public class GcCloudProperties : GameComponent {
+    public class GcCloudProperties : GameComponentType {
 
         /* 0x00 */ public Vector2f CoverageOffset;
         /* 0x08 */ public float HorizonCoverageStart;

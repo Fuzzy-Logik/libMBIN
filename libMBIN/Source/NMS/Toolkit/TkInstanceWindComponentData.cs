@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x4A883BBD9F48ADC6)]
-    public class TkInstanceWindComponentData : ToolkitData {
+    public class TkInstanceWindComponentData : ToolkitDataType {
 
         /* 0x00 */ public bool EnableLdsWind;
         /* 0x04 */ public float BaseMass;

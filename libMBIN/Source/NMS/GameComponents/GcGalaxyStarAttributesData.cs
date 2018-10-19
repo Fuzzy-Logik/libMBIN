@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x1B63ED8EF7748D2B)]
-    public class GcGalaxyStarAttributesData : GameComponent {
+    public class GcGalaxyStarAttributesData : GameComponentType {
 
         /* 0x000 */ public GcGalaxyStarTypes Type;
         /* 0x004 */ public GcGalaxyStarAnomaly Anomaly;

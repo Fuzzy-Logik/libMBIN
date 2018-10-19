@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFF1BC076103D0E5E, Size = 0xC00)]
-    public class GcVehicleData : GameComponent {
+    public class GcVehicleData : GameComponentType {
 
         [NMS(Size = 0x10)]
         /* 0x000 */ public string Name;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xE695E1E233A01B36)]
-    public class TkNoiseFlattenOptions : ToolkitData {
+    public class TkNoiseFlattenOptions : ToolkitDataType {
 
 		public enum FlatteningEnum { None, Natural, Artificial, AddResource }
 		public FlatteningEnum Flattening;

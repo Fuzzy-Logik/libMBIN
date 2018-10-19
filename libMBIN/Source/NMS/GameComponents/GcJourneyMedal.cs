@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x3B84F81C9B02B741)]
-    public class GcJourneyMedal : GameComponent {
+    public class GcJourneyMedal : GameComponentType {
 
         /* 0x000 */ public GcJourneyMedalType Type;
         /* 0x004 */ public TkTextureResource None;

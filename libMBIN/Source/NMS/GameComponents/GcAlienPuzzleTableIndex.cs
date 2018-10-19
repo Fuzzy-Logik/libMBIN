@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFC036F35930AC621)]
-    public class GcAlienPuzzleTableIndex : GameComponent {
+    public class GcAlienPuzzleTableIndex : GameComponentType {
 
 		public enum IndexTypeEnum { Regular, Seeded }
 		public IndexTypeEnum IndexType;

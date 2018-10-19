@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x9507B42892191B2A)]
-    public class GcSolarSystemEventWarpIn : GameComponent {
+    public class GcSolarSystemEventWarpIn : GameComponentType {
 
         /* 0x00 */ public GcSolarSystemLocatorChoice Locator;
         /* 0x2C */ public float Time;

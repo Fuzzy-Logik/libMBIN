@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x943A716913810596)]
-    public class GcWikiPage : GameComponent {
+    public class GcWikiPage : GameComponentType {
 
         [NMS(Size = 0x20)]
         /* 0x000 */ public string PageID;

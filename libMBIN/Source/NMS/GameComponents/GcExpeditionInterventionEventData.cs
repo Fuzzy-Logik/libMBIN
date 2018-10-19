@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xD8, GUID = 0xDD4BD9ABFEFBE883)]
-    public class GcExpeditionInterventionEventData : GameComponent {
+    public class GcExpeditionInterventionEventData : GameComponentType {
 
         [NMS(Size = 0x20)]
         /* 0x00 */ public string ID;

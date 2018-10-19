@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x28, Alignment = 0x8, GUID = 0x740B82B0433D5AD)]
-    public class GcRewardSpecificSubstance : GameComponent {
+    public class GcRewardSpecificSubstance : GameComponentType {
 
         /* 0x00 */ public GcDefaultMissionProduct Default;
         [NMS(Size = 0x4, Ignore = true)]

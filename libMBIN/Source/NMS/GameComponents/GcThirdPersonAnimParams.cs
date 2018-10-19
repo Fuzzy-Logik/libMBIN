@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x50, GUID = 0x8ABF8AF5472E941C)]
-    public class GcThirdPersonAnimParams : GameComponent {
+    public class GcThirdPersonAnimParams : GameComponentType {
 
 		/* 0x00 */ public Vector2f Velocity;
         /* 0x08 */ public Vector2f VelocityXY;

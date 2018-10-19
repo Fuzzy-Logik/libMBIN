@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xD1652C79D9419F1F)]
-    public class GcAsteroidGeneratorSurround : GameComponent {
+    public class GcAsteroidGeneratorSurround : GameComponentType {
 
         public GcAsteroidGeneratorAssignment Assignment;
         public float LowerRadius;

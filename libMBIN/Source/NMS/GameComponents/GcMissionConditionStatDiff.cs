@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x28, GUID = 0xD327EBA3598181D5)]
-    public class GcMissionConditionStatDiff : GameComponent {
+    public class GcMissionConditionStatDiff : GameComponentType {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string CurrentStat;

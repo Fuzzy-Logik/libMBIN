@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x9A1039C01ED519C)]
-    public class GcSpawnComponentOption : GameComponent {
+    public class GcSpawnComponentOption : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Name;

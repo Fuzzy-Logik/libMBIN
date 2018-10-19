@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xB55476A1D9E0E509)]
-    public class TkHeavyAirData : ToolkitData {
+    public class TkHeavyAirData : ToolkitDataType {
 
         [NMS(Size = 0x80)]
         public string Material;

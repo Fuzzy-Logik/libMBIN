@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x10, GUID = 0xCDD1753E3C085C69)]
-    public class GcHazardAction : GameComponent {
+    public class GcHazardAction : GameComponentType {
 
         public GcHazardModifiers Hazard;
         public float Strength;

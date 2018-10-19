@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xC77EEE2A066CE101)]
-    public class TkLanguageFontTableEntry : ToolkitData {
+    public class TkLanguageFontTableEntry : ToolkitDataType {
 
         public TkLanguages Language;
         [NMS(Size = 0x80)]

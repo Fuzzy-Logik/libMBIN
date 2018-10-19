@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x120, GUID = 0x50BEBA95B0A13913)]
-    public class TkNGuiEditorStyleData : ToolkitData {
+    public class TkNGuiEditorStyleData : ToolkitDataType {
 
         /* 0x000 */ public List<float> Sizes;
 

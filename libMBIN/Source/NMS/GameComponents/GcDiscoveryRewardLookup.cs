@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xF0, GUID = 0x953D6F5550ED77E2)]
-    public class GcDiscoveryRewardLookup : GameComponent {
+    public class GcDiscoveryRewardLookup : GameComponentType {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Id;

@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8231FB8008556170)]
-    public class GcNGuiSpecialTextStyles : GameComponent {
+    public class GcNGuiSpecialTextStyles : GameComponentType {
 
         public List<GcNGuiSpecialTextStyleData> SpecialStyles;
     }

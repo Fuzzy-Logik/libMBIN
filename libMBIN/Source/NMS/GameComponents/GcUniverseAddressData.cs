@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0xAF3FFA464A170D62)]
-    public class GcUniverseAddressData : GameComponent {
+    public class GcUniverseAddressData : GameComponentType {
 
         public int RealityIndex;
 

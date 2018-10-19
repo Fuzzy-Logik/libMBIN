@@ -7,7 +7,7 @@ using System.Reflection;
 namespace libMBIN.NMS.Toolkit {
 
     [NMS( Size = 0x140, GUID = 0xCD49AC37B4729513 )]
-    public class TkGeometryData : ToolkitData, ISerialize, IDeserialize {
+    public class TkGeometryData : ToolkitDataType, ISerialize, IDeserialize {
 
         /* 0x000 */ public int VertexCount;
         /* 0x004 */ public int IndexCount;

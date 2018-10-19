@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xEE5AAD305D39B554)]
-    public class GcMessageProjectileLaunch : GameComponent {
+    public class GcMessageProjectileLaunch : GameComponentType {
 
     }
 }

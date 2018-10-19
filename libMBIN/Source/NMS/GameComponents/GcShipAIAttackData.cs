@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xD0, GUID = 0xDC9412B2F3921390)]
-    public class GcShipAIAttackData : GameComponent {
+    public class GcShipAIAttackData : GameComponentType {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Id;

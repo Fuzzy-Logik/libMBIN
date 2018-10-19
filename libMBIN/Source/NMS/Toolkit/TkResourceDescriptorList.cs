@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x328BC8722EB81B1F)]
-    public class TkResourceDescriptorList : ToolkitData {
+    public class TkResourceDescriptorList : ToolkitDataType {
 
         [NMS(Size = 0x10)]
         public string TypeId;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xBAADE8803679AD54)]
-    public class GcSpaceshipClasses : GameComponent {
+    public class GcSpaceshipClasses : GameComponentType {
 
 		public enum ShipClassEnum { Freighter, Dropship, Fighter, Scientific, Shuttle, PlayerFreighter, Royal }
 		public ShipClassEnum ShipClass;

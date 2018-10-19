@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xA5204789BF9D0341)]
-    public class TkNoiseSuperPrimitiveData : ToolkitData {
+    public class TkNoiseSuperPrimitiveData : ToolkitDataType {
 
         public float Width;
         public float Height;

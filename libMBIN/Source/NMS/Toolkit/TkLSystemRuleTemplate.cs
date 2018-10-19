@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xAAC94F73173CF13F)]
-    public class TkLSystemRuleTemplate : ToolkitData {
+    public class TkLSystemRuleTemplate : ToolkitDataType {
 
         [NMS(Size = 0x20)]
         public string Name;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xDBC5A035A3C5D89D)]
-    public class GcOutpostLSystemPair : GameComponent {
+    public class GcOutpostLSystemPair : GameComponentType {
 
         [NMS(Size = 0x20)]
         public string Locator;

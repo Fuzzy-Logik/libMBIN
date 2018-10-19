@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xB3FD0C5AC8F65C2E)]
-    public class GcWarpAction : GameComponent {
+    public class GcWarpAction : GameComponentType {
 
 		public enum WarpTypeEnum { BlackHole }
 		public WarpTypeEnum WarpType;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xBE2FC37325C56C05)]
-    public class GcPlanetSentinelData : GameComponent {
+    public class GcPlanetSentinelData : GameComponentType {
 
 		public enum SentinelLevelEnum { Default, Aggressive }
 		public SentinelLevelEnum SentinelLevel;

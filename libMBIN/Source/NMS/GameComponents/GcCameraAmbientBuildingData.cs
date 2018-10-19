@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x50, GUID = 0xE7B910E9C497C58E)]
-    public class GcCameraAmbientBuildingData : GameComponent {
+    public class GcCameraAmbientBuildingData : GameComponentType {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Animation;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x3750322D673A2913)]
-    public class GcCreatureVocalData : GameComponent {
+    public class GcCreatureVocalData : GameComponentType {
 
         public float ScaleBias;
 

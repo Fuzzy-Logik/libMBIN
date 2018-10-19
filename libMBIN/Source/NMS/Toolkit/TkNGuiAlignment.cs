@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x10B96B017A55BF39)]
-    public class TkNGuiAlignment : ToolkitData {
+    public class TkNGuiAlignment : ToolkitDataType {
 
 
 		public enum VerticalEnum { Top, Middle, Bottom }

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xBDF1E47D45616C77)]
-    public class TkLocalisationEntry : ToolkitData {
+    public class TkLocalisationEntry : ToolkitDataType {
 
         [NMS(Size = 0x20)]
         public string Id;

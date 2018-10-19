@@ -3,7 +3,7 @@ using libMBIN.NMS.GameComponents;
 
 namespace libMBIN.NMS.GameComponents
 {
-    public class GcSeed : GameComponent {
+    public class GcSeed : GameComponentType {
 
         /* 0x00 */ public long Seed;
         /* 0x08 */ public bool UseSeedValue;

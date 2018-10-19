@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x210, GUID = 0x704DAEA1E9D05391)]
-    public class GcGalaxyRenderSetupData : GameComponent {
+    public class GcGalaxyRenderSetupData : GameComponentType {
 
         /* 0x000 */ public Colour SunCoreColour;
         /* 0x010 */ public float SunCoreSmaller;

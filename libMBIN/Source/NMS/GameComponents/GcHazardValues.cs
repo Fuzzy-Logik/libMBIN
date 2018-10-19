@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFB26B4777A161C54)]
-    public class GcHazardValues : GameComponent {
+    public class GcHazardValues : GameComponentType {
 
         public float Min;
         public float Max;

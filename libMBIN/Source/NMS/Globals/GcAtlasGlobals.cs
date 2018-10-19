@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xF07A5559350356C7 )]
-    public class GcAtlasGlobals : GlobalData {
+    public class GcAtlasGlobals : GlobalDataType {
 
         public int ChanceOfDisconnect;
         public int TimeoutSecNameResolution;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x30, GUID = 0x135475BEC6A4BDE9)]
-    public class GcCameraAerialViewData : GameComponent {
+    public class GcCameraAerialViewData : GameComponentType {
 
         /* 0x000 */ public float Time;
 		public enum AerialViewModeEnum { FaceDown, FaceOut, FaceDownThenOut }

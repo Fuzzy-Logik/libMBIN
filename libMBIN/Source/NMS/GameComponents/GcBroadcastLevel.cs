@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8B72D28DF2B25B17)]
-    public class GcBroadcastLevel : GameComponent {
+    public class GcBroadcastLevel : GameComponentType {
 
 		public enum GalaxyMarkerTypeEnum { Scene, LocalModel, Local }
 		public GalaxyMarkerTypeEnum GalaxyMarkerType;

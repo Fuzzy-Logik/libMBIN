@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF3A65944C96C7E77)]
-    public class GcDroneComponentData : GameComponent {
+    public class GcDroneComponentData : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Id;

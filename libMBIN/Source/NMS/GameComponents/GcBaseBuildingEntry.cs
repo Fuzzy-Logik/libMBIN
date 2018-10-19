@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x220, GUID = 0xCAC1FA679C6CB798)]
-    public class GcBaseBuildingEntry : GameComponent {
+    public class GcBaseBuildingEntry : GameComponentType {
 
         [NMS(Size = 0x10)]
         /* 0x000 */ public string ID;

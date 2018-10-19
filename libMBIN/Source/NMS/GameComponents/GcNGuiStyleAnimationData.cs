@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x91253F947A706088)]
-    public class GcNGuiStyleAnimationData : GameComponent {
+    public class GcNGuiStyleAnimationData : GameComponentType {
 
         public float Length;
         public List<GcNGuiStyleAnimationKeyframeData> KeyFrames;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x33ECF63512731C4A)]
-    public class GcCameraAnimationData : GameComponent {
+    public class GcCameraAnimationData : GameComponentType {
 
         public TkModelResource CameraAnimation;
     }

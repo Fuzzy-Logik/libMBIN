@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x35960ABC2FC00124)]
-    public class TkMaterialMetaData : ToolkitData {
+    public class TkMaterialMetaData : ToolkitDataType {
 
         [NMS(Size = 0x80)]
         /* 0x000 */ public string ExternalMaterial;

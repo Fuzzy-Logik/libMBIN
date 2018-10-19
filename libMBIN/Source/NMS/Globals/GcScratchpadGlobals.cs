@@ -3,7 +3,7 @@
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0xC14472951E47BFF8 )]
-    public class GcScratchpadGlobals : GlobalData {
+    public class GcScratchpadGlobals : GlobalDataType {
 
         [NMS(Size = 0xE)]
         /* 0x0 */ public GcPresetTextureData[] IBLMaps;

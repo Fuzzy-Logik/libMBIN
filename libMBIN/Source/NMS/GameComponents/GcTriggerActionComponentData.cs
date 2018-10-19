@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x30, GUID = 0x530AB19BD349A230)]
-    public class GcTriggerActionComponentData : GameComponent {
+    public class GcTriggerActionComponentData : GameComponentType {
 
         /* 0x00 */ public bool HideModel;
         /* 0x01 */ public bool StartInactive;

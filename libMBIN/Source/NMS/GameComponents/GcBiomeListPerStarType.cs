@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x158, GUID = 0xDA003053BA5CD479)]
-    public class GcBiomeListPerStarType : GameComponent {
+    public class GcBiomeListPerStarType : GameComponentType {
 
         [NMS(Size = 4, EnumValue = new[] { "Yellow", "Green", "Blue", "Red" })]
         /* 0x000 */ public GcBiomeList[] StarType;

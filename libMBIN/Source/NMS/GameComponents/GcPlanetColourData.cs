@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x16C0, GUID = 0xA5943DFEC116B5B7)]
-    public class GcPlanetColourData : GameComponent {
+    public class GcPlanetColourData : GameComponentType {
 
         [NMS(Size = 0x34, EnumValue = new[]
             {

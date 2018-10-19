@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0xC8, GUID = 0x285B1BD4142DF52)]
-    public class TkAnimPoseComponentData : ToolkitData {
+    public class TkAnimPoseComponentData : ToolkitDataType {
 
         /* 0x00 */ public List<TkAnimPoseData> PoseAnims;
 

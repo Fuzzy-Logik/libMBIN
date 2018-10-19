@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x240, GUID = 0x419D99411C2B0A01)]
-    public class GcMissionSequenceWaitForPhoto : GameComponent {
+    public class GcMissionSequenceWaitForPhoto : GameComponentType {
 
         [NMS(Size = 0x80)]
         /* 0x000 */ public string Message;

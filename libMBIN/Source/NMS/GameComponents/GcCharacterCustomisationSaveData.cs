@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x58, GUID = 0xCFF95D1DE4A528CD)]
-    public class GcCharacterCustomisationSaveData : GameComponent {
+    public class GcCharacterCustomisationSaveData : GameComponentType {
 
         [NMS(Size = 0x10)]
         /* 0x00 */ public string SelectedPreset;

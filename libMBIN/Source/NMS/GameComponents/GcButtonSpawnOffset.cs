@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x46CE100A699D46BF)]
-    public class GcButtonSpawnOffset : GameComponent {
+    public class GcButtonSpawnOffset : GameComponentType {
 
         /* 0x00 */ public float AngleMin;                   // 0C1F00000h
         /* 0x04 */ public float AngleMax;                   // 41F00000h

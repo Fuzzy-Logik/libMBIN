@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xA0, GUID = 0x8EFB720F2049EC27)]
-    public class GcRepairTechData : GameComponent {
+    public class GcRepairTechData : GameComponentType {
 
         /* 0x00 */ public GcMaintenanceContainer MaintenanceContainer;
         /* 0x90 */ public int InventoryType;

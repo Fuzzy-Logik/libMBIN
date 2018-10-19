@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x470, GUID = 0x47C7BD33257E0D64)]
-    public class GcCustomisationUI : GameComponent {
+    public class GcCustomisationUI : GameComponentType {
 
         /* 0x00 */ public GcCustomisationCameraData RacesCameraData;
         [NMS(Size = 0x4, Ignore = true)]

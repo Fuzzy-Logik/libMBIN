@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x38364E77B204C4F3)]
-    public class GcParticleAction : GameComponent {
+    public class GcParticleAction : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Effect;

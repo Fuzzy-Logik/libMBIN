@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x32C9FE7B499C2301)]
-    public class GcFrigateTraitStrength : GameComponent {
+    public class GcFrigateTraitStrength : GameComponentType {
 
 		public enum FrigateTraitStrengthEnum { NegativeLarge, NegativeMedium, NegativeSmall, TertiarySmall, TertiaryMedium, TertiaryLarge, SecondarySmall, SecondaryMedium, SecondaryLarge, Primary }
 		public FrigateTraitStrengthEnum FrigateTraitStrength;

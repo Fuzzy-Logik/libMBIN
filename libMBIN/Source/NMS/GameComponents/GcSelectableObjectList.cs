@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x86AB795F2BB3385D)]
-    public class GcSelectableObjectList : GameComponent {
+    public class GcSelectableObjectList : GameComponentType {
 
         [NMS(Size = 0x10)]
         public string Name;

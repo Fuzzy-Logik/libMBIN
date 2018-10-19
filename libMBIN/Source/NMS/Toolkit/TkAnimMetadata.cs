@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x3CD7D2192958BA6C)]
-    public class TkAnimMetadata : ToolkitData {
+    public class TkAnimMetadata : ToolkitDataType {
 
         public int FrameCount;
         public int NodeCount;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xCE34A571B19B7E94)]
-    public class GcRewardTeachWord : GameComponent {
+    public class GcRewardTeachWord : GameComponentType {
 
         public GcAlienRace Race;
         public int AmountMin;

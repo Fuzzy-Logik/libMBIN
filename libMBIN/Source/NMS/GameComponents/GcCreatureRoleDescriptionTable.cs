@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xD2C6B913CD1676C7)]
-    public class GcCreatureRoleDescriptionTable : GameComponent {
+    public class GcCreatureRoleDescriptionTable : GameComponentType {
 
         public List<GcCreatureRoleDescription> RoleDescription;
 

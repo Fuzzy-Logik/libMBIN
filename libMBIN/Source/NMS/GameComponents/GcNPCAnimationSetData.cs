@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x70, GUID = 0x8EE38D16655115FC)]
-    public class GcNPCAnimationSetData : GameComponent {
+    public class GcNPCAnimationSetData : GameComponentType {
 
         public List<GcNPCProbabilityAnimationData> IdleAnimations;
         public List<GcNPCProbabilityAnimationData> IdleFlavourAnimations;

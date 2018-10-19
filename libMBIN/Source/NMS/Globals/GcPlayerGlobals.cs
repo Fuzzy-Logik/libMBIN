@@ -4,7 +4,7 @@ using libMBIN.NMS.Toolkit;
 namespace libMBIN.NMS.Globals {
 
     [NMS( GUID = 0x229B325674CE447F )]
-    public class GcPlayerGlobals : GlobalData {
+    public class GcPlayerGlobals : GlobalDataType {
 
         /* 0x0 */ public bool InteractNearbyRadiusEnabled;
         /* 0x1 */ public bool DebugExperience;

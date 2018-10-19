@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
     [NMS(GUID = 0x4CBA554E975BDD3A)]
-    public class GcProductTableEnum : GameComponent {
+    public class GcProductTableEnum : GameComponentType {
 
         // super long list because it is auto-generated...
         // size: 0x246

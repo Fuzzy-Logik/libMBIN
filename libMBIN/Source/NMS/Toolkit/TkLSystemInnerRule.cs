@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x8999A8B76829CCD5)]
-    public class TkLSystemInnerRule : ToolkitData {
+    public class TkLSystemInnerRule : ToolkitDataType {
 
         [NMS(Size = 0x20)]
         public string LocatorType;

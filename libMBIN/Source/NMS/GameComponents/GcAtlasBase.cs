@@ -6,7 +6,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x298, GUID = 0x1512A8A65E002815)]
-    public class GcAtlasBase : GameComponent {
+    public class GcAtlasBase : GameComponentType {
 
         [NMS(Size = 0x200)]
         /* 0x000 */ public string OpaqueData;

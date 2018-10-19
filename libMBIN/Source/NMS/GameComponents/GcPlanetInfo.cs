@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x382, GUID = 0x7848EDF863AB4294)]
-    public class GcPlanetInfo : GameComponent {
+    public class GcPlanetInfo : GameComponentType {
 
         [NMS(Size = 0x80)]
         public string PlanetDescription;

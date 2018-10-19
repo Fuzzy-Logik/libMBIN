@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x10, GUID = 0x4093EB719D3F8041)]
-    public class GcJourneyMedalTiers : GameComponent {
+    public class GcJourneyMedalTiers : GameComponentType {
 
         public int None;
         public int Bronze;

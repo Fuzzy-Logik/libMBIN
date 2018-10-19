@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xA8, GUID = 0x25C7464DF342E314)]
-    public class GcDebrisData : GameComponent {
+    public class GcDebrisData : GameComponentType {
 
         /* 0x00 */ public TkModelResource Filename;
         /* 0x84 */ public int Number;

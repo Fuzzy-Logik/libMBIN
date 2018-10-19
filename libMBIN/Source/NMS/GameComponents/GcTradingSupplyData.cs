@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x47465FFF4364C345)]
-    public class GcTradingSupplyData : GameComponent {
+    public class GcTradingSupplyData : GameComponentType {
 
         public ulong GalacticAddress;
         public float Supply;

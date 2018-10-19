@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x68B22536052A78DB)]
-    public class GcMissionConditionWeaponMode : GameComponent {
+    public class GcMissionConditionWeaponMode : GameComponentType {
 
         public GcPlayerWeapons WeaponMode;
     }

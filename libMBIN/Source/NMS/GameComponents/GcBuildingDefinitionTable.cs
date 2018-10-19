@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x335F8, GUID = 0x6B611C849F3B2BFC)]
-    public class GcBuildingDefinitionTable : GameComponent {
+    public class GcBuildingDefinitionTable : GameComponentType {
 
         [NMS(Size = 7, EnumValue = new string[0x7]{ "Traders", "Warriors", "Explorers", "Robots", "Atlas", "Diplomats", "None" })]
         /* 0x00000 */ public GcBuildingFilenameList[] BuildingFiles;

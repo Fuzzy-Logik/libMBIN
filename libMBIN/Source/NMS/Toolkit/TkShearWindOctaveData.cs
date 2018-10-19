@@ -10,7 +10,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x4D99FFC8B020A397)]
-    public class TkShearWindOctaveData : ToolkitData {
+    public class TkShearWindOctaveData : ToolkitDataType {
 
         public float MinStrength;
         public float MaxStrength;

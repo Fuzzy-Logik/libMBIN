@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x3BD123ED9F9C4AAE)]
-    public class GcPlayerNearbyEvent : GameComponent {
+    public class GcPlayerNearbyEvent : GameComponentType {
 
 		public enum RequirePlayerActionEnum { None, Fire, InShip, OnFoot, OnFootOutside, Upload }
 		public RequirePlayerActionEnum RequirePlayerAction;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFB817D8401CD540D)]
-    public class GcRewardScan : GameComponent {
+    public class GcRewardScan : GameComponentType {
 
         public GcScanData ScanData;
     }

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x5BB998D3D120A59F)]
-    public class GcDefaultMissionProduct : GameComponent {
+    public class GcDefaultMissionProduct : GameComponentType {
 
         public GcProductTableEnum Product;
     }

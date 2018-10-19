@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Alignment = 0x8, GUID = 0xF4F36BE36E16AFF7)]
-    public class GcMissionSequenceSetCurrentMission : GameComponent {
+    public class GcMissionSequenceSetCurrentMission : GameComponentType {
 
         [NMS(Size = 0x10)]
         /* 0x000 */ public string MissionID;

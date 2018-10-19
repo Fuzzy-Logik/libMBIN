@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF0E6D81FCD11E097)]
-    public class GcLootComponentData : GameComponent {
+    public class GcLootComponentData : GameComponentType {
 
         public Vector2f Timed;
         [NMS(Size = 0x10)]

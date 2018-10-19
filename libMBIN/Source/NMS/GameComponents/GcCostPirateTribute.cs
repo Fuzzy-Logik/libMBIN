@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xDC9CC05023FE83EE)]
-    public class GcCostPirateTribute : GameComponent {
+    public class GcCostPirateTribute : GameComponentType {
 
         public int CargoValuePercent;
         public int MinimumValue;

@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x64, GUID = 0x7780E13333B207C4)]
-    public class GcGalaxyCameraData : GameComponent {
+    public class GcGalaxyCameraData : GameComponentType {
 
         /* 0x00 */ public float CameraFOV;                      // 42C80000h
         /* 0x04 */ public float MovementBlendRateFree;          // 40400000h

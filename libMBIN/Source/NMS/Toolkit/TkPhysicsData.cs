@@ -4,7 +4,7 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xE144A5F6E94E6409)]
-    public class TkPhysicsData : ToolkitData {
+    public class TkPhysicsData : ToolkitDataType {
 
         public float Mass;
         public float Friction;
