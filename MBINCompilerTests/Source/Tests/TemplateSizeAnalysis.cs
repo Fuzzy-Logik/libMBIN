@@ -28,7 +28,7 @@ namespace libMBIN.UnitTests.Analysis {
 
             foreach ( var type in NMSTemplate.NMSTemplateMap.Values ) {
                 NMSTemplate template = Activator.CreateInstance( type ) as NMSTemplate;
-                table.Add( new TemplateSizes.Record( type.Name, template.GetDataSize() ) );
+                table.Add( new TemplateSizes.Record( type.Name, NMSTemplate.GetDataSize( template ) ) );
             }
 
             Utils.SetFileReadOnly( logPath, false );

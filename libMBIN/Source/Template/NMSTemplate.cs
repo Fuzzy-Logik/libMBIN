@@ -83,31 +83,24 @@ namespace libMBIN
             return Activator.CreateInstance(type) as NMSTemplate;
         }
 
-        public int GetDataSize()
-        {
-            using (var ms = new MemoryStream())
-            using (var bw = new BinaryWriter(ms))
-            {
+        public static int GetDataSize( NMSTemplate template ) {
+            if ( template == null ) return 0;
+
+            using ( var ms = new MemoryStream() )
+            using ( var bw = new BinaryWriter( ms ) ) {
                 var addt = new List<Tuple<long, object>>();
                 int addtIdx = 0;
 
                 var prevState = isDebugLogTemplateEnabled;
                 isDebugLogTemplateEnabled = false;
-                AppendToWriter(bw, ref addt, ref addtIdx, GetType());
+                template.AppendToWriter( bw, ref addt, ref addtIdx, template.GetType() );
                 isDebugLogTemplateEnabled = prevState;
 
                 return ms.ToArray().Length;
             }
         }
 
-        public static int GetTemplateDataSize(string templateName)
-        {
-            var template = TemplateFromName(templateName);
-            if (template == null)
-                return 0;
-
-            return template.GetDataSize();
-        }
+        public static int GetDataSize( string templateName ) => GetDataSize( TemplateFromName( templateName ) );
 
         private static FieldInfo[] GetOrderedFields( Type type ) {
             var bindingFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance;

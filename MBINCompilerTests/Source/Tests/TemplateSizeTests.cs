@@ -707,7 +707,7 @@ namespace libMBIN.UnitTests {
                     continue;
                 }
 
-                int size = NMSTemplate.GetTemplateDataSize( record.TemplateName );
+                int size = NMSTemplate.GetDataSize( record.TemplateName );
                 Assert.AreEqual( record.TemplateSize, size, $"template {record.TemplateName} size 0x{record.TemplateSize:X} != 0x{size:X}" );
                 doneTemplates.Add( record.TemplateName );
             }
