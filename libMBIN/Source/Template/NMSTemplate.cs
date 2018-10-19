@@ -120,7 +120,7 @@ namespace libMBIN {
         /// Writes the NMSTemplate object to an .exml file.
         /// </summary>
         /// <param name="outputpath">The location to write the .exml file.</param>
-        public void WriteToExml<T>( T template, string outputpath ) where T : NMSTemplate {
+        public static void WriteToExml<T>( T template, string outputpath ) where T : NMSTemplate {
             File.WriteAllText( outputpath, ExmlFile.WriteTemplate( template ) );
         }
 
