@@ -28,10 +28,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\MBIN\MbinSerializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\NMSType.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponent.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GlobalData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\ToolkitData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponentType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameDataType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GlobalDataType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\ToolkitDataType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcAtlasRecvBaseList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcMissionConditionNearScanEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcRealityGameIcons.cs" />
@@ -56,7 +56,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\MBIN\MbinHeader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\Template\NMSAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\Template\NMSTemplate.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\Colour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\Colour.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcAtlasRecvMonumentList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcMissionConditionOnOtherSideOfPortal.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcStatIconTable.cs" />
@@ -200,7 +200,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcScreenFilterTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcScreenFilterData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcHeightAdjustComponentData.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\NMSString0x40.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\NMSString0x40.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Toolkit\TkNetReplicatedEntityComponentData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Toolkit\TkProceduralInstanceData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcCostFrigateCargo.cs" />
@@ -288,7 +288,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcDamageMultiplier.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcDamageType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcDamageMultiplierLookup.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\EmptyNode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\EmptyNode.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcActionTrigger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcActionTriggerState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcAIShipSpawnData.cs" />
@@ -1041,10 +1041,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Globals\GcTerrainGlobals.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Globals\GcUIGlobals.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\Template\MBINCompilerTestTemplate.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\NMSString0x10.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\NMSString0x100.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\NMSString0x20.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\NMSString0x80.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\NMSString0x10.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\NMSString0x100.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\NMSString0x20.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\NMSString0x80.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Toolkit\TkActionButtonLookup.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Toolkit\TkActionButtonMap.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Toolkit\TkAnimationComponentData.cs" />
@@ -1174,12 +1174,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Toolkit\TkVoxelGeneratorRegionData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Toolkit\TkVoxelGeneratorSettingsArray.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Toolkit\TkVoxelGeneratorSettingsElement.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\VariableSizeString.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\Vector2f.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\Vector3f.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\Vector3i.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\Quaternion.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\DataTypes\Vector4f.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\VariableSizeString.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\Vector2f.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\Vector3f.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\Vector3i.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\Quaternion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\BaseTypes\Vector4f.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\Version.cs" />
   </ItemGroup>
 </Project>
