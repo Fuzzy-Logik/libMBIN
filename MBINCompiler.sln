@@ -32,6 +32,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug [StdOut]|Any CPU = Debug [StdOut]|Any CPU
+		Debug [to EXML]|Any CPU = Debug [to EXML]|Any CPU
+		Debug [to MBIN]|Any CPU = Debug [to MBIN]|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release [XML docs]|Any CPU = Release [XML docs]|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -39,6 +41,10 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Debug [StdOut]|Any CPU.ActiveCfg = Debug [StdOut]|Any CPU
 		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Debug [StdOut]|Any CPU.Build.0 = Debug [StdOut]|Any CPU
+		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Debug [to EXML]|Any CPU.ActiveCfg = Debug [to EXML]|Any CPU
+		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Debug [to EXML]|Any CPU.Build.0 = Debug [to EXML]|Any CPU
+		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Debug [to MBIN]|Any CPU.ActiveCfg = Debug [to MBIN]|Any CPU
+		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Debug [to MBIN]|Any CPU.Build.0 = Debug [to MBIN]|Any CPU
 		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Release [XML docs]|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,6 +53,10 @@ Global
 		{CE736EF9-7BE9-4FF0-9551-78F0071AA373}.Release|Any CPU.Build.0 = Release|Any CPU
 		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Debug [StdOut]|Any CPU.ActiveCfg = Debug|Any CPU
 		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Debug [StdOut]|Any CPU.Build.0 = Debug|Any CPU
+		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Debug [to EXML]|Any CPU.ActiveCfg = Debug|Any CPU
+		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Debug [to EXML]|Any CPU.Build.0 = Debug|Any CPU
+		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Debug [to MBIN]|Any CPU.ActiveCfg = Debug|Any CPU
+		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Debug [to MBIN]|Any CPU.Build.0 = Debug|Any CPU
 		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Release [XML docs]|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,6 +65,10 @@ Global
 		{836B3A35-C1EA-47C8-B3AB-59C0E2E0C763}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F2D295A6-D082-4EB4-8FC9-F4687F674939}.Debug [StdOut]|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2D295A6-D082-4EB4-8FC9-F4687F674939}.Debug [StdOut]|Any CPU.Build.0 = Debug|Any CPU
+		{F2D295A6-D082-4EB4-8FC9-F4687F674939}.Debug [to EXML]|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D295A6-D082-4EB4-8FC9-F4687F674939}.Debug [to EXML]|Any CPU.Build.0 = Debug|Any CPU
+		{F2D295A6-D082-4EB4-8FC9-F4687F674939}.Debug [to MBIN]|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D295A6-D082-4EB4-8FC9-F4687F674939}.Debug [to MBIN]|Any CPU.Build.0 = Debug|Any CPU
 		{F2D295A6-D082-4EB4-8FC9-F4687F674939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2D295A6-D082-4EB4-8FC9-F4687F674939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2D295A6-D082-4EB4-8FC9-F4687F674939}.Release [XML docs]|Any CPU.ActiveCfg = Release [XML docs]|Any CPU
