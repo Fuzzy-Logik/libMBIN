@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x138, GUID = 0x43E75A538B7E1D0E)]
-    public class TkAnimationData : NMSTemplate
-    {
+    public class TkAnimationData : ToolkitData {
+
         [NMS(Size = 0x10)]
         /* 0x000 */ public string Anim;
         [NMS(Size = 0x80)]

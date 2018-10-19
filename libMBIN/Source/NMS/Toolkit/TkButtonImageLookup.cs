@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xDCE1F72E8E82F3BB)]
-    public class TkButtonImageLookup : NMSTemplate
-    {
+    public class TkButtonImageLookup : ToolkitData {
+
         public List<TkButtonPathMapping> Lookup;
     }
 }

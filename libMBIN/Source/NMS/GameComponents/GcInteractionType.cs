@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x18F9EA403B5B0C73)]
-    public class GcInteractionType : NMSTemplate
-    {
+    public class GcInteractionType : GameComponent {
+
 		public enum InteractionTypeEnum { None, Shop, NPC, NPC_Secondary, NPC_Anomaly, NPC_Anomaly_Secondary, Ship, Outpost, SpaceStation, RadioTower, Monolith,
             Factory, AbandonedShip, Harvester, Observatory, TradingPost, DistressBeacon, Portal, Plaque, AtlasStation, AbandonedBuildings,WeaponTerminal,
             SuitTerminal, SignalScanner, Teleporter_Base, Teleporter_Station, ClaimBase, NPC_Freighter_Captain, NPC_HIRE_Weapons,NPC_HIRE_Weapons_Wait,

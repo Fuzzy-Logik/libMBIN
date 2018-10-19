@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x4230, GUID = 0xC70A517728774310)]
-    public class GcRealityIconTable : NMSTemplate
-    {
+    public class GcRealityIconTable : GameComponent {
+
         [NMS(Size = 6, EnumValue = new string[6] { "None", "NoOxygen", "ExtremeHeat", "ExtremeCold", "ToxicGas", "Radiation" })]
         /* 0x0000 */ public TkTextureResource[] HazardIcons;
 

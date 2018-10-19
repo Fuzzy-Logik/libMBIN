@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF9E88B62ABF748CB, Broken = true)]
-    public class GcMissionSequenceGatherForRepair : NMSTemplate
-    {
+    public class GcMissionSequenceGatherForRepair : GameComponent {
+
         [NMS(Size = 0x80)]
         /* 0x000 */ public string Message;
         /* 0x080 */ public GcStatsTypes TargetStat;

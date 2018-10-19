@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xDF284C3967A7FFBC)]
-    public class GcNumberedTextList : NMSTemplate
-    {
+    public class GcNumberedTextList : GameComponent {
+
         [NMS(Size = 0x20)]
         public string Format;
         public int Count;

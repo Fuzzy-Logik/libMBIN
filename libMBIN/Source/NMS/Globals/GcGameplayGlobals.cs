@@ -1,11 +1,11 @@
-using libMBIN.NMS.Toolkit;
 using libMBIN.NMS.GameComponents;
+using libMBIN.NMS.Toolkit;
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS(GUID = 0x15C8B6A94DE6326E)]
-    public class GcGameplayGlobals : NMSTemplate
-    {
+namespace libMBIN.NMS.Globals {
+
+    [NMS( GUID = 0x15C8B6A94DE6326E )]
+    public class GcGameplayGlobals : GlobalData {
+
         [NMS(Size = 0x3)]
         /* 0x0 */ public NMSString0x10[] HyperdriveAccess;
         [NMS(Size = 0x3)]
@@ -21,8 +21,10 @@ namespace libMBIN.NMS.Globals
 		/* 0x68 */ public int MaxNumSameGroupTech;
 		/* 0x6C */ public float ShootableAggroMinStartTime;
 		/* 0x70 */ public float ShootableAggroForgetTime;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x74 */ public byte[] Padding74;
+
         /* 0x80 */ public Colour RefinerColour1A;
         /* 0x90 */ public Colour RefinerColour1B;
         /* 0xA0 */ public Colour RefinerColour1C;
@@ -45,8 +47,10 @@ namespace libMBIN.NMS.Globals
         /* 0xFC */ public float BinocularScanTargetScaler;
         /* 0x100 */ public float BinocularScanTargetLineWidth;
         /* 0x104 */ public float BinocularScanTargetFadeTime;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x108 */ public byte[] Padding108;
+
         /* 0x110 */ public Colour BinocularScanTargetColour;
         /* 0x120 */ public GcScanEffectData BinocularScanEffect;
         /* 0x170 */ public float ScannerIconsClumpRadius;
@@ -59,21 +63,27 @@ namespace libMBIN.NMS.Globals
         /* 0x18C */ public float BuildingPlayerBaseIconOffset;
         /* 0x190 */ public float CriticalHitMultiplier;
         /* 0x194 */ public float HitEffectMinTime;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x198 */ public byte[] Padding198;
+
         /* 0x1A0 */ public GcScanEffectData DeconstructEffect;
         /* 0x1F0 */ public GcScanEffectData HitEffect;
         /* 0x240 */ public GcScanEffectData HitEffectCritical;
         /* 0x290 */ public float CommunicatorSpawnOffset;
         /* 0x294 */ public float CommunicatorSpawnHeightOffset;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x298 */ public byte[] Padding298;
+
         /* 0x2A0 */ public Vector4f CommunicatorShipSpawnOffset;
         /* 0x2B0 */ public float CommunicatorSpawnScale;
         /* 0x2B4 */ public float CommunicatorSpawnRotation;
         /* 0x2B8 */ public float CommunicatorFadeTime;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x2BC */ public byte[] Padding2BC;
+
         [NMS(Size = 0x2)]
         /* 0x2C0 */ public GcScanEffectData[] CommunicatorEffectTable;
         /* 0x360 */ public int MaxNumMissionsFromMissionGiver;
@@ -251,8 +261,10 @@ namespace libMBIN.NMS.Globals
         /* 0xD30 */ public float HUDDamageOffset;
         /* 0xD34 */ public float HUDDamageScaler;
         /* 0xD38 */ public float HUDDamageRadius;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0xD3C */ public byte[] PaddingD3C;
+
         /* 0xD40 */ public GcShipHUDTargetData HUDTarget;
         /* 0x1170 */ public float HUDLabelTime;
         /* 0x1174 */ public float HUDLabelAngle;
@@ -285,8 +297,10 @@ namespace libMBIN.NMS.Globals
         /* 0x1258 */ public float MouseSensitivityShip;
         /* 0x125C */ public float PainTime;
         /* 0x1260 */ public TkCurveType PainCurve;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x1264 */ public byte[] Padding1264;
+
         /* 0x1270 */ public Colour PainColour;
         /* 0x1280 */ public float GunOffsetX;
         /* 0x1284 */ public float GunOffsetY;
@@ -297,8 +311,10 @@ namespace libMBIN.NMS.Globals
         /* 0x1298 */ public float HitOffset;
         /* 0x129C */ public GcTracerData BulletTracer;
         /* 0x12B4 */ public GcTracerData ShipTracer;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x12CC */ public byte[] Padding12CC;
+
         [NMS(Size = 0x10)]
         /* 0x12D0 */ public string DefaultAnim;
         /* 0x12E0 */ public bool DebugDrawTriggerBoxes;
@@ -310,8 +326,10 @@ namespace libMBIN.NMS.Globals
         /* 0x12F8 */ public float TorchOffsetY;
         /* 0x12FC */ public float TorchOffsetZ;
         /* 0x1300 */ public float TorchRotation;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x1304 */ public byte[] Padding1304;
+
         /* 0x1310 */ public Colour TorchColour;
         /* 0x1320 */ public float SimpleInteractionPickupAngle;
         /* 0x1324 */ public float SimpleInteractionPickupRadius;
@@ -360,9 +378,12 @@ namespace libMBIN.NMS.Globals
         /* 0x1530 */ public float ViciousSentinelProbability;
         /* 0x1534 */ public float ViciousStormProbability;
         /* 0x1538 */ public float ViciousWeatherProbability;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x153C */ public byte[] Endpadding;
+
     }
+
 }
 
 /* Notes and algorithms:

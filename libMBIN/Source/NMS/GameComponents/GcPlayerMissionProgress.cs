@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xAA38C3418BB16A5F)]
-    public class GcPlayerMissionProgress : NMSTemplate // 0x148 bytes
-    {
+    public class GcPlayerMissionProgress : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x000 */ public string Mission;
         /* 0x010 */ public int Progress;

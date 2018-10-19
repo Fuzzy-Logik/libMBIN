@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF3A65944C96C7E77)]
-    public class GcDroneComponentData : NMSTemplate
-    {
+    public class GcDroneComponentData : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Id;
         public GcPrimaryAxis PrimaryAxis;

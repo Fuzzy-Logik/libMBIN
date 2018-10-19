@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4F4457FDB9B16E09)]
-    public class GcBoidData : NMSTemplate       // maybe in a global?
-    {
+    public class GcBoidData : GameComponent {
+
         /* 0x000 */ public float Coherence;             // 3F000000
         /* 0x004 */ public float Alignment;             // 3E4CCCCD
         /* 0x008 */ public float Separation;            // 3F800000

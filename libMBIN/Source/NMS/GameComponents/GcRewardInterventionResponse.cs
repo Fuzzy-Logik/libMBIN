@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x699C68DBF05B93E7)]
-    public class GcRewardInterventionResponse : NMSTemplate
-    {
+    public class GcRewardInterventionResponse : GameComponent {
+
 		public enum ResponseTypeEnum { DontIntervene, InterveneWithMission, MissionSuccess, MissionFailure }
 		public ResponseTypeEnum ResponseType;
         [NMS(Size = 0x4, Ignore = true)]

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x40, GUID = 0x55BA4726F9A4A05D)]
-    public class TkNoiseUberData : NMSTemplate
-    {
+    public class TkNoiseUberData : ToolkitData {
+
         /* 0x00 */ public int Octaves;
         /* 0x04 */ public float SlopeGain;
         /* 0x08 */ public float SlopeBias;

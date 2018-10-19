@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xB0, Alignment = 0x8, GUID = 0xC9C6025A0E94ED85)]
-    public class GcMissionSequenceStartScanEvent : NMSTemplate
-    {
+    public class GcMissionSequenceStartScanEvent : GameComponent {
+
         /* 0x000 */ public GcPlayerMissionParticipantType Participant;
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x004 */ public byte[] Padding4;

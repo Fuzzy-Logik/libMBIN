@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x20, GUID = 0x827AF33FF68FE05F)]
-    public class GcCostProduct : NMSTemplate
-    {
+    public class GcCostProduct : GameComponent {
+
         /* 0x00 */ public GcDefaultMissionProductEnum Default;
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x04 */ public byte[] Padding4;

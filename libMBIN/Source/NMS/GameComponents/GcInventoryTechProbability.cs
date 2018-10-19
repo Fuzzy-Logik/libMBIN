@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x6CAEF8DD21A894EA)]
-    public class GcInventoryTechProbability : NMSTemplate
-    {
+    public class GcInventoryTechProbability : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Tech;
 		public enum DesiredTechProbabilityEnum { Never, Rare, Common, Always }

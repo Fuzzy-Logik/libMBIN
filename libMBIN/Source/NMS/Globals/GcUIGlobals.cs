@@ -1,11 +1,11 @@
-using libMBIN.NMS.Toolkit;
 using libMBIN.NMS.GameComponents;
+using libMBIN.NMS.Toolkit;
 
-namespace libMBIN.NMS.Globals
-{
+namespace libMBIN.NMS.Globals {
+
     [NMS( GUID = 0xD25256FB1959D22E )]
-    public class GcUIGlobals : NMSTemplate
-    {
+    public class GcUIGlobals : GlobalData {
+
         /* 0x0 */ public bool LoadPagesFromMetadataCache;
         /* 0x1 */ public bool AlwaysCloseQuickMenu;
         /* 0x2 */ public bool UseWorldNodesForRepair;
@@ -80,9 +80,9 @@ namespace libMBIN.NMS.Globals
         /* 0x17C */ public float MaintenanceIconFadeStart;
         /* 0x180 */ public float MaintenanceIconFadeTime;
 
-
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x184 */ public byte[] Padding184;
+
         /* 0x190 */ public TkModelRendererData RepairCamera;
         /* 0x240 */ public TkModelRendererData RepairWeaponCamera;
         /* 0x2F0 */ public TkModelRendererData RepairBackpackCamera;
@@ -127,8 +127,10 @@ namespace libMBIN.NMS.Globals
         /* 0x594 */ public float ShipOverheatSwitchMessageWait;
         /* 0x598 */ public float ShipOverheatSwitchMessageTime;
         /* 0x59C */ public bool LeadTargetEnabled;
+
         [NMS(Size = 0x3, Ignore = true)]
         /* 0x59D */ public byte[] Padding59D;
+
         /* 0x5A0 */ public Vector2f SaveIconPosition;
         /* 0x5A8 */ public float MissionStartEndTime;
         /* 0x5AC */ public float MissionStartEndOSDTime;
@@ -150,9 +152,9 @@ namespace libMBIN.NMS.Globals
         /* 0x630 */ public int MissionLoopCount;
         /* 0x634 */ public int MissionSeedOffset;
 
-
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x638 */ public byte[] Padding638;
+
         /* 0x640 */ public Vector4f SpaceMapCockpitOffset;
         /* 0x650 */ public float SpaceMapCockpitScale;
         /* 0x654 */ public float SpaceMapCockpitAngle;
@@ -162,9 +164,9 @@ namespace libMBIN.NMS.Globals
         /* 0x660 */ public string TargetDisplayShipOffset;
         /* 0x670 */ public float TargetDisplayDamageFlashTime;
 
-
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x674 */ public byte[] Padding674;
+
         /* 0x680 */ public GcScanEffectData TargetDisplayScanEffect;
         /* 0x6D0 */ public bool ProgressiveDialogStyle;
         /* 0x6D4 */ public float CommunicatorMessageTime;
@@ -179,8 +181,10 @@ namespace libMBIN.NMS.Globals
         /* 0x708 */ public float HUDMarkerLabelDisplayDistance;
         /* 0x70C */ public float HUDMarkerNonActiveMissionAlpha;
         /* 0x710 */ public bool DebugMarkerLabels;
+
         [NMS(Size = 0xF, Ignore = true)]
         /* 0x711 */ public byte[] Padding711;
+
         /* 0x720 */ public GcScanEffectData DebugEditorPreviewEffect;
         /* 0x770 */ public bool ShowDamageNumbers;
         /* 0x774 */ public float QuickMenuCloseTime;
@@ -306,7 +310,6 @@ namespace libMBIN.NMS.Globals
         /* 0xA1C */ public TkCurveType CrosshairTargetLockCurve;
         /* 0xA20 */ public TkCurveType CrosshairTargetLockAlphaCurve;
         /* 0xA30 */ public Colour CrosshairColour;
-
 
         /* 0xA40 */ public TkHitCurveData CrosshairLeadHitCurve;
 
@@ -575,18 +578,16 @@ namespace libMBIN.NMS.Globals
         /* 0x2C18 */ public float AlwaysOnHazardMultiplierRad;
         /* 0x2C1C */ public float AlwaysOnHazardMultiplierCold;
         /* 0x2C20 */ public float HazardPulseRate;
+
         [NMS(Size = 0x6, EnumValue = new string[6] { "None", "NoOxygen", "ExtremeHeat", "ExtremeCold", "ToxicGas", "Radiation" })]
         /* 0x2C24 */ public NMSString0x80[] HazardTextures;
+
         [NMS(Size = 0x6, EnumValue = new string[6] { "None", "NoOxygen", "ExtremeHeat", "ExtremeCold", "ToxicGas", "Radiation" })]
-
-
         /* 0x2F24 */ public NMSString0x80[] HazardNormalMaps;
+
         [NMS(Size = 0x6, EnumValue = new string[6] { "None", "NoOxygen", "ExtremeHeat", "ExtremeCold", "ToxicGas", "Radiation" })]
-
-
-
-
         /* 0x3224 */ public NMSString0x80[] HazardHeightmaps;
+
         /* 0x3524 */ public float IconPulseRate;
         /* 0x3530 */ public Colour EnergyBgColour;
 
@@ -703,9 +704,9 @@ namespace libMBIN.NMS.Globals
         /* 0x456C */ public float SpaceMapLightPitch;
         /* 0x4570 */ public float SpaceMapLightYaw;
 
-
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x4574 */ public byte[] Padding4574;
+
         /* 0x4580 */ public Vector4f SpaceMapPosScaler;
         /* 0x4590 */ public Colour SpaceMapAttackColour;
         /* 0x45A0 */ public Colour SpaceMapOtherPlayerColour;
@@ -814,9 +815,9 @@ namespace libMBIN.NMS.Globals
         /* 0x5194 */ public float NGuiPlacementAngleScrollSpeed;
         /* 0x5198 */ public float NGuiModelViewFractionOfBBHeightAboveReflectivePlane;
 
-
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x519C */ public byte[] Padding519C;
+
         /* 0x51A0 */ public Vector4f NGuiModelTranslationFactors;
         /* 0x51B0 */ public Vector4f NGuiModelTranslationFactorsInteraction;
         /* 0x51C0 */ public Vector4f NGuiThumbnailModelTranslationFactors;
@@ -835,9 +836,9 @@ namespace libMBIN.NMS.Globals
         /* 0x5214 */ public TkCurveType NGuiModelViewFadeInAfterRenderCurve;
         /* 0x5218 */ public bool NGuiUseSeparateLayersForModelAndReflection;
 
-
         [NMS(Size = 0x3, Ignore = true)]
         /* 0x5219 */ public byte[] Padding5219;
+
         /* 0x521C */ public GcDiscoveryHelperTimings DiscoveryHelperTimings;
         /* 0x5228 */ public GcHUDStartupTable IntroTiming;
         /* 0x52A8 */ public GcInventorySlotActionData InstallTechSlotAction;
@@ -858,7 +859,10 @@ namespace libMBIN.NMS.Globals
         /* 0x5370 */ public float TextChatMaxDisplayTime;
         /* 0x5374 */ public float TextChatStayBigAfterTextInput;
         /* 0x5378 */ public int BuildingShopMaxItems;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x537C */ public byte[] EndPadding;
+
     }
+
 }

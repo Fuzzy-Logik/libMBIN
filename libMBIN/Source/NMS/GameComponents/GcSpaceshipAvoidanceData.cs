@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4BE1B6BC289E2D1C)]
-    public class GcSpaceshipAvoidanceData : NMSTemplate
-    {
+    public class GcSpaceshipAvoidanceData : GameComponent {
+
         public int NumRays;
         public float RayMinRange;
         public float RaySpeedTime;

@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x28, GUID = 0xA829A15F1ECEF45B)]
-    public class GcDamageMultiplierLookup : NMSTemplate
-    {
+    public class GcDamageMultiplierLookup : GameComponent {
+
 
         [NMS(Size = 0x10)]
         public string Id;

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xC4, GUID = 0x204DFFD03BAA3C1A)]
-    public class GcDiscoveryOwner : NMSTemplate
-    {
+    public class GcDiscoveryOwner : GameComponent {
+
 
         [NMS(Size = 0x40)]
         public string LocalID;

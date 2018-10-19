@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xEAAFDE92AF042A96)]
-    public class TkImGuiData : NMSTemplate
-    {
+    public class TkImGuiData : ToolkitData {
+
         public TkImGuiWindowData MainWindow;
         public bool Maximised;
         public int DimensionX;

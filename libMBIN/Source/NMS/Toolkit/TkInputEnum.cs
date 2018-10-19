@@ -7,8 +7,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Alignment = 0x4, GUID = 0x62EB9D0F5E67D4F6)]
-    public class TkInputEnum : NMSTemplate
-    {
+    public class TkInputEnum : ToolkitData {
+
         public int InputButton;
         public Dictionary<int, string> InputButtonDict()
         {

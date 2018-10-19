@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xAE882B312D5F93D5)]
-    public class TkDynamicChainComponentData : NMSTemplate      // possibly in a global...
-    {
+    public class TkDynamicChainComponentData : ToolkitData {
+
         public float AngularLimit;
         public float TwistLimit;
         public float MotorStrengthCone;

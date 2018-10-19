@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x114B7C2B8D22F51)]
-    public class GcColourModifier : NMSTemplate
-    {
+    public class GcColourModifier : GameComponent {
+
         public bool ForceColour;
         [NMS(Size = 0xF, Ignore = true)]
         public byte[] Padding1;

@@ -1,13 +1,10 @@
 ﻿using libMBIN.NMS.GameComponents;
 
-using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+namespace libMBIN.NMS.Toolkit {
 
-namespace libMBIN.NMS.Toolkit
-{
-	[NMS(Size = 0x15D0, GUID = 0x1E376F876EF204A0)]
-    public class TkVoxelGeneratorData : NMSTemplate
-    {
+    [NMS( Size = 0x15D0, GUID = 0x1E376F876EF204A0 )]
+    public class TkVoxelGeneratorData : ToolkitData {
+
         /* 0x0000 */ public GcSeed BaseSeed;
         /* 0x0010 */ public float SeaLevel;
         /* 0x0014 */ public float BeachHeight;

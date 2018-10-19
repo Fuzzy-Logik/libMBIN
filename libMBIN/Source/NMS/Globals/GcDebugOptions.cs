@@ -1,11 +1,10 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS(GUID = 0xB74B21AE3DAA306B)]
-    public class GcDebugOptions : NMSTemplate
-    {
+namespace libMBIN.NMS.Globals {
+
+    [NMS( GUID = 0xB74B21AE3DAA306B )]
+    public class GcDebugOptions : GlobalData {
+
         /* 0x0 */ public bool ThirdPersonIsDefaultCamera;
         /* 0x1 */ public bool SkipIntro;
         /* 0x2 */ public bool SkipLogos;
@@ -33,8 +32,10 @@ namespace libMBIN.NMS.Globals
         /* 0x18 */ public int ScreenWidth;
         /* 0x1C */ public int ScreenHeight;
         /* 0x20 */ public bool DisableVSync;
+
 		public enum GameWindowModeEnum { Bordered, Borderless, Fullscreen }
-		public GameWindowModeEnum GameWindowMode;
+		/* 0x24 */ public GameWindowModeEnum GameWindowMode;
+
         /* 0x28 */ public int Monitor;
         [NMS(Size = 0x100)]
         /* 0x2C */ public string ForceUniverseAddress;
@@ -42,26 +43,36 @@ namespace libMBIN.NMS.Globals
         /* 0x12C */ public string ForcePlayerPosition;
         /* 0x22C */ public bool ForceInitialShip;
         /* 0x22D */ public bool ForceInitialWeapon;
+
 		public enum GameStateModeEnum { LoadPreset, UserStorage, FreshStart }
-		public GameStateModeEnum GameStateMode;
+		/* 0x230 */ public GameStateModeEnum GameStateMode;
+
 		public enum BootModeEnum { MinimalSolarSystem, SolarSystem, GalaxyMap, SmokeTest, SmokeTestGalaxyMap, Scratchpad, UnitTest }
-		public BootModeEnum BootMode;
+		/* 0x234 */ public BootModeEnum BootMode;
+
 		public enum PlayerSpawnLocationOverrideEnum { None, FromSettings, Space, SpaceStation, RandomPlanet, GameStartPlanet }
-		public PlayerSpawnLocationOverrideEnum PlayerSpawnLocationOverride;
+		/* 0x238 */ public PlayerSpawnLocationOverrideEnum PlayerSpawnLocationOverride;
+
         [NMS(Size = 0x80)]
         /* 0x23C */ public string SceneSettings;
+
         [NMS(Size = 0x100)]
         /* 0x2BC */ public string WorkingDirectory;
+
 		public enum SolarSystemBootEnum { FromSettings, Generate }
-		public SolarSystemBootEnum SolarSystemBoot;
+		/* 0x3BC */ public SolarSystemBootEnum SolarSystemBoot;
+
 		public enum ShaderPreloadEnum { Off, Full }
-		public ShaderPreloadEnum ShaderPreload;
+		/* 0x3C0 */ public ShaderPreloadEnum ShaderPreload;
+
         /* 0x3C4 */ public float PresetGameMode;
         /* 0x3C8 */ public bool ShaderPreloadListExport;
         /* 0x3C9 */ public bool ShaderPreloadListImport;
         /* 0x3CA */ public bool ShaderCaching;
+
 		public enum BootLoadDelayEnum { LoadAll, WaitForPlanet, WaitForNothing }
-		public BootLoadDelayEnum BootLoadDelay;
+		/* 0x3CC */ public BootLoadDelayEnum BootLoadDelay;
+
         /* 0x3D0 */ public bool MemCsv;
         /* 0x3D4 */ public float ForceTimeOfDay;
         /* 0x3D8 */ public bool UseParticles;
@@ -104,8 +115,10 @@ namespace libMBIN.NMS.Globals
         /* 0x42C */ public bool DebugPersistentInteractions;
         [NMS(Size = 0x80)]
         /* 0x42D */ public string RealityPresetFile;
+
         [NMS(Size = 0x1, Ignore = true)]
         /* 0x4AD */ public byte[] Padding4AD;
+
         /* 0x4AE */ public short RealityGenerationIteration;
         [NMS(Size = 0x3)]
         /* 0x4B0 */ public NMSString0x20[] LocTableList;
@@ -120,8 +133,10 @@ namespace libMBIN.NMS.Globals
         /* 0x5A1 */ public bool FleetDirectorAutoMode;
         /* 0x5A4 */ public float _3dTextDistance;
         /* 0x5A8 */ public float _3dTextMinScale;
+
 		public enum RecordSettingEnum { None, Record, Playback }
-		public RecordSettingEnum RecordSetting;
+		/* 0x5AC */ public RecordSettingEnum RecordSetting;
+
         /* 0x5B0 */ public bool DebugBuildingSpawns;
         /* 0x5B1 */ public bool StressTestLongNameDisplay;
         [NMS(Size = 0x20)]
@@ -144,8 +159,10 @@ namespace libMBIN.NMS.Globals
         /* 0x6E2 */ public bool GraphFPS;
         /* 0x6E3 */ public bool GraphTexStreaming;
         /* 0x6E4 */ public bool SmokeTestDumpStatsMode;
+
 		public enum SmokeTestCycleModeEnum { None, TourSolarSystem, RegeneratePlanet }
-		public SmokeTestCycleModeEnum SmokeTestCycleMode;
+		/* 0x6E8 */ public SmokeTestCycleModeEnum SmokeTestCycleMode;
+
         /* 0x6EC */ public bool SmokeTestCameraFly;
         /* 0x6ED */ public bool SmokeTestOutputOnly;
         /* 0x6EE */ public bool SmokeTestPureFlight;
@@ -177,12 +194,16 @@ namespace libMBIN.NMS.Globals
         /* 0xA06 */ public bool RenderLowFramerate;
         /* 0xA07 */ public bool EnableComputePost;
         /* 0xA08 */ public bool SimulateNoNetworkConnection;
+
 		public enum ProxyTypeEnum { None, ManualURI, InetProxy }
-		public ProxyTypeEnum ProxyType;
+		/* 0xA0C */ public ProxyTypeEnum ProxyType;
+
         [NMS(Size = 0x80)]
         /* 0xA10 */ public string ProxyURI;
+
 		public enum ServerEnvEnum { Default, dev, qa, prodqa, prod, custom, pentest }
-		public ServerEnvEnum ServerEnv;
+		/* 0xA90 */ public ServerEnvEnum ServerEnv;
+
         [NMS(Size = 0x80)]
         /* 0xA94 */ public string AuthBaseUrl;
         /* 0xB14 */ public bool CertificateSecurityBypass;
@@ -250,9 +271,11 @@ namespace libMBIN.NMS.Globals
         /* 0x1754 */ public GcPlanetLife ForceCreatureLifeLevelTo;
         /* 0x1758 */ public int ForceTerrainSettings;                   // there will be an enum/struct
         /* 0x175C */ public bool ForceTerrainType;
-        /* 0x1760 */ public int ForceTerranTypeTo;                      // there will be an enum/struct
+        /* 0x1760 */ public int ForceTerrainTypeTo;                     // there will be an enum/struct
+
 		public enum ForceAnomalyToEnum { None, AtlasType1, AtlasType2, Blackhole, Anomaly, Spacewalk }
-		public ForceAnomalyToEnum ForceAnomalyTo;
+		/* 0x1764 */ public ForceAnomalyToEnum ForceAnomalyTo;
+
         /* 0x1768 */ public bool ForcePlanetsToHaveWater;
         /* 0x1769 */ public bool DisableLimits;
         /* 0x176A */ public bool LimitPerRegionInstances;
@@ -276,5 +299,7 @@ namespace libMBIN.NMS.Globals
         /* 0x179C */ public bool DisableBaseBuilding;
         /* 0x179D */ public bool DisableBaseBuildingLimits;
         /* 0x17A0 */ public float BaseDownloadTimeout;
+
     }
+
 }

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x1B0, GUID = 0xF52AE08CE8343407)]
-    public class TkNGuiGraphicStyle : NMSTemplate
-    {
+    public class TkNGuiGraphicStyle : ToolkitData {
+
         /* 0x000 */ public TkNGuiGraphicStyleData Default;
         /* 0x080 */ public TkNGuiGraphicStyleData Highlight;
         /* 0x100 */ public TkNGuiGraphicStyleData Active;

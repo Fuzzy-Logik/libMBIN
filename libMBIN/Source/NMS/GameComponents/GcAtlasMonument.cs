@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x190, GUID = 0x6845EF170C6FF29B)]
-    public class GcAtlasMonument : NMSTemplate
-    {
+    public class GcAtlasMonument : GameComponent {
+
         /* 0x000 */ public GcUniverseAddressData UniverseAddress;
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x018 */ public byte[] Padding18;

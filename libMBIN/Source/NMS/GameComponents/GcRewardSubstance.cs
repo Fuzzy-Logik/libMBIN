@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x584681F116B56A7D)]
-    public class GcRewardSubstance : NMSTemplate
-    {
+    public class GcRewardSubstance : GameComponent {
+
         /* 0x00 */ public GcRealitySubstanceCategory ItemCategory;
         /* 0x04 */ public GcRarity ItemRarity;
         /* 0x08 */ public int ItemLevel;

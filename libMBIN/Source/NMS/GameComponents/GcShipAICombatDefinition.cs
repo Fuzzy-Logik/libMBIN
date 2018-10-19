@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x784B7C716DC456EA)]
-    public class GcShipAICombatDefinition : NMSTemplate       // size: 0x100
-    {
+    public class GcShipAICombatDefinition : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Id;
         [NMS(Size = 0x10)]

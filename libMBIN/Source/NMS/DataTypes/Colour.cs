@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS {
 
     [NMS( Alignment = 0x10 )]
-    public class Colour : NMSTemplate {
+    public class Colour : NMSType {
 
         public float R;
         public float G;

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF9E364878E24F868)]
-    public class GcPersistentBBObjectData : NMSTemplate // size = 0x60
-    {
+    public class GcPersistentBBObjectData : GameComponent {
+
         /* 0x00 */ public ulong Timestamp;
         [NMS(Size = 0x10)]
         /* 0x08 */ public string ObjectId;

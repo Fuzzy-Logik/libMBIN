@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x3, GUID = 0x7E964EBCC31CF4FD)]
-    public class GcMissionConditionWeather : NMSTemplate
-    {
+    public class GcMissionConditionWeather : GameComponent {
+
         public bool IsExtreme;
         public bool StormActive;
         public bool IgnoreStormIfInShip;

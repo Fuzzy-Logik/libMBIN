@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFC0B28004AD759EC)]
-    public class GcPlayerSpaceshipWarpData : NMSTemplate
-    {
+    public class GcPlayerSpaceshipWarpData : GameComponent {
+
         /* 0x000 */ public float EntryTime;
         /* 0x004 */ public TkCurveType EntryTunnelCurve;
         /* 0x008 */ public float EntryTunnelDistance;

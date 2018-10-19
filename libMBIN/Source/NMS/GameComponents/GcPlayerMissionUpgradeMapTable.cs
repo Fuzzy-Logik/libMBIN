@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x54511EBAE64FC462)]
-    public class GcPlayerMissionUpgradeMapTable : NMSTemplate
-    {
+    public class GcPlayerMissionUpgradeMapTable : GameComponent {
+
         public List<GcPlayerMissionUpgradeMapEntry> MissionUpgradeTable;
     }
 }

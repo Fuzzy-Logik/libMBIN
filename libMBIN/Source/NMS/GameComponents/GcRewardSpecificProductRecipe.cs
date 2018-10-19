@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF76E52C52365A783)]
-    public class GcRewardSpecificProductRecipe : NMSTemplate
-    {
+    public class GcRewardSpecificProductRecipe : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Id;
         public bool Slient;

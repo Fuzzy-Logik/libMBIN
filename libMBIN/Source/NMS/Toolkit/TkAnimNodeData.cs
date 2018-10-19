@@ -6,7 +6,7 @@ using System.Reflection;
 namespace libMBIN.NMS.Toolkit {
 
     [NMS( Size = 0x50, GUID = 0x14C032849E45EE8D )]
-    public class TkAnimNodeData : NMSTemplate, ISerialize {
+    public class TkAnimNodeData : ToolkitData, ISerialize {
 
         [NMS( Size = 0x40 )]
         /* 0x00 */ public string Node;

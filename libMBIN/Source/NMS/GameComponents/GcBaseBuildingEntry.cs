@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x220, GUID = 0xCAC1FA679C6CB798)]
-    public class GcBaseBuildingEntry : NMSTemplate
-    {
+    public class GcBaseBuildingEntry : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x000 */ public string ID;
         /* 0x010 */ public bool HasProduct;

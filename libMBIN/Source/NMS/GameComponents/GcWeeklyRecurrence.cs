@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x8C, GUID = 0xE475AF3D8A81BB1F)]
-    public class GcWeeklyRecurrence : NMSTemplate
-    {
+    public class GcWeeklyRecurrence : GameComponent {
+
         public int RecurrenceMinute;
         public int RecurrenceHour;
         public GcDay RecurrenceDay;

@@ -1,22 +1,23 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS(GUID = 0x544924CC0A70DE9B)]
-    public class GcTerrainGlobals : NMSTemplate
-    {
-        /* 0x0 */ public float RegisterTerrainMinDistance;
-        /* 0x4 */ public float TerrainBeamUndoRangeFromLastAdd;
-        /* 0x8 */ public float TerrainBeamHologramTimeout;
-        /* 0xC */ public float MouseWheelRotatePlaneSensitivity;
+namespace libMBIN.NMS.Globals {
+
+    [NMS( GUID = 0x544924CC0A70DE9B )]
+    public class GcTerrainGlobals : GlobalData {
+
+        /* 0x0 */  public float RegisterTerrainMinDistance;
+        /* 0x4 */  public float TerrainBeamUndoRangeFromLastAdd;
+        /* 0x8 */  public float TerrainBeamHologramTimeout;
+        /* 0xC */  public float MouseWheelRotatePlaneSensitivity;
         /* 0x10 */ public float SubtractEditOffset;
         /* 0x14 */ public float SubtractEditLength;
         /* 0x18 */ public float SubtractEditFrequency;
         /* 0x1C */ public float TerrainBeamDefaultRadius;
         /* 0x20 */ public float TerrainBeamLightIntensity;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x24 */ public byte[] Padding24;
+
         /* 0x30 */ public Colour TerrainBeamLightColour;
         /* 0x40 */ public float UseMax;
         /* 0x44 */ public float TextureFadeDistance;
@@ -45,14 +46,19 @@ namespace libMBIN.NMS.Globals
         /* 0xC8 */ public float MaxHighWaterRatio;
         /* 0xCC */ public float MinWaterRatio;
         /* 0xD0 */ public float MaxWaterRatio;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0xD4 */ public byte[] PaddingD4;
+
         [NMS(Size = 0xB, EnumValue = new string[] { "Lush", "Toxic", "Scorched", "Radioactive", "Frozen", "Barren", "Dead", "Weird", "Red", "Green", "Blue" })]
         /* 0xD8 */ public NMSString0x10[] MiningSubstanceBiome;
+
         [NMS(Size = 0x4, EnumValue = new string[] { "Yellow", "Green", "Blue", "Red" })]
         /* 0x188 */ public NMSString0x10[] MiningSubstanceStar;
+
         [NMS(Size = 0x4, EnumValue = new string[] { "Yellow", "Green", "Blue", "Red" })]
         /* 0x1C8 */ public NMSString0x10[] MiningSubstanceStarExtreme;
+
         [NMS(Size = 0x5)]
         /* 0x208 */ public NMSString0x10[] MiningSubstanceRare;
         /* 0x258 */ public float TextureBlendScale0;
@@ -72,7 +78,10 @@ namespace libMBIN.NMS.Globals
 		/* 0x35C */ public float TerrainUndoFadeDepthConstant;
 		/* 0x360 */ public float TerrainUndoFadeDepthScalar;
 		/* 0x364 */ public bool TerrainEditUndosEnabled;
+
         [NMS(Size = 0xB, Ignore = true)]
         /* 0x365 */ public byte[] EndPadding;
+
     }
+
 }

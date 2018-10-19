@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x40, GUID = 0xCC9CB206CECC8D1D)]
-    public class GcPlayerCharacterIKStateData : NMSTemplate
-    {
+    public class GcPlayerCharacterIKStateData : GameComponent {
+
         public GcPlayerCharacterStateType State;
         [NMS(Size = 0xC, Ignore = true)]
         public byte[] Padding4;

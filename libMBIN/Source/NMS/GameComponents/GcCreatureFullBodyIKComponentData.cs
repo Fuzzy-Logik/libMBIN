@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x337F45FFED97901C)]
-    public class GcCreatureFullBodyIKComponentData : NMSTemplate        // size: 0x18
-    {
+    public class GcCreatureFullBodyIKComponentData : GameComponent {
+
         public List<GcCreatureIkData> JointData;
 		public enum HeadUpAxisEnum { X, XNeg, Y, YNeg, Z, ZNeg }
 		public HeadUpAxisEnum HeadUpAxis;

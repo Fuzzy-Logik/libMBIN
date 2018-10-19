@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x8, GUID = 0x7B315E9093FB9325, Broken = true)]
-    public class GcRewardOpenPage : NMSTemplate
-    {
+    public class GcRewardOpenPage : GameComponent {
+
 		public enum PageToOpenEnum { FreighterShipTransfer, DisplayPortalUa, ExpeditionSelect, TraderInventory, ExpeditionDetails, ExpeditionDebrief, FreeFreighterReward, BuildingPartsShop }
 		public PageToOpenEnum PageToOpen;
         /* 0x4 */ public bool ReinteractWhenComplete;

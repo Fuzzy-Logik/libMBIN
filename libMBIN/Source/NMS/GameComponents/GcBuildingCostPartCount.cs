@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF701652DA9F900D6)]
-    public class GcBuildingCostPartCount : NMSTemplate
-    {
+    public class GcBuildingCostPartCount : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Id;
         public int Count;

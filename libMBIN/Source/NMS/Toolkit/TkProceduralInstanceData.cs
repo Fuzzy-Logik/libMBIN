@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x9E8977C498CF111F)]
-    public class TkProceduralInstanceData : NMSTemplate
-    {
+    public class TkProceduralInstanceData : ToolkitData {
+
         [NMS(Size = 0x10)]
         public string Id;
         public int Index;

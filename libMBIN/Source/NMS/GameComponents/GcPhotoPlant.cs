@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x88D5BE0AA7AE6B79)]
-    public class GcPhotoPlant : NMSTemplate
-    {
+    public class GcPhotoPlant : GameComponent {
+
 		public enum PhotoPlantTypeEnum { Zinc, Thamium, Platinum }
 		public PhotoPlantTypeEnum PhotoPlantType;
     }

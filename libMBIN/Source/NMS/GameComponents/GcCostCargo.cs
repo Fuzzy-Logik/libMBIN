@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x1F6C9AEB838BC892)]
-    public class GcCostCargo : NMSTemplate
-    {
+    public class GcCostCargo : GameComponent {
+
         public int Slots;
     }
 }

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x80, GUID = 0x7411BFD5B5031BED)]
-    public class TkShearWindData : NMSTemplate
-    {
+    public class TkShearWindData : ToolkitData {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Name;
         /* 0x10 */ public float OverallWindStrength;

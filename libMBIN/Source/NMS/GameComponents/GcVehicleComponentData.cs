@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x6BADA75FD7BE0161, Size = 0x130)]
-    public class GcVehicleComponentData : NMSTemplate
-    {
+    public class GcVehicleComponentData : GameComponent {
+
         /* 0x00 */ public GcVehicleType Class;
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x04 */ public byte[] Padding4;

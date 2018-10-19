@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x14, GUID = 0xAF8C623DBEFEC570)]
-    public class GcScanData : NMSTemplate
-    {
+    public class GcScanData : GameComponent {
+
 		public enum ScanTypeEnum { Tool, Beacon, RadioTower, Observatory, DistressSignal, Waypoint, Ship, DebugPlanet, DebugSpace, VisualOnly }
 		public ScanTypeEnum ScanType;
 	  /* 0x004 */ public float PulseRange;          // 41200000h

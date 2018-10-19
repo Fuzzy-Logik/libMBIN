@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x30811CE981E010DD)]
-    public class GcMissionSequenceWaitForFactionStanding : NMSTemplate      // size: 0x110
-    {
+    public class GcMissionSequenceWaitForFactionStanding : GameComponent {
+
         [NMS(Size = 0x80)]
         /* 0x000 */ public string Message;
         /* 0x080 */ public GcFactionSelectOptions SelectFrom;

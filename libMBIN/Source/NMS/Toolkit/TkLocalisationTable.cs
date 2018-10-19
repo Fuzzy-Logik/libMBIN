@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x8B2AEC2B23D377F3)]
-    public class TkLocalisationTable : NMSTemplate
-    {
+    public class TkLocalisationTable : ToolkitData {
+
         public List<TkLocalisationEntry> Table;
     }
 }

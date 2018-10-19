@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x6BA9CBE0ED534658)]
-    public class GcMissionConditionBasePartNear : NMSTemplate
-    {
+    public class GcMissionConditionBasePartNear : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string PartID;
         /* 0x10 */ public float Distance;

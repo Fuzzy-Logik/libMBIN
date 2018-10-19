@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xBBCFC24EB018B5F3)]
-    public class GcPlayerHazardData : NMSTemplate
-    {
+    public class GcPlayerHazardData : GameComponent {
+
         public float ProtectionInitialTime;
         public Vector2f ProtectionTime;
         public Vector2f DamageRate;

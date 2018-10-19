@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xF28FCA1E3D439CD9)]
-    public class GcCreatureGroupDescription : NMSTemplate       // size: 0x20
-    {
+    public class GcCreatureGroupDescription : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Group;
         public int MinGroupSize;                // 1

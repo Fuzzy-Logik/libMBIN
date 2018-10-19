@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x168, GUID = 0xCA2582D7DE712902)]
-    public class GcFleetFrigateSaveData : NMSTemplate
-    {
+    public class GcFleetFrigateSaveData : GameComponent {
+
         /* 0x000 */ public GcSeed ResourceSeed;
         /* 0x010 */ public GcSeed HomeSystemSeed;
         /* 0x020 */ public ulong TimeOfLastIncomeCollection;

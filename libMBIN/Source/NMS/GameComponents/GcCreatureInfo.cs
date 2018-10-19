@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x498, GUID = 0xC2F25F7BCF665267)]
-    public class GcCreatureInfo : NMSTemplate
-    {
+    public class GcCreatureInfo : GameComponent {
+
 		public enum AgeEnum { Regular, Weird }
 		public AgeEnum Age;
 

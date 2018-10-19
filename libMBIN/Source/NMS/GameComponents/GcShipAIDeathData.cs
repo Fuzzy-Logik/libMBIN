@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x1C, GUID = 0xFA72516623196493)]
-    public class GcShipAIDeathData : NMSTemplate
-    {
+    public class GcShipAIDeathData : GameComponent {
+
         /* 0x000 */ public float DroneDeathTime;            // 3FE66666h
         /* 0x004 */ public float DroneDeathForce;           // 41000000h
         /* 0x008 */ public float DroneDeathBoomTotalTime;   // 3ECCCCCDh

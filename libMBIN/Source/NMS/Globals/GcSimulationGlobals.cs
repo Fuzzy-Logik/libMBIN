@@ -1,11 +1,8 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿namespace libMBIN.NMS.Globals {
 
-namespace libMBIN.NMS.Globals
-{
     [NMS( GUID = 0x131A257CD72A878F )]
-    public class GcSimulationGlobals : NMSTemplate
-    {
+    public class GcSimulationGlobals : GlobalData {
+
         [NMS(Size = 0x80)]
         /* 0x0 */ public string StartingSceneFile;
         [NMS(Size = 0x80)]
@@ -61,5 +58,7 @@ namespace libMBIN.NMS.Globals
         /* 0x1D88 */ public string PortalTunnelFile;
         [NMS(Size = 0x80)]
         /* 0x1E08 */ public string PortalStoryTunnelFile;
+
     }
+
 }

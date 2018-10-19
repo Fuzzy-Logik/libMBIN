@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x40, GUID = 0x2BC80C07487546FC)]
-    public class GcMissionConditionStatLevel : NMSTemplate
-    {
+    public class GcMissionConditionStatLevel : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Stat;
         [NMS(Size = 0x10)]

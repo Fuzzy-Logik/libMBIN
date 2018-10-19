@@ -1,6 +1,6 @@
 ﻿namespace libMBIN.NMS {
 
-    public class Vector3i : NMSTemplate {
+    public class Vector3i : NMSType {
 
         public int x;
         public int y;

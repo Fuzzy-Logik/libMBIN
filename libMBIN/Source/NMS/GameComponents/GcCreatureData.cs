@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x60, GUID = 0xFA9126943E19F338)]
-    public class GcCreatureData : NMSTemplate
-    {
+    public class GcCreatureData : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Id;
         /* 0x10 */ public bool OnlySpawnWhenIdIsForced;

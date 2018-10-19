@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x3235EA918856F2FB)]
-    public class TkProceduralTextureLayer : NMSTemplate     // size: 0x40
-    {
+    public class TkProceduralTextureLayer : ToolkitData {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Name;
 

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFB6953103434EDD8)]
-    public class GcAtlasDiscoveryMetadata : NMSTemplate
-    {
+    public class GcAtlasDiscoveryMetadata : GameComponent {
+
         [NMS(Size = 0x80)]
         public string CustomName;
     }

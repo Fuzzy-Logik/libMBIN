@@ -1,11 +1,10 @@
 ﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
 
-namespace libMBIN.NMS.Globals
-{
+namespace libMBIN.NMS.Globals {
+
     [NMS( GUID = 0x6ABE798B8E148B68 )]
-    public class GcBuildingGlobals : NMSTemplate
-    {
+    public class GcBuildingGlobals : GlobalData {
+
         /* 0x0 */ public bool AllowBuildingUsingIntermediates;
         /* 0x4 */ public float BuildingLineFadeStart;
         /* 0x8 */ public float BuildingLineFadeEnd;
@@ -117,7 +116,10 @@ namespace libMBIN.NMS.Globals
         /* 0x240 */ public float BaseBuildingTerrainEditBaseYOffset;
         /* 0x244 */ public float BaseBuildingTerrainEditTopYOffset;
         /* 0x248 */ public float BaseBuildingTerrainEditBoundsScalar;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x24C */ public byte[] EndPadding;
+
     }
+
 }

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4A07C0F132712212)]
-    public class GcBirdData : NMSTemplate		// size: 0x90
-    {
+    public class GcBirdData : GameComponent {
+
         public float FlapSpeedMax;
         public float FlapSpeedMin;
         public float FlapSpeed;

@@ -1,6 +1,6 @@
 ﻿namespace libMBIN.NMS {
 
-    public class NMSString0x10 : NMSTemplate {
+    public class NMSString0x10 : NMSType {
 
         [NMS( Size = 0x10 )]
         private string _val;

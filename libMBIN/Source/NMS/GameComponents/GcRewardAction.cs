@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xE99A21CC212AEF47)]
-    public class GcRewardAction : NMSTemplate
-    {
+    public class GcRewardAction : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Reward;
     }

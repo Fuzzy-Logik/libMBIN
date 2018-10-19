@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x54, GUID = 0x2134F28E3C1FC07E)]
-    public class GcCameraWarpSettings : NMSTemplate
-    {
+    public class GcCameraWarpSettings : GameComponent {
+
         public float FocusPointDist;
         public float OffsetZFrequency_1;
         public float OffsetZFrequency_2;

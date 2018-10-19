@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x2C, GUID = 0x33F2238EFBDDCC89)]
-    public class GcDroneControlData : NMSTemplate
-    {
+    public class GcDroneControlData : GameComponent {
+
         public float MaxSpeed;                  // 41A00000h
         public float Strength;                  // 3FC00000h
         public float DirectionBrake;            // 3F800000h

@@ -6,7 +6,7 @@ using System.Reflection;
 namespace libMBIN.NMS.Toolkit {
 
     [NMS( Size = 0x30, GUID = 0x122A23E7D278667B )]
-    public class TkAnimNodeFrameData : NMSTemplate, IDeserialize {
+    public class TkAnimNodeFrameData : ToolkitData, IDeserialize {
 
         public List<Quaternion> Rotations;
         public List<Vector4f>   Translations;

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x10907E0AAEACD31)]
-    public class GcUserSettingsData : NMSTemplate
-    {
+    public class GcUserSettingsData : GameComponent {
+
         // this needs to be fixed!! Has a fair few values missing as can be see in the struct and the file itself
 
         /* 0x0000 */ public bool InvertLookControls;

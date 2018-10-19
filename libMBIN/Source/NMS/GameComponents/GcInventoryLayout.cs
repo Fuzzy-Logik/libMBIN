@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xEB40D4AD4447ECD0)]
-    public class GcInventoryLayout : NMSTemplate        // size: 0x20
-    {
+    public class GcInventoryLayout : GameComponent {
+
         /* 0x00 */ public int Slots;
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x04 */ public byte[] Padding4;

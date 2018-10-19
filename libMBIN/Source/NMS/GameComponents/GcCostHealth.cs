@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x68662CA06329C105)]
-    public class GcCostHealth : NMSTemplate
-    {
+    public class GcCostHealth : GameComponent {
+
         public int HealthUnits;
     }
 }

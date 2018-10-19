@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0x1E174AAC81BFAF86)]
-    public class GcDistanceScaleComponentData : NMSTemplate
-    {
+    public class GcDistanceScaleComponentData : GameComponent {
+
         public bool UseGlobals;
         public float Scale;
         public float MinDistance;

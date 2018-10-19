@@ -1,11 +1,11 @@
-using libMBIN.NMS.Toolkit;
 using libMBIN.NMS.GameComponents;
+using libMBIN.NMS.Toolkit;
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS(GUID = 0x5E2BB84C26535A58)]
-    public class GcCameraGlobals : NMSTemplate
-    {
+namespace libMBIN.NMS.Globals {
+
+    [NMS( GUID = 0x5E2BB84C26535A58 )]
+    public class GcCameraGlobals : GlobalData {
+
 		/* 0x0 */ public bool PauseThirdPersonCamInPause;
 		/* 0x4 */ public float TogglePerspectiveBlendTime;
 		/* 0x8 */ public float ThirdPersonAfterIntroCamBlendTime;
@@ -45,8 +45,10 @@ namespace libMBIN.NMS.Globals
 		/* 0x928 */ public GcCameraFollowSettings CharacterSteepSlopeCam;
 		/* 0xA08 */ public GcCameraFollowSettings CharacterUnderwaterCam;
 		/* 0xAE8 */ public float ThirdPersonCameraChangeBlendTime;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0xAEC */ public byte[] PaddingAEC;
+
 		/* 0xAF0 */ public GcCameraFollowSettings BuggyFollowCam;
 		/* 0xBD0 */ public GcCameraFollowSettings HovercraftFollowCam;
 		/* 0xCB0 */ public GcCameraFollowSettings SubmarineFollowCam;
@@ -58,38 +60,51 @@ namespace libMBIN.NMS.Globals
 		/* 0x11F0 */ public GcCameraFollowSettings ShuttleFollowCam;
 		/* 0x12D0 */ public GcCameraFollowSettings RoyalShipFollowCam;
 		/* 0x13B0 */ public GcCameraFollowSettings ScienceShipFollowCam;
+
 		/* 0x1490 */ public float FrontendModelCameraSpringTime;
 		/* 0x1494 */ public float ModelViewFlashTime;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x1498 */ public byte[] Padding1498;
 		/* 0x14A0 */ public Vector4f ModelViewOffset;
 		/* 0x14B0 */ public Vector2f ModelViewFocusOffset;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x14B8 */ public byte[] Padding14B8;
         /* 0x14C0 */ public Vector4f InteractionOffset;
 		/* 0x14D0 */ public Vector4f InteractionShipFocusOffset;
+
 		/* 0x14E0 */ public float DistanceForFleetInteraction;
 		/* 0x14E4 */ public float DistanceForFrigateInteraction;
 		/* 0x14E8 */ public float DistanceForFrigatePurchaseInteraction;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x14EC */ public byte[] Padding14EC;
         /* 0x14F0 */ public Vector4f OffsetForFleetInteraction;
 		/* 0x1500 */ public Vector4f OffsetForFrigateInteraction;
+
 		/* 0x1510 */ public float FleetUIOrbitRate;
 		/* 0x1514 */ public float FleetUIVerticalMotionDuration;
 		/* 0x1518 */ public float FleetUIVerticalMotionAmplitude;
+
 		/* 0x151C */ public Vector2f PitchForFrigateInteraction;
 		/* 0x1524 */ public Vector2f RotationForFrigateInteraction;
+
 		/* 0x152C */ public float InteractionModeBlendTime;
 		/* 0x1530 */ public float InteractionModeFocusCamBlend;
 		/* 0x1534 */ public float InteractionModeFoV;
+
 		/* 0x1538 */ public float MinInteractFocusAngle;
 		/* 0x153C */ public float ModelViewInterpTime;
+
 		/* 0x1540 */ public float ThirdPersonBlendInTime;
 		/* 0x1544 */ public float ThirdPersonBlendOutTime;
+
 		/* 0x1548 */ public float ThirdPersonCollisionPushOffsetReducerStart;
 		/* 0x154C */ public float ThirdPersonOffsetSpringTime;
+
 		/* 0x1550 */ public bool MaxBob;
+
 		/* 0x1554 */ public float PhotoModeMoveSpeed;
 		/* 0x1558 */ public float PhotoModeTurnSpeed;
 		/* 0x155C */ public float PhotoModeMaxDistance;
@@ -100,9 +115,11 @@ namespace libMBIN.NMS.Globals
 		/* 0x1570 */ public float PhotoModeRollSpeed;
 		/* 0x1574 */ public float PhotoModeFlashDuration;
 		/* 0x1578 */ public float PhotoModeFlashIntensity;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x157C */ public byte[] Padding157C;
         /* 0x1580 */ public Vector4f PhotoModeShipOffset;
+
 		/* 0x1590 */ public float RunningFoVAdjust;
 		/* 0x1594 */ public float MeleeBoostedFoV;
 		/* 0x1598 */ public float MeleeFoV;
@@ -162,8 +179,10 @@ namespace libMBIN.NMS.Globals
 		/* 0x1720 */ public float IndoorCamShakeDamper;
 		/* 0x1724 */ public float FirstPersonSlerpAway;
 		/* 0x1728 */ public float FirstPersonSlerpTowards;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x172C */ public byte[] Padding172C;
+
         [NMS(Size = 0x20)]
         /* 0x1730 */ public GcCameraShakeData[] CameraShakeTable;
         /* 0x2F30 */ public float BobAmount;
@@ -184,10 +203,12 @@ namespace libMBIN.NMS.Globals
 		/* 0x2F6C */ public float DebugCameraFastFactor;
 		/* 0x2F70 */ public float DebugCameraSpaceFastFactor;
 		/* 0x2F74 */ public float OffsetCamFOV;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x2F78 */ public byte[] Padding2F78;
         /* 0x2F80 */ public Vector4f OffsetCamOffset;
         /* 0x2F90 */ public Vector4f OffsetCamRotation;
+
         /* 0x2FA0 */ public float ObjectFocusTime;
         /* 0x2FA4 */ public float CharCamFocusHeight;
         /* 0x2FA8 */ public float CharCamMaxDistance;
@@ -219,26 +240,35 @@ namespace libMBIN.NMS.Globals
         /* 0x3010 */ public float FoVSpring;
         /* 0x3014 */ public float FoVAdjust;
         /* 0x3018 */ public bool FollowDrawCamProbes;
+
         [NMS(Size = 0x3, Ignore = true)]
         /* 0x3019 */ public byte[] Padding3019;
+
         /* 0x301C */ public GcCameraAnimationData AmbientCameraAnimations;
         /* 0x30A0 */ public GcCameraAnimationData AmbientDroneAnimations;
         [NMS(Size = 0x80)]
         /* 0x3124 */ public string CameraAmbientAnimationsData;
         /* 0x31A4 */ public float CameraAmbientAutoSwitchMinTime;
         /* 0x31A8 */ public float CameraAmbientAutoSwitchMaxTime;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x31AC */ public byte[] Padding31AC;
         /* 0x31B0 */ public TkModelRendererData CameraNPCShipInteraction;
         /* 0x3260 */ public TkModelRendererData CameraNPCShopInteraction;
+
         [NMS(Size = 0x4)]
         /* 0x3310 */ public Vector4f[] SavedCameraPositions;
+
         [NMS(Size = 0x40, Ignore = true)]
         /* 0x3350 */ public byte[] Padding3350;
+
         [NMS(Size = 0x4)]
         /* 0x3390 */ public Vector4f[] SavedCameraFacing;
         /* 0x33D0 */ public GcCameraWarpSettings WarpSettings;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x3424 */ public byte[] EndPadding;
+
     }
+
 }

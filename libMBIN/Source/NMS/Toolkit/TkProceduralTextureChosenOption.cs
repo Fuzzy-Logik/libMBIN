@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x60, GUID = 0x8B752B493C2190FA)]
-    public class TkProceduralTextureChosenOption : NMSTemplate
-    {
+    public class TkProceduralTextureChosenOption : ToolkitData {
+
         [NMS(Size = 0x10)]
         public string Layer;
         [NMS(Size = 0x10)]

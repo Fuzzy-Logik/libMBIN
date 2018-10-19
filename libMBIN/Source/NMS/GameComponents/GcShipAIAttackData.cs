@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xD0, GUID = 0xDC9412B2F3921390)]
-    public class GcShipAIAttackData : NMSTemplate
-    {
+    public class GcShipAIAttackData : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Id;
         /* 0x10 */ public float GunDispersionAngle;

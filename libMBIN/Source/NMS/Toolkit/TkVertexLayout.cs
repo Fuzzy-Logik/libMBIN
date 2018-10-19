@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xB5F73B43F19328BA)]
-    public class TkVertexLayout : NMSTemplate
-    {
+    public class TkVertexLayout : ToolkitData {
+
         public int ElementCount;
         public int Stride;
 

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xA8064521312FF34A)]
-    public class TkUserServiceAuthProvider : NMSTemplate
-    {
+    public class TkUserServiceAuthProvider : ToolkitData {
+
 		public enum AuthProviderEnum { Null, PSN, Steam, Galaxy }
 		public AuthProviderEnum AuthProvider;
     }

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x79BCF4E60FAC1B71)]
-    public class GcAlienSpeechEntry : NMSTemplate       // size: 0x40
-    {
+    public class GcAlienSpeechEntry : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Id;
 

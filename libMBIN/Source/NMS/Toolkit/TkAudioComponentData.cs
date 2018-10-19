@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0xA8, GUID = 0x1345863FBC0832FF)]
-    public class TkAudioComponentData : NMSTemplate
-    {
+    public class TkAudioComponentData : ToolkitData {
+
         [NMS(Size = 0x80)]
         /* 0x00 */ public string Ambient;
         [NMS(Size = 0x10)]

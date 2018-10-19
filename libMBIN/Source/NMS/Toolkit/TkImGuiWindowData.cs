@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x159F70DC858BFEB9)]
-    public class TkImGuiWindowData : NMSTemplate
-    {
+    public class TkImGuiWindowData : ToolkitData {
+
         [NMS(Size = 0x80)]
         public string Type;
 

@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x70, GUID = 0x8EE38D16655115FC)]
-    public class GcNPCAnimationSetData : NMSTemplate
-    {
+    public class GcNPCAnimationSetData : GameComponent {
+
         public List<GcNPCProbabilityAnimationData> IdleAnimations;
         public List<GcNPCProbabilityAnimationData> IdleFlavourAnimations;
         public List<GcNPCProbabilityAnimationData> ChatterAnimations;

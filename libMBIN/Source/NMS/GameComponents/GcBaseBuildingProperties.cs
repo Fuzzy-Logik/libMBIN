@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xB71A10E23C5105BD)]
-    public class GcBaseBuildingProperties : NMSTemplate
-    {
+    public class GcBaseBuildingProperties : GameComponent {
+
         [NMS(Size = 0x10)]
         public string DefaultInBaseObject;
         [NMS(Size = 0x10)]

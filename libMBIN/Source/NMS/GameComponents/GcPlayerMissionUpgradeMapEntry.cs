@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4A9DE083678EC5C2)]
-    public class GcPlayerMissionUpgradeMapEntry : NMSTemplate       // size: 0x38
-    {
+    public class GcPlayerMissionUpgradeMapEntry : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Mission;
         /* 0x10 */ public int MinProgress;

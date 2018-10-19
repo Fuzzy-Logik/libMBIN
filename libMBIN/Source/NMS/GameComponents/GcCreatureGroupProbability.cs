@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8707DA4682020EC8)]
-    public class GcCreatureGroupProbability : NMSTemplate       // size: 0x18
-    {
+    public class GcCreatureGroupProbability : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Group;
         public float Probability;         // 3F800000h

@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x66F519D76005DDAF)]
-    public class GcRewardMultiSpecificProductRecipes : NMSTemplate
-    {
+    public class GcRewardMultiSpecificProductRecipes : GameComponent {
+
         public List<NMSString0x10> ProductIds;
         [NMS(Size = 0x10)]
         public string DisplayProductId;

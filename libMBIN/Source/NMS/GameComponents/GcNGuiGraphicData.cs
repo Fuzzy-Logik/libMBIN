@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x280, Alignment = 0x10, GUID = 0x4FA1552617F32EFF)]
-    public class GcNGuiGraphicData : NMSTemplate
-    {
+    public class GcNGuiGraphicData : GameComponent {
+
         /* 0x000 */ public GcNGuiElementData ElementData;
         /* 0x050 */ public TkNGuiGraphicStyle Style;
 

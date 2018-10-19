@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xE2FDB3256F6FF4CD)]
-    public class TkPlatformButtonPair : NMSTemplate
-    {
+    public class TkPlatformButtonPair : ToolkitData {
+
         [NMS(Size = 0x10)]
         public string PlatformId;
         [NMS(Size = 0x10)]

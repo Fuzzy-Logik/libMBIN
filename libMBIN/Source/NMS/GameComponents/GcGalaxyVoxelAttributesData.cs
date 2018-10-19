@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x5F60C335588B8F1E)]
-    public class GcGalaxyVoxelAttributesData : NMSTemplate
-    {
+    public class GcGalaxyVoxelAttributesData : GameComponent {
+
         /* 0x00 */ public bool InsideGoalGap;
         [NMS(Size = 0x3, Ignore = true)]
         /* 0x01 */ public byte[] Padding01;

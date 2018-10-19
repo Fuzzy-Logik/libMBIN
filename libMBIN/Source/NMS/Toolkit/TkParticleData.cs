@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0xD0, GUID = 0x6FFE4AC2BE301EB6)]
-    public class TkParticleData : NMSTemplate
-    {
+    public class TkParticleData : ToolkitData {
+
         /* 0x00 */ public bool StartEnabled;
         /* 0x01 */ public bool Oneshot;
         /* 0x04 */ public int MaxCount;

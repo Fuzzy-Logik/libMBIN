@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x23D1A40BAFED32A4)]
-    public class GcBeenShotEvent : NMSTemplate
-    {
+    public class GcBeenShotEvent : GameComponent {
+
 		public enum ShotByEnum { Player, Anything }
 		public ShotByEnum ShotBy;
 

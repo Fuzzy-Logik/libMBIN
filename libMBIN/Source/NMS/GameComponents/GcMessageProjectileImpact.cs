@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x6E628EFEA4C27F42)]
-    public class GcMessageProjectileImpact: NMSTemplate
-    {
+    public class GcMessageProjectileImpact: GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string Id;
         /* 0x10 */ public int Damage;

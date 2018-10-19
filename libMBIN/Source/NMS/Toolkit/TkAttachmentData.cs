@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x28, GUID = 0x87068490DC83B1C1)]
-    public class TkAttachmentData : NMSTemplate
-    {
+    public class TkAttachmentData : ToolkitData {
+
         /* 0x00 */ public List<NMSTemplate> Components;
         [NMS(Size = 0x5)]
         /* 0x10 */ public float[] LodDistances;

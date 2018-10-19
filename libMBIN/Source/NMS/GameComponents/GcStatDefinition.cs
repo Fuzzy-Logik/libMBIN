@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x9FC1366FC90CF988)]
-    public class GcStatDefinition : NMSTemplate
-    {
+    public class GcStatDefinition : GameComponent {
+
         public GcStatType Type;
         public GcStatTrackType TrackType;
         public GcStatDisplayType DisplayType;

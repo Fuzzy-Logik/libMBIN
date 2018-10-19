@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFB4C5A9F89C74F2D)]
-    public class GcRewardScanEventNearestBuilding : NMSTemplate
-    {
+    public class GcRewardScanEventNearestBuilding : GameComponent {
+
         public bool DoAerialScan;
         public bool IncludeVisited;
     }

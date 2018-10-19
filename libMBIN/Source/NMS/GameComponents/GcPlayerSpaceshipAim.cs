@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0x6807D0364B187845)]
-    public class GcPlayerSpaceshipAim : NMSTemplate
-    {
+    public class GcPlayerSpaceshipAim : GameComponent {
+
         /* 0x000 */ public float AimAngleMin;
         /* 0x004 */ public float AimAngleRange;
         /* 0x008 */ public float AimDistanceAngleMin;

@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x50E28F5B756C135B)]
-    public class GcObjectSpawnData : NMSTemplate // 0x3B0 bytes
-    {
+    public class GcObjectSpawnData : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x000 */ public string DebugName;
 		public enum TypeEnum { Instanced, Single }

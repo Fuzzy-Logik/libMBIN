@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4CE334B92351578B)]
-    public class GcItemCostData : NMSTemplate        // size: 0x20
-    {
+    public class GcItemCostData : GameComponent {
+
         [NMS(Size = 0x10)]
         public string ID;
         public float Cost;

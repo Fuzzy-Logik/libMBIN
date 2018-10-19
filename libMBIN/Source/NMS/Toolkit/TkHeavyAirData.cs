@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xB55476A1D9E0E509)]
-    public class TkHeavyAirData : NMSTemplate
-    {
+    public class TkHeavyAirData : ToolkitData {
+
         [NMS(Size = 0x80)]
         public string Material;
         public int NumberOfParticles;

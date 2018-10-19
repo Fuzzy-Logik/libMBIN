@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x90, GUID = 0x3FEB12DC7AB9E2EC)]
-    public class GcMaintenanceContainer : NMSTemplate
-    {
+    public class GcMaintenanceContainer : GameComponent {
+
         /* 0x00 */ public GcInventoryContainer InventoryContainer;
         /* 0x60 */ public ulong LastUpdateTimestamp;
         /* 0x68 */ public ulong LastCompletedTimestamp;

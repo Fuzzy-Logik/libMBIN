@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x28, GUID = 0x544936348FE78AAE)]
-    public class TkActionButtonMap : NMSTemplate
-    {
+    public class TkActionButtonMap : ToolkitData {
+
         [NMS(Size = 0x10)]
         /* 0x00 */ public string ActionId;
         /* 0x10 */ public bool ScaleToFitFont;

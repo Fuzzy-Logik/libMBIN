@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x64BEA061A645390)]
-    public class GcRewardSpecificProductRecipeFromList : NMSTemplate
-    {
+    public class GcRewardSpecificProductRecipeFromList : GameComponent {
+
         public List<NMSString0x10> ProductList;
 
 		public enum ProductListRewardOrderEnum { OneRandom, InOrder, TryAllRandom }

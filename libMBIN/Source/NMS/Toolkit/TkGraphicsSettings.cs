@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x88, GUID = 0xD6DA8D9BCBAC1DBB)]
-    public class TkGraphicsSettings : NMSTemplate
-    {
+    public class TkGraphicsSettings : ToolkitData {
+
         /* 0x00 */ public int Version;
 		/* 0x04 */ public bool FullScreen;
         /* 0x05 */ public bool Borderless;

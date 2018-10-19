@@ -1,11 +1,10 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
 
-namespace libMBIN.NMS.Globals
-{
+namespace libMBIN.NMS.Globals {
+
     [NMS( GUID = 0x464813EEC6B590AD )]
-    public class GcRobotGlobals : NMSTemplate
-    {
+    public class GcRobotGlobals : GlobalData {
+
         /* 0x0 */ public float GrenadeLaunchFlightTime;
         /* 0x4 */ public int AttackSentinelWantedValue;
         /* 0x8 */ public int MaxNumPatrolDrones;
@@ -27,8 +26,10 @@ namespace libMBIN.NMS.Globals
         /* 0x48 */ public float LineOfSightReturnRange;
         /* 0x4C */ public float FakeQuadGuard;
         /* 0x50 */ public float RobotSightAngle;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x54 */ public byte[] Padding54;
+
         /* 0x60 */ public Vector4f DroneRepairOffset;
         /* 0x70 */ public float QuadLookAngleMin;
         /* 0x74 */ public float QuadLookAngleMax;
@@ -63,8 +64,10 @@ namespace libMBIN.NMS.Globals
         /* 0xF0 */ public float LabelOffsetDrone;
         /* 0xF4 */ public float LabelOffsetQuad;
         /* 0xF8 */ public float LabelOffsetWalker;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0xFC */ public byte[] PaddingFC;
+
         /* 0x100 */ public Vector4f QuadCriticalOffset;
         /* 0x110 */ public Vector4f DroneCriticalOffset;
         /* 0x120 */ public Vector4f WalkerGunOffset1;
@@ -109,8 +112,10 @@ namespace libMBIN.NMS.Globals
         /* 0x1E0 */ public bool DroneClickToMove;
         /* 0x1E4 */ public float DroneInvestigateMinScanTimeAttackMe;
         /* 0x1E8 */ public float DroneInvestigateMinScanTime;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x1EC */ public byte[] Padding1EC;
+
         /* 0x1F0 */ public GcScanEffectData DroneScanEffect;
         /* 0x240 */ public float HeightTestSampleDistance;
         /* 0x244 */ public float HeightTestSampleTime;
@@ -218,5 +223,7 @@ namespace libMBIN.NMS.Globals
         /* 0x3E0 */ public GcRobotLaserData WalkerLaser;
         /* 0x430 */ public GcRobotLaserData QuadLaser;
         /* 0x480 */ public GcDroneData DroneControl;
+
     }
+
 }

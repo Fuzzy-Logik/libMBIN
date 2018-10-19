@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x14, GUID = 0xE134690B3AB11AF1)]
-    public class GcInteractionDof : NMSTemplate     // in global?
-    {
+    public class GcInteractionDof : GameComponent {
+
         /* 0x00 */ public bool IsEnabled;           // 101h     (ie. including next byte)
         /* 0x01 */ public bool UseGlobals;
         /* 0x04 */ public float NearPlaneMin;       // 40000000h

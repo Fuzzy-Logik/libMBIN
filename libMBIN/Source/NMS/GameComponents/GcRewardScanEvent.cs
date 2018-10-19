@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Alignment = 0x8, Size = 0x28, GUID = 0x4905B2344858BDB3)]
-    public class GcRewardScanEvent : NMSTemplate
-    {
+    public class GcRewardScanEvent : GameComponent {
+
         [NMS(Size = 0x20)]
         public string Event;
 		public enum ScanEventTableEnum { Space, Planet, Missions, Tutorial }

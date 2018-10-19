@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x1D0, GUID = 0x586D342082D81B46)]
-    public class GcPlanetWaterData : NMSTemplate
-    {
+    public class GcPlanetWaterData : GameComponent {
+
         /* 0x00 */ public Colour WaterFogColourNear;
         /* 0x10 */ public Colour WaterFogColourFar;
         /* 0x20 */ public Colour WaterColourBase;

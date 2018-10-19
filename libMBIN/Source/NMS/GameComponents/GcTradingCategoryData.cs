@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x6EA695AFABAD730F)]
-    public class GcTradingCategoryData : NMSTemplate       // size: 0xCC
-    {
+    public class GcTradingCategoryData : GameComponent {
+
         [NMS(Size = 0x40)]
         /* 0x00 */ public string Name;
         /* 0x40 */ public TkTextureResource Icon;

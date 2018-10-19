@@ -1,11 +1,11 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
+using libMBIN.NMS.Toolkit;
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS( GUID = 0xC062555E105776D)]
-    public class GcAISpaceshipGlobals : NMSTemplate
-    {
+namespace libMBIN.NMS.Globals {
+
+    [NMS( GUID = 0xC062555E105776D )]
+    public class GcAISpaceshipGlobals : GlobalData {
+
         /* 0x0 */ public bool TradersAttackPirates;
         /* 0x1 */ public bool TraderHailingEnabled;
         /* 0x2 */ public bool FreightersAlwaysAttackPlayer;
@@ -109,8 +109,10 @@ namespace libMBIN.NMS.Globals
         /* 0x474 */ public string HangarFilename;
         /* 0x4F4 */ public float PoliceFreighterWarpOutRange;
         /* 0x4F8 */ public float MissileRange;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x4FC */ public byte[] Padding4FC;
+
         /* 0x500 */ public Colour FreighterDoorColourActive;
         /* 0x510 */ public Colour FreighterDoorColourInactive;
         /* 0x520 */ public Colour AlertLightColour;
@@ -125,8 +127,10 @@ namespace libMBIN.NMS.Globals
         /* 0x55C */ public float TurretMissileRange;
         /* 0x560 */ public float TurretOriginOffset;
         /* 0x564 */ public float TurretAlertLightIntensity;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x568 */ public byte[] Padding568;
+
         /* 0x570 */ public Vector4f TurretAlertLightOffset;
         /* 0x580 */ public bool DisableTradeRoutes;
         /* 0x584 */ public float AttackFreighterGetThereBoost;
@@ -308,8 +312,10 @@ namespace libMBIN.NMS.Globals
         /* 0xA6C */ public float FlybyHeight;
         /* 0xA70 */ public float FlybyOffset;
         /* 0xA74 */ public GcProjectileLineData ShipBullet;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0xA9C */ public byte[] PaddingA9C;
+
         /* 0xAA0 */ public GcSpaceshipTravelData TraderTravel;
         /* 0xB00 */ public float WingmanLockDistance;
         /* 0xB04 */ public float WingmanLockBetweenTime;
@@ -370,5 +376,7 @@ namespace libMBIN.NMS.Globals
         /* 0xBF8 */ public GcShipAIAttackData AttackPlanet;
         /* 0xCC8 */ public GcShipAIAttackData TraderAttack;
         /* 0xD98 */ public GcShipAIPlanetPatrolData WingmanPathData;
+
     }
+
 }

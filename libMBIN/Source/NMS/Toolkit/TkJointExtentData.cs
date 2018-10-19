@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x570DB1A0C98C0858)]
-    public class TkJointExtentData : NMSTemplate
-    {
+    public class TkJointExtentData : ToolkitData {
+
         [NMS(Size = 3)]
         public float[] JointExtentMin; // Vector3f
 

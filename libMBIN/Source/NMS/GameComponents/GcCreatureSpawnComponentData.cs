@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xFA001D5CA538ABBD)]
-    public class GcCreatureSpawnComponentData : NMSTemplate
-    {
+    public class GcCreatureSpawnComponentData : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x000 */ public string TriggerID;
         [NMS(Size = 0x80)]

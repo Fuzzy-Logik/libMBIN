@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xD77B64DA9352885D)]
-    public class GcMissionSequenceSignalGalacticPoint : NMSTemplate     // size: 0x104
-    {
+    public class GcMissionSequenceSignalGalacticPoint : GameComponent {
+
         [NMS(Size = 0x80)]
         /* 0x000 */ public string Message;
         /* 0x080 */ public GcMissionGalacticPoint Target;

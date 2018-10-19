@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xD5F1AEB0209042C6)]
-    public class GcSpawnDensity : NMSTemplate
-    {
+    public class GcSpawnDensity : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x000 */ public string Name;
         /* 0x010 */ public bool Active;

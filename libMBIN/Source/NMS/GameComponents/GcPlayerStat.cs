@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xB9146AAAE645DEC)]
-    public class GcPlayerStat : NMSTemplate // 0x20 bytes
-    {
+    public class GcPlayerStat : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Id;
 

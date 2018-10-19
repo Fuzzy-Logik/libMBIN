@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x4C0, GUID = 0x8522736968AF8553)]
-    public class GcBaseBuildingMaterial : NMSTemplate
-    {
+    public class GcBaseBuildingMaterial : GameComponent {
+
         /* 0x00 */ public int MaterialIndex;
 
         [NMS(Size = 0x4, Ignore = true)]

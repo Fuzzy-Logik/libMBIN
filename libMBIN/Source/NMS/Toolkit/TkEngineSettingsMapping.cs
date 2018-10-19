@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x40, GUID = 0x5F0D049CCD180588)]
-    public class TkEngineSettingsMapping : NMSTemplate
-    {
+    public class TkEngineSettingsMapping : ToolkitData {
+
         public float ShadowMultiplierLow;
         public float ShadowMultiplierNormal;
         public float ShadowMultiplierHigh;

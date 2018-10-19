@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x35960ABC2FC00124)]
-    public class TkMaterialMetaData : NMSTemplate       // size: 0x420;
-    {
+    public class TkMaterialMetaData : ToolkitData {
+
         [NMS(Size = 0x80)]
         /* 0x000 */ public string ExternalMaterial;
 		public enum ShaderEnum { UberShader, Sky, Screen, UberHack }

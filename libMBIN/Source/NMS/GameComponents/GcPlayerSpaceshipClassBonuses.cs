@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x30, GUID = 0x9E42C06E5A1542B3)]
-    public class GcPlayerSpaceshipClassBonuses : NMSTemplate
-    {
+    public class GcPlayerSpaceshipClassBonuses : GameComponent {
+
         /* 0x00 */ public float ThrustForceMax;         // 42480000h
         /* 0x04 */ public float ThrustForceMin;
         /* 0x08 */ public float MaxSpeedMax;            // 40A00000h

@@ -1,11 +1,10 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS( GUID = 0x3276D67F7EC472E5)]
-    public class GcCharacterGlobals : NMSTemplate
-    {
+namespace libMBIN.NMS.Globals {
+
+    [NMS( GUID = 0x3276D67F7EC472E5 )]
+    public class GcCharacterGlobals : GlobalData {
+
         [NMS(Size = 0x80)]
         /* 0x000 */ public string CharacterFile;
         /* 0x080 */ public GcSeed CharacterSeedOverride;
@@ -36,8 +35,10 @@ namespace libMBIN.NMS.Globals
 		/* 0xF0 */ public float SwimmingRollSmoothTimeWithWeapon;
 		/* 0xF4 */ public float LadderDistanceToAutoMount;
 		/* 0xF8 */ public float LadderCooldownAfterBeforeAutoClimb;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0xFC */ public byte[] PaddingFC;
+
         [NMS(Size = 0x10)]
         /* 0x100 */ public string LadderClimbIdle;
         [NMS(Size = 0x10)]
@@ -52,6 +53,7 @@ namespace libMBIN.NMS.Globals
         /* 0x1450 */ public string LadderMountTop;
         [NMS(Size = 0x10)]
         /* 0x160 */ public string LadderDismountTop;
+
 		/* 0x170 */ public float SlopeAngleForUphillClimb;
 		/* 0x174 */ public float SlopeAngleForDownhillClimb;
 		/* 0x178 */ public float SlidingBrake;
@@ -88,5 +90,7 @@ namespace libMBIN.NMS.Globals
 		/* 0x1F4 */ public float UnderwaterToAirTolerance;
 		/* 0x1F8 */ public float WaterBottomSmoothPushUp;
 		/* 0x1FC */ public float WaterBottomSmoothPushUpDepth;
+
     }
+
 }

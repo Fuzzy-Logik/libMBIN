@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x9C, GUID = 0x698532BFF8C2F781)]
-    public class GcObjectDefinitionData : NMSTemplate
-    {
+    public class GcObjectDefinitionData : GameComponent {
+
         [NMS(Size = 0x80)]
         /* 0x00 */ public string Filename;
 		public enum ObjectRenderTypeEnum { Instanced, Single }

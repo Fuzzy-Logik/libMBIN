@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x2259AC0209F03CD9)]
-    public class GcMissionSequenceKill : NMSTemplate      // size: 0x10C
-    {
+    public class GcMissionSequenceKill : GameComponent {
+
         [NMS(Size = 0x80)]
         /* 0x000 */ public string Message;
 		public enum KillTargetEnum { Robots, Drones, Quads, Walkers, Predators, Creatures, Pirates, Traders, Fiends, FeedCreatures }

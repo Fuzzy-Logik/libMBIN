@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x3BD123ED9F9C4AAE)]
-    public class GcPlayerNearbyEvent : NMSTemplate      // size: 0x24
-    {
+    public class GcPlayerNearbyEvent : GameComponent {
+
 		public enum RequirePlayerActionEnum { None, Fire, InShip, OnFoot, OnFootOutside, Upload }
 		public RequirePlayerActionEnum RequirePlayerAction;
         public float Distance;

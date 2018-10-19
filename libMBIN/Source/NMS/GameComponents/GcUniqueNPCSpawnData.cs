@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xA0E1569F241F7E28)]
-    public class GcUniqueNPCSpawnData : NMSTemplate // 0x2C8 bytes
-    {
+    public class GcUniqueNPCSpawnData : GameComponent {
+
 		public enum NPCSpawnConditionEnum { Always, MiniStation }
 		public NPCSpawnConditionEnum NPCSpawnCondition;
 

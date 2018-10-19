@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x1371942C474D2758)]
-    public class GcStatTrackType : NMSTemplate
-    {
+    public class GcStatTrackType : GameComponent {
+
 		public enum StatTrackTypeEnum { Set, Add, Max, Min }
 		public StatTrackTypeEnum StatTrackType;
     }

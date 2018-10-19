@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x90, GUID = 0x83D2C4892CEFB3A3)]
-    public class GcYearlyRecurrence : NMSTemplate
-    {
+    public class GcYearlyRecurrence : GameComponent {
+
         public int RecurrenceMinute;
         public int RecurrenceHour;
         public int RecurrenceDay;

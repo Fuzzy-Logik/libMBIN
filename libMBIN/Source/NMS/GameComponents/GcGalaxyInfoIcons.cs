@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0xB58, GUID = 0xEDDBE7AE19612B8F)]
-    public class GcGalaxyInfoIcons : NMSTemplate
-    {
+    public class GcGalaxyInfoIcons : GameComponent {
+
         [NMS(Size = 0x7, EnumValue = new[] { "Traders", "Warriors", "Explorers", "Robots", "Atlas", "Diplomats", "None" })]
         /* 0x000 */ public TkTextureResource[] RaceIcons;
         [NMS(Size = 0x7, EnumValue = new[] { "Mining", "HighTech", "Trading", "Manufacturing", "Fusion", "Scientific", "PowerGeneration" })]

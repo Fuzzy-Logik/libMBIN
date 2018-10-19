@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xC2EBE8CA8AF40DB1)]
-    public class GcSpaceSkyProperties : NMSTemplate         // size: 0xA0
-    {
+    public class GcSpaceSkyProperties : GameComponent {
+
           public GcPlanetWeatherColourIndex ColourIndex;        // add + 0x10 to all the next values
           [NMS(Size = 0x8, Ignore = true)]
           public byte[] Padding8;

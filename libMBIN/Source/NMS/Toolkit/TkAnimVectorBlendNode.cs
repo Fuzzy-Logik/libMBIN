@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x18, GUID = 0x1300B3988CAEE69E)]
-    public class TkAnimVectorBlendNode : NMSTemplate
-    {
+    public class TkAnimVectorBlendNode : ToolkitData {
+
 		public enum BlendOperationEnum { Blend, Add }
 		public BlendOperationEnum BlendOperation;
         [NMS(Size = 0x4, Ignore = true)]

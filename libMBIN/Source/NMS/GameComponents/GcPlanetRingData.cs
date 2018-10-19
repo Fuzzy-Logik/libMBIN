@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x60, GUID = 0xBF9AD056B83B4043)]
-    public class GcPlanetRingData : NMSTemplate
-    {
+    public class GcPlanetRingData : GameComponent {
+
         /* 0x00 */ public bool HasRings;
         [NMS(Size = 0xF, Ignore = true)]
         /* 0x01 */ public byte[] Padding1;

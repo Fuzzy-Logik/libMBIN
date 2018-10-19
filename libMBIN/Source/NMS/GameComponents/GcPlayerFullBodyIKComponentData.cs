@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x1E0, GUID = 0x1AC501CA8F8E4CB0, Broken = true)]
-    public class GcPlayerFullBodyIKComponentData : NMSTemplate
-    {
+    public class GcPlayerFullBodyIKComponentData : GameComponent {
+
         /* 0x000 */ public bool Enabled;
         /* 0x001 */ public bool EnableFootRaycasts;
         [NMS(Size = 0x6, Ignore = true)]

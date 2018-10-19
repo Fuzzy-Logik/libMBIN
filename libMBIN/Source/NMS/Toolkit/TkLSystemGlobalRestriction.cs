@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x4C98B666C4454E5A)]
-    public class TkLSystemGlobalRestriction : NMSTemplate
-    {
+    public class TkLSystemGlobalRestriction : ToolkitData {
+
         [NMS(Size = 0x20)]
         public string Name;
         [NMS(Size = 0x80)]

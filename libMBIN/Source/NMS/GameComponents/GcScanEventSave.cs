@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x87DB4E0216224E8F)]
-    public class GcScanEventSave : NMSTemplate // 0x50 bytes
-    {
+    public class GcScanEventSave : GameComponent {
+
         public int Table;
         [NMS(Size = 4, Ignore = true)]
         public byte[] Padding4;

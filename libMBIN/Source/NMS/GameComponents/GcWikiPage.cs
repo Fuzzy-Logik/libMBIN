@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x943A716913810596)]
-    public class GcWikiPage : NMSTemplate       // size: 0x168
-    {
+    public class GcWikiPage : GameComponent {
+
         [NMS(Size = 0x20)]
         /* 0x000 */ public string PageID;
         /* 0x020 */ public TkTextureResource Icon;

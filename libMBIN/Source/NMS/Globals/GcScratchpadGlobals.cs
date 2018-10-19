@@ -1,11 +1,10 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
 
-namespace libMBIN.NMS.Globals
-{
+namespace libMBIN.NMS.Globals {
+
     [NMS( GUID = 0xC14472951E47BFF8 )]
-    public class GcScratchpadGlobals : NMSTemplate
-    {
+    public class GcScratchpadGlobals : GlobalData {
+
         [NMS(Size = 0xE)]
         /* 0x0 */ public GcPresetTextureData[] IBLMaps;
         [NMS(Size = 0xA)]
@@ -14,5 +13,7 @@ namespace libMBIN.NMS.Globals
         /* 0x2400 */ public GcPresetTextureData[] OverlayTextures;
         [NMS(Size = 0xD)]
         /* 0x2700 */ public Colour[] TerrainColours;
+
     }
+
 }

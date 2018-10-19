@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x8246371C1D8ECBA2)]
-    public class GcScanEventSolarSystemLookup : NMSTemplate      // size: 0x1C
-    {
+    public class GcScanEventSolarSystemLookup : GameComponent {
+
         public bool UseStarType;
         public bool UseWealth;
         public bool Usetrading;

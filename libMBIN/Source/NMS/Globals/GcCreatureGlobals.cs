@@ -1,11 +1,10 @@
-using libMBIN.NMS.Toolkit;
 using libMBIN.NMS.GameComponents;
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS( GUID = 0xF239EC0A912FB902)]
-    public class GcCreatureGlobals : NMSTemplate
-    {
+namespace libMBIN.NMS.Globals {
+
+    [NMS( GUID = 0xF239EC0A912FB902 )]
+    public class GcCreatureGlobals : GlobalData {
+
         /* 0x0 */ public bool IsHurtingCreaturesACrime;
         /* 0x4 */ public float CreatureSeed;
         /* 0x8 */ public int MaxEcosystemCreatures;
@@ -38,8 +37,10 @@ namespace libMBIN.NMS.Globals
         /* 0x70 */ public float CreatureLookPlayerForceLookTime;
         /* 0x74 */ public float FootPlantError;
         /* 0x78 */ public float RecoverHealthTime;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x7C */ public byte[] Padding7C;
+
         /* 0x80 */ public GcCameraShakeData PainShake;
         /* 0x140 */ public float PatrolSwitchMinTime;
         /* 0x144 */ public float ExtraFollowStrength;
@@ -107,26 +108,35 @@ namespace libMBIN.NMS.Globals
         /* 0x2B8 */ public int CreatureMedHealth;
         /* 0x2BC */ public int CreatureLargeHealth;
         /* 0x2C0 */ public int CreatureHugeHealth;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x2C4 */ public byte[] Padding2C4;
+
         [NMS(Size = 0x10)]
         /* 0x2C8 */ public string CreatureLargeWalkShake;
         /* 0x2D8 */ public float CreatureLargeWalkMaxShakeDist;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x2DC */ public byte[] Padding2DC;
+
         [NMS(Size = 0x10)]
         /* 0x2E0 */ public string CreatureLargeRunShake;
         /* 0x2F0 */ public float CreatureLargeRunMaxShakeDist;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x2F4 */ public byte[] Padding2F4;
+
         [NMS(Size = 0x10)]
         /* 0x2F8 */ public string CreatureHugeWalkShake;
         /* 0x308 */ public float CreatureHugeWalkMaxShakeDist;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x30C */ public byte[] Padding30C;
+
         [NMS(Size = 0x10)]
         /* 0x310 */ public string CreatureHugeRunShake;
 		/* 0x320 */ public float CreatureHugeRunMaxShakeDist;
+
 		/* 0x324 */ public float SmallCreaturePerceptionDistance;
 		/* 0x328 */ public float largeCreaturePerceptionDistance;
 		/* 0x32C */ public float SmallCreatureFleePlayerDistance;
@@ -247,14 +257,17 @@ namespace libMBIN.NMS.Globals
 		/* 0x4F0 */ public float DetailAnimMinPauseTime;
 		/* 0x4F4 */ public float DetailAnimMaxPauseTime;
 		/* 0x4F8 */ public bool DetailAnimPlayWhileWalking;
+
         [NMS(Size = 0x7, Ignore = true)]
         /* 0x4F9 */ public byte[] Padding4F9;
+
         [NMS(Size = 0x10)]
         /* 0x500 */ public string CreatureDeathEffectSmall;
 		[NMS(Size = 0x10)]
 		/* 0x510 */ public string CreatureDeathEffectMedium;
 		[NMS(Size = 0x10)]
 		/* 0x520 */ public string CreatureDeathEffectBig;
+
 		/* 0x530 */ public float FootParticleTime;
         /* 0x534 */ public bool PiedPiper;
         /* 0x538 */ public float FollowPlayerDistance;
@@ -302,16 +315,22 @@ namespace libMBIN.NMS.Globals
         /* 0x6C9 */ public string DefaultWaterCreatureSettings;
         /* 0x74C */ public float CreatureSpeedMultiplier;
         /* 0x750 */ public float PredatorSpeedMultiplier;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x754 */ public byte[] Padding754;
+
         [NMS(Size = 0x3)]
         /* 0x758 */ public NMSString0x10[] FeedingSubstances;
         [NMS(Size = 0x3)]
         /* 0x788 */ public NMSString0x10[] KillingSubstances;
         [NMS(Size = 0x3)]
         /* 0x7B8 */ public NMSString0x10[] LootItems;
+
         /* 0x7E8 */ public int PauseBetweenCreatureSpawnRequests;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x7EC */ public byte[] EndPadding;
+
     }
+
 }

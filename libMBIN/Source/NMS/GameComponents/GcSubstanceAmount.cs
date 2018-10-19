@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x30, GUID = 0x15E8BBC4FDB928FE)]
-    public class GcSubstanceAmount : NMSTemplate
-    {
+    public class GcSubstanceAmount : GameComponent {
+
         public int AmountMin;
         public int AmountMax;
         [NMS(Size = 0x10)]

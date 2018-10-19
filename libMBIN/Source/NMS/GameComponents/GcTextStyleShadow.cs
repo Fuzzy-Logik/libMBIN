@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x7D59746106C3F196)]
-    public class GcTextStyleShadow : NMSTemplate
-    {
+    public class GcTextStyleShadow : GameComponent {
+
         public Colour ShadowColour;
         public Vector2f ShadowOffset;
 

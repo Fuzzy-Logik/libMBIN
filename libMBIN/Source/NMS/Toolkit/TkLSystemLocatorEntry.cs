@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x75324406CCCAAABD)]
-    public class TkLSystemLocatorEntry : NMSTemplate // 0x98 bytes
-    {
+    public class TkLSystemLocatorEntry : ToolkitData {
+
         [NMS(Size = 0x80)]
         public string Model;
 

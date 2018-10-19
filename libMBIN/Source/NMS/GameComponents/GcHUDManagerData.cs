@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x18C90AC3ABEDC7CD)]
-    public class GcHUDManagerData : NMSTemplate
-    {
+    public class GcHUDManagerData : GameComponent {
+
         public GcTextPreset TitleFont;
         public GcTextPreset SubtitleFont;
         public GcTextPreset SubtitleFontSmall;

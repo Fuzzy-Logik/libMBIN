@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x738CDF94ACD0CC0A)]
-    public class GcHUDTextData : NMSTemplate
-    {
+    public class GcHUDTextData : GameComponent {
+
         public GcHUDComponent Data;
 
         [NMS(Size = 0x80)]

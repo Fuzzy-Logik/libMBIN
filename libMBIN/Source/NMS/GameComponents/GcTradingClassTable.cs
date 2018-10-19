@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4BF71BB18072DE17)]
-    public class GcTradingClassTable : NMSTemplate      // size: 0xAAC
-    {
+    public class GcTradingClassTable : GameComponent {
+
         [NMS(Size = 0x7, EnumValue = new string[7] {"Mining", "HighTech", "Trading", "Manufacturing",
                                                     "Fusion" ,"Scientific", "PowerGeneration" })]
         /* 0x000 */ public GcTradingClassData[] TradingClassesData;

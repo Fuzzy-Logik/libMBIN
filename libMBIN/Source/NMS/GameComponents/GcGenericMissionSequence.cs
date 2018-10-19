@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x450, GUID = 0x45C9489C73EC858D)]
-    public class GcGenericMissionSequence : NMSTemplate
-    {
+    public class GcGenericMissionSequence : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x000 */ public string MissionID;
 		public enum MissionClassEnum { Primary, Secondary, ChainedSecondary, Guide }

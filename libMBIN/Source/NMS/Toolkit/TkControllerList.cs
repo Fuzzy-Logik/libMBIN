@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xD33AC9B9ADD17756)]
-    public class TkControllerList : NMSTemplate
-    {
+    public class TkControllerList : ToolkitData {
+
         public List<TkControllerButtonLookup> Controllers;
     }
 }

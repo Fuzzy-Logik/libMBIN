@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4ADB6398A852FD7B)]
-    public class GcRewardWikiTopic : NMSTemplate
-    {
+    public class GcRewardWikiTopic : GameComponent {
+
         [NMS(Size = 0x20)]
         public string Topic;
         public bool CentreMessage;

@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x130, GUID = 0x5CF8C4676B4A867A)]
-    public class GcSimpleInteractionComponentData : NMSTemplate
-    {
+    public class GcSimpleInteractionComponentData : GameComponent {
+
 		public enum SimpleInteractionTypeEnum { Interact, Treasure, Beacon, Scan, Save, CallShip, CallVehicle, Word, Tech, GenericReward, Feed, Ladder,
             ClaimBase, TeleportStartPoint, TeleportEndPoint, Portal, Chest, ResourceHarvester, BaseCapsule, Hologram, NPCTerminalMessage, VehicleBoot,
             BiomeHarvester, FreighterGalacticMap, FreighterChest }

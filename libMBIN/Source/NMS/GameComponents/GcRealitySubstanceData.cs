@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x240, GUID = 0x2CF9B807BDE62278)]
-    public class GcRealitySubstanceData : NMSTemplate
-    {
+    public class GcRealitySubstanceData : GameComponent {
+
         [NMS(Size = 0x20)]
         /* 0x000 */ public string Name;
         [NMS(Size = 0x20)]

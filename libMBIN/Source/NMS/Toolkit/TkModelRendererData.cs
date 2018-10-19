@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0xB0, GUID = 0x9599F2AAF0F58844)]
-    public class TkModelRendererData : NMSTemplate
-    {
+    public class TkModelRendererData : ToolkitData {
+
         /* 0x00 */ public TkModelRendererCameraData Camera;
         /* 0x40 */ public float Fov;
         /* 0x44 */ public float AspectRatio;

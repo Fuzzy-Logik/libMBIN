@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x130, GUID = 0x53406B443DE8066D)]
-    public class GcPlayerDamageData : NMSTemplate
-    {
+    public class GcPlayerDamageData : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x000 */ public string Id;
         [NMS(Size = 0x20)]

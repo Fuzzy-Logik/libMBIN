@@ -1,6 +1,6 @@
 ﻿namespace libMBIN.NMS {
 
-    public class Vector2f : NMSTemplate {
+    public class Vector2f : NMSType {
 
         public float x;
         public float y;

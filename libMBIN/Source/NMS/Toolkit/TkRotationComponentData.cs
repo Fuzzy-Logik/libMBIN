@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x41BC3C0B86CEBAA0)]
-    public class TkRotationComponentData : NMSTemplate
-    {
+    public class TkRotationComponentData : ToolkitData {
+
         public float Speed;
 
         [NMS(Size = 0xC, Ignore = true)]

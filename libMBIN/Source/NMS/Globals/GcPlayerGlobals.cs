@@ -1,34 +1,42 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
+using libMBIN.NMS.Toolkit;
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS( GUID = 0x229B325674CE447F)]
-    public class GcPlayerGlobals : NMSTemplate
-    {
+namespace libMBIN.NMS.Globals {
+
+    [NMS( GUID = 0x229B325674CE447F )]
+    public class GcPlayerGlobals : GlobalData {
+
         /* 0x0 */ public bool InteractNearbyRadiusEnabled;
         /* 0x1 */ public bool DebugExperience;
         [NMS(Size = 0x80)]
 		/* 0x2 */ public string DefaultShipFilename;
+
         [NMS(Size = 0x6, Ignore = true)]
         /* 0x82 */ public byte[] Padding82;
+
         /* 0x88 */ public GcSeed DefaultShipSeed;
 		/* 0x98 */ public bool DebugExperienceRender;
 		/* 0x99 */ public bool DebugDroneScanPlayer;
+
         [NMS(Size = 0x6, Ignore = true)]
         /* 0x9A */ public byte[] Padding9A;
+
 		/* 0xA0 */ public Vector4f DebugDroneSpawn;
 		/* 0xB0 */ public Vector4f DebugDroneTarget;
 		/* 0xC0 */ public int DebugNumDrones;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0xC4 */ public byte[] PaddingC4;
+
 		/* 0xD0 */ public Vector4f DebugWalkerSpawn;
 		/* 0xE0 */ public Vector4f DebugWalkerTarget;
 		/* 0xF0 */ public Vector4f DebugFlybyTarget;
 		/* 0x100 */ public Vector4f DebugFlybyDir;
 		/* 0x110 */ public float DebugFlybyRange;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x114 */ public byte[] Padding114;
+
         /* 0x118 */ public GcSeed DebugFlybySeed;
         [NMS(Size = 0x10)]
         /* 0x128 */ public string DebugExperienceCamShake;
@@ -123,8 +131,10 @@ namespace libMBIN.NMS.Globals
 		/* 0x2A0 */ public float EnergyDischargeRateFloatingInSpace;
 		/* 0x2A4 */ public float EnergyPainRate;
 		/* 0x2A8 */ public float SolarRegenFactor;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x2AC */ public byte[] Padding2AC;
+
         /* 0x2B0 */ public Colour DefaultMuzzleColour;
         /* 0x2C0 */ public Colour TerrainEditorMuzzleColourSubtract;
         /* 0x2D0 */ public Colour TerrainEditorMuzzleColourAdd;
@@ -244,8 +254,10 @@ namespace libMBIN.NMS.Globals
         /* 0x4A8 */ public float CombatEscapeRadius;
         /* 0x4AC */ public float CombatEscapeTime;
         /* 0x4B0 */ public bool UpgradeExosuitWithProduct;
+
         [NMS(Size = 0x7, Ignore = true)]
         /* 0x441 */ public byte[] Padding4A1;
+
         [NMS(Size = 0x10)]
         /* 0x4B8 */ public string ExosuitUpgradeProduct;
         /* 0x4C8 */ public int SuitInventoryStartSeed;
@@ -475,8 +487,10 @@ namespace libMBIN.NMS.Globals
         /* 0xB68 */ public float LaserBeamAmmoUseTime;
         /* 0xB6C */ public float ReloadButtonHoldTimeToHolster;
         /* 0xB70 */ public float WeaponChangeModeTime;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0xB74 */ public byte[] PaddingB74;
+
         /* 0xB80 */ public Vector4f WeaponBarrelOffset;
         /* 0xB90 */ public float WeaponLowerDelay;
         /* 0xB94 */ public float WeaponHolsterDelay;
@@ -616,8 +630,10 @@ namespace libMBIN.NMS.Globals
         /* 0xE4C */ public float[] TechLearningProbabilities;
         /* 0xE64 */ public int NumTechShopSlots;
         /* 0xE68 */ public float GrassPushDistance;
+
         [NMS(Size = 0x4, Ignore = true)]
-        /* 0xE6C */ public byte[] PaddingD1c;
+        /* 0xE6C */ public byte[] PaddingD1C;
+
         /* 0xE70 */ public GcCameraAnomalySetupData AnomalyBlachHoleSpawnData;
         /* 0xEB0 */ public GcCameraAnomalySetupData AnomalyAtlasStationSpawnData;
         /* 0xEF0 */ public GcCameraAnomalySetupData AnomalyMiniStationSpawnData;
@@ -638,5 +654,7 @@ namespace libMBIN.NMS.Globals
         /* 0x1228 */ public int[] TraderHailReceiveFight;
         [NMS(Size =  0x4)]
         /* 0x1230 */ public int[] TraderHailSend;
+
     }
+
 }

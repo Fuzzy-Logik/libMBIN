@@ -1,11 +1,11 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
+using libMBIN.NMS.Toolkit;
 
-namespace libMBIN.NMS.Globals
-{
+namespace libMBIN.NMS.Globals {
+
     [NMS( GUID = 0xA2939C8D2780E13C )]
-    public class GcGraphicsGlobals : NMSTemplate
-    {
+    public class GcGraphicsGlobals : GlobalData {
+
         /* 0x0 */ public float LUTDistanceFlightMultiplier;
         /* 0x4 */ public float SunLightIntensity;
         /* 0x8 */ public float HBAOBias;
@@ -84,8 +84,10 @@ namespace libMBIN.NMS.Globals
         /* 0x30C */ public float ShadowLengthSpace;
         /* 0x310 */ public float ShadowLengthStation;
         /* 0x314 */ public float ShadowLengthCameraView;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x318 */ public byte[] Padding318;
+
         /* 0x320 */ public Vector4f ShadowSplit;
         /* 0x330 */ public Vector4f ShadowSplitShip;
         /* 0x340 */ public Vector4f ShadowSplitSpace;
@@ -148,8 +150,10 @@ namespace libMBIN.NMS.Globals
         /* 0x454 */ public float ShieldDownScanlineTime;
         /* 0x458 */ public bool FullscreenScanEffect;
         /* 0x459 */ public bool UseImposters;
+
         [NMS(Size = 0x6, Ignore = true)]
         /* 0x45A */ public byte[] Padding45A;
+
         /* 0x460 */ public Vector4f MipLevelDebug;
         /* 0x470 */ public Vector4f LensParams;
         /* 0x480 */ public Colour VerticalColourTop;
@@ -206,8 +210,10 @@ namespace libMBIN.NMS.Globals
         /* 0x578 */ public float WaterHueShift;
         /* 0x57C */ public float WaterSaturation;
         /* 0x580 */ public float WaterValue;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x584 */ public byte[] Padding584;
+
         /* 0x590 */ public GcPlanetWaterData WaterDataMin;
         /* 0x760 */ public GcPlanetWaterData WaterDataMax;
         /* 0x930 */ public float MaxParticleRenderRange;
@@ -229,8 +235,10 @@ namespace libMBIN.NMS.Globals
         /* 0x958 */ public bool ShowTaaVarianceBuf;
         /* 0x959 */ public bool ShowTaaNVarianceBuf;
         /* 0x95A */ public bool ShowTaaCVarianceBuf;
+
         [NMS(Size = 0x5, Ignore = true)]
         /* 0x95B */ public byte[] Padding95B;
+
         /* 0x960 */ public Vector4f TaaSettings;
         /* 0x970 */ public Vector4f TessSettingsMed;
         /* 0x980 */ public Vector4f TessSettingsHi;
@@ -276,7 +284,10 @@ namespace libMBIN.NMS.Globals
 		/* 0xA28 */ public float SpaceIBLBlendDistance;
 		/* 0xA2C */ public float NoFocusMaxFPS;
 		/* 0xA30 */ public bool EnableCrossPipeSharing;
+
         [NMS(Size = 0xF, Ignore = true)]
         /* 0xA31 */ public byte[] EndPadding;
+
     }
+
 }

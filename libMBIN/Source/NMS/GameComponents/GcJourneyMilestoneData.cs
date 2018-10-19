@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x70A99E84E5D737DB)]
-    public class GcJourneyMilestoneData : NMSTemplate
-    {
+    public class GcJourneyMilestoneData : GameComponent {
+
         [NMS(Size = 0x10)]
         public string JourneyMilestoneId;
         public int PointsToUnlock;

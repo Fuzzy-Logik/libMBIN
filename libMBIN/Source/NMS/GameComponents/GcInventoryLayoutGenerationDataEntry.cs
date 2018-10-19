@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xDDE56711938E1BC7)]
-    public class GcInventoryLayoutGenerationDataEntry : NMSTemplate     // size: 0x10
-    {
+    public class GcInventoryLayoutGenerationDataEntry : GameComponent {
+
         public int MinSlots;            // 1
         public int MaxSlots;            // 5
         public int MinExtraTech;        // 1

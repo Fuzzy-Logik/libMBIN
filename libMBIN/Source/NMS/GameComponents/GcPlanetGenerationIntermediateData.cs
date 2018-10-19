@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x3D0, GUID = 0xB83A34626D9E6551)]
-    public class GcPlanetGenerationIntermediateData : NMSTemplate
-    {
+    public class GcPlanetGenerationIntermediateData : GameComponent {
+
         /* 0x000 */ public GcSeed Seed;
         /* 0x010 */ public int TerrainSettingIndex;
         /* 0x014 */ public GcGalaxyStarTypes GalaxyStarType;

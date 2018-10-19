@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xA7F3AE06D8A09EE9)]
-    public class GcJourneyCategory : NMSTemplate        // size: 0x180
-    {
+    public class GcJourneyCategory : GameComponent {
+
         /* 0x000 */ public GcJourneyCategoryType Type;
         /* 0x004 */ public GcMissionFaction Faction;
         [NMS(Size = 0x20)]

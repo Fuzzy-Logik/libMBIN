@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x1A17963717B304A1)]
-    public class GcFlyingSnakeData : NMSTemplate 
-    {
+    public class GcFlyingSnakeData : GameComponent {
+
 		  /* 0x00 */ public float CircleSpeed;
 		  /* 0x04 */ public float ApproachBaitSpeed;
 		  /* 0x08 */ public float DefaultCircleDistance;

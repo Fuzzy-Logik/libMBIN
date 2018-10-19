@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x138, Alignment = 0x8, GUID = 0x59B90F78441D5EDF)]
-    public class GcMissionSequenceBuild : NMSTemplate
-    {
+    public class GcMissionSequenceBuild : GameComponent {
+
         [NMS(Size = 0x80)]
         /* 0x000 */ public string Message;
         [NMS(Size = 0x10)]

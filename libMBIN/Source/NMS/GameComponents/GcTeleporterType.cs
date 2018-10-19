@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xA5C891B043A1F0F3)]
-    public class GcTeleporterType : NMSTemplate
-    {
+    public class GcTeleporterType : GameComponent {
+
 		public enum TeleporterDestinationTypeEnum { Base, Spacestation, Atlas, PlanetAwayFromShip, ExternalBase, EmergencyGalaxyFix }
 		public TeleporterDestinationTypeEnum TeleporterDestinationType;
     }

@@ -1,21 +1,21 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
+using libMBIN.NMS.Toolkit;
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS(GUID = 0x49843E9480857ED0)]
-    public class GcSpaceshipGlobals : NMSTemplate
-    {
-		/* 0x0 */ public float MaximumShipHeightWhenExiting;
-		/* 0x4 */ public float DistanceFromShipToAllowSpawningOnFreighter;
-		/* 0x8 */ public bool AltControls;
-		/* 0x9 */ public bool SpaceMapInWorld;
-		/* 0xA */ public bool _3rdPersonShipEnabled;
-		/* 0xB */ public bool AimZoomAuto;
-		/* 0xC */ public bool EnableDepthTestedCrosshairSections;
-		/* 0xD */ public bool CritsFromBehind;
-		/* 0xE */ public bool DrawLineLockTarget;
-		/* 0xF */ public bool ApplyHeightForce;
+namespace libMBIN.NMS.Globals {
+
+    [NMS( GUID = 0x49843E9480857ED0 )]
+    public class GcSpaceshipGlobals : GlobalData {
+
+        /* 0x0 */  public float MaximumShipHeightWhenExiting;
+		/* 0x4 */  public float DistanceFromShipToAllowSpawningOnFreighter;
+		/* 0x8 */  public bool AltControls;
+		/* 0x9 */  public bool SpaceMapInWorld;
+		/* 0xA */  public bool _3rdPersonShipEnabled;
+		/* 0xB */  public bool AimZoomAuto;
+		/* 0xC */  public bool EnableDepthTestedCrosshairSections;
+		/* 0xD */  public bool CritsFromBehind;
+		/* 0xE */  public bool DrawLineLockTarget;
+		/* 0xF */  public bool ApplyHeightForce;
 		/* 0x10 */ public bool ApplyHeightAlign;
 		/* 0x11 */ public bool DoPreCollision;
 		/* 0x12 */ public bool SpeedTrackModeEnabled;
@@ -35,15 +35,19 @@ namespace libMBIN.NMS.Globals
 		/* 0x48 */ public float WingmanSpeedTrackOffset;
 		/* 0x4C */ public float WingmanSpeedApproachSpeed;
 		/* 0x50 */ public float WingmanSpeedApproachSpeedSpace;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x54 */ public byte[] Padding54;
+
         /* 0x60 */ public Vector4f DebugShipSpawnPos;
         /* 0x70 */ public Vector4f DebugShipSpawnFacing;
         /* 0x80 */ public Vector4f DebugShipSpawnUp;
         /* 0x90 */ public float DockingAttractAlign;
         /* 0x94 */ public float DockingAttractAlignRange;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x98 */ public byte[] Padding98;
+
         /* 0xA0 */ public Colour LandingEffectSpaceColourOverride;
         /* 0xB0 */ public Colour GroundEffectBuildingColour;
         /* 0xC0 */ public Colour GroundEffectWaterColour;
@@ -119,8 +123,10 @@ namespace libMBIN.NMS.Globals
         /* 0x22C */ public float TestShieldEffect;
         /* 0x230 */ public float ShieldEffectHitTime;
         /* 0x234 */ public TkCurveType ShieldEffectHitCurve;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x238 */ public byte[] Padding238;
+
         /* 0x240 */ public GcScanEffectData ShieldEffectScanData;
         /* 0x290 */ public float _3rdPersonUpOffsetRollChangeSpeed;
         /* 0x294 */ public float _3rdPersonRollAngle;
@@ -155,8 +161,10 @@ namespace libMBIN.NMS.Globals
         /* 0x308 */ public float AvoidanceDistancePower;
         /* 0x30C */ public float CollisionDeflectForce;
         /* 0x310 */ public float CollisionAlignStrength;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x314 */ public byte[] Padding314;
+
         /* 0x320 */ public Vector4f DefaultCentreOffset;
         /* 0x330 */ public Vector4f DefaultCentreOffsetDropship;
         /* 0x340 */ public Vector4f DefaultCentreOffsetScientific;
@@ -237,8 +245,10 @@ namespace libMBIN.NMS.Globals
         /* 0x828 */ public float ShuttleTakeOffMod;
         /* 0x82C */ public float ExplorerTakeOffMod;
         /* 0x830 */ public float RoyalTakeOffMod;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x834 */ public byte[] Padding834;
+
         /* 0x840 */ public Colour AlarmLightColour;
         [NMS(Size = 0x2)]
         /* 0x850 */ public Vector4f[] AlarmLightOffsets;
@@ -449,8 +459,10 @@ namespace libMBIN.NMS.Globals
         /* 0xCDC */ public float LootDampForce;
         /* 0xCE0 */ public float LootCollectDistance;
         /* 0xCE4 */ public float GunOffset3rdPersonMultiplier;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0xCE8 */ public byte[] PaddingCE8;
+
         /* 0xCF0 */ public Vector4f GunOffsetLeft;
         /* 0xD00 */ public Vector4f GunOffsetRight;
         /* 0xD10 */ public Vector4f GunOffsetLeft2;
@@ -473,8 +485,10 @@ namespace libMBIN.NMS.Globals
         /* 0xDB0 */ public float DroneWarpTime;
         /* 0xDB4 */ public float DroneWarpMinForce;
         /* 0xDB8 */ public float DroneWarpMaxForce;
+
         [NMS(Size = 0x4, Ignore = true)]
         /* 0xDBC */ public byte[] PaddingDBC;
+
         /* 0xDC0 */ public Vector4f CockpitScale;
         /* 0xDD0 */ public float ShakePowerScaler;
         /* 0xDD4 */ public float ShakeSpeed;
@@ -526,5 +540,7 @@ namespace libMBIN.NMS.Globals
 		/* 0x1084 */ public float SpeedUpVelocityCoeff;
 		/* 0x1088 */ public float MaxSpeedUpDistance;
 		/* 0x108C */ public float MaxSpeedUpVelocity;
+
     }
+
 }

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x360F73387712D16B)]
-    public class GcSubstanceSecondary : NMSTemplate     // size: 0x20
-    {
+    public class GcSubstanceSecondary : GameComponent {
+
         [NMS(Size = 0x10)]
         public string ID;
         public float Chance;

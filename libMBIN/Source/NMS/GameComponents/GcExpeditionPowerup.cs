@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x58, GUID = 0x8D71FA6CE0ED29EA)]
-    public class GcExpeditionPowerup : NMSTemplate
-    {
+    public class GcExpeditionPowerup : GameComponent {
+
         [NMS(Size = 0x10)]
         public string ProductId;
         public GcFrigateStatType StatModified;

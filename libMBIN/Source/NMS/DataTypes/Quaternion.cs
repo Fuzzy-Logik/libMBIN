@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS {
 
     [NMS( Alignment = 0x10 )]
-    public class Quaternion : NMSTemplate {
+    public class Quaternion : NMSType {
 
         public float x;
         public float y;

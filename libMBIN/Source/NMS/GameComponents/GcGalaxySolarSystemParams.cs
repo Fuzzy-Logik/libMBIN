@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x58, GUID = 0x33EED7714D4189E8)]
-    public class GcGalaxySolarSystemParams : NMSTemplate
-    {
+    public class GcGalaxySolarSystemParams : GameComponent {
+
         /* 0x00 */ public GcGalaxySolarSystemOrbitParams PlanetParameters;
         /* 0x1C */ public GcGalaxySolarSystemOrbitParams MoonParameters;
         [NMS(Size = 0x4, EnumValue = new[] { "Large", "Medium", "Small", "Moon" })]

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x78, Alignment = 0x8, GUID = 0x86CADD975FB340E0)]
-    public class GcShootableComponentData : NMSTemplate
-    {
+    public class GcShootableComponentData : GameComponent {
+
         /* 0x00 */ public int Health;
 		/* 0x04 */ public bool AutoAimTarget;
 		/* 0x05 */ public bool PlayerOnly;

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xD43AF1D3C4E374FD)]
-    public class GcNetworkInterpolationComponentData : NMSTemplate
-    {
+    public class GcNetworkInterpolationComponentData : GameComponent {
+
 		public enum SynchroniseScaleEnum { Never, Once, Always }
 		public SynchroniseScaleEnum SynchroniseScale;
     }

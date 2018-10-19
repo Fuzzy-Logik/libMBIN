@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x4D18939438BD086D)]
-    public class GcRewardMission : NMSTemplate
-    {
+    public class GcRewardMission : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Mission;
         public bool SetAsSelected;

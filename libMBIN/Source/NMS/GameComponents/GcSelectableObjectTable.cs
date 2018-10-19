@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x7EB306AB588C39AB)]
-    public class GcSelectableObjectTable : NMSTemplate
-    {
+    public class GcSelectableObjectTable : GameComponent {
+
         public List<GcSelectableObjectList> Lists;
     }
 }

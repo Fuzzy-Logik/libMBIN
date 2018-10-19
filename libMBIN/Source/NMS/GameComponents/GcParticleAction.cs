@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x38364E77B204C4F3)]
-    public class GcParticleAction : NMSTemplate // size: 0x38
-    {
+    public class GcParticleAction : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Effect;
         [NMS(Size = 0x20)]

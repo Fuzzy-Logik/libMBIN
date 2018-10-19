@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xCA9782C4E180BB)]
-    public class GcSubstanceTable : NMSTemplate
-    {
+    public class GcSubstanceTable : GameComponent {
+
         public List<GcRealitySubstanceData> Table;
         public List<GcRealityCraftingRecipeData> Crafting;
     }

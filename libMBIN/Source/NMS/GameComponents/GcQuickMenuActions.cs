@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x7E0E9457B5DF185E)]
-    public class GcQuickMenuActions : NMSTemplate
-    {
+    public class GcQuickMenuActions : GameComponent {
+
         // size: 0x28
 		public enum QuickMenuActionsEnum { None, CallFreighter, CallShip, SummonVehicleSubMenu, SummonBuggy, SummonBike, SummonTruck,
             SummonWheeledBike, SummonHovercraft, SummonSubmarine, VehicleScan, VehicleScanSelect, VehicleRestartRace, Torch, GalaxyMap,

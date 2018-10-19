@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x40789D9B5E2EC52E)]
-    public class GcRewardWorker : NMSTemplate
-    {
+    public class GcRewardWorker : GameComponent {
+
         public GcNPCHabitationType NPCHabitationType;
     }
 }

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x150, GUID = 0xCC6637353420A3ED)]
-    public class GcPlanetWeatherData : NMSTemplate
-    {
+    public class GcPlanetWeatherData : GameComponent {
+
         public GcWeatherOptions WeatherOptions;     // weather type?
         //public GcPlanetWeatherColourData NightColours;
         [NMS(Size = 0xC, Ignore = true)]

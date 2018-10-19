@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x2127956C2D3B50ED)]
-    public class GcRewardShipMessage : NMSTemplate
-    {
+    public class GcRewardShipMessage : GameComponent {
+
         public GcShipMessage ShipMessage;
     }
 }

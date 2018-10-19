@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x9A55EA80BBEF4621)]
-    public class TkAnimPoseData : NMSTemplate // 0x18 bytes
-    {
+    public class TkAnimPoseData : ToolkitData {
+
         [NMS(Size = 0x10)]
         public string Anim;
         public int FrameStart;

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x18, GUID = 0x608078A388EF854B)]
-    public class GcCharacterCustomisationBoneScaleData : NMSTemplate
-    {
+    public class GcCharacterCustomisationBoneScaleData : GameComponent {
+
         [NMS(Size = 0x10)]
         public string BoneName;
         public float Scale;

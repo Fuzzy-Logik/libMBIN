@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x59EFF0A74DA063C5)]
-    public class GcSolarSystemSkyColourData : NMSTemplate       // size 0xD0
-    {
+    public class GcSolarSystemSkyColourData : GameComponent {
+
 	  /* 0x00 */ public Colour TopColour;
 	  /* 0x10 */ public Colour MidColour;
 	  /* 0x20 */ public Colour BottomColour;

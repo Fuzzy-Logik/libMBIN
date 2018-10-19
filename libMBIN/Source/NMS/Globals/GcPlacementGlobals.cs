@@ -1,11 +1,8 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿namespace libMBIN.NMS.Globals {
 
-namespace libMBIN.NMS.Globals
-{
     [NMS( GUID = 0x835A9EE0AC007013 )]
-    public class GcPlacementGlobals : NMSTemplate
-    {
+    public class GcPlacementGlobals : GlobalData {
+
         /* 0x0 */ public float MinFrequency;
         /* 0x4 */ public float MinDensity;
         /* 0x8 */ public float MinPatchSize;
@@ -18,5 +15,7 @@ namespace libMBIN.NMS.Globals
         /* 0x24 */ public float HighInterpValue;
         /* 0x28 */ public float MidInterpValue;
         /* 0x2C */ public float LowInterpValue;
+
     }
+
 }

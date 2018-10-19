@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x190, GUID = 0x70F15FEDCAE3687B)]
-    public class TkImGuiSettings : NMSTemplate
-    {
+    public class TkImGuiSettings : ToolkitData {
+
         public Colour BackgroundColour;
         public Colour WindowTitleColour;
         public Colour ActiveWindowTitleColour;

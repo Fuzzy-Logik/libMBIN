@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x3D75143BE008F7FF)]
-    public class GcObjectPlacementComponentData : NMSTemplate
-    {
+    public class GcObjectPlacementComponentData : GameComponent {
+
         [NMS(Size = 0x20)]
         /* 0x00 */ public string GroupNodeName;
 

@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x91E568FA1C5AAF38)]
-    public class GcWikiTopic : NMSTemplate       // size: 0xD0
-    {
+    public class GcWikiTopic : GameComponent {
+
         [NMS(Size = 0x20)]
         /* 0x00 */ public string TopicID;
         /* 0x20 */ public TkTextureResource Icon;

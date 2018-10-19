@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x4117A6369803D90B)]
-    public class TkModelRendererCameraData : NMSTemplate // 0x40 bytes
-    {
+    public class TkModelRendererCameraData : ToolkitData {
+
         public float Distance;
         [NMS(Size = 0xC, Ignore = true)]
         public byte[] Padding4;

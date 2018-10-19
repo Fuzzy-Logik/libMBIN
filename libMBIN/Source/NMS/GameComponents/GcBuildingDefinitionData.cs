@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x58, GUID = 0x42BA3DD6D048BC6C)]
-    public class GcBuildingDefinitionData : NMSTemplate
-    {
+    public class GcBuildingDefinitionData : GameComponent {
+
         /* 0x00 */ public TkNoiseFlattenOptions FlattenType;
         /* 0x08 */ public GcBuildingClusterPlacement BuildingClusterPlacement;
         /* 0x0C */ public bool AddWaypoint;

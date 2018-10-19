@@ -1,11 +1,10 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
 
-namespace libMBIN.NMS.Globals
-{
+namespace libMBIN.NMS.Globals {
+
     [NMS( GUID = 0x909213CA197AC1CB )]
-    public class GcAudioGlobals : NMSTemplate
-    {
+    public class GcAudioGlobals : GlobalData {
+
         /* 0x0 */ public GcAudioNPCDoppler NPCEngines;
         /* 0x3C */ public GcAudio3PointDopplerData DroneDoppler;
         /* 0x48 */ public float AuxSendCaveRampDistance;
@@ -40,5 +39,7 @@ namespace libMBIN.NMS.Globals
         /* 0xC5 */ public bool LockListenerMatrix;
         /* 0xC8 */ public Vector2f CommsChatterFalloffFreighers;
         /* 0xD0 */ public Vector2f CommsChatterFalloffShips;
+
     }
+
 }

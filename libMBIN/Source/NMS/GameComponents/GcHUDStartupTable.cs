@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x36ADEC9CC619210F, Broken = true)]
-    public class GcHUDStartupTable : NMSTemplate        // size: 0x80
-    {
+    public class GcHUDStartupTable : GameComponent {
+
         /* 0x00 */ public float FadeInFlashTime;        // 40000000h
         /* 0x04 */ public float LookSpeed;              // 41700000h
         /* 0x08 */ public float StartHoldTime;          // 40000000h

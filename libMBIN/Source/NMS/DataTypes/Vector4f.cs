@@ -1,7 +1,7 @@
 ﻿namespace libMBIN.NMS {
 
     [NMS( Alignment = 0x10 )]
-    public class Vector4f : NMSTemplate {
+    public class Vector4f : NMSType {
 
         public float x;
         public float y;

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x2A8, GUID = 0xF72F5E0FD467DEEB)]
-    public class GcResourceElement : NMSTemplate
-    {
+    public class GcResourceElement : GameComponent {
+
         [NMS(Size = 0x80)]
         /* 0x000 */ public string Filename;
 

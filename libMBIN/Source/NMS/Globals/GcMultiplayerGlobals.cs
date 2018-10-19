@@ -1,11 +1,8 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿namespace libMBIN.NMS.Globals {
 
-namespace libMBIN.NMS.Globals
-{
-    [NMS( GUID = 0xDA8B00B2D67658AF)]
-    public class GcMultiplayerGlobals : NMSTemplate
-    {
+    [NMS( GUID = 0xDA8B00B2D67658AF )]
+    public class GcMultiplayerGlobals : GlobalData {
+
         /* 0x0 */ public float FullSimUpdateInterval;
         /* 0x4 */ public int MaxDownloadableBases;
         /* 0x8 */ public float BlobHeightOffset;
@@ -33,8 +30,10 @@ namespace libMBIN.NMS.Globals
         /* 0x58 */ public float PlayerMarkerSmallIconSize;
         /* 0x5C */ public float PlayerMarkerMinShowDistance;
         /* 0x60 */ public bool PlayerMarkerCenteredName;
+
         [NMS(Size = 0x7, Ignore = true)]
         /* 0x61 */ public byte[] Padding61;
+
         /* 0x68 */ public int AbandonedEntityWaitPeriod_A;
         /* 0x6C */ public int AbandonedEntityWaitPeriod_B;
         /* 0x70 */ public float HostOnConnectedTimeout;
@@ -63,5 +62,7 @@ namespace libMBIN.NMS.Globals
         /* 0xCC */ public float PlaceholderBroadcastInterval;
         /* 0xD0 */ public float StatSyncRadiusPlanet;
         /* 0xD4 */ public float StatSyncRadiusSpace;
+
     }
+
 }

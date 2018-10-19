@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x360, GUID = 0xE68E3A6E41FA4306)]
-    public class GcNGuiPresetText : NMSTemplate
-    {
+    public class GcNGuiPresetText : GameComponent {
+
         [NMS(Size = 0x10)]
         /* 0x000 */ public string PresetID;
         /* 0x010 */ public GcNGuiLayoutData Layout;

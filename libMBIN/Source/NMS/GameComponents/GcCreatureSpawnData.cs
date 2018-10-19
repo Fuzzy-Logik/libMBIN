@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(Size = 0x598, GUID = 0x66A0C8FE58CFFF29)]
-    public class GcCreatureSpawnData : NMSTemplate
-    {
+    public class GcCreatureSpawnData : GameComponent {
+
         /* 0x000 */ public GcResourceElement Resource;
         /* 0x2A8 */ public GcResourceElement FemaleResource;
 

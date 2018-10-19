@@ -1,11 +1,8 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿namespace libMBIN.NMS.Globals {
 
-namespace libMBIN.NMS.Globals
-{
     [NMS( GUID = 0xE631F099F9410CAB )]
-    public class GcSceneOptions : NMSTemplate // doesn't seem like any of this is used by the game..
-    {
+    public class GcSceneOptions : GlobalData { // doesn't seem like any of this is used by the game..
+
         /* 0x0 */ public int RecentToolboxIndex;
         /* 0x4 */ public int SelectedToolboxIndex;
         /* 0x8 */ public bool OverrideBiome;
@@ -25,7 +22,10 @@ namespace libMBIN.NMS.Globals
         /* 0x20D */ public string AtmosphereFile;
         /* 0x290 */ public Vector4f ForceResource;     // dunno what this is... Dummy for now...
         /* 0x2A0 */ public float ForceResourceSize;
+
         [NMS(Size = 0xC, Ignore = true)]
         /* 0x2A4 */ public byte[] EndPadding;
+
     }
+
 }

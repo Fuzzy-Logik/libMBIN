@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x11E5EDDC4A44DF65)]
-    public class TkJointMirrorAxis : NMSTemplate
-    {
+    public class TkJointMirrorAxis : ToolkitData {
+
         public float TransMirrorAxisX;
         public float TransMirrorAxisY;
         public float TransMirrorAxisZ;

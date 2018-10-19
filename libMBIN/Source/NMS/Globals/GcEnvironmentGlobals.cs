@@ -1,14 +1,16 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
+using libMBIN.NMS.Toolkit;
 
-namespace libMBIN.NMS.Globals
-{
+namespace libMBIN.NMS.Globals {
+
     [NMS( GUID = 0xB16E5213AD3DEF96 )]
-    public class GcEnvironmentGlobals : NMSTemplate
-    {
+    public class GcEnvironmentGlobals : GlobalData {
+
         /* 0x0 */ public Vector2f SpaceBuildingTemperature;
+
         [NMS(Size = 0x8, Ignore = true)]
         /* 0x8 */ public byte[] Padding8;
+
         /* 0x10 */ public GcCloudProperties CloudProperties;
         /* 0x100 */ public float SenseProbingValueSmoothingTime;
         /* 0x104 */ public float SenseProbingValueSmoothingTimeSlow;
@@ -124,9 +126,13 @@ namespace libMBIN.NMS.Globals
         /* 0x2E4 */ public float ObjectSpawnDetailRadius;
         /* 0x2E8 */ public float InteractionRadius;
         /* 0x2EC */ public bool EnableWind;
+
         [NMS(Size = 0x3, Ignore = true)]
         /* 0x2ED */ public byte[] Padding2ED;
+
         [NMS(Size = 0x3)]
         /* 0x2F0 */ public TkShearWindData[] ShearWindSettings;
+
     }
+
 }

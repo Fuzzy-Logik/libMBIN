@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0xB22E1ABAB4CBE5F8)]
-    public class TkModelDescriptorList : NMSTemplate
-    {
+    public class TkModelDescriptorList : ToolkitData {
+
         public List<TkResourceDescriptorList> List;
     }
 }

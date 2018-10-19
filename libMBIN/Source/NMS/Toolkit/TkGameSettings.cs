@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(GUID = 0x8199639F3277B942)]
-    public class TkGameSettings : NMSTemplate
-    {
+    public class TkGameSettings : ToolkitData {
+
 		public enum LanguageSettingEnum { Default, english, french, italian, german, spanish, russian, polish, dutch, portuguese, brazilianportuguese, japanese, traditionalchinese, simplifiedchinese, korean }
 		public LanguageSettingEnum LanguageSetting;
 

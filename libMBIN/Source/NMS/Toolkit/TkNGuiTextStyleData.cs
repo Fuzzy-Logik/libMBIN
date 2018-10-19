@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.Toolkit
 {
 	[NMS(Size = 0x50, GUID = 0x146B5D54B914672D)]
-    public class TkNGuiTextStyleData : NMSTemplate
-    {
+    public class TkNGuiTextStyleData : ToolkitData {
+
         /* 0x00 */ public Colour Colour;
         /* 0x10 */ public float FontHeight;
         /* 0x14 */ public float FontSpacing;

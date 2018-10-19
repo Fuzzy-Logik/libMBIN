@@ -1,11 +1,11 @@
-﻿using libMBIN.NMS.Toolkit;
-using libMBIN.NMS.GameComponents;
+﻿using libMBIN.NMS.GameComponents;
+using libMBIN.NMS.Toolkit;
 
-namespace libMBIN.NMS.Globals
-{
+namespace libMBIN.NMS.Globals {
+
     [NMS( GUID = 0x18B789779D43057A )]
-    public class GcSkyGlobals : NMSTemplate
-    {
+    public class GcSkyGlobals : GlobalData {
+
         /* 0x0 */ public float NightThreshold;
         /* 0x4 */ public GcPhotoModeAdjustData FogAdjust;
         /* 0x1C */ public GcPhotoModeAdjustData CloudAdjust;
@@ -13,8 +13,10 @@ namespace libMBIN.NMS.Globals
         /* 0x4C */ public TkCurveType DoFAdjustMagnitudeMaxCurve;
         /* 0x50 */ public int DayLength;
         /* 0x54 */ public bool EnableDayNightCycle;
+
         [NMS(Size = 0xB, Ignore = true)]
         /* 0x55 */ public byte[] Padding55;
+
         /* 0x60 */ public Vector4f SunRotationAxis;
         /* 0x70 */ public int SafeSkyMinIndex;
         /* 0x74 */ public int SafeSkyMaxIndex;
@@ -132,5 +134,7 @@ namespace libMBIN.NMS.Globals
         /* 0xBC0 */ public Colour NightHeightFogColour;
         /* 0xBD0 */ public GcPlanetCloudProperties PlanetCloudsMin;
         /* 0xBF8 */ public GcPlanetCloudProperties PlanetCloudsMax;
+
     }
+
 }

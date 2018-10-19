@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x7A4D434E17BA457F)]
-    public class GcCreatureMoveAnimData : NMSTemplate
-    {
+    public class GcCreatureMoveAnimData : GameComponent {
+
         [NMS(Size = 0x10)]
         public string Anim;
         [NMS(Size = 0x10)]

@@ -4,8 +4,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0x5165572FA852C8DD)]
-    public class GcInventoryElement : NMSTemplate
-    {
+    public class GcInventoryElement : GameComponent {
+
         public GcInventoryType Type;
         [NMS(Ignore = true)]
         public int EmptyNode1;

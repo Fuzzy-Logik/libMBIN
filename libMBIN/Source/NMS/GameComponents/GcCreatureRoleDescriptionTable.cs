@@ -6,8 +6,8 @@ using libMBIN.NMS.GameComponents;
 namespace libMBIN.NMS.GameComponents
 {
 	[NMS(GUID = 0xD2C6B913CD1676C7)]
-    public class GcCreatureRoleDescriptionTable : NMSTemplate
-    {
+    public class GcCreatureRoleDescriptionTable : GameComponent {
+
         public List<GcCreatureRoleDescription> RoleDescription;
 
         public float MinScaleVariance;
