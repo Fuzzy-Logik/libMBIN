@@ -19,12 +19,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\Common\IO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlSerializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\MBIN\MbinException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\MBIN\MbinFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlMeta.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlProperty.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\MBIN\MbinSerializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcAtlasRecvBaseList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcMissionConditionNearScanEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponents\GcRealityGameIcons.cs" />

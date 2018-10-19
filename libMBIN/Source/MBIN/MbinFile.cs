@@ -67,7 +67,7 @@ namespace libMBIN {
 
         public NMSTemplate LoadData() {
             io.Stream.Position = Marshal.SizeOf<MbinHeader>();
-            return DeserializeMBIN.DeserializeBinaryTemplate( io.Reader, header.GetXMLTemplateName() );
+            return MbinSerializer.DeserializeBinaryTemplate( io.Reader, header.GetXMLTemplateName() );
         }
 
         public void SaveData( NMSTemplate template ) {
@@ -75,7 +75,7 @@ namespace libMBIN {
             io.Stream.SetLength( headerLen );
             io.Stream.Position = headerLen;
 
-            byte[] data = SerializeMBIN.SerializeBytes( template );
+            byte[] data = MbinSerializer.SerializeBytes( template );
             io.Writer.Write( data );
 
             fileLength = (ulong) data.LongLength;
