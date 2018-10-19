@@ -1,6 +1,5 @@
-﻿using System.Globalization;
+﻿namespace MBINCompilerTests.Database.Tables.GameDataMBIN {
 
-namespace MBINCompilerTests.Database.Tables.GameDataMBIN {
     public class Table : AbstractTable<Record> {
 
         private static readonly string NAME = "GameDataMBIN";
@@ -40,7 +39,7 @@ namespace MBINCompilerTests.Database.Tables.GameDataMBIN {
             this.SHA1          = sha1;
         }
 
-        public Record( string path, long fileSize, string sha1, libMBIN.MBINHeader header )
+        public Record( string path, long fileSize, string sha1, libMBIN.MBIN.MBINHeader header )
             : this( path, fileSize, sha1, header.MagicID, header.FormatID, header.Tag, header.MbinVersion, header.GetXMLTemplateName() ) { }
 
         //public GameDataFileRecord( string[] fields ) : this() { SetFields( fields ); }

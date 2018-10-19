@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace libMBIN.UnitTests {
 
+    using MBIN;
+
     [TestClass]
     public class MBINHeaderTestsV2 {
 

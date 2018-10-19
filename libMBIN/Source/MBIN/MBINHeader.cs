@@ -2,8 +2,8 @@
 using System.Reflection;
 using System.Text;
 
-namespace libMBIN
-{
+namespace libMBIN.MBIN {
+
     [NMS(Size = 0x60)]
     public class MBINHeader : NMSTemplate
     {

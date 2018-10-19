@@ -160,7 +160,7 @@ namespace libMBIN.UnitTests {
 
             MemoryStream memory = new MemoryStream();
             using (var file = new MBINFile( memory, true )) {
-                file.header = new MBINHeader();
+                file.header = new MBIN.MBINHeader();
                 file.header.SetDefaults( data.GetType() );
                 file.SaveData( data );
                 file.SaveHeader();

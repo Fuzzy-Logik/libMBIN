@@ -2,6 +2,8 @@
 
 namespace libMBIN.UnitTests {
 
+    using MBIN;
+
     [TestClass]
     public class MBINHeaderTestsV0 {
 

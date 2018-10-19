@@ -134,7 +134,7 @@ namespace MBINCompiler.Commands {
                             data = EXmlFile.ReadTemplateFromStream( fIn );
                             if ( data is null ) throw new InvalidDataException( $"Failed to deserialize EXML." );
                             if ( data is libMBIN.NMS.Toolkit.TkGeometryData | data is libMBIN.NMS.Toolkit.TkGeometryStreamData ) fileOut += ".PC";
-                            var mbin = new MBINFile( ms ) { header = new MBINHeader() };
+                            var mbin = new MBINFile( ms ) { header = new libMBIN.MBIN.MBINHeader() };
                             mbin.header.SetDefaults( data.GetType() );
                             mbin.SaveData( data );
                             mbin.SaveHeader();

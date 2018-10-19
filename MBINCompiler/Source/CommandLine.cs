@@ -1,13 +1,13 @@
 ﻿using System;
+using System.IO;
 
 using libMBIN;
 
 namespace MBINCompiler {
-    using System.IO;
+
     using static CommandLineOptions;
 
-    internal static class CommandLine
-    {
+    internal static class CommandLine {
 
         // Console.Out and Console.Error streams unaffected by Quiet option.
         private static TextWriter StandardOut = null;
@@ -39,8 +39,7 @@ namespace MBINCompiler {
         /// Display the help info and wait for a key press.
         /// </summary>
         /// <returns>Always returns 0 (exit code = success)</returns>
-        public static int ShowHelp( ErrorCode code = ErrorCode.Success )
-        {
+        public static int ShowHelp( ErrorCode code = ErrorCode.Success ) {
             if (Console.IsOutputRedirected) return (int) code;
             using ( var forceConsole = new ForceConsoleOutput() ) {
                 Console.Out.Write( GetHelpInfo() );
@@ -86,8 +85,7 @@ namespace MBINCompiler {
         /// <param name="exitCode">The value to return, unless <paramref name="showHelp"/> is true.</param>
         /// <returns>Returns 1 if <paramref name="showHelp"/> is true, otherwise <paramref name="exitCode"/>.</returns>
         /// <summary>
-        public static int ShowError( string msg, ErrorCode code = ErrorCode.Unknown, bool wait = true )
-        {
+        public static int ShowError( string msg, ErrorCode code = ErrorCode.Unknown, bool wait = true ) {
             Logger.LogError( msg );
             WaitForKeypress( wait );
             return (int) code;
@@ -115,8 +113,7 @@ namespace MBINCompiler {
         /// </summary>
         /// <returns>Always returns 0 (exit code = success)</returns>
         public static int ShowVersion( bool quiet = false ) => ShowVersion( null, quiet );
-        public static int ShowVersion( MBINFile mbin , bool quiet = false )
-        {
+        public static int ShowVersion( MBINFile mbin , bool quiet = false ) {
             using ( var forceConsole = new ForceConsoleOutput() ) {
                 Logger.LogInfo( Version.GetVersionString( mbin, quiet ) );
             }
@@ -126,8 +123,7 @@ namespace MBINCompiler {
         /// <summary>
         /// Display "Press any key" and wait for keypress.
         /// </summary>
-        public static void WaitForKeypress( bool wait = true )
-        {
+        public static void WaitForKeypress( bool wait = true ) {
             if ( Quiet || !wait || Console.IsOutputRedirected ) return;
             Console.Out.WriteLine( "\nPress any key to continue . . ." );
             Console.ReadKey();

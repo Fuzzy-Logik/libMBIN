@@ -5,7 +5,7 @@ namespace libMBIN {
 
     public class MBINFile : IDisposable {
 
-        public MBINHeader header;
+        public MBIN.MBINHeader header;
         private readonly IO io;
         private readonly string filePath;
         private readonly bool keepOpen;
@@ -29,7 +29,7 @@ namespace libMBIN {
         public bool LoadHeader() {
             if ( io.Stream.Length < 0x60 ) return false;
             io.Stream.Position = 0;
-            header = (MBINHeader) NMSTemplate.DeserializeBinaryTemplate( io.Reader, "MBINHeader" );
+            header = (MBIN.MBINHeader) NMSTemplate.DeserializeBinaryTemplate( io.Reader, "MBINHeader" );
             return true;
         }
 

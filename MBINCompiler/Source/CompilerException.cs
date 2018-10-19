@@ -1,4 +1,5 @@
 ﻿using System;
+
 using libMBIN;
 
 namespace MBINCompiler {
@@ -43,7 +44,7 @@ namespace MBINCompiler {
     internal class ExmlException : CompilerException {
         private const string DEFAULT_MESSAGE = "An EXML exception has occurred!";
 
-        public NMSTemplate Data { get; private set; }
+        public new NMSTemplate Data { get; private set; }
 
         public ExmlException()                                                                              : this( DEFAULT_MESSAGE                 ) { }
         public ExmlException( string message )                                                              : base( message                         ) { }

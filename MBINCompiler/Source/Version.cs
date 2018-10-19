@@ -1,7 +1,6 @@
 ﻿using libMBIN;
 
-namespace MBINCompiler
-{
+namespace MBINCompiler {
 
     internal class Version {
 

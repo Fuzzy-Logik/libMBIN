@@ -15,19 +15,21 @@
 
 
 using System;
-using System.Linq;
 using System.Collections;
-using System.IO;
-using System.Text;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 
-namespace libMBIN
-{
-    public class NMSTemplate
-    {
+namespace libMBIN {
+
+    using EXML;
+
+    public class NMSTemplate {
+
         internal static readonly Dictionary<string, Type> NMSTemplateMap = Assembly.GetExecutingAssembly()
                 .GetTypes()
                 .Where(t => t.BaseType == typeof(NMSTemplate))
@@ -1194,7 +1196,7 @@ namespace libMBIN
         {
             using (var file = new MBINFile(outputpath))
             {
-                file.header = new MBINHeader();
+                file.header = new MBIN.MBINHeader();
                 var type = this.GetType();
                 file.header.SetDefaults(type);
                 file.SaveData(this);
