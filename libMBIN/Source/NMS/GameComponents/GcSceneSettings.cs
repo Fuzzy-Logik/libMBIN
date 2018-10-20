@@ -31,8 +31,8 @@ namespace libMBIN.NMS.GameComponents
 
         /* 0x430 */ public GcPlayerSpawnStateData PlayerState;
 
-        /* 0x4B0 */ public List<GameComponent> Events;
-        /* 0x4C0 */ public List<GameComponent> PostWarpEvents;
+        /* 0x4B0 */ public List<Component> Events;
+        /* 0x4C0 */ public List<Component> PostWarpEvents;
 
         [NMS(Size = 0x10)]
         /* 0x4D0 */ public string SpawnerOptionId;

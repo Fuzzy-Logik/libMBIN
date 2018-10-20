@@ -7,7 +7,7 @@ namespace libMBIN.NMS.GameComponents
     public class GcTextPreset : GameComponent {
 
         public GcFontTypesEnum FontType;
-        public GameComponent TextStyle;
+        public Component TextStyle;
 
         public float Height;
         public Colour Colour;

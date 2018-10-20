@@ -11,7 +11,7 @@ namespace libMBIN.NMS.GameComponents
         [NMS(Size = 0x10)]
         public string Name;
 
-        public List<GameComponent> StyleProperties;
+        public List<Component> StyleProperties;
         public GcNGuiStyleAnimationData Animation;
     }
 }

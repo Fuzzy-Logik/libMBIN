@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\EXML\ExmlProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\MBIN\MbinSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\Component.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\NMSType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameComponent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Source\NMS\GameData.cs" />

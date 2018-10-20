@@ -1,5 +1,5 @@
 ﻿namespace libMBIN.NMS {
 
-    public class ToolkitComponent : GameComponent { }
+    public class ToolkitComponent : Component { }
 
 }

@@ -115,7 +115,7 @@ namespace libMBIN.MBIN {
                         }
                     }
                     return null;
-                case "GameComponent":
+                case "Component":
                     reader.Align( 8, templatePosition );
                     long startPos = reader.BaseStream.Position;
                     long offset = reader.ReadInt64();
@@ -475,7 +475,7 @@ namespace libMBIN.MBIN {
                 case "EmptyNode":
                     break;
 
-                case "GameComponent":
+                case "Component":
                     writer.Align( 8, startStructPos );
                     long refPos = writer.BaseStream.Position;
 

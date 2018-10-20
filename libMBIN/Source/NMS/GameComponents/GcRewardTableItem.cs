@@ -9,7 +9,7 @@ namespace libMBIN.NMS.GameComponents
         /* 0x00 */ public float PercentageChance;
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x04 */ public byte[] Padding4;
-        /* 0x08 */ public GameComponent Reward;
+        /* 0x08 */ public Component Reward;
         [NMS(Size = 0x40)]
         /* 0x50 */ public string LabelID;
     }

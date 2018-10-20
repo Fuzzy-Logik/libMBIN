@@ -9,6 +9,6 @@ namespace libMBIN.NMS.GameComponents
     public class GcNGuiStyleAnimationKeyframeData : GameComponent {
 
         public float Position;
-        public List<GameComponent> StyleProperties;
+        public List<Component> StyleProperties;
     }
 }

@@ -1,5 +1,5 @@
 ﻿namespace libMBIN.NMS {
 
-    public class GameComponent : GameData { }
+    public class GameComponent : Component { }
 
 }

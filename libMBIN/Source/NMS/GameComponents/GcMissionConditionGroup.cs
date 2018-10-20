@@ -12,6 +12,6 @@ namespace libMBIN.NMS.GameComponents
         [NMS(Size = 0x4, Ignore = true)]
         public byte[] Padding4;
 
-        public List<GameComponent> Conditions;
+        public List<Component> Conditions;
     }
 }

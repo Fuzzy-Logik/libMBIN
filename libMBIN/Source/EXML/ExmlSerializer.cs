@@ -288,7 +288,7 @@ namespace libMBIN.EXML {
                     }
 
                     return listProperty;
-                case "GameComponent":
+                case "Component":
                     if ( value != null ) {
                         template = (NMSType) value;
 

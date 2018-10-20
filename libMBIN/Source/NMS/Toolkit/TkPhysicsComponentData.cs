@@ -9,7 +9,7 @@ namespace libMBIN.NMS.Toolkit
     public class TkPhysicsComponentData : ToolkitComponent {
 
         public TkPhysicsData Data;
-        /* 0x018 */ public GameComponent RagdollData;
+        /* 0x018 */ public Component RagdollData;
         /* 0x060 */ public TkVolumeTriggerType VolumeTriggerType;
 		public enum SurfacePropertiesEnum { None, Glass }
 		public SurfacePropertiesEnum SurfaceProperties;

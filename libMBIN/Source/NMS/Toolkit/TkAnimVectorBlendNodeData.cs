@@ -19,6 +19,6 @@ namespace libMBIN.NMS.Toolkit
         public float InitialWeight;
         [NMS(Size = 0x4, Ignore = true)]
         public byte[] Padding64;
-        public GameComponent BlendChild;
+        public Component BlendChild;
     }
 }

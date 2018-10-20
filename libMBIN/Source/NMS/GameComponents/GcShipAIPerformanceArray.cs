@@ -8,6 +8,6 @@ namespace libMBIN.NMS.GameComponents
 	[NMS(GUID = 0x5F63DA0FE984966E)]
     public class GcShipAIPerformanceArray : GameComponent {
 
-        public List<GameComponent> Array;
+        public List<Component> Array;
     }
 }

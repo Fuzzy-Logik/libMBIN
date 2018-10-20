@@ -14,6 +14,6 @@ namespace libMBIN.NMS.Toolkit
         public string Name;
         public List<NMSString0x80> ReferencePaths;
         public float Chance;
-        public List<GameComponent> Children;
+        public List<Component> Children;
     }
 }

@@ -42,7 +42,7 @@ namespace libMBIN.NMS.GameComponents
         /* 0x0510 */ public GcSolarSystemTraderSpawnData TraderSpawnOnOutposts;
         /* 0x0524 */ public GcSolarSystemTraderSpawnData TraderSpawnInStations;
         /* 0x0538 */ public List<GcSolarSystemLocator> Locators;
-        /* 0x0548 */ public List<GameComponent> AsteroidGenerators;
+        /* 0x0548 */ public List<Component> AsteroidGenerators;
 
 		public enum AsteroidLevelEnum { NoRares, SomeRares, LotsOfRares }
 		public AsteroidLevelEnum AsteroidLevel;
