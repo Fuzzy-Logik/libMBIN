@@ -14,9 +14,6 @@ namespace libMBIN.EXML {
         internal static NMSType DeserializeEXml( ExmlBase xmlData ) {     // this is the inital code that is run when converting exml to mbin.
             NMSType template = null;
 
-            //DebugLog(xmlData.Name);
-            //DebugLog(xmlData.GetType().ToString());
-
             if ( xmlData.GetType() == typeof( ExmlData ) ) {
                 template = NMSTemplate.TemplateFromName( ((ExmlData) xmlData).Template );
             } else if ( xmlData.GetType() == typeof( ExmlProperty ) ) {
@@ -24,13 +21,6 @@ namespace libMBIN.EXML {
             } else if ( xmlData.GetType() == typeof( ExmlMeta ) ) {
                 NMSTemplate.DebugLogComment( ((ExmlMeta) xmlData).Comment );
             }
-
-            /*
-            DebugLog("Getting types");
-            foreach (var property in xmlData.Elements)
-            {
-                DebugLog(property.GetType());
-            }*/
 
             if ( template == null ) return null;
 
