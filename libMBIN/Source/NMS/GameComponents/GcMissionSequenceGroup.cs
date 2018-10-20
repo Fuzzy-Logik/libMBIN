@@ -38,8 +38,8 @@ namespace libMBIN.NMS.GameComponents
 
 		public enum RepeatLogicEnum { None, Loop, RestartOnConditionFail }
 		public RepeatLogicEnum RepeatLogic;
-        /* 0x1D0 */ public List<NMSTemplate> Conditions;
-        /* 0x1E0 */ public List<NMSTemplate> Consequences;
+        /* 0x1D0 */ public List<GameComponent> Conditions;
+        /* 0x1E0 */ public List<GameComponent> Consequences;
         /* 0x1F0 */ public List<GcGenericMissionStage> Stages;
     }
 }

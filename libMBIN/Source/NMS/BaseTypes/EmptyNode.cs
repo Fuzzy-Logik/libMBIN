@@ -1,6 +1,6 @@
 namespace libMBIN.NMS {
 
-    public class EmptyNode : NMSType {
+    public class EmptyNode : GameComponent {
 
         [NMS( Size = 0x0, Ignore = true )]
         public byte[] Padding;

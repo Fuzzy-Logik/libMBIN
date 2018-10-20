@@ -9,6 +9,6 @@ namespace libMBIN.NMS.Toolkit
     public class TkAnim2dBlendNodeData : ToolkitComponent {
 
         public Vector2f Position;
-        public NMSTemplate BlendChild;
+        public GameComponent BlendChild;
     }
 }

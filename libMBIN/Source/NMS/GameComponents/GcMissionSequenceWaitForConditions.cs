@@ -13,7 +13,7 @@ namespace libMBIN.NMS.GameComponents
         /* 0x080 */ public GcMissionConditionTest ConditionTest;
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x084 */ public byte[] Padding84;
-        /* 0x088 */ public List<NMSTemplate> Conditions;
+        /* 0x088 */ public List<GameComponent> Conditions;
         [NMS(Size = 0x80)]
         /* 0x098 */ public string DebugText;
     }

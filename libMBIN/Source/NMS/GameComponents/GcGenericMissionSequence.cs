@@ -76,8 +76,8 @@ namespace libMBIN.NMS.GameComponents
         [NMS(Size = 0x7, Ignore = true)]
         /* 0x401 */ public byte[] Padding401;
 
-        /* 0x408 */ public List<NMSTemplate> StartingConditions;
-        /* 0x418 */ public List<NMSTemplate> CancelingConditions;
+        /* 0x408 */ public List<GameComponent> StartingConditions;
+        /* 0x418 */ public List<GameComponent> CancelingConditions;
         /* 0x428 */ public List<GcGenericMissionVersionProgress> FinalStageVersions;
         /* 0x438 */ public List<GcGenericMissionStage> Stages;
         /* 0x448 */ public bool ForcesPageHint;

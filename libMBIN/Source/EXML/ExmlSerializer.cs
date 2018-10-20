@@ -6,11 +6,13 @@ using System.Reflection;
 
 namespace libMBIN.EXML {
 
+    using NMS;
+
     internal static class ExmlSerializer {
 
         // this code is run to parse over the exml file and put it into a data structure that is processed by SerializeBytes() (I think...)
-        internal static NMSTemplate DeserializeEXml( ExmlBase xmlData ) {     // this is the inital code that is run when converting exml to mbin.
-            NMSTemplate template = null;
+        internal static NMSType DeserializeEXml( ExmlBase xmlData ) {     // this is the inital code that is run when converting exml to mbin.
+            NMSType template = null;
 
             //DebugLog(xmlData.Name);
             //DebugLog(xmlData.GetType().ToString());
@@ -47,7 +49,7 @@ namespace libMBIN.EXML {
                     FieldInfo field = templateType.GetField( xmlProperty.Name );
                     object fieldValue = null;
                     NMSTemplate.DebugLogPropertyName( xmlProperty.Name );
-                    if ( field.FieldType == typeof( NMSTemplate ) || field.FieldType.IsSubclassOf( typeof( NMSTemplate ) ) ) {
+                    if ( field.FieldType == typeof( NMSType ) || field.FieldType.IsSubclassOf( typeof( NMSType ) ) ) {
                         fieldValue = DeserializeEXml( xmlProperty );
                     } else {
                         Type fieldType = field.FieldType;
@@ -58,7 +60,7 @@ namespace libMBIN.EXML {
                 } else if ( xmlElement.GetType() == typeof( ExmlData ) ) {
                     ExmlData innerXmlData = (ExmlData) xmlElement;
                     FieldInfo field = templateType.GetField( innerXmlData.Name );
-                    NMSTemplate innerTemplate = DeserializeEXml( innerXmlData );
+                    NMSType innerTemplate = DeserializeEXml( innerXmlData );
                     field.SetValue( template, innerTemplate );
                 } else if ( xmlElement.GetType() == typeof( ExmlMeta ) ) {
                     ExmlMeta xmlMeta = (ExmlMeta) xmlElement;
@@ -70,7 +72,7 @@ namespace libMBIN.EXML {
             foreach ( var xmlProperty in xmlData.Elements.OfType<EXmlProperty>() ) {
                 FieldInfo field = templateType.GetField(xmlProperty.Name);
                 object fieldValue = null;
-                if (field.FieldType == typeof(NMSTemplate) || field.FieldType.IsSubClassOf( typeof( NMSTemplate ) ) ) {
+                if (field.FieldType == typeof(NMSType) || field.FieldType.IsSubClassOf( typeof( NMSType ) ) ) {
                     fieldValue = DeserializeEXml(xmlProperty);
                 } else {
                     Type fieldType = field.FieldType;
@@ -82,7 +84,7 @@ namespace libMBIN.EXML {
 
             foreach ( EXmlData innerXmlData in xmlData.Elements.OfType<EXmlData>() ) {
                 FieldInfo field = templateType.GetField(innerXmlData.Name);
-                NMSTemplate innerTemplate = DeserializeEXml(innerXmlData);
+                NMSType innerTemplate = DeserializeEXml(innerXmlData);
                 field.SetValue(template, innerTemplate);
             }
 
@@ -96,7 +98,7 @@ namespace libMBIN.EXML {
             return template;
         }
 
-        private static object DeserializeEXmlValue( NMSTemplate template, Type fieldType, FieldInfo field, ExmlProperty xmlProperty, Type templateType, NMSAttribute settings ) {
+        private static object DeserializeEXmlValue( NMSType template, Type fieldType, FieldInfo field, ExmlProperty xmlProperty, Type templateType, NMSAttribute settings ) {
             switch ( fieldType.Name ) {
                 case "String":
                     return xmlProperty.Value;
@@ -166,7 +168,7 @@ namespace libMBIN.EXML {
                     }
                     return list;
                 default:
-                    if ( field.FieldType.IsArray && field.FieldType.GetElementType().IsSubclassOf( typeof( NMSTemplate ) ) ) {
+                    if ( field.FieldType.IsArray && field.FieldType.GetElementType().IsSubclassOf( typeof( NMSType ) ) ) {
                         Array array = Array.CreateInstance( field.FieldType.GetElementType(), settings.Size );
                         //var data = xmlProperty.Elements.OfType<EXmlProperty>().ToList();
                         List<ExmlBase> data = xmlProperty.Elements.ToList();
@@ -182,7 +184,7 @@ namespace libMBIN.EXML {
 
                         for ( int i = 0; i < data.Count; ++i ) {
                             if ( data[i].GetType() == typeof( ExmlProperty ) ) {
-                                NMSTemplate element = DeserializeEXml( data[i] );
+                                NMSType element = DeserializeEXml( data[i] );
                                 array.SetValue( element, i - numMeta );
                             } else if ( data[i].GetType() == typeof( ExmlMeta ) ) {
                                 NMSTemplate.DebugLogComment( ((ExmlMeta) data[i]).Comment );     // don't need to worry about nummeta here since it is already counted above...
@@ -214,7 +216,7 @@ namespace libMBIN.EXML {
             }
         }
 
-        private static ExmlBase SerializeEXmlValue( NMSTemplate template, Type fieldType, FieldInfo field, NMSAttribute settings, object value ) {
+        private static ExmlBase SerializeEXmlValue( NMSType template, Type fieldType, FieldInfo field, NMSAttribute settings, object value ) {
             string t = fieldType.Name;
             int i = 0;
             string valueString = String.Empty;
@@ -286,9 +288,9 @@ namespace libMBIN.EXML {
                     }
 
                     return listProperty;
-                case "NMSTemplate":
+                case "GameComponent":
                     if ( value != null ) {
-                        template = (NMSTemplate) value;
+                        template = (NMSType) value;
 
                         var templateXmlData = SerializeEXml( template, true );
                         templateXmlData.Name = field.Name;
@@ -297,11 +299,11 @@ namespace libMBIN.EXML {
                     }
                     return null;
                 default:
-                    if ( fieldType.IsSubclassOf( typeof( NMSTemplate ) ) ) {
+                    if ( fieldType.IsSubclassOf( typeof( NMSType ) ) ) {
                         if ( value is null ) {
                             template = NMSTemplate.TemplateFromName( fieldType.Name );
                         } else {
-                            template = (NMSTemplate) value;
+                            template = (NMSType) value;
                         }
 
                         var templateXmlData = SerializeEXml( template, true );
@@ -342,7 +344,7 @@ namespace libMBIN.EXML {
             };
         }
 
-        internal static ExmlBase SerializeEXml( NMSTemplate template, bool isChildTemplate ) {
+        internal static ExmlBase SerializeEXml( NMSType template, bool isChildTemplate ) {
             Type type = template.GetType();
             ExmlBase xmlData = new ExmlProperty { Value = type.Name + ".xml" };
 

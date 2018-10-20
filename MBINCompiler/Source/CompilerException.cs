@@ -1,6 +1,7 @@
 ﻿using System;
 
 using libMBIN;
+using libMBIN.NMS;
 
 namespace MBINCompiler {
 
@@ -44,21 +45,21 @@ namespace MBINCompiler {
     internal class ExmlException : CompilerException {
         private const string DEFAULT_MESSAGE = "An EXML exception has occurred!";
 
-        public new NMSTemplate Data { get; private set; }
+        public new NMSType Data { get; private set; }
 
         public ExmlException()                                                                              : this( DEFAULT_MESSAGE                 ) { }
         public ExmlException( string message )                                                              : base( message                         ) { }
         public ExmlException(                 Exception innerException )                                    : base( DEFAULT_MESSAGE, innerException ) { }
         public ExmlException( string message, Exception innerException )                                    : base( message,         innerException ) { }
         public ExmlException( string message,                           string fileName )                   : base( message,         null,           fileName       ) { }
-        public ExmlException( string message,                                            NMSTemplate data ) : this( message,         null,           "",       data ) { }
-        public ExmlException( string message,                           string fileName, NMSTemplate data ) : base( message,         null,           fileName       ) { }
+        public ExmlException( string message,                                            NMSType data ) : this( message,         null,           "",       data ) { }
+        public ExmlException( string message,                           string fileName, NMSType data ) : base( message,         null,           fileName       ) { }
         public ExmlException(                 Exception innerException, string fileName )                   : base( DEFAULT_MESSAGE, innerException, fileName       ) { }
-        public ExmlException(                 Exception innerException,                  NMSTemplate data ) : this( DEFAULT_MESSAGE, innerException, "",       data ) { }
-        public ExmlException(                 Exception innerException, string fileName, NMSTemplate data ) : this( DEFAULT_MESSAGE, innerException, fileName, data ) { }
+        public ExmlException(                 Exception innerException,                  NMSType data ) : this( DEFAULT_MESSAGE, innerException, "",       data ) { }
+        public ExmlException(                 Exception innerException, string fileName, NMSType data ) : this( DEFAULT_MESSAGE, innerException, fileName, data ) { }
         public ExmlException( string message, Exception innerException, string fileName )                   : base( message,         innerException, fileName       ) { }
-        public ExmlException( string message, Exception innerException,                  NMSTemplate data ) : this( message,         innerException, "",       data ) { }
-        public ExmlException( string message, Exception innerException, string fileName, NMSTemplate data ) : base( message,         innerException, fileName       ) {
+        public ExmlException( string message, Exception innerException,                  NMSType data ) : this( message,         innerException, "",       data ) { }
+        public ExmlException( string message, Exception innerException, string fileName, NMSType data ) : base( message,         innerException, fileName       ) {
             this.Data = data;
         }
     }

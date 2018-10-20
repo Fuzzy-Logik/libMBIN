@@ -12,7 +12,7 @@ namespace libMBIN.NMS.GameComponents
         /* 0x050 */ public TkNGuiGraphicStyle Style;
         [NMS(Size = 0x80)]
         /* 0x200 */ public string Image;
-        /* 0x280 */ public List<NMSTemplate> Children;
+        /* 0x280 */ public List<GameComponent> Children;
         [NMS(Size = 0x80)]
         /* 0x290 */ public string DataFilename;
     }

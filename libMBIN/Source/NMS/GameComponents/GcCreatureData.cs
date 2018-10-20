@@ -28,6 +28,6 @@ namespace libMBIN.NMS.GameComponents
         /* 0x48 */ public GcCreatureRoleFrequencyModifier PredatorProbabilityModifier;
         /* 0x4C */ public GcCreatureRoleFrequencyModifier HerbivoreProbabilityModifier;
 
-        /* 0x50 */ public List<NMSTemplate> Data;
+        /* 0x50 */ public List<GameComponent> Data;
     }
 }

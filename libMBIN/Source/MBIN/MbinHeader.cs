@@ -7,7 +7,7 @@ namespace libMBIN.MBIN {
 
     [NMS(Size = 0x60)]
     [StructLayout( LayoutKind.Sequential, Pack = 4 )]
-    public class MbinHeader /*: NMSTemplate*/ {
+    public class MbinHeader /*: NMSType */ {
 
         internal const uint  MBIN_MAGIC    = 0xCCCCCCCC;         // MBIN format ID
         internal const uint  MBIN_MAGIC_PC = 0xDDDDDDDD;         // only used by TkGeometryData and TkGeometryStreamData (*.MBIN.PC)

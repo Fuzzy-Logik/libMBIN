@@ -8,6 +8,8 @@ using Database = MBINCompilerTests.Database;
 
 namespace libMBIN.UnitTests.Analysis {
 
+    using NMS;
+
     using TemplateSizes = Database.Tables.TemplateSize;
 
     [TestClass]
@@ -27,7 +29,7 @@ namespace libMBIN.UnitTests.Analysis {
             string logPath = Path.Combine( dataDir , "TemplateSizes.tsv" );
 
             foreach ( var type in NMSTemplate.NMSTemplateMap.Values ) {
-                NMSTemplate template = Activator.CreateInstance( type ) as NMSTemplate;
+                NMSType template = Activator.CreateInstance( type ) as NMSType;
                 table.Add( new TemplateSizes.Record( type.Name, NMSTemplate.GetDataSize( template ) ) );
             }
 

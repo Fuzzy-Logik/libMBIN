@@ -34,6 +34,7 @@ namespace libMBIN {
     public class DeserializeTypeException : TemplateException {
         public DeserializeTypeException( string name ) : base( $"Failed to deserialize type {name}!" ) { }
         public DeserializeTypeException( Type type )   : this( type.Name ) { }
+        public DeserializeTypeException( Type type, string fieldName ) : base( $"Failed to deserialize type {type.Name}\n{fieldName}" ) { }
     }
 
     public class NullDataException : TemplateException {

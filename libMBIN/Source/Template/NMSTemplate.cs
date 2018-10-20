@@ -23,11 +23,13 @@ using System.Reflection;
 
 namespace libMBIN {
 
+    using NMS;
+
     public class NMSTemplate {
 
         internal static readonly Dictionary<string, Type> NMSTemplateMap = Assembly.GetExecutingAssembly()
                 .GetTypes()
-                .Where( t => t.IsSubclassOf( typeof( NMSTemplate ) ) )
+                .Where( t => t.IsSubclassOf( typeof( NMSType ) ) )
                 .ToDictionary( t => t.Name );
 
         #region DebugLog
@@ -36,7 +38,7 @@ namespace libMBIN {
         // DEBUG is automatically defined if the project is set to the 'Debug' build configuration.
         // If the project is set to the 'Release' configuration, then DEBUG will not be defined.
         // 
-        // Use the NMSTEMPLATE_* defines at the top of this file to enable/disable debug logging.
+        // Use the defines at the top of this file to enable/disable debug logging.
 
         // TODO: static could be problematic for threading?
         internal static bool isDebugLogTemplateEnabled = true;
@@ -71,13 +73,13 @@ namespace libMBIN {
 
         #endregion
 
-        internal static NMSTemplate TemplateFromName( string templateName ) {
+        internal static NMSType TemplateFromName( string templateName ) {
             Type type;
             if ( !NMSTemplateMap.TryGetValue( templateName, out type ) ) return null; // Template type doesn't exist
-            return Activator.CreateInstance( type ) as NMSTemplate;
+            return Activator.CreateInstance( type ) as NMSType;
         }
 
-        internal static int GetDataSize( NMSTemplate template ) {
+        internal static int GetDataSize( NMSType template ) {
             if ( template == null ) return 0;
 
             using ( var ms = new MemoryStream() )
@@ -103,10 +105,10 @@ namespace libMBIN {
         }
 
         /// <summary>
-        /// Serialises the NMSTemplate object to a .mbin file with default header information.
+        /// Serialises the NMSType object to a .mbin file with default header information.
         /// </summary>
         /// <param name="outputpath">The location to write the .mbin file.</param>
-        public static void WriteToMbin<T>( T template, string outputpath ) where T : NMSTemplate {
+        public static void WriteToMbin<T>( T template, string outputpath ) where T : NMSType {
             using ( var file = new MbinFile( outputpath ) ) {
                 file.header = new MBIN.MbinHeader();
                 var type = template.GetType();
@@ -117,14 +119,14 @@ namespace libMBIN {
         }
 
         /// <summary>
-        /// Writes the NMSTemplate object to an .exml file.
+        /// Writes the NMSType object to an .exml file.
         /// </summary>
         /// <param name="outputpath">The location to write the .exml file.</param>
-        public static void WriteToExml<T>( T template, string outputpath ) where T : NMSTemplate {
+        public static void WriteToExml<T>( T template, string outputpath ) where T : NMSType {
             File.WriteAllText( outputpath, ExmlFile.WriteTemplate( template ) );
         }
 
-        public static string GetID( NMSTemplate template ) {
+        public static string GetID( NMSType template ) {
             var fields = GetOrderedFields( template.GetType() );
             foreach ( var field in fields ) {
                 NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();

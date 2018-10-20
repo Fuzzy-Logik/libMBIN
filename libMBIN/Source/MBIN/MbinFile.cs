@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 namespace libMBIN {
 
     using MBIN;
+    using NMS;
 
     public class MbinFile : IDisposable {
 
@@ -65,12 +66,12 @@ namespace libMBIN {
             return true;
         }
 
-        public NMSTemplate LoadData() {
+        public NMSType LoadData() {
             io.Stream.Position = Marshal.SizeOf<MbinHeader>();
             return MbinSerializer.DeserializeBinaryTemplate( io.Reader, header.GetXMLTemplateName() );
         }
 
-        public void SaveData( NMSTemplate template ) {
+        public void SaveData( NMSType template ) {
             int headerLen = Marshal.SizeOf<MbinHeader>();
             io.Stream.SetLength( headerLen );
             io.Stream.Position = headerLen;
@@ -83,7 +84,7 @@ namespace libMBIN {
             header.TemplateName = "c" + template.GetType().Name;
         }
 
-        public static implicit operator NMSTemplate( MbinFile mbin ) {
+        public static implicit operator NMSType( MbinFile mbin ) {
             return mbin.LoadData();
         }
 

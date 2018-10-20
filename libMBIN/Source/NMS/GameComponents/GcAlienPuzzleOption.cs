@@ -35,7 +35,7 @@ namespace libMBIN.NMS.GameComponents
         /* 0x250 */ public string NextInteraction;
         /* 0x270 */ public GcAudioWwiseEvents AudioEvent;
         /* 0x274 */ public GcMissionConditionTest EnablingConditionTest;
-        /* 0x278 */ public List<NMSTemplate> EnablingConditions;
+        /* 0x278 */ public List<GameComponent> EnablingConditions;
         [NMS(Size = 0x20)]
         /* 0x288 */ public string EnablingConditionId;
     }

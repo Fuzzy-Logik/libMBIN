@@ -22,6 +22,7 @@ using System.IO;
 using System.Threading.Tasks;
 
 using libMBIN;
+using libMBIN.NMS;
 
 namespace MBINCompiler.Commands {
 
@@ -112,7 +113,7 @@ namespace MBINCompiler.Commands {
 
                         var sw = new StreamWriter( ms );
 
-                        NMSTemplate data = null;
+                        NMSType data = null;
                         try {
                             data = mbin.LoadData();
                             if ( data is null ) throw new InvalidDataException( "Invalid MBIN data." );
@@ -129,7 +130,7 @@ namespace MBINCompiler.Commands {
                         }
 
                     } else if ( inputFormat == FormatType.EXML ) {
-                        NMSTemplate data = null;
+                        NMSType data = null;
                         try {
                             data = ExmlFile.ReadTemplateFromStream( fIn );
                             if ( data is null ) throw new InvalidDataException( $"Failed to deserialize EXML." );

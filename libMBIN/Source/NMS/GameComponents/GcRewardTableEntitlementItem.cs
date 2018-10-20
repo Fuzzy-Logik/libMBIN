@@ -10,6 +10,6 @@ namespace libMBIN.NMS.GameComponents
         public string RewardId;
         [NMS(Size = 0x10)]
         public string EntitlementId;
-        public NMSTemplate Reward;
+        public GameComponent Reward;
     }
 }

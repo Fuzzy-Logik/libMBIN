@@ -19,7 +19,7 @@ namespace libMBIN.NMS.Toolkit
         /* 0x60 */ public float InitialWeight;
         [NMS(Size = 0x4, Ignore = true)]
         /* 0x64 */ public byte[] Padding64;
-        /* 0x68 */ public NMSTemplate BlendLeft;
-        /* 0xB0 */ public NMSTemplate BlendRight;
+        /* 0x68 */ public GameComponent BlendLeft;
+        /* 0xB0 */ public GameComponent BlendRight;
     }
 }

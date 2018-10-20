@@ -12,6 +12,6 @@ namespace libMBIN.NMS.GameComponents
         /* 0x11 */ public bool DontCharge;
         [NMS(Size = 0x6, Ignore = true)]
         /* 0x12 */ public byte[] Padding12;
-        /* 0x18 */ public NMSTemplate Cost;
+        /* 0x18 */ public GameComponent Cost;
     }
 }

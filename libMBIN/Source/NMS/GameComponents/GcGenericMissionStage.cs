@@ -9,6 +9,6 @@ namespace libMBIN.NMS.GameComponents
     public class GcGenericMissionStage : GameComponent {
 
         public List<GcGenericMissionVersionProgress> Versions;
-        public NMSTemplate Stage;
+        public GameComponent Stage;
     }
 }

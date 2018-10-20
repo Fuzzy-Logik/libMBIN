@@ -18,6 +18,6 @@ namespace libMBIN {
         public NMS.VariableSizeString TestDynamicString;
         public List<NMS.NMSString0x80> Test0x80ByteStringList;
         public List<int> TestListInt;
-        // todo: public List<NMSTemplate> TestGenericList
+        // todo: public List<NMS.GameComponent> TestGenericList
     }
 }

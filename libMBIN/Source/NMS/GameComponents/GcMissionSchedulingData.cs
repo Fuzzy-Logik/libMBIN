@@ -8,7 +8,7 @@ namespace libMBIN.NMS.GameComponents
 	[NMS(Size = 0x88, GUID = 0xEA811EE090A41A87)]
     public class GcMissionSchedulingData : GameComponent {
 
-        /* 0x00 */ public NMSTemplate RecurrenceType;
+        /* 0x00 */ public GameComponent RecurrenceType;
         /* 0x48 */ public GcDate StartDate;
         /* 0x5C */ public GcDate EndDate;
         /* 0x70 */ public bool IndependentStart;

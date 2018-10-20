@@ -9,6 +9,6 @@ namespace libMBIN.NMS.GameComponents
     public class GcHUDLayerData : GameComponent {
 
         public GcHUDComponent Data;
-        public List<NMSTemplate> Children;
+        public List<GameComponent> Children;
     }
 }

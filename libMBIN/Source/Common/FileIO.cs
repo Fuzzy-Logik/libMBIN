@@ -3,18 +3,20 @@ using System.IO;
 
 namespace libMBIN {
 
+    using NMS;
+
     /// <summary>
     /// Container class for general file loading methods.
     /// </summary>
     public class FileIO {
 
         /// <summary>
-        /// Loads a file and returns an NMSTemplate which can be either used as-is, or cast to a specific type.
+        /// Loads a file and returns an NMSType which can be either used as-is, or cast to a specific type.
         /// The path to either an .exml or .mbin can be provided here and the correct method will be selected automatically.
         /// </summary>
         /// <param name="file">File path to the .exml or .mbin to be loaded into memory.</param>
-        /// <returns>NMSTemplate</returns>
-        public static NMSTemplate LoadFile( string file ) {
+        /// <returns>NMSType</returns>
+        public static NMSType LoadFile( string file ) {
             // TODO: doesn't handle MBIN.PC files
             if ( Path.HasExtension( file ) ) {
                 string x = Path.GetExtension( file ).ToUpper();
@@ -28,18 +30,18 @@ namespace libMBIN {
         }
 
         /// <summary>
-        /// Loads an .mbin file and returns an NMSTemplate which can be either used as-is, or cast to a specific type.
+        /// Loads an .mbin file and returns an NMSType which can be either used as-is, or cast to a specific type.
         /// </summary>
         /// <param name="path">File path to the .mbin to be loaded into memory.</param>
-        /// <returns>NMSTemplate</returns>
-        public static NMSTemplate LoadMbin( string path ) {
+        /// <returns>NMSType</returns>
+        public static NMSType LoadMbin( string path ) {
             string err = null;
             try {
 
                 MbinFile mbin = new MbinFile( path );
                 if ( !mbin.LoadHeader() || !mbin.header.IsValid ) throw new InvalidDataException( "Not a valid MBIN file!" );
 
-                NMSTemplate data = mbin.LoadData();
+                NMSType data = mbin.LoadData();
                 err = $"Failed to read {mbin.header.GetXMLTemplateName()} from MBIN";
                 if ( data is null ) throw new InvalidDataException( "Invalid MBIN data." );
                 return data;
@@ -50,11 +52,11 @@ namespace libMBIN {
         }
 
         /// <summary>
-        /// Loads an .exml file and returns an NMSTemplate which can be either used as-is, or cast to a specific type.
+        /// Loads an .exml file and returns an NMSType which can be either used as-is, or cast to a specific type.
         /// </summary>
         /// <param name="path">File path to the .exml to be loaded into memory.</param>
-        /// <returns>NMSTemplate</returns>
-        public static NMSTemplate LoadExml( string path ) {
+        /// <returns>NMSType</returns>
+        public static NMSType LoadExml( string path ) {
             return ExmlFile.ReadTemplate( path );
         }
 

@@ -9,6 +9,7 @@ using System.Xml.Serialization;
 namespace libMBIN {
 
     using EXML;
+    using NMS;
 
     public static class ExmlFile {
 
@@ -18,13 +19,13 @@ namespace libMBIN {
         private static XmlReaderSettings readerSettings = new XmlReaderSettings();
 
 
-        public static NMSTemplate ReadTemplate( string filePath ) {
+        public static NMSType ReadTemplate( string filePath ) {
             using ( var input = File.OpenRead( filePath ) ) {
                 return ReadTemplateFromStream( input );
             }
         }
 
-        public static NMSTemplate ReadTemplateFromString( string xml ) {
+        public static NMSType ReadTemplateFromString( string xml ) {
             var origCulture = Thread.CurrentThread.CurrentCulture;
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             readerSettings.IgnoreComments = false;
@@ -37,7 +38,7 @@ namespace libMBIN {
             }
         }
 
-        public static NMSTemplate ReadTemplateFromStream( Stream input ) {
+        public static NMSType ReadTemplateFromStream( Stream input ) {
             var origCulture = Thread.CurrentThread.CurrentCulture;
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             readerSettings.IgnoreComments = false;
@@ -49,9 +50,9 @@ namespace libMBIN {
             }
         }
 
-        private static NMSTemplate ReadTemplateFromXmlReader( XmlReader reader ) {
+        private static NMSType ReadTemplateFromXmlReader( XmlReader reader ) {
             ExmlData root = (ExmlData) Serializer.Deserialize( reader );
-            NMSTemplate rootTemplate = ExmlSerializer.DeserializeEXml( root );
+            NMSType rootTemplate = ExmlSerializer.DeserializeEXml( root );
             return rootTemplate;
         }
 
@@ -68,7 +69,7 @@ namespace libMBIN {
             }
         }
 
-        public static string WriteTemplate( NMSTemplate template ) {
+        public static string WriteTemplate( NMSType template ) {
             var origCulture = Thread.CurrentThread.CurrentCulture;
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
