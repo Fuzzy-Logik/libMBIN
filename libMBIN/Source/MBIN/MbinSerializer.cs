@@ -51,7 +51,7 @@ namespace libMBIN.MBIN {
                     } else {
                         field.SetValue( obj, DeserializeValue( reader, field.FieldType, settings, templatePosition, field, obj ) );
                     }
-                    NMSTemplate.DebugLogTemplate( "Gk Hack: " + templateName + " Deserialized Value: " + field.Name + " value: " + field.GetValue( obj ) );
+                    NMSTemplate.DebugLogFieldName( "Gk Hack: " + templateName + " Deserialized Value: " + field.Name + " value: " + field.GetValue( obj ) );
                     //Logger.LogDebug($"{templateName} position: 0x{reader.BaseStream.Position:X}");
                 }
 
