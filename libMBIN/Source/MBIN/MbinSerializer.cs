@@ -204,7 +204,6 @@ namespace libMBIN.MBIN {
 
         private static List<T> DeserializeList<T>( BinaryReader reader, FieldInfo field, NMSAttribute settings, long templateStartOffset, NMSType parent ) {
             long listPosition = reader.BaseStream.Position;
-            if ( listPosition == 0x3A8 ) System.Diagnostics.Debugger.Break();
             NMSTemplate.DebugLogTemplate( $"DeserializeList\tstart\t0x{listPosition:X}" );
 
             long listStartOffset = reader.ReadInt64();
