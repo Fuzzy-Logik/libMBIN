@@ -33,30 +33,34 @@ namespace libMBIN.EXML {
                 if ( settings?.DefaultValue != null ) templateField.SetValue( template, settings.DefaultValue );
             }
 
-            foreach ( var xmlElement in xmlData.Elements ) {
-                if ( xmlElement.GetType() == typeof( ExmlProperty ) ) {
-                    ExmlProperty xmlProperty = (ExmlProperty) xmlElement;
-                    FieldInfo field = templateType.GetField( xmlProperty.Name );
-                    object fieldValue = null;
-                    NMSTemplate.DebugLogPropertyName( xmlProperty.Name );
-                    if ( field.FieldType == typeof( NMSType ) || field.FieldType.IsSubclassOf( typeof( NMSType ) ) ) {
-                        fieldValue = DeserializeEXml( xmlProperty );
-                    } else {
-                        Type fieldType = field.FieldType;
-                        NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();
-                        fieldValue = DeserializeEXmlValue( template, fieldType, field, xmlProperty, templateType, settings );
+            using ( var indentScope = new Logger.IndentScope() ) {
+
+                foreach ( var xmlElement in xmlData.Elements ) {
+                    if ( xmlElement.GetType() == typeof( ExmlProperty ) ) {
+                        ExmlProperty xmlProperty = (ExmlProperty) xmlElement;
+                        FieldInfo field = templateType.GetField( xmlProperty.Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance );
+                        object fieldValue = null;
+                        NMSTemplate.DebugLogPropertyName( xmlProperty.Name );
+                        if ( field.FieldType == typeof( NMSType ) || field.FieldType.IsSubclassOf( typeof( NMSType ) ) ) {
+                            fieldValue = DeserializeEXml( xmlProperty );
+                        } else {
+                            Type fieldType = field.FieldType;
+                            NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();
+                            fieldValue = DeserializeEXmlValue( template, fieldType, field, xmlProperty, templateType, settings );
+                        }
+                        field.SetValue( template, fieldValue );
+                    } else if ( xmlElement.GetType() == typeof( ExmlData ) ) {
+                        ExmlData innerXmlData = (ExmlData) xmlElement;
+                        FieldInfo field = templateType.GetField( innerXmlData.Name );
+                        NMSType innerTemplate = DeserializeEXml( innerXmlData );
+                        field.SetValue( template, innerTemplate );
+                    } else if ( xmlElement.GetType() == typeof( ExmlMeta ) ) {
+                        ExmlMeta xmlMeta = (ExmlMeta) xmlElement;
+                        string comment = xmlMeta.Comment;
+                        NMSTemplate.DebugLogComment( comment );
                     }
-                    field.SetValue( template, fieldValue );
-                } else if ( xmlElement.GetType() == typeof( ExmlData ) ) {
-                    ExmlData innerXmlData = (ExmlData) xmlElement;
-                    FieldInfo field = templateType.GetField( innerXmlData.Name );
-                    NMSType innerTemplate = DeserializeEXml( innerXmlData );
-                    field.SetValue( template, innerTemplate );
-                } else if ( xmlElement.GetType() == typeof( ExmlMeta ) ) {
-                    ExmlMeta xmlMeta = (ExmlMeta) xmlElement;
-                    string comment = xmlMeta.Comment;
-                    NMSTemplate.DebugLogComment( comment );
                 }
+
             }
             /*
             foreach ( var xmlProperty in xmlData.Elements.OfType<EXmlProperty>() ) {
