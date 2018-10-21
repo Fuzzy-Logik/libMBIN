@@ -15,7 +15,7 @@ namespace MBINCompiler.Commands {
 
             if ( !GetOverwriteOption( options ) ) return (int) ErrorCode.CommandLine;
 
-            var force = options.GetOptionSwitch( "force" );
+            IgnoreErrors = options.GetOptionSwitch( "force" );
 
             if ( paths.Count < 1 ) return CommandLine.ShowHelp( ErrorCode.CommandLine );
             var inputDir = paths[0];
@@ -65,7 +65,7 @@ namespace MBINCompiler.Commands {
             // auto detect the input format if necessary
             if ( autoFormat && !AutoDetectFormat( ref fileList ) ) return (int) ErrorCode.Unknown;
 
-            return (int) Convert.ConvertFileList( inputDir, outputDir, fileList, force );
+            return (int) Convert.ConvertFileList( inputDir, outputDir, fileList, IgnoreErrors );
         }
 
         private static bool GetOverwriteOption( CommandLineParser options ) {
