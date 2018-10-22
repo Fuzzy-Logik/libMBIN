@@ -13,13 +13,13 @@ namespace MBINCompiler
 
         public static class OptionBackers
         {
-            public static bool optQuiet;
-            public static OverwriteMode optOverwrite;
-            public static bool optIgnoreErrors;
-            public static FormatType optInputFormat;
-            public static FormatType optOutputFormat;
-            public static List<string> optIncludeFilters;
-            public static List<string> optExcludeFilters;
+            public static bool optQuiet                  = false;
+            public static OverwriteMode optOverwrite     = OverwriteMode.Prompt;
+            public static bool optIgnoreErrors           = false;
+            public static FormatType optInputFormat      = FormatType.Unknown;
+            public static FormatType optOutputFormat     = FormatType.Unknown;
+            public static List<string> optIncludeFilters = null;
+            public static List<string> optExcludeFilters = null;
         }
 
         // --quiet
@@ -118,46 +118,52 @@ namespace MBINCompiler
         {
             string exe = GetExecutableName();
 
-            var sw = new StringBuilder();
+            var sb = new StringBuilder();
             
-            sw.AppendLine( Version.GetVersionStringVerbose() );
+            sb.AppendLine( Version.GetVersionStringVerbose() );
 
-            sw.Append( "\nUsage:\n\n" +
+            sb.Append( "\nUsage:\n\n" +
                    $"    {exe} help\n" +
                    $"    {exe} version [(-q | --quiet)] [<File>]\n" +
                    $"    {exe} [convert] [<Option>...] <Path> [<Path>...]\n" );
 
-            sw.Append( "\n\nModes:\n\n" +
+            sb.Append( "\n\nModes:\n\n" +
                     FormatWrapped( "  help", 20, "Show this help info.", true ) +
                     FormatWrapped( "  version", 20, "Show version info.", true ) +
                     FormatWrapped( "  convert", 20, "Convert files between MBIN and EXML formats.", true ) );
 
             if ( OPTIONS_GENERAL.Count > 0 ) {
-                sw.Append( "\n\nGeneral Options:\n" );
-                foreach ( var option in OPTIONS_GENERAL ) { sw.Append(option ); sw.AppendLine(); }
+                sb.Append( "\n\nGeneral Options:\n" );
+                foreach ( var option in OPTIONS_GENERAL ) AppendOption( sb, option );
             }
 
-            sw.Append( FormatWrapped( "\nversion [<Option>...] [<File>]\n\n", 4,
+            sb.Append( FormatWrapped( "\nversion [<Option>...] [<File>]\n\n", 4,
                     "    If no valid <File> is specified, the version for this exe is displayed.\n" +
                     "    If <File> is an MBIN, the version that the MBIN was compiled with will be displayed.\n" +
                     "\n" +
                     "    If -q or --quiet is used, a compact version string will be displayed with no decoration." ) );
 
             if ( OPTIONS_VERSION.Count > 0 ) {
-                sw.Append( "\nversion Options:\n" );
-                foreach ( var option in OPTIONS_VERSION ) { sw.Append(option ); sw.AppendLine(); }
+                sb.Append( "\nversion Options:\n" );
+                foreach ( var option in OPTIONS_VERSION ) AppendOption( sb, option );
             }
 
-            sw.Append( FormatWrapped( "\n\n[convert] [<Option>...] <Path> [<Path>...]\n\n", 4,
+            sb.Append( FormatWrapped( "\n\n[convert] [<Option>...] <Path> [<Path>...]\n\n", 4,
                     "    This mode is the default. The convert keyword is optional.\n" +
                     "    For each <Path>, convert all files between MBIN and EXML formats." ) );
 
             if ( OPTIONS_CONVERT.Count > 0 ) {
-                sw.Append( "\nconvert Options:\n" );
-                foreach ( var option in OPTIONS_CONVERT ) { sw.Append(option ); sw.AppendLine(); }
+                sb.Append( "\nconvert Options:\n" );
+                foreach ( var option in OPTIONS_CONVERT ) AppendOption( sb, option );
             }
 
-            return sw.ToString();
+            return sb.ToString();
+        }
+
+        private static void AppendOption( StringBuilder sb, Option option ) {
+            if ( option.isHidden ) return;
+            sb.Append( option );
+            sb.AppendLine();
         }
 
     }
