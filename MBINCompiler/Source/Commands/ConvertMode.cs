@@ -16,6 +16,7 @@ namespace MBINCompiler.Commands {
             if ( !GetOverwriteOption( options ) ) return (int) ErrorCode.CommandLine;
 
             IgnoreErrors = options.GetOptionSwitch( "force" );
+            UseThreads   = !options.GetOptionSwitch( "no-threads" );
 
             if ( paths.Count < 1 ) return CommandLine.ShowHelp( ErrorCode.CommandLine );
             var inputDir = paths[0];

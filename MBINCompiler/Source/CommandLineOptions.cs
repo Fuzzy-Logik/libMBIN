@@ -20,6 +20,7 @@ namespace MBINCompiler
             public static FormatType optOutputFormat     = FormatType.Unknown;
             public static List<string> optIncludeFilters = null;
             public static List<string> optExcludeFilters = null;
+            public static bool optUseThreads             = true;
         }
 
         // --quiet
@@ -42,6 +43,9 @@ namespace MBINCompiler
 
         // --exclude
         public static List<string> ExcludeFilters { get => optExcludeFilters; internal set => optExcludeFilters = value; }
+
+        // --no-threads
+        public static bool UseThreads { get => optUseThreads; internal set => optUseThreads = value; }
 
         public static readonly List<Option> OPTIONS_GENERAL = new List<Option> {
             new Option { shortName = 'q', longName = "quiet",
@@ -102,6 +106,14 @@ namespace MBINCompiler
                                         "Multiple glob patterns are separated by a semicolon.\n" +
                                         "The default is --exclude=\"LANGUAGE\\*;*.GEOMETRY.*\".\n" +
                                         "The --exclude filter is applied after --include." },
+
+            new Option { longName = "no-threads", isHidden = true,
+                            description = "Disable multi-threading." +
+                "When multi-threading is enabled, log messages are not guaranteed to be in order. " +
+                "Progress and error messages for different threads could be interleaved.\n" +
+                "This option can be used to ensure that execution and the logs produced are sequential.\n" +
+                "Multi-threading also adds a fair bit of complexity to the process logic and introduces many potential bugs.\n" +
+                "This option could be used to help identify if any new bugs are thread-related and as a stop-gap until the bugs are fixed." }
         };
 
         private static string FormatWrapped( string prefix, int padleft, string txt, bool trim = false )
@@ -161,7 +173,9 @@ namespace MBINCompiler
         }
 
         private static void AppendOption( StringBuilder sb, Option option ) {
-            if ( option.isHidden ) return;
+            #if !DEBUG
+                if ( option.isHidden ) return;
+            #endif
             sb.Append( option );
             sb.AppendLine();
         }
