@@ -13,6 +13,7 @@ namespace MBINCompiler
 
         public static class OptionBackers
         {
+            public static bool optDebugMode              = false;
             public static bool optQuiet                  = false;
             public static OverwriteMode optOverwrite     = OverwriteMode.Prompt;
             public static bool optIgnoreErrors           = false;
@@ -21,6 +22,18 @@ namespace MBINCompiler
             public static List<string> optIncludeFilters = null;
             public static List<string> optExcludeFilters = null;
             public static bool optUseThreads             = true;
+        }
+
+        // --debug
+        public static bool DebugMode {
+            get => optDebugMode;
+            internal set {
+                #if DEBUG
+                    optDebugMode = true;
+                #else
+                    optDebugMode = value;
+                #endif
+            }
         }
 
         // --quiet
@@ -52,6 +65,9 @@ namespace MBINCompiler
                             description = "Do not display any console messages.\n" +
                                         "(Except requested help or version info.)\n" +
                                         "Do not wait for key press." },
+
+            new Option { longName = "debug", isHidden = true,
+                            description = "Unhide the help info for hidden debug options." }
         };
 
         public static readonly List<Option> OPTIONS_HELP = new List<Option> {
@@ -107,14 +123,9 @@ namespace MBINCompiler
                                         "The default is --exclude=\"LANGUAGE\\*;*.GEOMETRY.*\".\n" +
                                         "The --exclude filter is applied after --include." },
 
-            new Option { longName = "no-threads", isHidden = true,
-                            description = "Disable multi-threading." +
-                "When multi-threading is enabled, log messages are not guaranteed to be in order. " +
-                "Progress and error messages for different threads could be interleaved.\n" +
-                "This option can be used to ensure that execution and the logs produced are sequential.\n" +
-                "Multi-threading also adds a fair bit of complexity to the process logic and introduces many potential bugs.\n" +
-                "This option could be used to help identify if any new bugs are thread-related and as a stop-gap until the bugs are fixed." }
+            new Option { longName = "no-threads", isHidden = true, description = "Disable multi-threading." }
         };
+
 
         private static string FormatWrapped( string prefix, int padleft, string txt, bool trim = false )
         {
@@ -135,12 +146,12 @@ namespace MBINCompiler
             sb.AppendLine( Version.GetVersionStringVerbose() );
 
             sb.Append( "\nUsage:\n\n" +
-                   $"    {exe} help\n" +
-                   $"    {exe} version [(-q | --quiet)] [<File>]\n" +
+                   $"    {exe} help [<Option>...]\n" +
+                   $"    {exe} version [<Option>...] [<File>]\n" +
                    $"    {exe} [convert] [<Option>...] <Path> [<Path>...]\n" );
 
             sb.Append( "\n\nModes:\n\n" +
-                    FormatWrapped( "  help", 20, "Show this help info.", true ) +
+                    FormatWrapped( "  help",    20, "Show this help info.", true ) +
                     FormatWrapped( "  version", 20, "Show version info.", true ) +
                     FormatWrapped( "  convert", 20, "Convert files between MBIN and EXML formats.", true ) );
 
@@ -173,9 +184,7 @@ namespace MBINCompiler
         }
 
         private static void AppendOption( StringBuilder sb, Option option ) {
-            #if !DEBUG
-                if ( option.isHidden ) return;
-            #endif
+            if ( option.isHidden && !DebugMode ) return;
             sb.Append( option );
             sb.AppendLine();
         }
