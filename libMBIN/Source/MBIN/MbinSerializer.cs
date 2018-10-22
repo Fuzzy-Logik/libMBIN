@@ -28,7 +28,7 @@ namespace libMBIN.MBIN {
             if ( obj == null ) return null;
 
             long templatePosition = reader.BaseStream.Position;
-            NMSTemplate.DebugLogTemplate( $"{templateName}\tposition:\t0x{templatePosition:X}" );
+            NMSTemplate.DebugLogTemplate( $"[T Start] {templateName}\t0x{templatePosition:X}" );
             using ( var indentScope = new Logger.IndentScope() ) {
 
                 if ( templateName == "VariableSizeString" ) {
@@ -51,14 +51,13 @@ namespace libMBIN.MBIN {
                     } else {
                         field.SetValue( obj, DeserializeValue( reader, field.FieldType, settings, templatePosition, field, obj ) );
                     }
-                    NMSTemplate.DebugLogFieldName( "Gk Hack: " + templateName + " Deserialized Value: " + field.Name + " value: " + field.GetValue( obj ) );
-                    //Logger.LogDebug($"{templateName} position: 0x{reader.BaseStream.Position:X}");
+                    NMSTemplate.DebugLogFieldName( $"[T] {templateName}\t0x{reader.BaseStream.Position:X}\t{field.Name}\t{field.GetValue( obj )}" );
                 }
 
                 FinishDeserialize( obj );
 
             }
-            NMSTemplate.DebugLogTemplate( $"{templateName}\tend position:\t0x{reader.BaseStream.Position:X}" );
+            NMSTemplate.DebugLogTemplate( $"[T End]{templateName}\t0x{reader.BaseStream.Position:X}" );
 
             return obj;
         }
@@ -158,7 +157,7 @@ namespace libMBIN.MBIN {
 
         private static List<NMSType> DeserializeGenericList( BinaryReader reader, long templateStartOffset, NMSType parent ) {
             long listPosition = reader.BaseStream.Position;
-            NMSTemplate.DebugLogTemplate( $"DeserializeGenericList\tstart\t0x{listPosition:X}" );
+            NMSTemplate.DebugLogTemplate( $"[G Start]\t0x{listPosition:X}" );
 
             long templateNamesOffset = reader.ReadInt64();
             int numTemplates = reader.ReadInt32();
@@ -196,6 +195,7 @@ namespace libMBIN.MBIN {
                 }
             }
 
+            NMSTemplate.DebugLogTemplate( $"[G End]\t0x{listEndPosition:X}" );
             reader.BaseStream.Position = listEndPosition;
             reader.Align( 0x8, 0 );
 
@@ -204,7 +204,7 @@ namespace libMBIN.MBIN {
 
         private static List<T> DeserializeList<T>( BinaryReader reader, FieldInfo field, NMSAttribute settings, long templateStartOffset, NMSType parent ) {
             long listPosition = reader.BaseStream.Position;
-            NMSTemplate.DebugLogTemplate( $"DeserializeList\tstart\t0x{listPosition:X}" );
+            NMSTemplate.DebugLogTemplate( $"[L Start]\t0x{listPosition:X}" );
 
             long listStartOffset = reader.ReadInt64();
             int numEntries = reader.ReadInt32();
@@ -225,6 +225,7 @@ namespace libMBIN.MBIN {
                 list.Add( (T) template );
             }
 
+            NMSTemplate.DebugLogTemplate( $"[L End]\t0x{listEndPosition:X}" );
             reader.BaseStream.Position = listEndPosition;
             reader.Align( 0x8, 0 );
 
@@ -324,7 +325,7 @@ namespace libMBIN.MBIN {
                             var endPos = writer.BaseStream.Position;
                             writer.BaseStream.Position = data.Item1;
                             writer.Write( pos - data.Item1 );
-                            writer.WriteString( "c" + template.GetType().Name, Encoding.UTF8, 0x40 );
+                            writer.WriteString( "c" + template2.GetType().Name, Encoding.UTF8, 0x40 );
                             writer.BaseStream.Position = endPos;
                         } else if ( data.Item2.GetType().IsGenericType && data.Item2.GetType().GetGenericTypeDefinition() == typeof( List<> ) ) {
                             // this will serialise a dynamic length list of either a generic type, or a specific type
@@ -359,7 +360,7 @@ namespace libMBIN.MBIN {
 
         internal static void AppendToWriter( NMSType template, BinaryWriter writer, ref List<Tuple<long, object>> additionalData, ref int addtDataIndex, Type parent, UInt32 listEnding = 0xAAAAAA01 ) {
             long templatePosition = writer.BaseStream.Position;
-            //Logger.LogDebug( $"[C] writing {GetType().Name} to offset 0x{templatePosition:X} (parent: {parent.Name})" );
+            NMSTemplate.DebugLogTemplate( $"[A] {template.GetType().Name}\t0x{templatePosition:X4}\t{parent.Name}" );
             var type = template.GetType();
             var fields = NMSTemplate.GetOrderedFields( type );
 
@@ -374,7 +375,7 @@ namespace libMBIN.MBIN {
             if ( type.Name != "EmptyNode" ) {
                 foreach ( var field in fields ) {
                     var fieldAddr = writer.BaseStream.Position - templatePosition;      // location of the data within the struct
-                                                                                        //Logger.LogDebug($"fieldAddr: 0x{fieldAddr:X}, templatePos: 0x{templatePosition:X}, name: {field.FieldType.Name}, value: {field.GetValue(this)}");
+                    //Logger.LogDebug($"fieldAddr: 0x{fieldAddr:X}, templatePos: 0x{templatePosition:X}, name: {field.FieldType.Name}, value: {field.GetValue(this)}");
                     NMSAttribute settings = field.GetCustomAttribute<NMSAttribute>();
                     var fieldData = field.GetValue( template );
                     SerializeValue( template, writer, field.FieldType, fieldData, settings, field, templatePosition, ref additionalData, ref addtDataIndex, structLength, listEnding );
@@ -385,7 +386,7 @@ namespace libMBIN.MBIN {
         }
 
         private static void SerializeValue( NMSType template, BinaryWriter writer, Type fieldType, object fieldData, NMSAttribute settings, FieldInfo field, long startStructPos, ref List<Tuple<long, object>> additionalData, ref int addtDataIndex, int structLength = 0, UInt32 listEnding = 0xAAAAAA01 ) {
-            //Logger.LogDebug( $"{field?.DeclaringType.Name}.{field?.Name}\ttype:\t{fieldType.Name}\tadditionalData.Count:\t{additionalData?.Count ?? 0}\taddtDataIndex:\t{addtDataIndex}" );
+            NMSTemplate.DebugLogTemplate( $"[V] {field?.DeclaringType.Name}.{field?.Name}\t{fieldType.Name}\t{additionalData?.Count ?? 0}\t{addtDataIndex}" );
 
             if ( (template as NMS.ISerialize)?.OnSerialize( writer, fieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex ) ?? false ) return;
 
@@ -547,7 +548,7 @@ namespace libMBIN.MBIN {
             writer.Align( 0x8, 0 );       // Make sure that all c~ names are offset at 0x8.     // make rel to listHeaderPosition?
             long listPosition = writer.BaseStream.Position;
 
-            NMSTemplate.DebugLogTemplate( $"SerializeList\tstart:\t{$"0x{listPosition:X},",-10}\theader:\t{$"0x{listHeaderPosition:X},",-10}\tcount:\t{list.Count}" );
+            NMSTemplate.DebugLogTemplate( $"[G Start] {template.GetType().Name}\t{$"0x{listPosition:X},",-10}\t{$"0x{listHeaderPosition:X},",-10}\t{list.Count}" );
 
             writer.BaseStream.Position = listHeaderPosition;
 
@@ -581,7 +582,7 @@ namespace libMBIN.MBIN {
                 var templateEntry = (NMSType) entry;
                 var listObjects = new List<Tuple<long, object>>();     // new list of objects so that this data is serialised first
                 var addtData = new Dictionary<long, object>();
-                //Logger.LogDebug( $"[C] writing {template.GetType().Name} to offset 0x{writer.BaseStream.Position:X}" );
+                NMSTemplate.DebugLogTemplate( $"[G] {template.GetType().Name}\t0x{writer.BaseStream.Position:X}" );
                 // pass the new listObject object in place of additionalData so that this branch is serialised before the whole layer
                 AppendToWriter( templateEntry, writer, ref listObjects, ref addtDataIndexThis, template.GetType() );
                 for ( int i = 0; i < listObjects.Count; i++ ) {
@@ -650,7 +651,7 @@ namespace libMBIN.MBIN {
             }
 
             long listPosition = writer.BaseStream.Position;
-            //Logger.LogDebug( $"SerializeList\tstart:\t{$"0x{listPosition:X},",-10}\theader:\t{$"0x{listHeaderPosition:X},",-10}\tcount:\t{list.Count}" );
+            NMSTemplate.DebugLogTemplate( $"[L Start] {template.GetType().Name}\t{$"0x{listPosition:X},",-10}\t{$"0x{listHeaderPosition:X},",-10}\t{list.Count}" );
 
             writer.BaseStream.Position = listHeaderPosition;
 
@@ -670,7 +671,7 @@ namespace libMBIN.MBIN {
             int addtDataIndexThis = addtDataIndex;
 
             foreach ( var entry in list ) {
-                NMSTemplate.DebugLogTemplate( $"[C] writing {entry.GetType().Name} to offset 0x{writer.BaseStream.Position:X}" );
+                NMSTemplate.DebugLogTemplate( $"[L] {entry.GetType().Name}\t0x{writer.BaseStream.Position:X}" );
                 SerializeValue( template, writer, entry.GetType(), entry, null, null, listPosition, ref additionalData, ref addtDataIndexThis, 0, listEnding );
             }
 
