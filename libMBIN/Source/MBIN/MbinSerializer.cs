@@ -17,14 +17,6 @@ namespace libMBIN.MBIN {
 
             NMSType obj = NMSTemplate.TemplateFromName( templateName );
 
-            /*using (System.IO.StreamWriter file =
-                new System.IO.StreamWriter(@"T:\mbincompiler_debug.txt", true))
-            {
-                file.WriteLine("Deserializing Template: " + templateName);
-            }*/
-
-            //DebugLog("Gk Hack: " + "Deserializing Template: " + templateName);
-
             if ( obj == null ) return null;
 
             long templatePosition = reader.BaseStream.Position;
@@ -62,7 +54,7 @@ namespace libMBIN.MBIN {
             return obj;
         }
 
-        internal static object DeserializeValue( BinaryReader reader, Type field, NMSAttribute settings, long templatePosition, FieldInfo fieldInfo, NMSType parent ) {
+        private static object DeserializeValue( BinaryReader reader, Type field, NMSAttribute settings, long templatePosition, FieldInfo fieldInfo, NMSType parent ) {
             //Logger.LogDebug( $"{fieldInfo?.DeclaringType.Name}.{fieldInfo?.Name}\ttype:\t{field.Name}\tpos:\t0x{templatePosition:X}" );
 
             var data = (parent as NMS.IDeserialize)?.OnDeserialize( reader, field, settings, templatePosition, fieldInfo );
@@ -103,15 +95,10 @@ namespace libMBIN.MBIN {
                     reader.Align( 8, templatePosition );
                     if ( field.IsGenericType && field.GetGenericTypeDefinition() == typeof( List<> ) ) {
                         Type itemType = field.GetGenericArguments()[0];
-                        if ( itemType == typeof( NMSType ) )
-                            return DeserializeGenericList( reader, templatePosition, parent );
-                        else {
-                            // todo: get rid of this nastiness
-                            MethodInfo method = typeof( MbinSerializer ).GetMethod( "DeserializeList", BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic )
-                                                         .MakeGenericMethod( new Type[] { itemType } );
-                            var list = method.Invoke( null, new object[] { reader, fieldInfo, settings, templatePosition, parent } );
-                            return list;
-                        }
+                        MethodInfo method = typeof( MbinSerializer ).GetMethod( "DeserializeList", BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic )
+                                                        .MakeGenericMethod( new Type[] { itemType } );
+                        var list = method.Invoke( null, new object[] { reader, fieldInfo, settings, templatePosition, parent } );
+                        return list;
                     }
                     return null;
                 case "Component":
@@ -155,6 +142,7 @@ namespace libMBIN.MBIN {
             }
         }
 
+        /*
         private static List<NMSType> DeserializeGenericList( BinaryReader reader, long templateStartOffset, NMSType parent ) {
             long listPosition = reader.BaseStream.Position;
             NMSTemplate.DebugLogTemplate( $"[G Start]\t0x{listPosition:X}" );
@@ -201,6 +189,7 @@ namespace libMBIN.MBIN {
 
             return list;
         }
+        */
 
         private static List<T> DeserializeList<T>( BinaryReader reader, FieldInfo field, NMSAttribute settings, long templateStartOffset, NMSType parent ) {
             long listPosition = reader.BaseStream.Position;
@@ -233,7 +222,7 @@ namespace libMBIN.MBIN {
         }
 
         // func thats run after template is deserialized, can be used for checks etc
-        internal static void FinishDeserialize( NMSType template ) {
+        private static void FinishDeserialize( NMSType template ) {
 #if DEBUG
             // check enums are valid
             var fields = NMSTemplate.GetOrderedFields( template.GetType() );
@@ -258,7 +247,7 @@ namespace libMBIN.MBIN {
 #endif
         }
 
-    internal static byte[] SerializeBytes( NMSType template ) {
+        internal static byte[] SerializeBytes( NMSType template ) {
             using ( var stream = new MemoryStream() )
             using ( var writer = new BinaryWriter( stream, Encoding.ASCII ) ) {
                 var additionalData = new List<Tuple<long, object>>();
@@ -581,7 +570,7 @@ namespace libMBIN.MBIN {
 
                 var templateEntry = (NMSType) entry;
                 var listObjects = new List<Tuple<long, object>>();     // new list of objects so that this data is serialised first
-                var addtData = new Dictionary<long, object>();
+                //var addtData = new Dictionary<long, object>();
                 NMSTemplate.DebugLogTemplate( $"[G] {template.GetType().Name}\t0x{writer.BaseStream.Position:X}" );
                 // pass the new listObject object in place of additionalData so that this branch is serialised before the whole layer
                 AppendToWriter( templateEntry, writer, ref listObjects, ref addtDataIndexThis, template.GetType() );

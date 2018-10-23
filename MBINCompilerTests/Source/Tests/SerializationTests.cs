@@ -186,27 +186,29 @@ namespace libMBIN.UnitTests {
                     timer.Start();
 
                     try {
-                        var fileStream = File.Open( file.FullPath, FileMode.Open );
-                        file.mbinSize = fileStream.Length;
+                        using ( var fileStream = File.Open( file.FullPath, FileMode.Open ) ) {
 
-                        var vanillaEXML = Decompile( fileStream );
-                        var compiledMBIN = Compile( vanillaEXML );
-                        var recompiledEXML = Decompile( compiledMBIN );
+                            file.mbinSize = fileStream.Length;
 
-                        file.hash = Utils.SHA1.GetHexString( vanillaEXML );
-                        string hash = Utils.SHA1.GetHexString( recompiledEXML );
+                            var vanillaEXML = Decompile( fileStream );
+                            var compiledMBIN = Compile( vanillaEXML );
+                            var recompiledEXML = Decompile( compiledMBIN );
 
-                        vanillaEXML.Dispose();
-                        compiledMBIN.Dispose();
-                        recompiledEXML.Dispose();
+                            file.hash = Utils.SHA1.GetHexString( vanillaEXML );
+                            string hash = Utils.SHA1.GetHexString( recompiledEXML );
 
-                        // check exml files match
-                        if ( hash == file.hash ) { // pass
-                            file.status = FileStatus.Passed;
-                        } else { // mismatch
-                            file.status = FileStatus.Mismatch;
+                            vanillaEXML.Dispose();
+                            compiledMBIN.Dispose();
+                            recompiledEXML.Dispose();
+
+                            // check exml files match
+                            if ( hash == file.hash ) { // pass
+                                file.status = FileStatus.Passed;
+                            } else { // mismatch
+                                file.status = FileStatus.Mismatch;
+                            }
+
                         }
-
                     } catch ( FileNotFoundException ) { // missing
                         file.status = FileStatus.Missing;
                     } catch ( Exception e ) { // fail
